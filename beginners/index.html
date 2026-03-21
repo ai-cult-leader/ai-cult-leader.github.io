@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI for Beginners & Seniors — Learn AI Step by Step, No Tech Experience Needed</title>
+<meta name="description" content="Learn how to use AI tools as a complete beginner or senior. Simple guides, no jargon, step-by-step. Start here if you've never used AI before.">
+<link rel="canonical" href="https://aiguerrilla.net/beginners/">
+<meta property="og:title" content="AI for Beginners & Seniors — Learn AI Step by Step, No Tech Experience Needed">
+<meta property="og:description" content="Learn how to use AI tools as a complete beginner or senior. Simple guides, no jargon, step-by-step. Start here if you've never used AI before.">
+<meta property="og:url" content="https://aiguerrilla.net/beginners/">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d0d0d;color:#e8e8e8;font-family:Georgia,'Times New Roman',serif;font-size:19px;line-height:1.85}
+nav{padding:20px 40px;border-bottom:1px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#0d0d0d;position:sticky;top:0;z-index:100}
+.logo{color:#00AA66;font-weight:900;font-size:1.4rem;text-decoration:none;font-family:'Segoe UI',sans-serif}
+.nav-home{color:#aaa;text-decoration:none;font-size:1rem;font-family:'Segoe UI',sans-serif}
+.nav-home:hover{color:#00AA66}
+.nav-cta{background:#00AA66;color:#fff;font-weight:700;padding:10px 22px;border-radius:8px;text-decoration:none;font-size:.95rem;font-family:'Segoe UI',sans-serif}
+.hero{padding:80px 20px 60px;max-width:800px;margin:0 auto;text-align:center}
+h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:700;margin-bottom:20px;line-height:1.2;color:#fff}
+h1 span{color:#00AA66}
+.hero-subtitle{font-size:1.25rem;color:#aaa;max-width:600px;margin:0 auto 40px;line-height:1.7}
+.start-btn{display:inline-block;background:#00AA66;color:#fff;font-size:1.2rem;font-weight:700;padding:20px 48px;border-radius:12px;text-decoration:none;font-family:'Segoe UI',sans-serif;transition:transform .2s}
+.start-btn:hover{transform:scale(1.03)}
+.reassurance{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+.reassurance-item{display:flex;align-items:center;gap:8px;font-size:.95rem;color:#888;font-family:'Segoe UI',sans-serif}
+.reassurance-item span{font-size:1.2rem}
+.section{max-width:760px;margin:0 auto;padding:60px 20px}
+h2{font-size:1.8rem;font-weight:700;margin-bottom:16px;color:#fff;line-height:1.3}
+h3{font-size:1.3rem;font-weight:600;margin:36px 0 12px;color:#ddd}
+p{margin-bottom:20px;color:#ccc;line-height:1.85}
+.guide-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;max-width:1000px;margin:0 auto;padding:0 20px 60px}
+.guide-card{background:#141414;border:2px solid #1a1a1a;border-radius:14px;padding:28px;transition:border-color .2s,transform .2s;text-decoration:none;color:inherit;display:block}
+.guide-card:hover{border-color:#00AA66;transform:translateY(-2px)}
+.guide-icon{font-size:2.5rem;margin-bottom:14px}
+.guide-card h3{font-size:1.1rem;font-weight:700;margin:0 0 8px;color:#fff;font-family:'Segoe UI',sans-serif}
+.guide-card p{font-size:.9rem;color:#888;margin:0;line-height:1.5;font-family:'Segoe UI',sans-serif}
+.guide-time{font-size:.78rem;color:#00AA66;margin-top:10px;font-family:'Segoe UI',sans-serif}
+.steps{list-style:none;padding:0;counter-reset:steps}
+.step{counter-increment:steps;background:#141414;border-radius:12px;padding:24px 24px 24px 80px;margin-bottom:16px;position:relative;border:1px solid #1a1a1a}
+.step::before{content:counter(steps);position:absolute;left:20px;top:24px;background:#00AA66;color:#fff;font-weight:900;font-size:1rem;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Segoe UI',sans-serif}
+.step h4{font-size:1.05rem;font-weight:700;margin-bottom:8px;color:#fff;font-family:'Segoe UI',sans-serif}
+.step p{font-size:.92rem;color:#999;margin:0;font-family:'Segoe UI',sans-serif}
+.tip-box{background:#0a1a0a;border-left:4px solid #00AA66;padding:20px 24px;border-radius:0 10px 10px 0;margin:28px 0}
+.tip-label{font-size:.72rem;color:#00AA66;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-family:'Segoe UI',sans-serif}
+.tip-box p{color:#aaa;margin:0;font-size:.95rem}
+.faq-item{border-bottom:1px solid #1a1a1a;padding:20px 0}
+.faq-q{font-size:1.05rem;font-weight:600;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'Segoe UI',sans-serif}
+.faq-q::after{content:'▼';font-size:.8rem;color:#00AA66;transition:transform .2s}
+.faq-item.open .faq-q::after{transform:rotate(180deg)}
+.faq-a{font-size:.92rem;color:#999;padding-top:12px;display:none;font-family:'Segoe UI',sans-serif;line-height:1.7}
+.faq-item.open .faq-a{display:block}
+.cta-section{background:#0a1a0a;border:2px solid #00AA66;border-radius:16px;padding:48px;text-align:center;max-width:700px;margin:60px auto}
+.cta-section h2{color:#00AA66;font-size:1.8rem;margin-bottom:14px;font-family:'Segoe UI',sans-serif}
+.cta-section p{color:#aaa;margin-bottom:28px;font-size:1rem;font-family:'Segoe UI',sans-serif}
+.text-size-bar{position:fixed;bottom:20px;right:20px;background:#141414;border:1px solid #2a2a2a;border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:10px;z-index:999;font-family:'Segoe UI',sans-serif}
+.text-size-bar span{font-size:.75rem;color:#666}
+.size-btn{background:#1a1a1a;border:1px solid #2a2a2a;color:#aaa;width:32px;height:32px;border-radius:6px;cursor:pointer;font-size:1rem;font-family:inherit}
+.size-btn:hover{border-color:#00AA66;color:#00AA66}
+footer{text-align:center;padding:40px;color:#444;border-top:1px solid #111;font-size:.9rem;font-family:'Segoe UI',sans-serif}
+footer a{color:#00AA66;text-decoration:none}
+.path-card{background:#141414;border:2px solid #1a1a1a;border-radius:14px;padding:24px 28px;margin-bottom:14px;display:flex;align-items:center;gap:20px;text-decoration:none;color:inherit;transition:border-color .2s}
+.path-card:hover{border-color:#00AA66}
+.path-num{background:#00AA66;color:#fff;font-weight:900;font-size:1.1rem;min-width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Segoe UI',sans-serif;flex-shrink:0}
+.path-card h3{font-size:1.05rem;font-weight:700;margin:0 0 4px;color:#fff;font-family:'Segoe UI',sans-serif}
+.path-card p{font-size:.85rem;color:#888;margin:0;font-family:'Segoe UI',sans-serif}
+.warning-box{background:#1a0a0a;border-left:4px solid #cc4444;padding:20px 24px;border-radius:0 10px 10px 0;margin:28px 0}
+.warning-label{font-size:.72rem;color:#cc4444;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-family:'Segoe UI',sans-serif}
+.warning-box p{color:#bbb;margin:0;font-size:.95rem}
+.tool-card{background:#141414;border:1px solid #1a1a1a;border-radius:14px;padding:24px;margin-bottom:16px}
+.tool-card h3{font-size:1.1rem;font-weight:700;margin:0 0 8px;color:#fff;font-family:'Segoe UI',sans-serif}
+.tool-card p{font-size:.92rem;color:#999;margin:0 0 12px;font-family:'Segoe UI',sans-serif}
+.tool-link{display:inline-block;background:#00AA66;color:#fff;font-weight:700;padding:10px 22px;border-radius:8px;text-decoration:none;font-size:.9rem;font-family:'Segoe UI',sans-serif}
+.glossary-item{border-bottom:1px solid #1a1a1a;padding:16px 0}
+.glossary-term{font-size:1.05rem;font-weight:700;color:#00AA66;font-family:'Segoe UI',sans-serif;margin-bottom:4px}
+.glossary-def{font-size:.95rem;color:#ccc;font-family:'Segoe UI',sans-serif;line-height:1.6}
+.prompt-example{background:#141414;border:1px solid #1a1a1a;border-radius:10px;padding:16px 20px;margin-bottom:12px;font-family:'Segoe UI',sans-serif;font-size:.92rem;color:#ccc;cursor:pointer;transition:border-color .2s}
+.prompt-example:hover{border-color:#00AA66;color:#fff}
+.next-btn{display:inline-block;background:#141414;border:2px solid #00AA66;color:#00AA66;font-size:1rem;font-weight:700;padding:14px 32px;border-radius:10px;text-decoration:none;font-family:'Segoe UI',sans-serif;transition:background .2s,color .2s;margin-top:20px}
+.next-btn:hover{background:#00AA66;color:#fff}
+</style>
+
+</head>
+<body>
+<nav>
+  <a class="logo" href="/beginners/">AI for Beginners</a>
+  <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+    <a class="nav-home" href="/">Full Site</a>
+    <a class="nav-home" href="/beginners/what-is-ai/">What is AI?</a>
+    <a class="nav-home" href="/beginners/chatgpt-for-beginners/">ChatGPT Guide</a>
+    <a class="nav-home" href="/beginners/ask-ai/">Ask AI Anything</a>
+    <a class="nav-cta" href="https://skool.com/aiguerrilla">Free Community</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>You Don't Need to Be<br><span>Tech-Savvy to Use AI</span></h1>
+  <p class="hero-subtitle">AI is the most useful tool most people have never tried. We'll show you how — one simple step at a time, in plain English.</p>
+  <a href="/beginners/what-is-ai/" class="start-btn">Start Here — What is AI? &rarr;</a>
+  <div class="reassurance">
+    <div class="reassurance-item"><span>✓</span> No experience needed</div>
+    <div class="reassurance-item"><span>✓</span> Take it at your own pace</div>
+    <div class="reassurance-item"><span>✓</span> Plain English only</div>
+    <div class="reassurance-item"><span>✓</span> Completely free</div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Your Learning Path — Start Here</h2>
+  <p>Follow these guides in order. Each one builds on the last. You can stop at any time and pick up where you left off.</p>
+
+  <a href="/beginners/what-is-ai/" class="path-card">
+    <div class="path-num">1</div>
+    <div><h3>What is AI?</h3><p>A gentle introduction. No jargon, no confusion. Just a clear explanation of what AI actually is. &bull; 5 min read</p></div>
+  </a>
+  <a href="/beginners/chatgpt-for-beginners/" class="path-card">
+    <div class="path-num">2</div>
+    <div><h3>ChatGPT — Your First AI Conversation</h3><p>Step-by-step guide to having your very first conversation with an AI. Free to use. &bull; 8 min read</p></div>
+  </a>
+  <a href="/beginners/how-to-ask-ai/" class="path-card">
+    <div class="path-num">3</div>
+    <div><h3>How to Ask AI Good Questions</h3><p>The simple trick that makes AI 10x more helpful. With 20 real examples you can use today. &bull; 6 min read</p></div>
+  </a>
+  <a href="/beginners/ai-for-daily-life/" class="path-card">
+    <div class="path-num">4</div>
+    <div><h3>Useful AI Tools for Daily Life</h3><p>Writing letters, health questions, recipes, family calls — AI can help with all of it. &bull; 10 min read</p></div>
+  </a>
+  <a href="/beginners/staying-safe/" class="path-card">
+    <div class="path-num">5</div>
+    <div><h3>Staying Safe Online with AI</h3><p>What to share, what never to share, and how to spot scams. Essential reading. &bull; 7 min read</p></div>
+  </a>
+  <a href="/beginners/ask-ai/" class="path-card">
+    <div class="path-num">6</div>
+    <div><h3>Try It — Ask AI Anything Right Now</h3><p>A simple, beginner-friendly AI chat. Type a question and get a plain English answer. &bull; Interactive tool</p></div>
+  </a>
+</div>
+
+<div style="max-width:760px;margin:0 auto;padding:0 20px 20px">
+  <h2>All Beginner Guides</h2>
+  <p>Browse all our guides. Each one is written for people who are new to technology.</p>
+</div>
+<div class="guide-grid">
+  <a href="/beginners/what-is-ai/" class="guide-card">
+    <div class="guide-icon">🤔</div>
+    <h3>What is AI?</h3>
+    <p>A clear, simple explanation of artificial intelligence for complete beginners.</p>
+    <div class="guide-time">5 min read &bull; Start here</div>
+  </a>
+  <a href="/beginners/chatgpt-for-beginners/" class="guide-card">
+    <div class="guide-icon">💬</div>
+    <h3>ChatGPT for Beginners</h3>
+    <p>How to sign up, what to type, and 10 things to try right now.</p>
+    <div class="guide-time">8 min read</div>
+  </a>
+  <a href="/beginners/how-to-ask-ai/" class="guide-card">
+    <div class="guide-icon">❓</div>
+    <h3>How to Ask AI Good Questions</h3>
+    <p>The magic formula that gets you helpful answers every time.</p>
+    <div class="guide-time">6 min read</div>
+  </a>
+  <a href="/beginners/ai-for-daily-life/" class="guide-card">
+    <div class="guide-icon">🏠</div>
+    <h3>AI for Daily Life</h3>
+    <p>Letters, health questions, recipes, travel — practical help for every day.</p>
+    <div class="guide-time">10 min read</div>
+  </a>
+  <a href="/beginners/staying-safe/" class="guide-card">
+    <div class="guide-icon">🛡️</div>
+    <h3>Staying Safe with AI</h3>
+    <p>What to share, what not to share, and how to spot AI scams.</p>
+    <div class="guide-time">7 min read &bull; Important!</div>
+  </a>
+  <a href="/beginners/ai-scam-warning/" class="guide-card">
+    <div class="guide-icon">⚠️</div>
+    <h3>AI Scam Warning Signs</h3>
+    <p>Voice cloning, fake AI calls, deepfakes — how to protect yourself.</p>
+    <div class="guide-time">8 min read &bull; Must read</div>
+  </a>
+  <a href="/beginners/free-tools-for-seniors/" class="guide-card">
+    <div class="guide-icon">🆓</div>
+    <h3>Free AI Tools for Seniors</h3>
+    <p>10 free tools anyone can use. No credit card. No tech skills needed.</p>
+    <div class="guide-time">5 min read</div>
+  </a>
+  <a href="/beginners/glossary/" class="guide-card">
+    <div class="guide-icon">📖</div>
+    <h3>AI Words in Plain English</h3>
+    <p>50 AI terms explained simply. Look up any word that confuses you.</p>
+    <div class="guide-time">Reference guide</div>
+  </a>
+  <a href="/beginners/ask-ai/" class="guide-card">
+    <div class="guide-icon">🙋</div>
+    <h3>Ask AI Anything</h3>
+    <p>Type your question and get a simple, friendly answer. No signup needed.</p>
+    <div class="guide-time">Interactive &bull; Free</div>
+  </a>
+</div>
+
+<div class="section">
+  <h2>Questions People Ask Before Getting Started</h2>
+  <div id="faq">
+    <div class="faq-item">
+      <div class="faq-q">Is AI safe to use?</div>
+      <div class="faq-a">Yes! The main AI tools — like ChatGPT, Gemini, and Siri — are made by large, reputable companies and are completely safe to use for asking questions and getting help. As with anything online, you should avoid sharing private information like passwords or your Social Security number. But asking AI "what should I have for dinner?" or "help me write a birthday card" is totally safe.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do I need to pay for AI?</div>
+      <div class="faq-a">No! The most popular AI tools are free to use. ChatGPT has a free version at chat.openai.com. Google's Gemini is free. Microsoft Copilot is free. You can do a lot without ever paying anything. Some tools offer paid upgrades with extra features, but the free versions are excellent for everyday use.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Will AI steal my personal information?</div>
+      <div class="faq-a">AI tools from reputable companies (OpenAI, Google, Microsoft) do not steal your information. However, you should treat AI like you treat any website: don't share your passwords, Social Security number, bank account numbers, or other sensitive private details. Use AI for questions and tasks, not for storing private information.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do I need a fast computer or special equipment?</div>
+      <div class="faq-a">Not at all! AI tools work on any computer, tablet, or smartphone made in the last 10 years. If you can open a web browser (like Google Chrome, Firefox, or Safari) and go to a website, you can use AI. No special equipment needed.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What if I make a mistake?</div>
+      <div class="faq-a">You can't break it! AI is very forgiving. If you type something wrong, just correct it. If the answer isn't what you wanted, ask again in a different way. You can start a completely new conversation at any time. There's no wrong way to try.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is using AI legal?</div>
+      <div class="faq-a">Absolutely. Using AI tools like ChatGPT is completely legal for personal use — asking questions, writing letters, getting recipes, learning new things. The same way it's legal to search Google, it's legal to ask an AI.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Will AI replace my job?</div>
+      <div class="faq-a">AI is a tool that helps people do their jobs better — similar to how computers and the internet changed work but didn't eliminate it. If you're retired, this isn't something to worry about. If you're still working, learning to use AI is actually a great way to make yourself more valuable at your job.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How do I get started today?</div>
+      <div class="faq-a">Right here! Start with our "What is AI?" guide — it takes about 5 minutes to read and will answer all your questions. Then try the ChatGPT beginner guide and have your first AI conversation. You'll be amazed how easy it actually is.</div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-section" style="margin:0 20px 60px;max-width:700px;margin-left:auto;margin-right:auto">
+  <h2>You're Not Alone on This Journey</h2>
+  <p>Our free community is full of people just like you — beginners, seniors, and curious learners of all ages. Ask questions, share what you've learned, and grow at your own pace.</p>
+  <a href="https://skool.com/aiguerrilla" class="start-btn" style="font-size:1rem;padding:16px 36px">Join the Free Community &rarr;</a>
+</div>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    item.classList.toggle('open');
+  });
+});
+</script>
+
+<div style="background:#0a0a0a;border-top:1px solid #1a1a1a;padding:32px 20px;text-align:center;font-family:'Segoe UI',sans-serif">
+  <p style="color:#555;font-size:.95rem;margin-bottom:8px">Free community where you can ask questions and learn at your own pace</p>
+  <a href="https://skool.com/aiguerrilla" style="color:#00AA66;text-decoration:none;font-size:1rem;font-weight:600">Join free at skool.com/aiguerrilla &rarr;</a>
+</div>
+<footer>
+  <p>&copy; 2026 <a href="https://aiguerrilla.net">AI Guerrilla</a> &mdash; 
+  <a href="/beginners/">Beginners Home</a> &mdash; 
+  <a href="/beginners/staying-safe/">Stay Safe Online</a> &mdash;
+  <a href="https://skool.com/aiguerrilla">Free Community</a></p>
+</footer>
+
+<div class="text-size-bar">
+  <span>Text size:</span>
+  <button class="size-btn" onclick="changeSize(-1)" title="Smaller text">A−</button>
+  <button class="size-btn" onclick="changeSize(1)" title="Larger text">A+</button>
+</div>
+<script>
+let fontSize = parseInt(localStorage.getItem('beginnerFontSize') || '19');
+document.body.style.fontSize = fontSize + 'px';
+function changeSize(dir) {
+  fontSize = Math.max(16, Math.min(28, fontSize + dir * 2));
+  document.body.style.fontSize = fontSize + 'px';
+  localStorage.setItem('beginnerFontSize', fontSize);
+}
+</script>
+</body>
+</html>
