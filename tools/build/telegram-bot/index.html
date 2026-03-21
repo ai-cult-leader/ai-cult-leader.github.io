@@ -195,6 +195,11 @@ document.addEventListener('click',function(e){
       </label>
     </div>
 
+<div style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:10px;padding:16px 20px;margin-bottom:20px">
+  <div style="font-size:.72rem;color:#00FF88;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;font-weight:700">💡 Example Output</div>
+  <p style="font-size:.83rem;color:#888;margin-bottom:8px">See a working FAQ bot for a coffee shop — complete Python code you can run in minutes.</p>
+  <button onclick="loadExample()" style="background:transparent;border:1px solid #00FF88;color:#00FF88;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:.8rem;font-family:inherit">Load Example →</button>
+</div>
     <div style="margin-top:24px">
       <button class="btn" id="generateBtn" data-orig="Generate My Bot Code" onclick="generateBot()">Generate My Bot Code</button>
     </div>
@@ -378,6 +383,95 @@ function _download(content, filename, type) {
   a.href = URL.createObjectURL(blob);
   a.download = filename;
   a.click();
+}
+</script>
+<script>
+function loadExample() {
+  document.getElementById('botName').value = 'Brew & Bean Bot';
+  if(document.getElementById('botDesc')) document.getElementById('botDesc').value = 'FAQ bot for Brew & Bean Coffee Shop. Answers questions about menu, hours, location, and specials.';
+  if(document.getElementById('botType')) document.getElementById('botType').value = document.getElementById('botType').options[0]?.value;
+
+  const exampleCode = `import logging
+from telegram import Update, ReplyKeyboardMarkup
+from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
+
+# Configure logging
+logging.basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# ── Bot Configuration ─────────────────────────────────────────
+BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"  # Get from @BotFather on Telegram
+
+# FAQ Data
+FAQS = {
+    "hours": "☕ We're open Monday–Friday 7am–8pm, Saturday–Sunday 8am–6pm.",
+    "location": "📍 123 Main Street, downtown. We're next to City Hall!",
+    "menu": "🍵 We serve espresso, lattes, cappuccinos, cold brew, and 15+ specialty drinks. Full menu at brewandbean.com/menu",
+    "wifi": "📶 Free WiFi! Password: BrewAndBean2024",
+    "parking": "🚗 Free parking in the lot behind the building. Enter from Oak Street.",
+    "specials": "⭐ This week: Buy 2 lattes, get a free pastry! Valid Mon-Wed.",
+}
+
+MENU = ReplyKeyboardMarkup(
+    [["☕ Hours", "📍 Location"], ["🍵 Menu", "📶 WiFi"], ["🚗 Parking", "⭐ Specials"]],
+    resize_keyboard=True
+)
+
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        "Welcome to Brew & Bean Coffee! ☕\n\nI can answer your questions about hours, menu, WiFi, and more.\n\nWhat would you like to know?",
+        reply_markup=MENU
+    )
+
+async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    text = update.message.text.lower()
+    
+    if any(w in text for w in ["hour", "open", "close", "time"]):
+        await update.message.reply_text(FAQS["hours"])
+    elif any(w in text for w in ["where", "location", "address", "find"]):
+        await update.message.reply_text(FAQS["location"])
+    elif any(w in text for w in ["menu", "drink", "coffee", "latte", "espresso"]):
+        await update.message.reply_text(FAQS["menu"])
+    elif any(w in text for w in ["wifi", "wi-fi", "internet", "password"]):
+        await update.message.reply_text(FAQS["wifi"])
+    elif any(w in text for w in ["park", "car"]):
+        await update.message.reply_text(FAQS["parking"])
+    elif any(w in text for w in ["special", "deal", "discount", "offer"]):
+        await update.message.reply_text(FAQS["specials"])
+    else:
+        await update.message.reply_text(
+            "I'm not sure about that! Try asking about:\n• Hours\n• Location\n• Menu\n• WiFi\n• Parking\n• Specials",
+            reply_markup=MENU
+        )
+
+def main():
+    app = Application.builder().token(BOT_TOKEN).build()
+    app.add_handler(CommandHandler("start", start))
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
+    print("Bot is running... Press Ctrl+C to stop.")
+    app.run_polling()
+
+if __name__ == "__main__":
+    main()
+
+# ── Setup Instructions ─────────────────────────────────────────
+# 1. pip install python-telegram-bot
+# 2. Get your bot token from @BotFather on Telegram
+# 3. Replace YOUR_BOT_TOKEN_HERE with your actual token
+# 4. Run: python bot.py`;
+
+  // Find the code display element and show the example
+  const outputSection = document.getElementById('outputSection');
+  if (outputSection) {
+    outputSection.style.display = 'block';
+    outputSection.classList.add('visible');
+  }
+  const codeDisplay = document.getElementById('generatedCode') || document.querySelector('.code-block');
+  if (codeDisplay) {
+    codeDisplay.textContent = exampleCode;
+  }
+  // Try showOutput for consistency
+  if (typeof showOutput === 'function') showOutput(exampleCode, 'bot.py', false);
 }
 </script>
 </body>
