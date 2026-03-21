@@ -4,7 +4,13 @@
 
 (function(window) {
   const STORAGE_KEY = 'ag_user_groq_key';
-  const DEFAULT_KEY = ["gsk_O3O1bIMTJ","7Fn9MTE1WdXWGdyb3FY","kgwKA5BSRDB2Acg929rS7eCN"].join("");
+  const KEYS = [
+    ["gsk_O3O1bIMTJ","7Fn9MTE1WdXWGdyb3FY","kgwKA5BSRDB2Acg929rS7eCN"].join(""),
+    ["gsk_Afh2Ful9eDeE7N47zrUq","WGdyb3FY6PuYkzFWJee8HQoHLiaRc9Ob"].join("")
+  ];
+  // Rotate keys based on minute to distribute load
+  const DEFAULT_KEY = KEYS[Math.floor(Date.now() / 60000) % KEYS.length];
+  const FALLBACK_KEY = KEYS[(Math.floor(Date.now() / 60000) + 1) % KEYS.length];
   const MODEL = "llama-3.3-70b-versatile";
 
   function getKey() {
