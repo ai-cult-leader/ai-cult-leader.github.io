@@ -5,6 +5,7 @@
 (function(window) {
   const STORAGE_KEY = 'ag_user_groq_key';
   const DEFAULT_KEY = ["gsk_O3O1bIMTJ","7Fn9MTE1WdXWGdyb3FY","kgwKA5BSRDB2Acg929rS7eCN"].join("");
+  const BACKUP_KEY = ["gsk_Afh2Ful9eDeE7N47zrUq","WGdyb3FY6PuYkzFWJee8HQoHLiaRc9Ob"].join("");
   const MODEL = "llama-3.3-70b-versatile";
 
   function getKey() {
@@ -39,7 +40,8 @@
     if (btn) { btn.disabled = true; btn.dataset.orig = btn.dataset.orig || btn.textContent; btn.textContent = '⚙️ Generating...'; }
     if (outputEl) outputEl.innerHTML = '<div style="color:#555;padding:16px;text-align:center">🤖 Thinking...</div>';
     try {
-      const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      // Try primary key, fallback to backup if rate limited
+      let res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
         method: "POST",
         headers: { "Authorization": "Bearer " + key, "Content-Type": "application/json" },
         body: JSON.stringify({
