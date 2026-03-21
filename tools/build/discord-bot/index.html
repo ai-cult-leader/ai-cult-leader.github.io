@@ -187,6 +187,11 @@ document.addEventListener('click',function(e){
       <label><input type="checkbox" id="feat6"> Role management (auto-assign roles)</label>
     </div>
 
+<div style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:10px;padding:16px 20px;margin-bottom:20px">
+  <div style="font-size:.72rem;color:#00FF88;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;font-weight:700">💡 Example Output</div>
+  <p style="font-size:.83rem;color:#888;margin-bottom:8px">See a complete Discord welcome bot with custom commands — Python code ready to deploy.</p>
+  <button onclick="loadExample()" style="background:transparent;border:1px solid #00FF88;color:#00FF88;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:.8rem;font-family:inherit">Load Example →</button>
+</div>
     <div style="margin-top:24px">
       <button class="btn" id="generateBtn" data-orig="Generate My Bot" onclick="generateBot()">Generate My Bot</button>
     </div>
@@ -377,6 +382,100 @@ function _download(content, filename, type) {
   a.href = URL.createObjectURL(blob);
   a.download = filename;
   a.click();
+}
+</script>
+<script>
+function loadExample() {
+  document.getElementById('botName').value = 'WelcomeGuard';
+  if(document.getElementById('botDesc')) document.getElementById('botDesc').value = 'Welcome bot that greets new members and has commands for server rules, FAQ, and role assignment';
+  if(document.getElementById('feat1')) document.getElementById('feat1').value = 'Auto-welcome new members in #welcome channel';
+  if(document.getElementById('feat2')) document.getElementById('feat2').value = '!rules command shows server rules';
+  if(document.getElementById('feat3')) document.getElementById('feat3').value = '!help command lists all commands';
+  if(document.getElementById('feat4')) document.getElementById('feat4').value = '!role command to self-assign roles';
+
+  const exampleCode = `import discord
+from discord.ext import commands
+import datetime
+
+# ── Configuration ──────────────────────────────────────────────
+BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"  # discord.com/developers
+PREFIX = "!"
+WELCOME_CHANNEL_ID = 123456789  # Replace with your channel ID
+
+# ── Bot Setup ─────────────────────────────────────────────────
+intents = discord.Intents.default()
+intents.members = True
+intents.message_content = True
+bot = commands.Bot(command_prefix=PREFIX, intents=intents, help_command=None)
+
+# ── Events ────────────────────────────────────────────────────
+@bot.event
+async def on_ready():
+    print(f"✅ WelcomeGuard is online as {bot.user}")
+    await bot.change_presence(activity=discord.Activity(
+        type=discord.ActivityType.watching,
+        name=f"{len(bot.guilds)} servers"
+    ))
+
+@bot.event
+async def on_member_join(member):
+    channel = bot.get_channel(WELCOME_CHANNEL_ID)
+    if not channel:
+        return
+    
+    embed = discord.Embed(
+        title=f"Welcome to the server, {member.display_name}! 🎉",
+        description=f"We're glad you're here, {member.mention}!\n\nRead the rules in #rules and introduce yourself!",
+        color=0x00FF88,
+        timestamp=datetime.datetime.utcnow()
+    )
+    embed.set_thumbnail(url=member.display_avatar.url)
+    embed.set_footer(text=f"Member #{member.guild.member_count}")
+    await channel.send(embed=embed)
+
+# ── Commands ──────────────────────────────────────────────────
+@bot.command(name="help")
+async def help_cmd(ctx):
+    embed = discord.Embed(title="WelcomeGuard Commands", color=0x00FF88)
+    embed.add_field(name="!help", value="Show this message", inline=False)
+    embed.add_field(name="!rules", value="Show server rules", inline=False)
+    embed.add_field(name="!info", value="Server information", inline=False)
+    embed.add_field(name="!ping", value="Check bot latency", inline=False)
+    await ctx.send(embed=embed)
+
+@bot.command(name="rules")
+async def rules(ctx):
+    embed = discord.Embed(title="Server Rules 📋", color=0x00FF88)
+    embed.add_field(name="1. Be Respectful", value="Treat everyone with kindness.", inline=False)
+    embed.add_field(name="2. No Spam", value="No flooding, no repeated messages.", inline=False)
+    embed.add_field(name="3. Stay On Topic", value="Keep discussions relevant to each channel.", inline=False)
+    embed.add_field(name="4. No Self-Promotion", value="Ask a mod before posting links.", inline=False)
+    await ctx.send(embed=embed)
+
+@bot.command(name="ping")
+async def ping(ctx):
+    latency = round(bot.latency * 1000)
+    await ctx.send(f"🏓 Pong! Latency: **{latency}ms**")
+
+@bot.command(name="info")
+async def info(ctx):
+    guild = ctx.guild
+    embed = discord.Embed(title=guild.name, color=0x00FF88)
+    embed.add_field(name="Members", value=guild.member_count)
+    embed.add_field(name="Channels", value=len(guild.channels))
+    embed.add_field(name="Roles", value=len(guild.roles))
+    await ctx.send(embed=embed)
+
+# ── Run ───────────────────────────────────────────────────────
+bot.run(BOT_TOKEN)
+
+# Setup: pip install discord.py && python bot.py`;
+
+  const outputSection = document.getElementById('outputSection');
+  if (outputSection) { outputSection.style.display = 'block'; outputSection.classList.add('visible'); }
+  const codeDisplay = document.getElementById('generatedCode') || document.querySelector('.code-block');
+  if (codeDisplay) codeDisplay.textContent = exampleCode;
+  if (typeof showOutput === 'function') showOutput(exampleCode, 'bot.py', false);
 }
 </script>
 </body>
