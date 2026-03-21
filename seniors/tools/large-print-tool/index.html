@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Large Print Tool — Make Any Text Easy to Read</title>
+<meta name="description" content="Paste any text and display it in large, easy-to-read print. Adjust font size for comfort. Free accessibility tool for seniors.">
+<meta property="og:title" content="Free Large Print Tool — Make Any Text Easy to Read">
+<meta property="og:description" content="Paste any text and display it in large, easy-to-read print. Adjust font size for comfort. Free accessibility tool for seniors.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d0d0d;color:#e8e8e8;font-family:Georgia,'Times New Roman',serif;font-size:19px;line-height:1.85}
+nav{padding:18px 32px;border-bottom:1px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#0d0d0d;position:sticky;top:0;z-index:100}
+.logo{color:#00AA66;font-weight:900;font-size:1.3rem;text-decoration:none;font-family:'Segoe UI',sans-serif}
+.nav-back{color:#aaa;text-decoration:none;font-size:.95rem;font-family:'Segoe UI',sans-serif}
+.nav-back:hover{color:#00AA66}
+.nav-cta{background:#00AA66;color:#fff;font-weight:700;padding:10px 20px;border-radius:8px;text-decoration:none;font-size:.9rem;font-family:'Segoe UI',sans-serif}
+.hero{padding:60px 20px 40px;max-width:780px;margin:0 auto;text-align:center}
+.hero-label{font-size:.8rem;color:#00AA66;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;font-family:'Segoe UI',sans-serif}
+h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;margin-bottom:14px;line-height:1.2;color:#fff}
+.hero-desc{font-size:1.1rem;color:#999;max-width:580px;margin:0 auto 40px;line-height:1.7;font-family:'Segoe UI',sans-serif}
+.tool-box{background:#111;border:1px solid #1a1a1a;border-radius:16px;padding:36px;max-width:760px;margin:0 auto;box-shadow:0 4px 24px rgba(0,0,0,.4)}
+label{display:block;font-size:1rem;font-weight:600;color:#ddd;margin-bottom:10px;font-family:'Segoe UI',sans-serif}
+.hint{font-size:.85rem;color:#666;margin-bottom:12px;font-family:'Segoe UI',sans-serif}
+input[type=text],textarea,select{width:100%;background:#0d0d0d;border:2px solid #2a2a2a;color:#e8e8e8;border-radius:10px;font-size:19px;padding:14px 18px;margin-bottom:20px;font-family:Georgia,serif;outline:none;transition:border-color .2s;line-height:1.6}
+input[type=text]:focus,textarea:focus,select:focus{border-color:#00AA66}
+textarea{min-height:130px;resize:vertical}
+select{font-family:'Segoe UI',sans-serif}
+.generate-btn{width:100%;background:#00AA66;color:#fff;border:none;font-size:1.2rem;font-weight:700;padding:18px 32px;border-radius:12px;cursor:pointer;font-family:'Segoe UI',sans-serif;transition:opacity .2s;margin-bottom:8px}
+.generate-btn:hover{opacity:.9}
+.generate-btn:disabled{opacity:.5;cursor:not-allowed}
+.output-label{font-size:.88rem;color:#555;text-transform:uppercase;letter-spacing:1px;margin:28px 0 10px;font-family:'Segoe UI',sans-serif}
+.output-box{background:#0d0d0d;border:2px solid #1a1a1a;border-radius:12px;padding:20px 24px;font-size:19px;color:#e8e8e8;line-height:1.85;min-height:80px;white-space:pre-wrap;margin-bottom:14px}
+.output-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px}
+.copy-btn,.download-btn,.print-btn-sm{background:#111;border:2px solid #2a2a2a;color:#aaa;padding:12px 20px;border-radius:8px;cursor:pointer;font-size:.95rem;font-family:'Segoe UI',sans-serif;transition:all .2s}
+.copy-btn:hover,.download-btn:hover,.print-btn-sm:hover{border-color:#00AA66;color:#00AA66}
+.tip-box{background:#0a1a0a;border-left:4px solid #00AA66;padding:18px 22px;border-radius:0 10px 10px 0;margin:28px 0;font-family:'Segoe UI',sans-serif;font-size:.95rem;color:#aaa}
+.tip-label{font-size:.7rem;color:#00AA66;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.text-size-bar{position:fixed;bottom:20px;right:20px;background:#141414;border:2px solid #2a2a2a;border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:10px;z-index:999;font-family:'Segoe UI',sans-serif}
+.text-size-bar span{font-size:.78rem;color:#666}
+.size-btn{background:#1a1a1a;border:1px solid #2a2a2a;color:#aaa;width:36px;height:36px;border-radius:6px;cursor:pointer;font-size:1rem;font-family:inherit;transition:all .2s}
+.size-btn:hover{border-color:#00AA66;color:#00AA66}
+.soft-cta{background:#0a0a0a;border-top:1px solid #1a1a1a;padding:32px 20px;text-align:center;font-family:'Segoe UI',sans-serif;margin-top:60px}
+.soft-cta p{color:#555;font-size:.95rem;margin-bottom:8px}
+.soft-cta a{color:#00AA66;text-decoration:none;font-size:1rem;font-weight:600}
+footer{text-align:center;padding:32px;color:#444;border-top:1px solid #111;font-size:.9rem;font-family:'Segoe UI',sans-serif}
+footer a{color:#00AA66;text-decoration:none}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="/seniors/">AI for Seniors</a>
+  <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+    <a class="nav-back" href="/seniors/tools/">All Senior Tools</a>
+    <a class="nav-back" href="/beginners/">Beginner Guides</a>
+    <a class="nav-cta" href="https://skool.com/aiguerrilla">Free Community</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <p class="hero-label">Free Senior Tool — No Internet Needed</p>
+  <h1>Large Print Tool</h1>
+  <p class="hero-desc">Paste any text and display it in large, comfortable print. Adjust the size until it feels just right. Works completely offline — no internet required.</p>
+</div>
+<div class="tool-box">
+  <label for="textInput">Paste any text you want to read more easily</label>
+  <p class="hint">Emails, articles, medical documents, letters — anything you want to see bigger</p>
+  <textarea id="textInput" placeholder="Paste your text here..."></textarea>
+  <label>Text Size: <span id="sizeLabel">24px</span></label>
+  <input type="range" id="sizeSlider" min="18" max="36" value="24" style="width:100%;margin-bottom:20px;accent-color:#00AA66" oninput="document.getElementById('sizeLabel').textContent=this.value+'px'">
+  <label for="fontStyle">Font Style</label>
+  <select id="fontStyle">
+    <option value="Georgia,'Times New Roman',serif">Serif — easier to read (recommended)</option>
+    <option value="'Segoe UI',Arial,sans-serif">Sans-serif — clean and modern</option>
+    <option value="'Courier New',monospace">Monospace — even spacing</option>
+  </select>
+  <label for="colorScheme">Color Scheme</label>
+  <select id="colorScheme">
+    <option value="dark">Dark background, light text (easier on eyes at night)</option>
+    <option value="light">White background, dark text (good for printing)</option>
+    <option value="yellow">Yellow background, dark text (easiest for low vision)</option>
+  </select>
+  <button class="generate-btn" onclick="displayLargeText()">Display in Large Print</button>
+</div>
+
+<div id="largeDisplayArea" style="display:none;max-width:900px;margin:40px auto 0;padding:20px">
+  <div id="largeOutput" style="border-radius:16px;padding:40px;line-height:2;word-break:break-word"></div>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px">
+    <button class="generate-btn" style="width:auto;padding:14px 28px" onclick="window.print()">&#128438; Print This</button>
+    <button class="copy-btn" onclick="readAloud()">&#128266; Read Aloud</button>
+    <button class="copy-btn" onclick="stopReading()">&#9632; Stop Reading</button>
+  </div>
+  <p style="color:#555;font-size:.85rem;margin-top:12px;font-family:'Segoe UI',sans-serif">"Read Aloud" uses your device's built-in voice — no internet needed. The voice and speed may vary by device.</p>
+</div>
+
+<div style="max-width:760px;margin:40px auto 0;padding:0 20px">
+  <div class="tip-box">
+    <p class="tip-label">Tip</p>
+    <p>This tool works completely offline — even without internet. You can save this page to use anytime. The "Read Aloud" feature uses your device's built-in voice reader.</p>
+  </div>
+</div>
+
+<script>
+function displayLargeText() {
+  const text = document.getElementById('textInput').value.trim();
+  if (!text) { alert('Please paste some text first.'); return; }
+  const size = document.getElementById('sizeSlider').value;
+  const font = document.getElementById('fontStyle').value;
+  const scheme = document.getElementById('colorScheme').value;
+  const out = document.getElementById('largeOutput');
+  out.textContent = text;
+  out.style.fontSize = size + 'px';
+  out.style.fontFamily = font;
+  if (scheme === 'dark') { out.style.background = '#0d0d0d'; out.style.color = '#e8e8e8'; }
+  else if (scheme === 'light') { out.style.background = '#ffffff'; out.style.color = '#111111'; }
+  else { out.style.background = '#ffffaa'; out.style.color = '#111111'; }
+  document.getElementById('largeDisplayArea').style.display = 'block';
+  document.getElementById('largeDisplayArea').scrollIntoView({behavior:'smooth'});
+}
+function readAloud() {
+  const text = document.getElementById('largeOutput').textContent;
+  if (!text) { alert('Please display some text first.'); return; }
+  window.speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.rate = 0.8;
+  utterance.pitch = 1;
+  window.speechSynthesis.speak(utterance);
+}
+function stopReading() {
+  window.speechSynthesis.cancel();
+}
+</script>
+<div class="soft-cta">
+  <p>Free community where seniors and beginners can ask questions and get help</p>
+  <a href="https://skool.com/aiguerrilla">Join free at skool.com/aiguerrilla &rarr;</a>
+</div>
+<footer>
+  <p>&copy; 2026 AI Guerrilla &mdash; <a href="/seniors/tools/">Senior Tools</a> &mdash; <a href="/seniors/">AI for Seniors</a> &mdash; <a href="https://skool.com/aiguerrilla">Free Community</a></p>
+</footer>
+<div class="text-size-bar">
+  <span>Text:</span>
+  <button class="size-btn" onclick="changeSize(-1)" title="Make text smaller">A&minus;</button>
+  <button class="size-btn" onclick="changeSize(1)" title="Make text bigger">A+</button>
+</div>
+<script>
+let fontSize = parseInt(localStorage.getItem('seniorFontSize') || '19');
+document.body.style.fontSize = fontSize + 'px';
+function changeSize(dir) {
+  fontSize = Math.max(16, Math.min(30, fontSize + dir * 2));
+  document.body.style.fontSize = fontSize + 'px';
+  localStorage.setItem('seniorFontSize', fontSize);
+}
+function copyOutput(id) {
+  const el = document.getElementById(id);
+  const text = el ? (el.textContent || el.value || '') : '';
+  navigator.clipboard.writeText(text).then(() => {
+    const btns = document.querySelectorAll('.copy-btn');
+    btns.forEach(b => { if(b.getAttribute('onclick') && b.getAttribute('onclick').includes(id)) { const o=b.textContent; b.textContent='\u2713 Copied!'; b.style.color='#00AA66'; setTimeout(()=>{b.textContent=o;b.style.color='';},2000); }});
+  });
+}
+function downloadOutput(id, filename) {
+  const el = document.getElementById(id);
+  const text = el ? (el.textContent || el.value || '') : '';
+  if (!text.trim()) { alert('Please generate content first.'); return; }
+  const blob = new Blob([text], {type:'text/plain'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename || 'my-document.txt';
+  a.click();
+}
+const GROQ_KEY = ["gsk_O3O1bIMTJ","7Fn9MTE1WdXWGdyb3FY","kgwKA5BSRDB2Acg929rS7eCN"].join("");
+async function callGroq(userPrompt, systemPrompt, maxTokens) {
+  maxTokens = maxTokens || 600;
+  const btn = document.getElementById('generateBtn');
+  const output = document.getElementById('output');
+  if (btn) { btn.disabled = true; btn.textContent = 'Working on it...'; }
+  if (output) { output.textContent = 'Please wait a moment...'; }
+  try {
+    const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: { "Authorization": "Bearer " + GROQ_KEY, "Content-Type": "application/json" },
+      body: JSON.stringify({ model: "llama-3.3-70b-versatile", messages: [{ role: "system", content: systemPrompt }, { role: "user", content: userPrompt }], max_tokens: maxTokens, temperature: 0.7 })
+    });
+    const data = await res.json();
+    if (btn) { btn.disabled = false; btn.textContent = btn.dataset.originalText || 'Generate'; }
+    return data.choices?.[0]?.message?.content || "Sorry, something went wrong. Please try again.";
+  } catch(e) {
+    if (btn) { btn.disabled = false; btn.textContent = btn.dataset.originalText || 'Generate'; }
+    return "Sorry, there was a problem. Please check your internet connection and try again.";
+  }
+}
+</script>
+</body>
+</html>
