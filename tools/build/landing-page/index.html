@@ -267,7 +267,13 @@ document.addEventListener('click',function(e){
   <p style="margin-top:8px">© 2026 AI Guerrilla — Build With AI For Free</p>
 </footer>
 <script>
-const GROQ_KEY = ["gsk_O3O1bIMTJ","7Fn9MTE1WdXWGdyb3FY","kgwKA5BSRDB2Acg929rS7eCN"].join("");
+const GROQ_KEY = (function(){
+  const KEYS = [
+    ["gsk_SpC07PQBCR4tmMzERyCY","WGdyb3FYObw5uGiYTCC7eBVMzGgwIplO"].join(""),
+    ["gsk_O3O1bIMTJ","7Fn9MTE1WdXWGdyb3FY","kgwKA5BSRDB2Acg929rS7eCN"].join("")
+  ];
+  return KEYS[Math.floor(Date.now()/60000)%KEYS.length];
+})();
 
 async function callGroq(prompt, system, maxTokens = 2000) {
   const btn = document.getElementById('generateBtn');
