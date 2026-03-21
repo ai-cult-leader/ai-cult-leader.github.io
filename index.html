@@ -1,53 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="AI Guerrilla — Free AI training, tools, and community for operators who build with AI. Join 150+ operators at skool.com/aiguerrilla">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="AI Guerrilla — Free AI tools, tutorials, and community for operators. Join 150+ operators at skool.com/aiguerrilla">
 <meta property="og:title" content="AI Guerrilla — Build With AI">
-<meta property="og:description" content="Free AI training and community for operators. Tools, tutorials, and real results.">
-<meta property="og:image" content="https://ai-cult-leader.github.io/og.jpg">
-<title>AI Guerrilla — Build With AI</title>
+<title>AI Guerrilla — Free AI Training &amp; Community</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0a0a;color:#fff;font-family:'Segoe UI',sans-serif;line-height:1.7}
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px 20px;background:linear-gradient(135deg,#0a0a0a 0%,#0d1a0d 100%)}
-h1{font-size:clamp(2rem,5vw,4rem);font-weight:900;color:#00FF88;margin-bottom:20px;letter-spacing:-1px}
-.subtitle{font-size:clamp(1rem,2.5vw,1.4rem);color:#aaa;max-width:600px;margin-bottom:40px}
-.cta-btn{background:#00FF88;color:#000;font-size:1.2rem;font-weight:700;padding:16px 40px;border-radius:8px;text-decoration:none;display:inline-block;transition:transform 0.2s}
-.cta-btn:hover{transform:scale(1.05)}
+body{background:#0a0a0a;color:#fff;font-family:'Segoe UI',sans-serif;line-height:1.75}
+nav{padding:18px 40px;border-bottom:1px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center}
+.logo{color:#00FF88;font-weight:900;font-size:1.3rem;text-decoration:none}
+.nav-cta{background:#00FF88;color:#000;font-weight:700;padding:8px 20px;border-radius:6px;text-decoration:none;font-size:.9rem}
+.hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:60px 20px;background:radial-gradient(ellipse at top,#0d1a0d 0%,#0a0a0a 70%)}
+h1{font-size:clamp(2.2rem,6vw,4.5rem);font-weight:900;color:#00FF88;margin-bottom:20px;letter-spacing:-2px;line-height:1.1}
+.subtitle{font-size:clamp(1rem,2.5vw,1.3rem);color:#999;max-width:560px;margin-bottom:40px}
+.cta-btn{background:#00FF88;color:#000;font-size:1.15rem;font-weight:700;padding:18px 44px;border-radius:8px;text-decoration:none;display:inline-block}
+.tag{font-size:.85rem;color:#00FF88;margin-bottom:12px;letter-spacing:2px;text-transform:uppercase}
 .videos{padding:80px 20px;max-width:1100px;margin:0 auto}
-.videos h2{font-size:2rem;color:#00FF88;margin-bottom:40px;text-align:center}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
-.card{background:#111;border-radius:12px;overflow:hidden;border:1px solid #1a1a1a;transition:border-color 0.2s}
-.card:hover{border-color:#00FF88}
+.videos h2{font-size:2rem;color:#fff;margin-bottom:8px}
+.videos .sub{color:#666;margin-bottom:40px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{background:#111;border-radius:10px;overflow:hidden;border:1px solid #1a1a1a;transition:border-color .2s,transform .2s}
+.card:hover{border-color:#00FF88;transform:translateY(-2px)}
 .card a{text-decoration:none;color:inherit;display:block}
-.card-thumb{width:100%;aspect-ratio:16/9;object-fit:cover}
+.card img{width:100%;aspect-ratio:16/9;object-fit:cover}
 .card-body{padding:16px}
-.card-title{font-size:1rem;font-weight:600;margin-bottom:8px;color:#fff}
-.card-desc{font-size:0.85rem;color:#888}
-.footer{text-align:center;padding:40px;color:#555;border-top:1px solid #1a1a1a}
-.footer a{color:#00FF88;text-decoration:none}
+.card-title{font-size:.95rem;font-weight:600;margin-bottom:6px;color:#fff}
+.card-desc{font-size:.82rem;color:#666}
+.cta-section{background:#0d1a0d;border-top:1px solid #1a1a1a;padding:80px 20px;text-align:center}
+.cta-section h2{font-size:2.2rem;margin-bottom:16px}
+.cta-section p{color:#888;max-width:500px;margin:0 auto 32px}
+footer{text-align:center;padding:30px;color:#444;border-top:1px solid #111;font-size:.85rem}
+footer a{color:#00FF88;text-decoration:none}
+.article-hero{padding:60px 20px 40px;max-width:800px;margin:0 auto;text-align:center}
+.article-hero h1{font-size:clamp(1.6rem,4vw,2.6rem);font-weight:900;margin-bottom:16px}
+.video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;margin:0 auto 40px;max-width:800px}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%}
+.article{max-width:720px;margin:0 auto;padding:0 20px 80px}
+.article p{margin-bottom:22px;color:#bbb;font-size:1.05rem}
+.cta-box{background:#0d1a0d;border:2px solid #00FF88;border-radius:12px;padding:36px;text-align:center;margin:40px 0}
+.cta-box h2{color:#00FF88;font-size:1.6rem;margin-bottom:10px}
+.cta-box p{color:#888;margin-bottom:20px}
+.back{color:#00FF88;text-decoration:none;font-size:.9rem;display:inline-block;margin-bottom:40px}
 </style>
-</head>
-<body>
+</head><body>
+<nav><a class="logo" href="/">AI Guerrilla</a><a class="nav-cta" href="https://skool.com/aiguerrilla">Join Free</a></nav>
 <section class="hero">
-  <h1>AI Guerrilla</h1>
-  <p class="subtitle">Real AI tools. Real results. 150+ operators building the future — free community, zero gatekeeping.</p>
-  <a class="cta-btn" href="https://skool.com/aiguerrilla" target="_blank">Join Free → skool.com/aiguerrilla</a>
+  <div class="tag">Free AI Training</div>
+  <h1>Build With AI.<br>For Real.</h1>
+  <p class="subtitle">Tools, tutorials, and 150+ operators sharing what's actually working. No gatekeeping. No fluff.</p>
+  <a class="cta-btn" href="https://skool.com/aiguerrilla">Join Free &rarr; skool.com/aiguerrilla</a>
 </section>
 <section class="videos">
   <h2>Latest Tutorials</h2>
-  <div class="grid">
-    <div class="card"><a href="/claude-opus-46-window"><img class="card-thumb" src="https://img.youtube.com/vi/p4QIs1kBSq0/mqdefault.jpg"><div class="card-body"><div class="card-title">Claude Opus 4.6 Opened a Window — It Is Still Open</div><div class="card-desc">The operators who moved fast are compounding. Here's what you need to know.</div></div></a></div>
-    <div class="card"><a href="/what-most-miss-claude-46"><img class="card-thumb" src="https://img.youtube.com/vi/mowZ-pBOLsU/mqdefault.jpg"><div class="card-body"><div class="card-title">What Most Miss About Claude Opus 4.6: Adaptive Thinking</div><div class="card-desc">Most operators use it like a chatbot. Top operators use it like infrastructure.</div></div></a></div>
-    <div class="card"><a href="/stop-waiting-ai-perfect"><img class="card-thumb" src="https://img.youtube.com/vi/6JcYH4CtTEQ/mqdefault.jpg"><div class="card-body"><div class="card-title">Stop Waiting for AI to Be Perfect (You're Already Behind)</div><div class="card-desc">Perfectionism is the most expensive trap in AI adoption.</div></div></a></div>
-    <div class="card"><a href="/3-things-claude-operators"><img class="card-thumb" src="https://img.youtube.com/vi/yBdM36NxgH8/mqdefault.jpg"><div class="card-body"><div class="card-title">3 Things Claude Opus 4.6 Operators Need to Know</div><div class="card-desc">Adaptive thinking, 1M context window, best-in-class agentic coding.</div></div></a></div>
-    <div class="card"><a href="/users-write-emails-operators-replace-departments"><img class="card-thumb" src="https://img.youtube.com/vi/2guIHcS02eI/mqdefault.jpg"><div class="card-body"><div class="card-title">Users Write Emails. Operators Replace Departments.</div><div class="card-desc">The gap between users and operators just got wider.</div></div></a></div>
-  </div>
+  <p class="sub">Real tools. Real workflows. Real results.</p>
+  <div class="grid"><div class="card"><a href="/nobody-is-talking-about-this-ai-move-ai-shorts"><img src="https://img.youtube.com/vi/XIYWtkRR-8Q/mqdefault.jpg" alt="Nobody is talking about this AI move #AI #Shorts" loading="lazy"><div class="card-body"><div class="card-title">Nobody is talking about this AI move #AI #Shorts</div><div class="card-desc">Join 5,000+ AI operators building with AI.
+
+Free community → https://skool.com/aiguerrilla
+Newslette</div></div></a></div>
+<div class="card"><a href="/what-you-need-to-do-right-now-with-ai-shorts"><img src="https://img.youtube.com/vi/ll3DXO4puIQ/mqdefault.jpg" alt="What you need to do RIGHT NOW with AI #Shorts" loading="lazy"><div class="card-body"><div class="card-title">What you need to do RIGHT NOW with AI #Shorts</div><div class="card-desc">Join 5,000+ AI operators building with AI.
+
+Free community → https://skool.com/aiguerrilla
+Newslette</div></div></a></div>
+<div class="card"><a href="/openai-just-killed-half-its-products-ai-shorts"><img src="https://img.youtube.com/vi/XlgL2alMN1U/mqdefault.jpg" alt="OpenAI just killed half its products #AI #Shorts" loading="lazy"><div class="card-body"><div class="card-title">OpenAI just killed half its products #AI #Shorts</div><div class="card-desc">Join 5,000+ AI operators building with AI.
+
+Free community → https://skool.com/aiguerrilla
+Newslette</div></div></a></div>
+<div class="card"><a href="/what-openai-doesnt-want-you-to-know-ai-shorts"><img src="https://img.youtube.com/vi/zqFWU6tyUEM/mqdefault.jpg" alt="What OpenAI doesnt want you to know #AI #Shorts" loading="lazy"><div class="card-body"><div class="card-title">What OpenAI doesnt want you to know #AI #Shorts</div><div class="card-desc">Join 5,000+ AI operators building with AI.
+
+Free community → https://skool.com/aiguerrilla
+Newslette</div></div></a></div>
+<div class="card"><a href="/ai-operators-who-win-are-doing-this-shorts"><img src="https://img.youtube.com/vi/RRhHt5Tgtec/mqdefault.jpg" alt="AI operators who win are doing THIS #Shorts" loading="lazy"><div class="card-body"><div class="card-title">AI operators who win are doing THIS #Shorts</div><div class="card-desc">Join 5,000+ AI operators building with AI.
+
+Free community → https://skool.com/aiguerrilla
+Newslette</div></div></a></div>
+<div class="card"><a href="/claude-opus-4-6-users-write-emails-operators-repla"><img src="https://img.youtube.com/vi/2guIHcS02eI/mqdefault.jpg" alt="Claude Opus 4.6: Users Write Emails, Operators Replace Departments" loading="lazy"><div class="card-body"><div class="card-title">Claude Opus 4.6: Users Write Emails, Operators Replace Departments</div><div class="card-desc">Claude Opus 4.6 dropped February 5, 2026. Six weeks later, most people are still using it to write b</div></div></a></div>
+<div class="card"><a href="/3-things-claude-opus-4-6-operators-need-to-know"><img src="https://img.youtube.com/vi/yBdM36NxgH8/mqdefault.jpg" alt="3 Things Claude Opus 4.6 Operators Need to Know" loading="lazy"><div class="card-body"><div class="card-title">3 Things Claude Opus 4.6 Operators Need to Know</div><div class="card-desc">Claude Opus 4.6 isn't a chatbot upgrade. It's infrastructure. In this video I break down the 3 thing</div></div></a></div>
+<div class="card"><a href="/stop-waiting-for-ai-to-be-perfect-you-re-already-b"><img src="https://img.youtube.com/vi/6JcYH4CtTEQ/mqdefault.jpg" alt="Stop Waiting for AI to Be Perfect (You're Already Behind)" loading="lazy"><div class="card-body"><div class="card-title">Stop Waiting for AI to Be Perfect (You're Already Behind)</div><div class="card-desc">Operators who deployed Claude Opus 4.6 six weeks ago already have the head start. Every day you wait</div></div></a></div>
+<div class="card"><a href="/what-most-miss-about-claude-opus-4-6-adaptive-thin"><img src="https://img.youtube.com/vi/mowZ-pBOLsU/mqdefault.jpg" alt="What Most Miss About Claude Opus 4.6: Adaptive Thinking" loading="lazy"><div class="card-body"><div class="card-title">What Most Miss About Claude Opus 4.6: Adaptive Thinking</div><div class="card-desc">Most people think Claude Opus 4.6 is just a smarter chatbot. Operators know the real unlock is adapt</div></div></a></div>
+<div class="card"><a href="/claude-opus-4-6-opened-a-window-it-is-still-open"><img src="https://img.youtube.com/vi/p4QIs1kBSq0/mqdefault.jpg" alt="Claude Opus 4.6 Opened a Window — It Is Still Open" loading="lazy"><div class="card-body"><div class="card-title">Claude Opus 4.6 Opened a Window — It Is Still Open</div><div class="card-desc">Claude Opus 4.6 opened a window 6 weeks ago. Operators who moved fast are compounding. The ones who </div></div></a></div>
+</div>
 </section>
-<footer class="footer">
-  <p>Free AI training + community → <a href="https://skool.com/aiguerrilla">skool.com/aiguerrilla</a> &nbsp;|&nbsp; <a href="https://youtube.com/@aiguerrilla">YouTube</a></p>
-</footer>
-</body>
-</html>
+<section class="cta-section">
+  <h2>Ready to Build?</h2>
+  <p>150+ operators sharing what's actually working with AI tools. Free community, zero gatekeeping.</p>
+  <a class="cta-btn" href="https://skool.com/aiguerrilla">Join AI Guerrilla Free</a>
+</section>
+<footer><p>Free AI training + community &rarr; <a href="https://skool.com/aiguerrilla">skool.com/aiguerrilla</a> &nbsp;&middot;&nbsp; <a href="https://youtube.com/@aiguerrilla">YouTube @aiguerrilla</a></p></footer>
+</body></html>
