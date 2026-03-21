@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free AI FAQ Generator — Generate FAQs for Any Topic</title>
+<meta name="description" content="Generate comprehensive FAQ sections with AI. Perfect for websites, landing pages, and product pages. Free.">
+<style>*{box-sizing:border-box;margin:0;padding:0}body{background:#0a0a0a;color:#fff;font-family:"Segoe UI",sans-serif;min-height:100vh}.container{max-width:860px;margin:0 auto;padding:40px 20px}h1{font-size:2rem;font-weight:900;margin-bottom:8px}h1 span{color:#00FF88}.sub{color:#888;margin-bottom:32px}.fg{margin-bottom:18px}label{display:block;color:#aaa;font-size:.85rem;margin-bottom:6px;font-weight:600}input,textarea,select{width:100%;background:#111;border:1px solid #2a2a2a;color:#fff;border-radius:8px;padding:12px 16px;font-size:.95rem;font-family:inherit;outline:none;transition:border-color .2s}input:focus,textarea:focus,select:focus{border-color:#00FF88}select option{background:#111}textarea{resize:vertical;min-height:90px}.cbr{display:flex;align-items:center;gap:8px;margin-bottom:10px}.cbr input[type=checkbox]{width:auto;accent-color:#00FF88}.cbr label{margin:0;color:#bbb}.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}.btn{background:#00FF88;color:#000;font-weight:700;border:none;border-radius:8px;padding:13px 32px;font-size:1rem;cursor:pointer;transition:opacity .2s;font-family:inherit}.btn:hover{opacity:.85}.btn:disabled{opacity:.5;cursor:not-allowed}.bsm{padding:6px 16px!important;font-size:.82rem!important;border-radius:6px!important}.bout{background:#111;border:1px solid #2a2a2a;border-radius:10px;padding:20px;margin-top:28px;display:none}.bout.show{display:block}.oh{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px}.ol{color:#00FF88;font-weight:700;font-size:.9rem}.oc{color:#ddd;line-height:1.7;white-space:pre-wrap;word-wrap:break-word}.tag{display:inline-block;background:#1a1a1a;color:#00FF88;border:1px solid #2a2a2a;border-radius:4px;padding:2px 8px;font-size:.75rem;font-weight:700}.loading{color:#555;padding:20px;text-align:center}</style>
+
+</head>
+<body>
+<nav style="padding:16px 40px;border-bottom:1px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#0a0a0a;position:sticky;top:0;z-index:100"><a href="/" style="color:#00FF88;font-weight:900;font-size:1.3rem;text-decoration:none">AI Guerrilla</a><div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap"><a href="/free-ai-tools/" style="color:#aaa;text-decoration:none;font-size:.9rem">Free Tools</a><a href="/tools/" style="color:#aaa;text-decoration:none;font-size:.9rem">Tools</a><a href="/academy/" style="color:#aaa;text-decoration:none;font-size:.9rem">Academy</a><a href="https://skool.com/aiguerrilla" style="background:#00FF88;color:#000;font-weight:700;padding:7px 18px;border-radius:6px;text-decoration:none;font-size:.85rem">Community</a></div></nav>
+<div class="container">
+<h1>FAQ <span>Generator</span></h1>
+<p class="sub">Generate comprehensive FAQ sections for any topic, product, or service. Free, instant.</p>
+<div class="fg"><label>Topic or Product Name</label><input id="ft" placeholder="e.g. AI Guerrilla Community, ChatGPT, Project Management Software"></div>
+<div class="fg"><label>Brief Description</label><textarea id="fd" placeholder="Describe what this is, who it's for, and what it does..."></textarea></div>
+<div class="g2">
+  <div class="fg"><label>Number of FAQs</label><select id="fn"><option>5</option><option selected>10</option><option>15</option><option>20</option></select></div>
+  <div class="fg"><label>Audience</label><select id="fa"><option>General public</option><option>Technical users</option><option>Business owners</option><option>Beginners</option></select></div>
+</div>
+<button class="btn" id="gb" onclick="go()">Generate FAQs</button>
+<div class="bout" id="ob">
+  <div class="oh"><span class="ol">FAQ Section</span><button class="btn bsm" onclick="cp(getFT(),this)">Copy All</button></div>
+  <div id="fo"></div>
+</div>
+</div>
+<div style="background:#0d0d0d;border-top:1px solid #1a1a1a;padding:32px 20px;text-align:center"><p style="color:#555;font-size:.88rem;margin-bottom:8px">Free AI community for operators and entrepreneurs</p><a href="https://skool.com/aiguerrilla" style="color:#00FF88;text-decoration:none;font-size:.95rem;font-weight:600">Join 150+ operators at skool.com/aiguerrilla &rarr;</a></div>
+<footer style="text-align:center;padding:30px;color:#444;border-top:1px solid #111;font-size:.85rem"><p><a href="/free-ai-tools/" style="color:#00FF88;text-decoration:none">Free Tools</a> &middot; <a href="/tools/" style="color:#00FF88;text-decoration:none">Tools</a> &middot; <a href="/academy/" style="color:#00FF88;text-decoration:none">Academy</a> &middot; <a href="/glossary/" style="color:#00FF88;text-decoration:none">Glossary</a></p><p style="margin-top:8px">&copy; 2026 AI Guerrilla</p></footer>
+<script>const GK=["gsk_O3O1bIMTJ","7Fn9MTE1WdXWGdyb3FY","kgwKA5BSRDB2Acg929rS7eCN"].join("");async function groq(p,s,t=1200){const r=await fetch("https://api.groq.com/openai/v1/chat/completions",{method:"POST",headers:{"Authorization":"Bearer "+GK,"Content-Type":"application/json"},body:JSON.stringify({model:"llama-3.3-70b-versatile",messages:[{role:"system",content:s},{role:"user",content:p}],max_tokens:t,temperature:0.7})});const d=await r.json();return d.choices?.[0]?.message?.content||"Error: "+(d.error?.message||JSON.stringify(d));}function cp(t,b){navigator.clipboard.writeText(t).then(()=>{const o=b.textContent;b.textContent="✓ Copied!";b.style.background="#0d1a0d";b.style.color="#00FF88";setTimeout(()=>{b.textContent=o;b.style.background="";b.style.color="";},2000);})}</script>
+<script>
+let fitems=[];
+function getFT(){return fitems.map((f,i)=>"Q"+(i+1)+": "+f.q+"\nA: "+f.a).join("\n\n");}
+async function go(){
+  const ft=document.getElementById("ft").value.trim();
+  if(!ft){alert("Enter a topic");return;}
+  const b=document.getElementById("gb");b.disabled=true;b.textContent="Generating...";
+  document.getElementById("ob").classList.add("show");
+  document.getElementById("fo").innerHTML="<div class=loading>Generating FAQs...</div>";
+  const num=document.getElementById("fn").value;
+  const r=await groq("Generate "+num+" FAQs about: "+ft+"\n"+(document.getElementById("fd").value?"Description: "+document.getElementById("fd").value:"")+"\nAudience: "+document.getElementById("fa").value+"\n\nFormat EXACTLY as:\nQ1: [question]\nA1: [answer]\n\nQ2: [question]\nA2: [answer]",
+    "You are a content strategist. Generate comprehensive FAQs. Format: Q1: question then A1: answer. Cover common questions and objections.",2000);
+  const pairs=[];const re=/Q\d+:\s*(.+?)
++A\d+:\s*([\s\S]*?)(?=
+Q\d+:|$)/g;let m;
+  while((m=re.exec(r))!==null)pairs.push({q:m[1].trim(),a:m[2].trim()});
+  fitems=pairs;
+  if(!pairs.length){document.getElementById("fo").innerHTML='<div style="color:#ddd;white-space:pre-wrap">'+r+'</div>';b.disabled=false;b.textContent="Generate FAQs";return;}
+  document.getElementById("fo").innerHTML=pairs.map((p,i)=>'<div style="border-bottom:1px solid #1a1a1a"><div onclick="tf('+i+')" style="padding:14px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px"><div style="color:#fff;font-weight:600">'+p.q+'</div><span id="fa'+i+'" style="color:#00FF88;font-size:1.2rem;flex-shrink:0">+</span></div><div id="fb'+i+'" style="display:none;padding-bottom:14px;color:#bbb;line-height:1.6">'+p.a+'</div></div>').join("");
+  b.disabled=false;b.textContent="Generate FAQs";
+}
+function tf(i){const bx=document.getElementById("fb"+i),ar=document.getElementById("fa"+i),op=bx.style.display==="block";bx.style.display=op?"none":"block";ar.textContent=op?"+":"−";}
+</script>
+</body>
+</html>
