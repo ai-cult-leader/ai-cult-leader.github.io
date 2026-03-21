@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Browse all AI Guerrilla guides visually. Courses, free tools, app builders, senior guides — everything in one place with cards.">
+<title>AI Guerrilla Visual Guides — Courses, Tools & Tutorials</title>
+<link rel="canonical" href="https://aiguerrilla.net/guides/">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;color:#fff;font-family:'Segoe UI',sans-serif;line-height:1.7}
+nav{padding:16px 40px;border-bottom:1px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#0a0a0a;position:sticky;top:0;z-index:100}
+.logo{color:#00FF88;font-weight:900;font-size:1.3rem;text-decoration:none}
+.nav-links{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.nav-links a{color:#aaa;text-decoration:none;font-size:.9rem}
+.nav-links a:hover{color:#00FF88}
+.nav-cta{background:#00FF88!important;color:#000!important;font-weight:700;padding:7px 18px;border-radius:6px}
+.page-hero{padding:60px 20px 40px;text-align:center;max-width:860px;margin:0 auto}
+.hero-badge{display:inline-block;background:#0d1a0d;color:#00FF88;font-size:.72rem;font-weight:700;padding:5px 14px;border-radius:20px;border:1px solid #00FF88;margin-bottom:16px;letter-spacing:1px;text-transform:uppercase}
+h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;margin-bottom:14px}
+.page-desc{color:#888;font-size:1rem;max-width:600px;margin:0 auto 40px}
+.progress-bar{height:4px;background:#1a1a1a;border-radius:2px;margin:0 20px 40px;max-width:1160px;margin-left:auto;margin-right:auto}
+.progress-fill{height:100%;background:#00FF88;border-radius:2px;transition:width .3s}
+.section-header{max-width:1200px;margin:0 auto 20px;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+.section-title{font-size:1.1rem;font-weight:700;color:#fff;display:flex;align-items:center;gap:10px}
+.section-count{font-size:.78rem;color:#555;background:#111;padding:4px 12px;border-radius:20px}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;max-width:1200px;margin:0 auto;padding:0 20px 48px}
+.card{background:#111;border:1px solid #1a1a1a;border-radius:12px;overflow:hidden;transition:border-color .2s,transform .2s;position:relative}
+.card:hover{border-color:#00FF88;transform:translateY(-2px)}
+.card-img{width:100%;height:140px;object-fit:cover;background:linear-gradient(135deg,#0d1a0d,#1a1a2e)}
+.card-img-placeholder{width:100%;height:140px;display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,#0d1a0d 0%,#111 100%)}
+.card-body{padding:18px}
+.card-cat{font-size:.68rem;color:#00FF88;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-weight:600}
+.card-title{font-size:.97rem;font-weight:700;margin-bottom:6px;color:#fff;line-height:1.3}
+.card-desc{font-size:.82rem;color:#666;margin-bottom:14px;line-height:1.5}
+.card-footer{display:flex;justify-content:space-between;align-items:center}
+.card-link{color:#00FF88;text-decoration:none;font-size:.82rem;font-weight:600}
+.card-link:hover{text-decoration:underline}
+.card-meta{font-size:.75rem;color:#444}
+.lesson-card{background:#111;border:1px solid #1a1a1a;border-radius:10px;padding:18px;display:flex;gap:14px;align-items:flex-start;transition:border-color .2s;text-decoration:none;color:inherit}
+.lesson-card:hover{border-color:#00FF88}
+.lesson-num{min-width:36px;height:36px;background:#0d1a0d;border:1px solid #00FF88;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.85rem;color:#00FF88;flex-shrink:0}
+.lesson-num.done{background:#00FF88;color:#000;border-color:#00FF88}
+.lesson-info h3{font-size:.93rem;font-weight:700;margin-bottom:4px;color:#fff}
+.lesson-info p{font-size:.8rem;color:#666;margin:0}
+.lesson-duration{font-size:.72rem;color:#555;margin-top:6px}
+.tool-card{background:#111;border:1px solid #1a1a1a;border-radius:12px;padding:22px;transition:border-color .2s,transform .2s;text-decoration:none;color:inherit;display:block}
+.tool-card:hover{border-color:#00FF88;transform:translateY(-2px)}
+.tool-icon{font-size:2.2rem;margin-bottom:12px}
+.tool-tag{font-size:.68rem;color:#00FF88;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-weight:600}
+.tool-card h3{font-size:1rem;font-weight:700;margin-bottom:6px;color:#fff}
+.tool-card p{font-size:.82rem;color:#666;line-height:1.5;margin-bottom:14px}
+.tool-card .free-badge{display:inline-block;background:#0d1a0d;color:#00FF88;font-size:.7rem;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a}
+.featured-card{background:linear-gradient(135deg,#0d1a0d 0%,#111 100%);border:1px solid #00FF88;border-radius:16px;padding:32px;grid-column:1/-1;display:flex;gap:32px;align-items:center;flex-wrap:wrap}
+.featured-card .fc-content{flex:1;min-width:200px}
+.featured-card .fc-badge{font-size:.7rem;color:#00FF88;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;font-weight:700}
+.featured-card h2{font-size:1.6rem;font-weight:900;margin-bottom:10px}
+.featured-card p{color:#888;margin-bottom:20px;font-size:.95rem}
+.featured-card .fc-btn{display:inline-block;background:#00FF88;color:#000;font-weight:700;padding:12px 28px;border-radius:8px;text-decoration:none;font-size:.9rem}
+.featured-card .fc-stats{display:flex;gap:24px;flex-wrap:wrap}
+.featured-card .fc-stat{text-align:center}
+.featured-card .fc-stat-num{font-size:1.4rem;font-weight:900;color:#00FF88}
+.featured-card .fc-stat-label{font-size:.7rem;color:#555;text-transform:uppercase;letter-spacing:1px}
+.cta-strip{background:#0d1a0d;border-top:1px solid #1a1a1a;padding:32px 20px;text-align:center}
+.cta-strip p{color:#555;font-size:.88rem;margin-bottom:8px}
+.cta-strip a{color:#00FF88;text-decoration:none;font-size:.95rem;font-weight:600}
+footer{text-align:center;padding:28px;color:#444;border-top:1px solid #111;font-size:.85rem}
+footer a{color:#00FF88;text-decoration:none}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="/">AI Guerrilla</a>
+  <div class="nav-links">
+    <a href="/academy/">Academy</a>
+    <a href="/tools/">Tools</a>
+    <a href="/free-ai-tools/" style="color:#00FF88;font-weight:700">Free Tools</a>
+    <a href="/guides/" style="color:#fff;font-weight:600">Guides</a>
+    <a href="/news/">News</a>
+    <a href="https://skool.com/aiguerrilla" class="nav-cta" target="_blank">Join Free</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <span class="hero-badge">Visual Guides</span>
+  <h1>AI Guerrilla Visual Guides</h1>
+  <p class="page-desc">Browse every course, free tool, app builder, and beginner guide — all in one visual hub. No searching needed.</p>
+</div>
+
+<!-- FEATURED COURSES -->
+<div class="section-header">
+  <span class="section-title">🎓 Featured Courses</span>
+  <a href="/guides/courses/" style="color:#00FF88;font-size:.85rem;text-decoration:none">Browse All 13 Courses &rarr;</a>
+</div>
+<div class="cards-grid">
+  <div class="featured-card">
+    <div class="fc-content">
+      <div class="fc-badge">🎓 Beginner &bull; Most Popular</div>
+      <h2>AI Fundamentals for Entrepreneurs</h2>
+      <p>Everything you need to start using AI in your business. From prompting basics to real-world workflows — 6 modules, 18 lessons.</p>
+      <a href="/academy/ai-fundamentals/" class="fc-btn">Start Free &rarr;</a>
+    </div>
+    <div class="fc-stats">
+      <div class="fc-stat"><div class="fc-stat-num">6</div><div class="fc-stat-label">Modules</div></div>
+      <div class="fc-stat"><div class="fc-stat-num">18</div><div class="fc-stat-label">Lessons</div></div>
+      <div class="fc-stat"><div class="fc-stat-num">Free</div><div class="fc-stat-label">Always</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-img-placeholder">📹</div>
+    <div class="card-body">
+      <div class="card-cat">Intermediate &bull; Creator</div>
+      <div class="card-title">AI Content Machine</div>
+      <div class="card-desc">Build a full AI-powered content system. Scripts, thumbnails, scheduling — automated.</div>
+      <div class="card-footer">
+        <a href="/academy/ai-content-machine/" class="card-link">Start Course &rarr;</a>
+        <span class="card-meta">5 modules &bull; 15 lessons</span>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-img-placeholder">💰</div>
+    <div class="card-body">
+      <div class="card-cat">Advanced &bull; Business</div>
+      <div class="card-title">AI Monetization</div>
+      <div class="card-desc">Turn your AI skills into real income streams. Freelancing, products, and passive revenue.</div>
+      <div class="card-footer">
+        <a href="/academy/ai-monetization/" class="card-link">Start Course &rarr;</a>
+        <span class="card-meta">5 modules &bull; 15 lessons</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FREE TOOLS -->
+<div class="section-header">
+  <span class="section-title">🛠️ Free AI Tools</span>
+  <a href="/guides/tools/" style="color:#00FF88;font-size:.85rem;text-decoration:none">Browse All 38 Tools &rarr;</a>
+</div>
+<div class="cards-grid">
+  <a href="/tools/ai-prompt-generator/" class="tool-card">
+    <div class="tool-icon">✨</div>
+    <div class="tool-tag">Original Tool</div>
+    <h3>Prompt Generator</h3>
+    <p>Generate powerful AI prompts for any task. Works with ChatGPT, Claude, and Gemini.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/blog-post-generator/" class="tool-card">
+    <div class="tool-icon">📝</div>
+    <div class="tool-tag">Writing</div>
+    <h3>Blog Post Generator</h3>
+    <p>Full SEO-optimized blog posts in seconds. Input a topic, get a complete article.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/ai-youtube-title-generator/" class="tool-card">
+    <div class="tool-icon">🎬</div>
+    <div class="tool-tag">Social &amp; Video</div>
+    <h3>YouTube Title Generator</h3>
+    <p>Click-worthy titles that rank. Optimized for search and audience psychology.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/ai-token-counter/" class="tool-card">
+    <div class="tool-icon">🔢</div>
+    <div class="tool-tag">Developer</div>
+    <h3>Token Counter</h3>
+    <p>Count tokens before sending to any AI model. Know your costs before you run.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/viral-hook-generator/" class="tool-card">
+    <div class="tool-icon">🪝</div>
+    <div class="tool-tag">Social &amp; Video</div>
+    <h3>Viral Hook Generator</h3>
+    <p>Scroll-stopping hooks for any platform. Makes your first line impossible to ignore.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/ai-api-cost-calculator/" class="tool-card">
+    <div class="tool-icon">💵</div>
+    <div class="tool-tag">Developer</div>
+    <h3>API Cost Calculator</h3>
+    <p>Calculate exact costs for OpenAI, Anthropic, Groq, and 15+ AI APIs before you build.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+</div>
+
+<!-- BUILD APPS -->
+<div class="section-header">
+  <span class="section-title">⚡ Build Real Apps with AI</span>
+  <a href="/guides/build-apps/" style="color:#00FF88;font-size:.85rem;text-decoration:none">See All 10 App Builders &rarr;</a>
+</div>
+<div class="cards-grid">
+  <a href="/tools/chrome-extension-creator/" class="tool-card">
+    <div class="tool-icon">🔌</div>
+    <div class="tool-tag">App Builder &bull; No Coding</div>
+    <h3>Chrome Extension Creator</h3>
+    <p>Build a real Chrome extension without writing code. AI generates everything.</p>
+    <span class="free-badge">Free</span>
+  </a>
+  <a href="/tools/website-generator/" class="tool-card">
+    <div class="tool-icon">🌐</div>
+    <div class="tool-tag">App Builder &bull; No Coding</div>
+    <h3>Website Generator</h3>
+    <p>Describe your site, get complete HTML/CSS/JS. Launch in under an hour.</p>
+    <span class="free-badge">Free</span>
+  </a>
+  <a href="/tools/telegram-bot-creator/" class="tool-card">
+    <div class="tool-icon">🤖</div>
+    <div class="tool-tag">App Builder &bull; No Coding</div>
+    <h3>Telegram Bot Creator</h3>
+    <p>Build a functional Telegram bot with AI commands and responses. No code needed.</p>
+    <span class="free-badge">Free</span>
+  </a>
+  <a href="/tools/pwa-app-creator/" class="tool-card">
+    <div class="tool-icon">📱</div>
+    <div class="tool-tag">App Builder &bull; No Coding</div>
+    <h3>PWA App Creator</h3>
+    <p>Build a Progressive Web App that installs on phones like a native app.</p>
+    <span class="free-badge">Free</span>
+  </a>
+</div>
+
+<!-- SENIORS & BEGINNERS -->
+<div class="section-header">
+  <span class="section-title">👴 For Seniors &amp; Beginners</span>
+  <a href="/guides/seniors/" style="color:#00FF88;font-size:.85rem;text-decoration:none">Full Senior Guide &rarr;</a>
+</div>
+<div class="cards-grid">
+  <div class="card">
+    <div class="card-img-placeholder">🤔</div>
+    <div class="card-body">
+      <div class="card-cat">Beginners &bull; Start Here</div>
+      <div class="card-title">What is AI?</div>
+      <div class="card-desc">A plain-English explanation of what AI is and how you use it every day.</div>
+      <div class="card-footer"><a href="/beginners/what-is-ai/" class="card-link">Read Guide &rarr;</a></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-img-placeholder">💬</div>
+    <div class="card-body">
+      <div class="card-cat">Beginners &bull; Essential</div>
+      <div class="card-title">ChatGPT for Beginners</div>
+      <div class="card-desc">Start using ChatGPT today. Step-by-step with screenshots. No experience needed.</div>
+      <div class="card-footer"><a href="/beginners/chatgpt-for-beginners/" class="card-link">Read Guide &rarr;</a></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-img-placeholder">🏥</div>
+    <div class="card-body">
+      <div class="card-cat">Senior Tool &bull; Health</div>
+      <div class="card-title">Medical Term Explainer</div>
+      <div class="card-desc">Paste any medical term or doctor's note. Get a simple, clear explanation.</div>
+      <div class="card-footer"><a href="/seniors/tools/medical-term-explainer/" class="card-link">Use Free &rarr;</a></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-img-placeholder">🛡️</div>
+    <div class="card-body">
+      <div class="card-cat">Senior Tool &bull; Safety</div>
+      <div class="card-title">Scam Checker</div>
+      <div class="card-desc">Paste any suspicious message or email. AI tells you if it's a scam instantly.</div>
+      <div class="card-footer"><a href="/seniors/tools/scam-checker/" class="card-link">Use Free &rarr;</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- LEARN BY TOPIC -->
+<div class="section-header">
+  <span class="section-title">📚 Learn by Topic</span>
+  <a href="/guides/by-category/" style="color:#00FF88;font-size:.85rem;text-decoration:none">Browse All Categories &rarr;</a>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;max-width:1200px;margin:0 auto;padding:0 20px 60px">
+  <a href="/academy/developer/" style="background:#111;border:1px solid #1a1a1a;border-radius:10px;padding:20px;text-decoration:none;color:#fff;text-align:center;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
+    <div style="font-size:2rem;margin-bottom:8px">💻</div>
+    <div style="font-weight:700;font-size:.95rem;margin-bottom:4px">Developer &amp; APIs</div>
+    <div style="font-size:.78rem;color:#555">20 lessons</div>
+  </a>
+  <a href="/academy/seo/" style="background:#111;border:1px solid #1a1a1a;border-radius:10px;padding:20px;text-decoration:none;color:#fff;text-align:center;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
+    <div style="font-size:2rem;margin-bottom:8px">🔍</div>
+    <div style="font-weight:700;font-size:.95rem;margin-bottom:4px">SEO with AI</div>
+    <div style="font-size:.78rem;color:#555">10 lessons</div>
+  </a>
+  <a href="/academy/social-media/" style="background:#111;border:1px solid #1a1a1a;border-radius:10px;padding:20px;text-decoration:none;color:#fff;text-align:center;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
+    <div style="font-size:2rem;margin-bottom:8px">📱</div>
+    <div style="font-weight:700;font-size:.95rem;margin-bottom:4px">Social Media</div>
+    <div style="font-size:.78rem;color:#555">12 lessons</div>
+  </a>
+  <a href="/academy/business/" style="background:#111;border:1px solid #1a1a1a;border-radius:10px;padding:20px;text-decoration:none;color:#fff;text-align:center;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
+    <div style="font-size:2rem;margin-bottom:8px">💼</div>
+    <div style="font-weight:700;font-size:.95rem;margin-bottom:4px">Business</div>
+    <div style="font-size:.78rem;color:#555">15 lessons</div>
+  </a>
+  <a href="/academy/fields/" style="background:#111;border:1px solid #1a1a1a;border-radius:10px;padding:20px;text-decoration:none;color:#fff;text-align:center;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
+    <div style="font-size:2rem;margin-bottom:8px">🌍</div>
+    <div style="font-weight:700;font-size:.95rem;margin-bottom:4px">Fields of Study</div>
+    <div style="font-size:.78rem;color:#555">20 lessons</div>
+  </a>
+  <a href="/academy/agents/" style="background:#111;border:1px solid #1a1a1a;border-radius:10px;padding:20px;text-decoration:none;color:#fff;text-align:center;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
+    <div style="font-size:2rem;margin-bottom:8px">🤖</div>
+    <div style="font-weight:700;font-size:.95rem;margin-bottom:4px">AI Agents</div>
+    <div style="font-size:.78rem;color:#555">10 lessons</div>
+  </a>
+</div>
+
+<div class="cta-strip">
+  <p>150+ operators building with AI — free community</p>
+  <a href="https://skool.com/aiguerrilla" target="_blank">Join AI Guerrilla Free &rarr; skool.com/aiguerrilla</a>
+</div>
+<footer>
+  <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:12px">
+    <a href="/">Home</a>
+    <a href="/academy/">Academy</a>
+    <a href="/free-ai-tools/">Free Tools</a>
+    <a href="/guides/">Visual Guides</a>
+    <a href="/seniors/">For Seniors</a>
+    <a href="/news/">News</a>
+  </div>
+  <p>&copy; 2026 AI Guerrilla &mdash; <a href="https://skool.com/aiguerrilla">skool.com/aiguerrilla</a></p>
+</footer>
+</body>
+</html>
