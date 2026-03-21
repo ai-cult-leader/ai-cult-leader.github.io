@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Complete visual guide to AI for seniors. Guides, free tools, safety resources, and beginner courses. Easy to navigate.">
+<title>AI for Seniors — Visual Guide to All Senior Resources</title>
+<link rel="canonical" href="https://aiguerrilla.net/guides/seniors/">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;color:#fff;font-family:'Segoe UI',sans-serif;line-height:1.7}
+nav{padding:16px 40px;border-bottom:1px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#0a0a0a;position:sticky;top:0;z-index:100}
+.logo{color:#00FF88;font-weight:900;font-size:1.3rem;text-decoration:none}
+.nav-links{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.nav-links a{color:#aaa;text-decoration:none;font-size:.9rem}
+.nav-links a:hover{color:#00FF88}
+.nav-cta{background:#00FF88!important;color:#000!important;font-weight:700;padding:7px 18px;border-radius:6px}
+.page-hero{padding:60px 20px 40px;text-align:center;max-width:860px;margin:0 auto}
+.hero-badge{display:inline-block;background:#0d1a0d;color:#00FF88;font-size:.72rem;font-weight:700;padding:5px 14px;border-radius:20px;border:1px solid #00FF88;margin-bottom:16px;letter-spacing:1px;text-transform:uppercase}
+h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;margin-bottom:14px}
+.page-desc{color:#888;font-size:1rem;max-width:600px;margin:0 auto 40px}
+.progress-bar{height:4px;background:#1a1a1a;border-radius:2px;margin:0 20px 40px;max-width:1160px;margin-left:auto;margin-right:auto}
+.progress-fill{height:100%;background:#00FF88;border-radius:2px;transition:width .3s}
+.section-header{max-width:1200px;margin:0 auto 20px;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+.section-title{font-size:1.1rem;font-weight:700;color:#fff;display:flex;align-items:center;gap:10px}
+.section-count{font-size:.78rem;color:#555;background:#111;padding:4px 12px;border-radius:20px}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;max-width:1200px;margin:0 auto;padding:0 20px 48px}
+.card{background:#111;border:1px solid #1a1a1a;border-radius:12px;overflow:hidden;transition:border-color .2s,transform .2s;position:relative}
+.card:hover{border-color:#00FF88;transform:translateY(-2px)}
+.card-img{width:100%;height:140px;object-fit:cover;background:linear-gradient(135deg,#0d1a0d,#1a1a2e)}
+.card-img-placeholder{width:100%;height:140px;display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,#0d1a0d 0%,#111 100%)}
+.card-body{padding:18px}
+.card-cat{font-size:.68rem;color:#00FF88;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-weight:600}
+.card-title{font-size:.97rem;font-weight:700;margin-bottom:6px;color:#fff;line-height:1.3}
+.card-desc{font-size:.82rem;color:#666;margin-bottom:14px;line-height:1.5}
+.card-footer{display:flex;justify-content:space-between;align-items:center}
+.card-link{color:#00FF88;text-decoration:none;font-size:.82rem;font-weight:600}
+.card-link:hover{text-decoration:underline}
+.card-meta{font-size:.75rem;color:#444}
+.lesson-card{background:#111;border:1px solid #1a1a1a;border-radius:10px;padding:18px;display:flex;gap:14px;align-items:flex-start;transition:border-color .2s;text-decoration:none;color:inherit}
+.lesson-card:hover{border-color:#00FF88}
+.lesson-num{min-width:36px;height:36px;background:#0d1a0d;border:1px solid #00FF88;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.85rem;color:#00FF88;flex-shrink:0}
+.lesson-num.done{background:#00FF88;color:#000;border-color:#00FF88}
+.lesson-info h3{font-size:.93rem;font-weight:700;margin-bottom:4px;color:#fff}
+.lesson-info p{font-size:.8rem;color:#666;margin:0}
+.lesson-duration{font-size:.72rem;color:#555;margin-top:6px}
+.tool-card{background:#111;border:1px solid #1a1a1a;border-radius:12px;padding:22px;transition:border-color .2s,transform .2s;text-decoration:none;color:inherit;display:block}
+.tool-card:hover{border-color:#00FF88;transform:translateY(-2px)}
+.tool-icon{font-size:2.2rem;margin-bottom:12px}
+.tool-tag{font-size:.68rem;color:#00FF88;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-weight:600}
+.tool-card h3{font-size:1rem;font-weight:700;margin-bottom:6px;color:#fff}
+.tool-card p{font-size:.82rem;color:#666;line-height:1.5;margin-bottom:14px}
+.tool-card .free-badge{display:inline-block;background:#0d1a0d;color:#00FF88;font-size:.7rem;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a}
+.featured-card{background:linear-gradient(135deg,#0d1a0d 0%,#111 100%);border:1px solid #00FF88;border-radius:16px;padding:32px;grid-column:1/-1;display:flex;gap:32px;align-items:center;flex-wrap:wrap}
+.featured-card .fc-content{flex:1;min-width:200px}
+.featured-card .fc-badge{font-size:.7rem;color:#00FF88;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;font-weight:700}
+.featured-card h2{font-size:1.6rem;font-weight:900;margin-bottom:10px}
+.featured-card p{color:#888;margin-bottom:20px;font-size:.95rem}
+.featured-card .fc-btn{display:inline-block;background:#00FF88;color:#000;font-weight:700;padding:12px 28px;border-radius:8px;text-decoration:none;font-size:.9rem}
+.featured-card .fc-stats{display:flex;gap:24px;flex-wrap:wrap}
+.featured-card .fc-stat{text-align:center}
+.featured-card .fc-stat-num{font-size:1.4rem;font-weight:900;color:#00FF88}
+.featured-card .fc-stat-label{font-size:.7rem;color:#555;text-transform:uppercase;letter-spacing:1px}
+.cta-strip{background:#0d1a0d;border-top:1px solid #1a1a1a;padding:32px 20px;text-align:center}
+.cta-strip p{color:#555;font-size:.88rem;margin-bottom:8px}
+.cta-strip a{color:#00FF88;text-decoration:none;font-size:.95rem;font-weight:600}
+footer{text-align:center;padding:28px;color:#444;border-top:1px solid #111;font-size:.85rem}
+footer a{color:#00FF88;text-decoration:none}
+
+.cta-strip { background: #0a1a0a; border-color: #1a3a1a; }
+.cta-strip a { color: #00AA66; }
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="/">AI Guerrilla</a>
+  <div class="nav-links">
+    <a href="/academy/">Academy</a>
+    <a href="/tools/">Tools</a>
+    <a href="/free-ai-tools/" style="color:#00FF88;font-weight:700">Free Tools</a>
+    <a href="/guides/" style="color:#fff;font-weight:600">Guides</a>
+    <a href="/news/">News</a>
+    <a href="https://skool.com/aiguerrilla" class="nav-cta" target="_blank">Join Free</a>
+  </div>
+</nav>
+
+<div class="page-hero" style="padding-bottom:20px">
+  <span class="hero-badge" style="background:#0a1a0a;color:#00AA66;border-color:#00AA66">For Seniors & Beginners</span>
+  <h1>AI for Seniors — Your Complete Guide</h1>
+  <p class="page-desc">Simple guides, free tools, and safety resources for older adults and beginners. Everything is free. No tech experience needed.</p>
+</div>
+
+<!-- LEARNING PATH -->
+<div class="section-header" style="margin-top:20px">
+  <span class="section-title" style="color:#00AA66">📍 Start Here — Your Learning Path</span>
+  <span class="section-count">6 steps</span>
+</div>
+<div class="cards-grid">
+
+  <a href="/beginners/what-is-ai/" style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:12px;padding:22px;display:flex;gap:16px;align-items:flex-start;text-decoration:none;color:inherit;transition:border-color .2s" onmouseover="this.style.borderColor='#00AA66'" onmouseout="this.style.borderColor='#1a3a1a'">
+    <div style="min-width:44px;height:44px;background:#00AA66;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.1rem;color:#fff;flex-shrink:0">1</div>
+    <div>
+      <div style="font-size:1.4rem;margin-bottom:4px">🤔</div>
+      <h3 style="font-size:1rem;font-weight:700;margin-bottom:4px;color:#fff">What is AI?</h3>
+      <p style="font-size:.82rem;color:#666;line-height:1.5;margin:0">A clear, simple explanation of what AI actually is — no jargon.</p>
+    </div>
+  </a>
+  <a href="/beginners/chatgpt-for-beginners/" style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:12px;padding:22px;display:flex;gap:16px;align-items:flex-start;text-decoration:none;color:inherit;transition:border-color .2s" onmouseover="this.style.borderColor='#00AA66'" onmouseout="this.style.borderColor='#1a3a1a'">
+    <div style="min-width:44px;height:44px;background:#00AA66;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.1rem;color:#fff;flex-shrink:0">2</div>
+    <div>
+      <div style="font-size:1.4rem;margin-bottom:4px">💬</div>
+      <h3 style="font-size:1rem;font-weight:700;margin-bottom:4px;color:#fff">ChatGPT for Beginners</h3>
+      <p style="font-size:.82rem;color:#666;line-height:1.5;margin:0">Your first conversation with AI. Step-by-step with screenshots.</p>
+    </div>
+  </a>
+  <a href="/beginners/how-to-ask-ai/" style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:12px;padding:22px;display:flex;gap:16px;align-items:flex-start;text-decoration:none;color:inherit;transition:border-color .2s" onmouseover="this.style.borderColor='#00AA66'" onmouseout="this.style.borderColor='#1a3a1a'">
+    <div style="min-width:44px;height:44px;background:#00AA66;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.1rem;color:#fff;flex-shrink:0">3</div>
+    <div>
+      <div style="font-size:1.4rem;margin-bottom:4px">🗣️</div>
+      <h3 style="font-size:1rem;font-weight:700;margin-bottom:4px;color:#fff">How to Ask AI</h3>
+      <p style="font-size:.82rem;color:#666;line-height:1.5;margin:0">The simple technique that gets you better answers every time.</p>
+    </div>
+  </a>
+  <a href="/beginners/ai-for-daily-life/" style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:12px;padding:22px;display:flex;gap:16px;align-items:flex-start;text-decoration:none;color:inherit;transition:border-color .2s" onmouseover="this.style.borderColor='#00AA66'" onmouseout="this.style.borderColor='#1a3a1a'">
+    <div style="min-width:44px;height:44px;background:#00AA66;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.1rem;color:#fff;flex-shrink:0">4</div>
+    <div>
+      <div style="font-size:1.4rem;margin-bottom:4px">🏠</div>
+      <h3 style="font-size:1rem;font-weight:700;margin-bottom:4px;color:#fff">AI in Daily Life</h3>
+      <p style="font-size:.82rem;color:#666;line-height:1.5;margin:0">Real things AI can help you with every day at home.</p>
+    </div>
+  </a>
+  <a href="/beginners/staying-safe/" style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:12px;padding:22px;display:flex;gap:16px;align-items:flex-start;text-decoration:none;color:inherit;transition:border-color .2s" onmouseover="this.style.borderColor='#00AA66'" onmouseout="this.style.borderColor='#1a3a1a'">
+    <div style="min-width:44px;height:44px;background:#00AA66;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.1rem;color:#fff;flex-shrink:0">5</div>
+    <div>
+      <div style="font-size:1.4rem;margin-bottom:4px">🛡️</div>
+      <h3 style="font-size:1rem;font-weight:700;margin-bottom:4px;color:#fff">Staying Safe Online</h3>
+      <p style="font-size:.82rem;color:#666;line-height:1.5;margin:0">How to use AI safely and avoid common mistakes.</p>
+    </div>
+  </a>
+  <a href="/seniors/tools/" style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:12px;padding:22px;display:flex;gap:16px;align-items:flex-start;text-decoration:none;color:inherit;transition:border-color .2s" onmouseover="this.style.borderColor='#00AA66'" onmouseout="this.style.borderColor='#1a3a1a'">
+    <div style="min-width:44px;height:44px;background:#00AA66;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.1rem;color:#fff;flex-shrink:0">6</div>
+    <div>
+      <div style="font-size:1.4rem;margin-bottom:4px">🛠️</div>
+      <h3 style="font-size:1rem;font-weight:700;margin-bottom:4px;color:#fff">Senior Tools</h3>
+      <p style="font-size:.82rem;color:#666;line-height:1.5;margin:0">Ten free tools built specifically for older adults.</p>
+    </div>
+  </a>
+</div>
+
+<!-- SENIOR TOOLS -->
+<div class="section-header">
+  <span class="section-title" style="color:#00AA66">🛠️ Free Senior Tools</span>
+  <a href="/seniors/tools/" style="color:#00AA66;font-size:.85rem;text-decoration:none">See All &rarr;</a>
+</div>
+<div class="cards-grid">
+
+  <a href="/seniors/tools/medical-term-explainer/" style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:12px;padding:22px;text-decoration:none;color:inherit;display:block;transition:border-color .2s,transform .2s" onmouseover="this.style.borderColor='#00AA66';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1a3a1a';this.style.transform='translateY(0)'">
+    <div style="font-size:2.5rem;margin-bottom:12px">🏥</div>
+    <div style="font-size:.68rem;color:#00AA66;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-weight:600">Free Tool</div>
+    <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;color:#fff">Medical Term Explainer</h3>
+    <p style="font-size:.85rem;color:#777;line-height:1.5;margin-bottom:16px">Paste any medical word or doctor's note. Get a simple explanation.</p>
+    <span style="display:inline-block;background:#00AA66;color:#fff;font-weight:700;padding:8px 20px;border-radius:7px;font-size:.85rem">Use Free &rarr;</span>
+  </a>
+  <a href="/seniors/tools/doctor-visit-prep/" style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:12px;padding:22px;text-decoration:none;color:inherit;display:block;transition:border-color .2s,transform .2s" onmouseover="this.style.borderColor='#00AA66';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1a3a1a';this.style.transform='translateY(0)'">
+    <div style="font-size:2.5rem;margin-bottom:12px">👨‍⚕️</div>
+    <div style="font-size:.68rem;color:#00AA66;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-weight:600">Free Tool</div>
+    <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;color:#fff">Doctor Visit Prep</h3>
+    <p style="font-size:.85rem;color:#777;line-height:1.5;margin-bottom:16px">Prepare the right questions before any medical appointment.</p>
+    <span style="display:inline-block;background:#00AA66;color:#fff;font-weight:700;padding:8px 20px;border-radius:7px;font-size:.85rem">Use Free &rarr;</span>
+  </a>
+  <a href="/seniors/tools/letter-writer/" style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:12px;padding:22px;text-decoration:none;color:inherit;display:block;transition:border-color .2s,transform .2s" onmouseover="this.style.borderColor='#00AA66';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1a3a1a';this.style.transform='translateY(0)'">
+    <div style="font-size:2.5rem;margin-bottom:12px">✉️</div>
+    <div style="font-size:.68rem;color:#00AA66;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-weight:600">Free Tool</div>
+    <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;color:#fff">Letter Writer</h3>
+    <p style="font-size:.85rem;color:#777;line-height:1.5;margin-bottom:16px">Write formal letters, complaints, or thank-you notes with AI help.</p>
+    <span style="display:inline-block;background:#00AA66;color:#fff;font-weight:700;padding:8px 20px;border-radius:7px;font-size:.85rem">Use Free &rarr;</span>
+  </a>
+  <a href="/seniors/tools/scam-checker/" style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:12px;padding:22px;text-decoration:none;color:inherit;display:block;transition:border-color .2s,transform .2s" onmouseover="this.style.borderColor='#00AA66';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1a3a1a';this.style.transform='translateY(0)'">
+    <div style="font-size:2.5rem;margin-bottom:12px">🛡️</div>
+    <div style="font-size:.68rem;color:#00AA66;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-weight:600">Free Tool</div>
+    <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;color:#fff">Scam Checker</h3>
+    <p style="font-size:.85rem;color:#777;line-height:1.5;margin-bottom:16px">Paste any suspicious text. AI tells you instantly if it's a scam.</p>
+    <span style="display:inline-block;background:#00AA66;color:#fff;font-weight:700;padding:8px 20px;border-radius:7px;font-size:.85rem">Use Free &rarr;</span>
+  </a>
+  <a href="/seniors/tools/medication-schedule/" style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:12px;padding:22px;text-decoration:none;color:inherit;display:block;transition:border-color .2s,transform .2s" onmouseover="this.style.borderColor='#00AA66';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1a3a1a';this.style.transform='translateY(0)'">
+    <div style="font-size:2.5rem;margin-bottom:12px">💊</div>
+    <div style="font-size:.68rem;color:#00AA66;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-weight:600">Free Tool</div>
+    <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;color:#fff">Medication Schedule</h3>
+    <p style="font-size:.85rem;color:#777;line-height:1.5;margin-bottom:16px">Track your medications, doses, and timing in a clear format.</p>
+    <span style="display:inline-block;background:#00AA66;color:#fff;font-weight:700;padding:8px 20px;border-radius:7px;font-size:.85rem">Use Free &rarr;</span>
+  </a>
+  <a href="/seniors/tools/news-in-plain-english/" style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:12px;padding:22px;text-decoration:none;color:inherit;display:block;transition:border-color .2s,transform .2s" onmouseover="this.style.borderColor='#00AA66';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1a3a1a';this.style.transform='translateY(0)'">
+    <div style="font-size:2.5rem;margin-bottom:12px">📰</div>
+    <div style="font-size:.68rem;color:#00AA66;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-weight:600">Free Tool</div>
+    <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;color:#fff">News in Plain English</h3>
+    <p style="font-size:.85rem;color:#777;line-height:1.5;margin-bottom:16px">Paste any news article. Get a clear, simple summary.</p>
+    <span style="display:inline-block;background:#00AA66;color:#fff;font-weight:700;padding:8px 20px;border-radius:7px;font-size:.85rem">Use Free &rarr;</span>
+  </a>
+  <a href="/seniors/tools/family-letter-writer/" style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:12px;padding:22px;text-decoration:none;color:inherit;display:block;transition:border-color .2s,transform .2s" onmouseover="this.style.borderColor='#00AA66';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1a3a1a';this.style.transform='translateY(0)'">
+    <div style="font-size:2.5rem;margin-bottom:12px">👨‍👩‍👧</div>
+    <div style="font-size:.68rem;color:#00AA66;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-weight:600">Free Tool</div>
+    <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;color:#fff">Family Letter Writer</h3>
+    <p style="font-size:.85rem;color:#777;line-height:1.5;margin-bottom:16px">Write letters to loved ones. AI helps find the right words.</p>
+    <span style="display:inline-block;background:#00AA66;color:#fff;font-weight:700;padding:8px 20px;border-radius:7px;font-size:.85rem">Use Free &rarr;</span>
+  </a>
+  <a href="/seniors/tools/recipe-simplifier/" style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:12px;padding:22px;text-decoration:none;color:inherit;display:block;transition:border-color .2s,transform .2s" onmouseover="this.style.borderColor='#00AA66';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1a3a1a';this.style.transform='translateY(0)'">
+    <div style="font-size:2.5rem;margin-bottom:12px">🍳</div>
+    <div style="font-size:.68rem;color:#00AA66;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-weight:600">Free Tool</div>
+    <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;color:#fff">Recipe Simplifier</h3>
+    <p style="font-size:.85rem;color:#777;line-height:1.5;margin-bottom:16px">Turn complex recipes into simple, easy-to-follow steps.</p>
+    <span style="display:inline-block;background:#00AA66;color:#fff;font-weight:700;padding:8px 20px;border-radius:7px;font-size:.85rem">Use Free &rarr;</span>
+  </a>
+  <a href="/seniors/tools/large-print-tool/" style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:12px;padding:22px;text-decoration:none;color:inherit;display:block;transition:border-color .2s,transform .2s" onmouseover="this.style.borderColor='#00AA66';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1a3a1a';this.style.transform='translateY(0)'">
+    <div style="font-size:2.5rem;margin-bottom:12px">🔍</div>
+    <div style="font-size:.68rem;color:#00AA66;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-weight:600">Free Tool</div>
+    <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;color:#fff">Large Print Tool</h3>
+    <p style="font-size:.85rem;color:#777;line-height:1.5;margin-bottom:16px">Reformat any text for easier, larger reading.</p>
+    <span style="display:inline-block;background:#00AA66;color:#fff;font-weight:700;padding:8px 20px;border-radius:7px;font-size:.85rem">Use Free &rarr;</span>
+  </a>
+  <a href="/seniors/tools/safety-checker/" style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:12px;padding:22px;text-decoration:none;color:inherit;display:block;transition:border-color .2s,transform .2s" onmouseover="this.style.borderColor='#00AA66';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1a3a1a';this.style.transform='translateY(0)'">
+    <div style="font-size:2.5rem;margin-bottom:12px">🔒</div>
+    <div style="font-size:.68rem;color:#00AA66;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-weight:600">Free Tool</div>
+    <h3 style="font-size:1.05rem;font-weight:700;margin-bottom:8px;color:#fff">Safety Checker</h3>
+    <p style="font-size:.85rem;color:#777;line-height:1.5;margin-bottom:16px">Check if a product, email, or situation is safe. AI explains why.</p>
+    <span style="display:inline-block;background:#00AA66;color:#fff;font-weight:700;padding:8px 20px;border-radius:7px;font-size:.85rem">Use Free &rarr;</span>
+  </a>
+</div>
+
+<!-- SAFETY RESOURCES -->
+<div class="section-header">
+  <span class="section-title" style="color:#00AA66">🛡️ Safety Resources</span>
+</div>
+<div class="cards-grid" style="padding-bottom:20px">
+  <a href="/seniors/tools/scam-checker/" style="background:#0d1a0d;border:2px solid #1a3a1a;border-radius:12px;padding:24px;text-decoration:none;color:inherit;transition:border-color .2s" onmouseover="this.style.borderColor='#00AA66'" onmouseout="this.style.borderColor='#1a3a1a'">
+    <div style="font-size:2rem;margin-bottom:10px">🛡️</div>
+    <h3 style="font-weight:700;margin-bottom:8px;color:#fff">Scam Checker Tool</h3>
+    <p style="font-size:.85rem;color:#777;line-height:1.5">Paste any suspicious email, text, or phone number. AI tells you instantly if it looks like a scam.</p>
+  </a>
+  <a href="/beginners/staying-safe/" style="background:#0d1a0d;border:2px solid #1a3a1a;border-radius:12px;padding:24px;text-decoration:none;color:inherit;transition:border-color .2s" onmouseover="this.style.borderColor='#00AA66'" onmouseout="this.style.borderColor='#1a3a1a'">
+    <div style="font-size:2rem;margin-bottom:10px">🔒</div>
+    <h3 style="font-weight:700;margin-bottom:8px;color:#fff">Online Safety Guide</h3>
+    <p style="font-size:.85rem;color:#777;line-height:1.5">Simple rules for staying safe online. What to click, what to avoid, and how to protect yourself.</p>
+  </a>
+  <div style="background:#0d1a0d;border:2px solid #1a3a1a;border-radius:12px;padding:24px">
+    <div style="font-size:2rem;margin-bottom:10px">📞</div>
+    <h3 style="font-weight:700;margin-bottom:8px;color:#fff">Fraud Hotlines</h3>
+    <p style="font-size:.85rem;color:#777;line-height:1.5;margin-bottom:10px">If you think you've been scammed, call immediately:</p>
+    <div style="font-size:.85rem;color:#00AA66;line-height:1.9">
+      <div>🇺🇸 FTC: <strong>1-877-382-4357</strong></div>
+      <div>🇺🇸 AARP Fraud: <strong>1-877-908-3360</strong></div>
+      <div>🇺🇸 Elder Fraud: <strong>1-833-FRAUD-11</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- BEGINNER GUIDES -->
+<div class="section-header">
+  <span class="section-title" style="color:#00AA66">📖 Beginner Guides</span>
+  <a href="/beginners/" style="color:#00AA66;font-size:.85rem;text-decoration:none">All Guides &rarr;</a>
+</div>
+<div class="cards-grid">
+  <div class="card">
+    <div class="card-img-placeholder" style="background:linear-gradient(135deg,#0a1a0a,#0d1a0d)">🤔</div>
+    <div class="card-body">
+      <div class="card-cat" style="color:#00AA66">Start Here</div>
+      <div class="card-title">What is AI?</div>
+      <div class="card-desc">A plain-English answer to the most common question. No technical knowledge required.</div>
+      <div class="card-footer"><a href="/beginners/what-is-ai/" class="card-link" style="color:#00AA66">Read &rarr;</a></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-img-placeholder" style="background:linear-gradient(135deg,#0a1a0a,#0d1a0d)">💬</div>
+    <div class="card-body">
+      <div class="card-cat" style="color:#00AA66">Essential</div>
+      <div class="card-title">ChatGPT for Beginners</div>
+      <div class="card-desc">How to start your first AI conversation. Screenshots and step-by-step instructions.</div>
+      <div class="card-footer"><a href="/beginners/chatgpt-for-beginners/" class="card-link" style="color:#00AA66">Read &rarr;</a></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-img-placeholder" style="background:linear-gradient(135deg,#0a1a0a,#0d1a0d)">📚</div>
+    <div class="card-body">
+      <div class="card-cat" style="color:#00AA66">Reference</div>
+      <div class="card-title">AI Glossary for Beginners</div>
+      <div class="card-desc">Every AI word explained in simple language. Bookmark this one.</div>
+      <div class="card-footer"><a href="/beginners/glossary/" class="card-link" style="color:#00AA66">Read &rarr;</a></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-img-placeholder" style="background:linear-gradient(135deg,#0a1a0a,#0d1a0d)">⚠️</div>
+    <div class="card-body">
+      <div class="card-cat" style="color:#00AA66">Safety</div>
+      <div class="card-title">AI Scam Warning Guide</div>
+      <div class="card-desc">How scammers use AI to trick people — and exactly how to spot and avoid them.</div>
+      <div class="card-footer"><a href="/beginners/ai-scam-warning/" class="card-link" style="color:#00AA66">Read &rarr;</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-strip">
+  <p>150+ operators building with AI — free community</p>
+  <a href="https://skool.com/aiguerrilla" target="_blank">Join AI Guerrilla Free &rarr; skool.com/aiguerrilla</a>
+</div>
+<footer>
+  <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:12px">
+    <a href="/">Home</a>
+    <a href="/academy/">Academy</a>
+    <a href="/free-ai-tools/">Free Tools</a>
+    <a href="/guides/">Visual Guides</a>
+    <a href="/seniors/">For Seniors</a>
+    <a href="/news/">News</a>
+  </div>
+  <p>&copy; 2026 AI Guerrilla &mdash; <a href="https://skool.com/aiguerrilla">skool.com/aiguerrilla</a></p>
+</footer>
+</body>
+</html>
