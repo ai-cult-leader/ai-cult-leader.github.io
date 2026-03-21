@@ -180,29 +180,16 @@ document.addEventListener('click',function(e){
 <div class="content">
   <img class="hero-img" src="https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="RAG Explained: Retrieval Augmented Generation" loading="lazy">
   <p>RAG Explained: Retrieval Augmented Generation is an essential skill for modern operators. This guide covers everything you need to get started.</p>
-  <h2>Why This Matters for Operators</h2>
-  <p>AI is reshaping every industry. Operators who learn these tools now will have a significant competitive advantage.</p>
-  <div class="callout">
-    <div class="callout-label">Key Insight</div>
-    <p>The operators who move fastest are the ones who learn in community, not in isolation.</p>
-  </div>
-  <h2>Getting Started: Step by Step</h2>
-  <ol class="steps"><li><h3>Understand the Basics</h3><p>Start by understanding the core concepts before diving into tools.</p></li>
-<li><h3>Set Up Your Environment</h3><p>Install or access the tools needed for this workflow.</p></li>
-<li><h3>Run Your First Test</h3><p>Start with a simple test to validate your setup works.</p></li>
-<li><h3>Build Your First Project</h3><p>Create a small project to apply what you've learned.</p></li>
-<li><h3>Iterate and Improve</h3><p>Refine your approach based on results and community feedback.</p></li>
-</ol>
-  <h2>Key Tools</h2>
-  <div class="tool-grid"><a class="tool-card" href="/tools/chatgpt/"><h4>ChatGPT</h4><p>AI assistant for drafting, research, and analysis.</p></a>
-<a class="tool-card" href="/tools/claude/"><h4>Claude</h4><p>Anthropic's AI for long-form content and code.</p></a>
-<a class="tool-card" href="/tools/groq/"><h4>Groq</h4><p>Fastest free LLM inference API available.</p></a>
-</div>
-  <h2>Pro Tips</h2>
-  <ul><li>Start simple and build complexity gradually.</li><li>Document everything as you go.</li><li>Join a community of operators for faster learning.</li></ul>
-  <h2>Common Mistakes to Avoid</h2>
-  <ul><li>Skipping the fundamentals.</li><li>Over-engineering your first solution.</li><li>Working in isolation instead of leveraging community knowledge.</li></ul>
-  <div class="cta-box">
+  <h2>What You Need to Know</h2>
+<p>RAG (Retrieval-Augmented Generation) solves the fundamental limitation of LLMs — they only know what they were trained on. RAG lets any LLM answer questions about your specific, private, up-to-date data.</p>
+<p>The RAG pipeline works in two phases: indexing (chunking your documents, generating embeddings, storing in a vector database) and retrieval (embedding the query, finding similar chunks, injecting them as context for the LLM).</p>
+<p>Operators who implement RAG build AI applications that answer questions about their business documents, product knowledge bases, customer data, and proprietary information with up-to-date accuracy.</p>
+<h2>Getting Started: Step by Step</h2>
+<ol><li><strong>Understand the RAG architecture</strong> — Map out the full pipeline: document ingestion → chunking → embedding → vector storage → query → retrieval → LLM generation.</li><li><strong>Choose your embedding model</strong> — Select an embedding model (OpenAI text-embedding-3-small, Cohere Embed, or local models) based on cost and quality needs.</li><li><strong>Set up your vector database</strong> — Choose and configure a vector database (Chroma for local, Pinecone or Qdrant for production) for embedding storage.</li><li><strong>Build the ingestion pipeline</strong> — Write code to load documents, split into chunks, generate embeddings, and store them in your vector database.</li><li><strong>Implement the retrieval and generation step</strong> — Embed the user query, retrieve top-k similar chunks, and inject them into the LLM prompt as context.</li></ol>
+<h2>Key Tools</h2>
+<ul><li><strong>LlamaIndex</strong> — Python framework that handles the entire RAG pipeline from ingestion to query with minimal configuration.</li><li><strong>Chroma</strong> — Open-source vector database for local RAG development with a simple Python API.</li><li><strong>Pinecone</strong> — Managed vector database for production RAG applications with high-scale retrieval.</li></ul>
+<div class="callout"><div class="callout-label">Operator Insight</div><p>The operators who move fast on this don't wait for perfect conditions. They start, iterate, and improve. Come build with us at <a href="https://skool.com/aiguerrilla" style="color:#00FF88">skool.com/aiguerrilla</a>.</p></div>
+<div class="cta-box">
     <h2>Ready to Go Deeper?</h2>
     <p>Join 150+ operators applying AI in the real world. Free community, real results.</p>
     <a class="cta-btn" href="https://skool.com/aiguerrilla" target="_blank">Join AI Guerrilla Free →</a>
