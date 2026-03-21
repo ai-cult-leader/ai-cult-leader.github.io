@@ -454,4 +454,49 @@
   <url><loc>https://aiguerrilla.net/what-most-miss-about-claude-opus-4-6-adaptive-thin/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://aiguerrilla.net/what-openai-doesnt-want-you-to-know-ai-shorts/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://aiguerrilla.net/what-you-need-to-do-right-now-with-ai-shorts/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://aiguerrilla.net/tools/free-tools/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aiguerrilla.net/tools/prompt-generator/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aiguerrilla.net/tools/youtube-title-generator/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aiguerrilla.net/tools/token-counter/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aiguerrilla.net/tools/image-prompt-enhancer/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aiguerrilla.net/tools/linkedin-bio-generator/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aiguerrilla.net/tools/api-cost-calculator/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aiguerrilla.net/tools/ai-tool-finder/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aiguerrilla.net/tools/hashtag-generator/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
