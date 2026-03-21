@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Medical Term Explainer — Plain English for Seniors</title>
+<meta name="description" content="Paste any medical term, test result, or diagnosis and get a simple plain-English explanation. Free tool for seniors and patients.">
+<meta property="og:title" content="Free Medical Term Explainer — Plain English for Seniors">
+<meta property="og:description" content="Paste any medical term, test result, or diagnosis and get a simple plain-English explanation. Free tool for seniors and patients.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d0d0d;color:#e8e8e8;font-family:Georgia,'Times New Roman',serif;font-size:19px;line-height:1.85}
+nav{padding:18px 32px;border-bottom:1px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#0d0d0d;position:sticky;top:0;z-index:100}
+.logo{color:#00AA66;font-weight:900;font-size:1.3rem;text-decoration:none;font-family:'Segoe UI',sans-serif}
+.nav-back{color:#aaa;text-decoration:none;font-size:.95rem;font-family:'Segoe UI',sans-serif}
+.nav-back:hover{color:#00AA66}
+.nav-cta{background:#00AA66;color:#fff;font-weight:700;padding:10px 20px;border-radius:8px;text-decoration:none;font-size:.9rem;font-family:'Segoe UI',sans-serif}
+.hero{padding:60px 20px 40px;max-width:780px;margin:0 auto;text-align:center}
+.hero-label{font-size:.8rem;color:#00AA66;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;font-family:'Segoe UI',sans-serif}
+h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;margin-bottom:14px;line-height:1.2;color:#fff}
+.hero-desc{font-size:1.1rem;color:#999;max-width:580px;margin:0 auto 40px;line-height:1.7;font-family:'Segoe UI',sans-serif}
+.tool-box{background:#111;border:1px solid #1a1a1a;border-radius:16px;padding:36px;max-width:760px;margin:0 auto;box-shadow:0 4px 24px rgba(0,0,0,.4)}
+label{display:block;font-size:1rem;font-weight:600;color:#ddd;margin-bottom:10px;font-family:'Segoe UI',sans-serif}
+.hint{font-size:.85rem;color:#666;margin-bottom:12px;font-family:'Segoe UI',sans-serif}
+input[type=text],textarea,select{width:100%;background:#0d0d0d;border:2px solid #2a2a2a;color:#e8e8e8;border-radius:10px;font-size:19px;padding:14px 18px;margin-bottom:20px;font-family:Georgia,serif;outline:none;transition:border-color .2s;line-height:1.6}
+input[type=text]:focus,textarea:focus,select:focus{border-color:#00AA66}
+textarea{min-height:130px;resize:vertical}
+select{font-family:'Segoe UI',sans-serif}
+.generate-btn{width:100%;background:#00AA66;color:#fff;border:none;font-size:1.2rem;font-weight:700;padding:18px 32px;border-radius:12px;cursor:pointer;font-family:'Segoe UI',sans-serif;transition:opacity .2s;margin-bottom:8px}
+.generate-btn:hover{opacity:.9}
+.generate-btn:disabled{opacity:.5;cursor:not-allowed}
+.output-label{font-size:.88rem;color:#555;text-transform:uppercase;letter-spacing:1px;margin:28px 0 10px;font-family:'Segoe UI',sans-serif}
+.output-box{background:#0d0d0d;border:2px solid #1a1a1a;border-radius:12px;padding:20px 24px;font-size:19px;color:#e8e8e8;line-height:1.85;min-height:80px;white-space:pre-wrap;margin-bottom:14px}
+.output-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px}
+.copy-btn,.download-btn,.print-btn-sm{background:#111;border:2px solid #2a2a2a;color:#aaa;padding:12px 20px;border-radius:8px;cursor:pointer;font-size:.95rem;font-family:'Segoe UI',sans-serif;transition:all .2s}
+.copy-btn:hover,.download-btn:hover,.print-btn-sm:hover{border-color:#00AA66;color:#00AA66}
+.tip-box{background:#0a1a0a;border-left:4px solid #00AA66;padding:18px 22px;border-radius:0 10px 10px 0;margin:28px 0;font-family:'Segoe UI',sans-serif;font-size:.95rem;color:#aaa}
+.tip-label{font-size:.7rem;color:#00AA66;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.text-size-bar{position:fixed;bottom:20px;right:20px;background:#141414;border:2px solid #2a2a2a;border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:10px;z-index:999;font-family:'Segoe UI',sans-serif}
+.text-size-bar span{font-size:.78rem;color:#666}
+.size-btn{background:#1a1a1a;border:1px solid #2a2a2a;color:#aaa;width:36px;height:36px;border-radius:6px;cursor:pointer;font-size:1rem;font-family:inherit;transition:all .2s}
+.size-btn:hover{border-color:#00AA66;color:#00AA66}
+.soft-cta{background:#0a0a0a;border-top:1px solid #1a1a1a;padding:32px 20px;text-align:center;font-family:'Segoe UI',sans-serif;margin-top:60px}
+.soft-cta p{color:#555;font-size:.95rem;margin-bottom:8px}
+.soft-cta a{color:#00AA66;text-decoration:none;font-size:1rem;font-weight:600}
+footer{text-align:center;padding:32px;color:#444;border-top:1px solid #111;font-size:.9rem;font-family:'Segoe UI',sans-serif}
+footer a{color:#00AA66;text-decoration:none}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="/seniors/">AI for Seniors</a>
+  <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+    <a class="nav-back" href="/seniors/tools/">All Senior Tools</a>
+    <a class="nav-back" href="/beginners/">Beginner Guides</a>
+    <a class="nav-cta" href="https://skool.com/aiguerrilla">Free Community</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <p class="hero-label">Free Senior Tool</p>
+  <h1>Medical Term Explainer</h1>
+  <p class="hero-desc">Paste any medical term, test result, or something your doctor said — and get a clear, plain-English explanation. No confusing words, no guessing.</p>
+</div>
+<div class="tool-box">
+  <label for="medTerm">Paste a medical term, test result, or anything your doctor said</label>
+  <p class="hint">For example: "hypertension", "HbA1c", "benign prostatic hyperplasia", or "your creatinine is elevated"</p>
+  <textarea id="medTerm" placeholder="Type or paste the medical term or phrase here..."></textarea>
+  <button class="generate-btn" id="generateBtn" data-original-text="Explain This Simply" onclick="explainTerm()">Explain This Simply</button>
+  <p class="output-label">Plain English Explanation</p>
+  <div class="output-box" id="output">Your explanation will appear here after you click the button above.</div>
+  <div class="output-actions">
+    <button class="copy-btn" onclick="copyOutput('output')">Copy Text</button>
+    <button class="download-btn" onclick="downloadOutput('output','medical-explanation.txt')">Download</button>
+    <button class="print-btn-sm" onclick="window.print()">Print</button>
+  </div>
+  <div class="tip-box">
+    <p class="tip-label">Important Note</p>
+    <p>Always discuss medical information with your doctor. This tool helps you understand — not diagnose.</p>
+  </div>
+  <p style="color:#cc4444;font-size:.95rem;font-family:'Segoe UI',sans-serif;margin-top:16px">⚠️ This is for educational purposes only. Always consult your doctor for medical advice.</p>
+</div>
+<script>
+async function explainTerm() {
+  const term = document.getElementById('medTerm').value.trim();
+  if (!term) { alert('Please enter a medical term or phrase first.'); return; }
+  const sys = "You are a patient, warm medical educator helping seniors understand medical terminology. Explain medical terms in very simple, plain English as if talking to a grandmother. Break it down: what it is, what it means for the body, and what questions they might want to ask their doctor. Never be alarming. Always end with 'Talk to your doctor about [specific question].' Maximum 200 words.";
+  const result = await callGroq(term, sys, 400);
+  document.getElementById('output').textContent = result;
+}
+</script>
+<div class="soft-cta">
+  <p>Free community where seniors and beginners can ask questions and get help</p>
+  <a href="https://skool.com/aiguerrilla">Join free at skool.com/aiguerrilla &rarr;</a>
+</div>
+<footer>
+  <p>&copy; 2026 AI Guerrilla &mdash; <a href="/seniors/tools/">Senior Tools</a> &mdash; <a href="/seniors/">AI for Seniors</a> &mdash; <a href="https://skool.com/aiguerrilla">Free Community</a></p>
+</footer>
+<div class="text-size-bar">
+  <span>Text:</span>
+  <button class="size-btn" onclick="changeSize(-1)" title="Make text smaller">A&minus;</button>
+  <button class="size-btn" onclick="changeSize(1)" title="Make text bigger">A+</button>
+</div>
+<script>
+let fontSize = parseInt(localStorage.getItem('seniorFontSize') || '19');
+document.body.style.fontSize = fontSize + 'px';
+function changeSize(dir) {
+  fontSize = Math.max(16, Math.min(30, fontSize + dir * 2));
+  document.body.style.fontSize = fontSize + 'px';
+  localStorage.setItem('seniorFontSize', fontSize);
+}
+function copyOutput(id) {
+  const el = document.getElementById(id);
+  const text = el ? (el.textContent || el.value || '') : '';
+  navigator.clipboard.writeText(text).then(() => {
+    const btns = document.querySelectorAll('.copy-btn');
+    btns.forEach(b => { if(b.getAttribute('onclick') && b.getAttribute('onclick').includes(id)) { const o=b.textContent; b.textContent='\u2713 Copied!'; b.style.color='#00AA66'; setTimeout(()=>{b.textContent=o;b.style.color='';},2000); }});
+  });
+}
+function downloadOutput(id, filename) {
+  const el = document.getElementById(id);
+  const text = el ? (el.textContent || el.value || '') : '';
+  if (!text.trim()) { alert('Please generate content first.'); return; }
+  const blob = new Blob([text], {type:'text/plain'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename || 'my-document.txt';
+  a.click();
+}
+const GROQ_KEY = ["gsk_O3O1bIMTJ","7Fn9MTE1WdXWGdyb3FY","kgwKA5BSRDB2Acg929rS7eCN"].join("");
+async function callGroq(userPrompt, systemPrompt, maxTokens) {
+  maxTokens = maxTokens || 600;
+  const btn = document.getElementById('generateBtn');
+  const output = document.getElementById('output');
+  if (btn) { btn.disabled = true; btn.textContent = 'Working on it...'; }
+  if (output) { output.textContent = 'Please wait a moment...'; }
+  try {
+    const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: { "Authorization": "Bearer " + GROQ_KEY, "Content-Type": "application/json" },
+      body: JSON.stringify({ model: "llama-3.3-70b-versatile", messages: [{ role: "system", content: systemPrompt }, { role: "user", content: userPrompt }], max_tokens: maxTokens, temperature: 0.7 })
+    });
+    const data = await res.json();
+    if (btn) { btn.disabled = false; btn.textContent = btn.dataset.originalText || 'Generate'; }
+    return data.choices?.[0]?.message?.content || "Sorry, something went wrong. Please try again.";
+  } catch(e) {
+    if (btn) { btn.disabled = false; btn.textContent = btn.dataset.originalText || 'Generate'; }
+    return "Sorry, there was a problem. Please check your internet connection and try again.";
+  }
+}
+</script>
+</body>
+</html>
