@@ -179,61 +179,111 @@ document.addEventListener('DOMContentLoaded',function(){
 </script>
 
 
-<!-- News Section -->
-<div style="border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;padding:10px 0;overflow:hidden;background:#0a0a0a;position:relative">
-  <div style="display:flex;align-items:center;overflow:hidden">
-    <div style="background:#00FF88;color:#000;font-size:.72rem;font-weight:900;padding:4px 12px;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;flex-shrink:0;z-index:1">LIVE</div>
-    <div class="ticker-wrap" style="overflow:hidden;flex:1">
-      <div class="ticker" style="display:inline-flex;animation:ticker 40s linear infinite">
-        <a href="/news/ai-powered-wheelchairs-are-they-ready-for-real-lif/" style="color:#aaa;text-decoration:none;white-space:nowrap;padding:0 32px">📰 Ai Powered Wheelchairs Are They Ready For Real Lif</a><a href="/news/ai-smart-glasses-could-generate-fake-photos-instan/" style="color:#aaa;text-decoration:none;white-space:nowrap;padding:0 32px">📰 Ai Smart Glasses Could Generate Fake Photos Instan</a><a href="/news/an-industrial-piping-contractor-on-claude-code-vid/" style="color:#aaa;text-decoration:none;white-space:nowrap;padding:0 32px">📰 An Industrial Piping Contractor On Claude Code Vid</a><a href="/news/andrej-karpathy-on-code-agents-autoresearch-and-th/" style="color:#aaa;text-decoration:none;white-space:nowrap;padding:0 32px">📰 Andrej Karpathy On Code Agents Autoresearch And Th</a><a href="/news/ask-paul-march-20/" style="color:#aaa;text-decoration:none;white-space:nowrap;padding:0 32px">📰 Ask Paul March 20</a><a href="/news/blocking-internet-archive-wont-stop-ai-but-will-er/" style="color:#aaa;text-decoration:none;white-space:nowrap;padding:0 32px">📰 Blocking Internet Archive Wont Stop Ai But Will Er</a><a href="/news/building-production-ai-agents-with-langgraph-beyon/" style="color:#aaa;text-decoration:none;white-space:nowrap;padding:0 32px">📰 Building Production Ai Agents With Langgraph Beyon</a><a href="/news/claude-code-doesnt-know-youve-been-gone-heres-the/" style="color:#aaa;text-decoration:none;white-space:nowrap;padding:0 32px">📰 Claude Code Doesnt Know Youve Been Gone Heres The</a><a href="/news/ai-powered-wheelchairs-are-they-ready-for-real-lif/" style="color:#aaa;text-decoration:none;white-space:nowrap;padding:0 32px">📰 Ai Powered Wheelchairs Are They Ready For Real Lif</a><a href="/news/ai-smart-glasses-could-generate-fake-photos-instan/" style="color:#aaa;text-decoration:none;white-space:nowrap;padding:0 32px">📰 Ai Smart Glasses Could Generate Fake Photos Instan</a><a href="/news/an-industrial-piping-contractor-on-claude-code-vid/" style="color:#aaa;text-decoration:none;white-space:nowrap;padding:0 32px">📰 An Industrial Piping Contractor On Claude Code Vid</a><a href="/news/andrej-karpathy-on-code-agents-autoresearch-and-th/" style="color:#aaa;text-decoration:none;white-space:nowrap;padding:0 32px">📰 Andrej Karpathy On Code Agents Autoresearch And Th</a><a href="/news/ask-paul-march-20/" style="color:#aaa;text-decoration:none;white-space:nowrap;padding:0 32px">📰 Ask Paul March 20</a><a href="/news/blocking-internet-archive-wont-stop-ai-but-will-er/" style="color:#aaa;text-decoration:none;white-space:nowrap;padding:0 32px">📰 Blocking Internet Archive Wont Stop Ai But Will Er</a><a href="/news/building-production-ai-agents-with-langgraph-beyon/" style="color:#aaa;text-decoration:none;white-space:nowrap;padding:0 32px">📰 Building Production Ai Agents With Langgraph Beyon</a><a href="/news/claude-code-doesnt-know-youve-been-gone-heres-the/" style="color:#aaa;text-decoration:none;white-space:nowrap;padding:0 32px">📰 Claude Code Doesnt Know Youve Been Gone Heres The</a>
-      </div>
-    </div>
-    <a href="/news/" style="color:#00FF88;font-size:.78rem;font-weight:600;text-decoration:none;white-space:nowrap;padding:0 16px;flex-shrink:0">All News &rarr;</a>
-  </div>
-</div>
-<style>
-@keyframes ticker {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-.ticker:hover { animation-play-state: paused; }
-</style>
-
-<!-- Latest News Cards -->
-<div style="max-width:1200px;margin:0 auto;padding:40px 20px 20px">
+<!-- News Slider -->
+<div style="max-width:1200px;margin:0 auto;padding:32px 20px 24px">
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
-    <h2 style="font-size:1.1rem;font-weight:700;color:#fff">Latest AI News</h2>
-    <a href="/news/" style="color:#00FF88;font-size:.85rem;text-decoration:none;font-weight:600">View all &rarr;</a>
+    <div style="display:flex;align-items:center;gap:10px">
+      <div style="background:#00FF88;color:#000;font-size:.68rem;font-weight:900;padding:3px 10px;border-radius:20px;letter-spacing:1px;text-transform:uppercase">LIVE</div>
+      <h2 style="font-size:1.1rem;font-weight:700;color:#fff">Latest AI News</h2>
+    </div>
+    <a href="/news/" style="color:#00FF88;font-size:.85rem;text-decoration:none;font-weight:600">All news &rarr;</a>
   </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px">
-    <a href="/news/ai-powered-wheelchairs-are-they-ready-for-real-lif/" style="background:#111;border:1px solid #1a1a1a;border-radius:10px;padding:16px;text-decoration:none;color:inherit;display:block;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
-  <div style="font-size:.7rem;color:#00FF88;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;font-weight:600">AI News</div>
-  <div style="font-size:.9rem;font-weight:600;color:#fff;line-height:1.4">Ai Powered Wheelchairs Are They Ready For Real Lif</div>
-  <div style="font-size:.75rem;color:#555;margin-top:6px">James's take &rarr;</div>
-</a><a href="/news/ai-smart-glasses-could-generate-fake-photos-instan/" style="background:#111;border:1px solid #1a1a1a;border-radius:10px;padding:16px;text-decoration:none;color:inherit;display:block;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
-  <div style="font-size:.7rem;color:#00FF88;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;font-weight:600">AI News</div>
-  <div style="font-size:.9rem;font-weight:600;color:#fff;line-height:1.4">Ai Smart Glasses Could Generate Fake Photos Instan</div>
-  <div style="font-size:.75rem;color:#555;margin-top:6px">James's take &rarr;</div>
-</a><a href="/news/an-industrial-piping-contractor-on-claude-code-vid/" style="background:#111;border:1px solid #1a1a1a;border-radius:10px;padding:16px;text-decoration:none;color:inherit;display:block;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
-  <div style="font-size:.7rem;color:#00FF88;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;font-weight:600">AI News</div>
-  <div style="font-size:.9rem;font-weight:600;color:#fff;line-height:1.4">An Industrial Piping Contractor On Claude Code Vid</div>
-  <div style="font-size:.75rem;color:#555;margin-top:6px">James's take &rarr;</div>
-</a><a href="/news/andrej-karpathy-on-code-agents-autoresearch-and-th/" style="background:#111;border:1px solid #1a1a1a;border-radius:10px;padding:16px;text-decoration:none;color:inherit;display:block;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
-  <div style="font-size:.7rem;color:#00FF88;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;font-weight:600">AI News</div>
-  <div style="font-size:.9rem;font-weight:600;color:#fff;line-height:1.4">Andrej Karpathy On Code Agents Autoresearch And Th</div>
-  <div style="font-size:.75rem;color:#555;margin-top:6px">James's take &rarr;</div>
-</a><a href="/news/ask-paul-march-20/" style="background:#111;border:1px solid #1a1a1a;border-radius:10px;padding:16px;text-decoration:none;color:inherit;display:block;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
-  <div style="font-size:.7rem;color:#00FF88;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;font-weight:600">AI News</div>
-  <div style="font-size:.9rem;font-weight:600;color:#fff;line-height:1.4">Ask Paul March 20</div>
-  <div style="font-size:.75rem;color:#555;margin-top:6px">James's take &rarr;</div>
-</a><a href="/news/blocking-internet-archive-wont-stop-ai-but-will-er/" style="background:#111;border:1px solid #1a1a1a;border-radius:10px;padding:16px;text-decoration:none;color:inherit;display:block;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
-  <div style="font-size:.7rem;color:#00FF88;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;font-weight:600">AI News</div>
-  <div style="font-size:.9rem;font-weight:600;color:#fff;line-height:1.4">Blocking Internet Archive Wont Stop Ai But Will Er</div>
-  <div style="font-size:.75rem;color:#555;margin-top:6px">James's take &rarr;</div>
-</a>
+  <div style="position:relative" id="newsSlider">
+    <div class="slide active" style="display:block">
+  <div class="slide-inner" style="position:relative;height:320px;border-radius:14px;overflow:hidden;cursor:pointer" onclick="window.location.href='/news/ai-powered-wheelchairs-are-they-ready-for-real-lif/'">
+    <img src="https://external-preview.redd.it/63X_M0AMkRdEdCzSNinJTL5dwN0Gqgz-0Mp4XKpPjbM.jpeg?width=140&amp;height=70&amp;auto=webp&amp;s=8762907e735fb986488b93c154edc2f7c29fa904" alt="AI-Powered Wheelchairs: Are They Ready for Real Life?" style="width:100%;height:100%;object-fit:cover" onerror="this.src='https://images.pexels.com/photos/8566526/pexels-photo-8566526.jpeg?auto=compress&cs=tinysrgb&w=940'">
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.3) 50%,transparent 100%)"></div>
+    <div style="position:absolute;bottom:0;left:0;right:0;padding:24px">
+      <div style="font-size:.7rem;color:#00FF88;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px">AI NEWS</div>
+      <h3 style="font-size:1.1rem;font-weight:700;color:#fff;line-height:1.3;margin-bottom:8px">AI-Powered Wheelchairs: Are They Ready for Real Life?</h3>
+      <p style="font-size:.82rem;color:#ccc;line-height:1.5;margin-bottom:12px">Operators, a new wave of AI-powered wheelchairs is emerging, leveraging user input to navigate tight spaces more effectively than robotic sy</p>
+      <a href="/news/ai-powered-wheelchairs-are-they-ready-for-real-lif/" style="font-size:.8rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
+    </div>
+  </div>
+</div><div class="slide " style="display:none">
+  <div class="slide-inner" style="position:relative;height:320px;border-radius:14px;overflow:hidden;cursor:pointer" onclick="window.location.href='/news/ai-smart-glasses-could-generate-fake-photos-instan/'">
+    <img src="https://static.foxnews.com/foxnews.com/content/uploads/2026/03/meta-smart-glasses.jpg" alt="AI smart glasses could generate fake photos instantly" style="width:100%;height:100%;object-fit:cover" onerror="this.src='https://images.pexels.com/photos/8566526/pexels-photo-8566526.jpeg?auto=compress&cs=tinysrgb&w=940'">
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.3) 50%,transparent 100%)"></div>
+    <div style="position:absolute;bottom:0;left:0;right:0;padding:24px">
+      <div style="font-size:.7rem;color:#00FF88;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px">AI NEWS</div>
+      <h3 style="font-size:1.1rem;font-weight:700;color:#fff;line-height:1.3;margin-bottom:8px">AI smart glasses could generate fake photos instantly</h3>
+      <p style="font-size:.82rem;color:#ccc;line-height:1.5;margin-bottom:12px">Operators, the development of AI-powered smart glasses by tech giants like Google, Meta, Samsung, and Apple means you'll soon face a new rea</p>
+      <a href="/news/ai-smart-glasses-could-generate-fake-photos-instan/" style="font-size:.8rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
+    </div>
+  </div>
+</div><div class="slide " style="display:none">
+  <div class="slide-inner" style="position:relative;height:320px;border-radius:14px;overflow:hidden;cursor:pointer" onclick="window.location.href='/news/an-industrial-piping-contractor-on-claude-code-vid/'">
+    <img src="https://images.pexels.com/photos/5274483/pexels-photo-5274483.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="An industrial piping contractor on Claude Code [video]" style="width:100%;height:100%;object-fit:cover" onerror="this.src='https://images.pexels.com/photos/8566526/pexels-photo-8566526.jpeg?auto=compress&cs=tinysrgb&w=940'">
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.3) 50%,transparent 100%)"></div>
+    <div style="position:absolute;bottom:0;left:0;right:0;padding:24px">
+      <div style="font-size:.7rem;color:#00FF88;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px">AI NEWS</div>
+      <h3 style="font-size:1.1rem;font-weight:700;color:#fff;line-height:1.3;margin-bottom:8px">An industrial piping contractor on Claude Code [video]</h3>
+      <p style="font-size:.82rem;color:#ccc;line-height:1.5;margin-bottom:12px">Operators, a recent video showcases an industrial piping contractor leveraging Claude Code, demonstrating the potential for AI to streamline</p>
+      <a href="/news/an-industrial-piping-contractor-on-claude-code-vid/" style="font-size:.8rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
+    </div>
+  </div>
+</div><div class="slide " style="display:none">
+  <div class="slide-inner" style="position:relative;height:320px;border-radius:14px;overflow:hidden;cursor:pointer" onclick="window.location.href='/news/andrej-karpathy-on-code-agents-autoresearch-and-th/'">
+    <img src="https://nextbigfuture.s3.amazonaws.com/uploads/2026/03/Screenshot-2026-03-20-at-11.06.34-AM.jpg" alt="Andrej Karpathy on Code Agents, AutoResearch and the Self Improvement Loopy Era " style="width:100%;height:100%;object-fit:cover" onerror="this.src='https://images.pexels.com/photos/8566526/pexels-photo-8566526.jpeg?auto=compress&cs=tinysrgb&w=940'">
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.3) 50%,transparent 100%)"></div>
+    <div style="position:absolute;bottom:0;left:0;right:0;padding:24px">
+      <div style="font-size:.7rem;color:#00FF88;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px">AI NEWS</div>
+      <h3 style="font-size:1.1rem;font-weight:700;color:#fff;line-height:1.3;margin-bottom:8px">Andrej Karpathy on Code Agents, AutoResearch and the Self Improvement Loopy Era </h3>
+      <p style="font-size:.82rem;color:#ccc;line-height:1.5;margin-bottom:12px">Andrej Karpathy is pioneering autonomous loop” AI systems—especially coding agents and self-improving research agents—while advancing AI-nat</p>
+      <a href="/news/andrej-karpathy-on-code-agents-autoresearch-and-th/" style="font-size:.8rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
+    </div>
+  </div>
+</div><div class="slide " style="display:none">
+  <div class="slide-inner" style="position:relative;height:320px;border-radius:14px;overflow:hidden;cursor:pointer" onclick="window.location.href='/news/ask-paul-march-20/'">
+    <img src="https://thurrott-assets.nyc3.digitaloceanspaces.com/web/wp-content/uploads/sites/2/2026/03/bar-is-closed.jpg" alt="Ask Paul: March 20 ⭐️" style="width:100%;height:100%;object-fit:cover" onerror="this.src='https://images.pexels.com/photos/8566526/pexels-photo-8566526.jpeg?auto=compress&cs=tinysrgb&w=940'">
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.3) 50%,transparent 100%)"></div>
+    <div style="position:absolute;bottom:0;left:0;right:0;padding:24px">
+      <div style="font-size:.7rem;color:#00FF88;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px">AI NEWS</div>
+      <h3 style="font-size:1.1rem;font-weight:700;color:#fff;line-height:1.3;margin-bottom:8px">Ask Paul: March 20 ⭐️</h3>
+      <p style="font-size:.82rem;color:#ccc;line-height:1.5;margin-bottom:12px">Happy Friday! We're on the cusp of spring; well, you are. It's always spring here in Mexico City.
+The post Ask Paul: March 20 ⭐️ appeared fi</p>
+      <a href="/news/ask-paul-march-20/" style="font-size:.8rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
+    </div>
+  </div>
+</div><div class="slide " style="display:none">
+  <div class="slide-inner" style="position:relative;height:320px;border-radius:14px;overflow:hidden;cursor:pointer" onclick="window.location.href='/news/blocking-internet-archive-wont-stop-ai-but-will-er/'">
+    <img src="https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Blocking Internet Archive Won't Stop AI, but Will Erase Web's Historical Record" style="width:100%;height:100%;object-fit:cover" onerror="this.src='https://images.pexels.com/photos/8566526/pexels-photo-8566526.jpeg?auto=compress&cs=tinysrgb&w=940'">
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.3) 50%,transparent 100%)"></div>
+    <div style="position:absolute;bottom:0;left:0;right:0;padding:24px">
+      <div style="font-size:.7rem;color:#00FF88;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px">AI NEWS</div>
+      <h3 style="font-size:1.1rem;font-weight:700;color:#fff;line-height:1.3;margin-bottom:8px">Blocking Internet Archive Won't Stop AI, but Will Erase Web's Historical Record</h3>
+      <p style="font-size:.82rem;color:#ccc;line-height:1.5;margin-bottom:12px">Operators, a court ruling to block the Internet Archive will erase the web's historical record, but won't hinder AI development as models ca</p>
+      <a href="/news/blocking-internet-archive-wont-stop-ai-but-will-er/" style="font-size:.8rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
+    </div>
   </div>
 </div>
-<!-- End News Section -->
+    <button onclick="prevSlide()" style="position:absolute;left:12px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.7);border:1px solid #333;color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1rem;z-index:10;display:flex;align-items:center;justify-content:center">&#8249;</button>
+    <button onclick="nextSlide()" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.7);border:1px solid #333;color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1rem;z-index:10;display:flex;align-items:center;justify-content:center">&#8250;</button>
+  </div>
+  <div style="display:flex;gap:6px;justify-content:center;margin-top:12px" id="sliderDots">
+    <button class="dot active-dot" onclick="goTo(0)" style="width:8px;height:8px;border-radius:50%;border:none;background:#00FF88;cursor:pointer;transition:background .2s;padding:0"></button><button class="dot " onclick="goTo(1)" style="width:8px;height:8px;border-radius:50%;border:none;background:#333;cursor:pointer;transition:background .2s;padding:0"></button><button class="dot " onclick="goTo(2)" style="width:8px;height:8px;border-radius:50%;border:none;background:#333;cursor:pointer;transition:background .2s;padding:0"></button><button class="dot " onclick="goTo(3)" style="width:8px;height:8px;border-radius:50%;border:none;background:#333;cursor:pointer;transition:background .2s;padding:0"></button><button class="dot " onclick="goTo(4)" style="width:8px;height:8px;border-radius:50%;border:none;background:#333;cursor:pointer;transition:background .2s;padding:0"></button><button class="dot " onclick="goTo(5)" style="width:8px;height:8px;border-radius:50%;border:none;background:#333;cursor:pointer;transition:background .2s;padding:0"></button>
+  </div>
+</div>
+<script>
+(function(){
+  let cur = 0;
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  const total = slides.length;
+  let timer = setInterval(()=>move(1), 5000);
+  
+  function show(n){
+    slides.forEach((s,i)=>{s.style.display=i===n?'block':'none';});
+    dots.forEach((d,i)=>{d.style.background=i===n?'#00FF88':'#333';});
+    cur=n;
+  }
+  function move(dir){show((cur+dir+total)%total);}
+  window.nextSlide=()=>{clearInterval(timer);move(1);timer=setInterval(()=>move(1),5000);};
+  window.prevSlide=()=>{clearInterval(timer);move(-1);timer=setInterval(()=>move(1),5000);};
+  window.goTo=(n)=>{clearInterval(timer);show(n);timer=setInterval(()=>move(1),5000);};
+})();
+</script>
+<!-- End News Slider -->
 <div class="hero">
   <div class="hero-label">AI Research Database</div>
   <h1>Every AI Tool.<br>Every LLM. Every Founder.</h1>
