@@ -138,7 +138,24 @@ document.addEventListener('click',function(e){
   <p style="color:#888;font-size:1.05rem;max-width:560px;margin:0 auto">Chrome extensions, websites, bots, mobile apps — build and publish for free using AI. No coding experience needed.</p>
 </div>
 
-<div class="grid">
+<div class="grid"
+<div id="keyStatus" style="text-align:center;padding:8px;font-size:.82rem;margin-bottom:20px"></div>
+<script>
+(function(){
+  const key = localStorage.getItem('ag_user_groq_key');
+  const el = document.getElementById('keyStatus');
+  if (el) {
+    if (key) {
+      el.innerHTML = '🔑 Using your personal API key · <a href="/settings/" style="color:#00FF88;text-decoration:none">Change</a>';
+      el.style.color = '#00FF88';
+    } else {
+      el.innerHTML = 'Using shared key · <a href="/settings/" style="color:#00FF88;text-decoration:none">⚡ Add your own free key for unlimited use</a>';
+      el.style.color = '#555';
+    }
+  }
+})();
+</script>
+>
 
   <div class="card">
     <div style="font-size:2rem;margin-bottom:12px">🧩</div>
