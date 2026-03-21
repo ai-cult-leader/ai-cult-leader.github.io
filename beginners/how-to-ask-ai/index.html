@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Ask AI Good Questions — Simple Guide for Beginners</title>
+<meta name="description" content="Learn how to ask AI the right questions and get helpful answers every time. Tips for seniors and beginners. Plain English guide with 20 real examples.">
+<link rel="canonical" href="https://aiguerrilla.net/beginners/how-to-ask-ai/">
+<meta property="og:title" content="How to Ask AI Good Questions — Simple Guide for Beginners">
+<meta property="og:description" content="Learn how to ask AI the right questions and get helpful answers every time. Tips for seniors and beginners. Plain English guide with 20 real examples.">
+<meta property="og:url" content="https://aiguerrilla.net/beginners/how-to-ask-ai/">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d0d0d;color:#e8e8e8;font-family:Georgia,'Times New Roman',serif;font-size:19px;line-height:1.85}
+nav{padding:20px 40px;border-bottom:1px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#0d0d0d;position:sticky;top:0;z-index:100}
+.logo{color:#00AA66;font-weight:900;font-size:1.4rem;text-decoration:none;font-family:'Segoe UI',sans-serif}
+.nav-home{color:#aaa;text-decoration:none;font-size:1rem;font-family:'Segoe UI',sans-serif}
+.nav-home:hover{color:#00AA66}
+.nav-cta{background:#00AA66;color:#fff;font-weight:700;padding:10px 22px;border-radius:8px;text-decoration:none;font-size:.95rem;font-family:'Segoe UI',sans-serif}
+.hero{padding:80px 20px 60px;max-width:800px;margin:0 auto;text-align:center}
+h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:700;margin-bottom:20px;line-height:1.2;color:#fff}
+h1 span{color:#00AA66}
+.hero-subtitle{font-size:1.25rem;color:#aaa;max-width:600px;margin:0 auto 40px;line-height:1.7}
+.start-btn{display:inline-block;background:#00AA66;color:#fff;font-size:1.2rem;font-weight:700;padding:20px 48px;border-radius:12px;text-decoration:none;font-family:'Segoe UI',sans-serif;transition:transform .2s}
+.start-btn:hover{transform:scale(1.03)}
+.reassurance{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+.reassurance-item{display:flex;align-items:center;gap:8px;font-size:.95rem;color:#888;font-family:'Segoe UI',sans-serif}
+.reassurance-item span{font-size:1.2rem}
+.section{max-width:760px;margin:0 auto;padding:60px 20px}
+h2{font-size:1.8rem;font-weight:700;margin-bottom:16px;color:#fff;line-height:1.3}
+h3{font-size:1.3rem;font-weight:600;margin:36px 0 12px;color:#ddd}
+p{margin-bottom:20px;color:#ccc;line-height:1.85}
+.guide-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;max-width:1000px;margin:0 auto;padding:0 20px 60px}
+.guide-card{background:#141414;border:2px solid #1a1a1a;border-radius:14px;padding:28px;transition:border-color .2s,transform .2s;text-decoration:none;color:inherit;display:block}
+.guide-card:hover{border-color:#00AA66;transform:translateY(-2px)}
+.guide-icon{font-size:2.5rem;margin-bottom:14px}
+.guide-card h3{font-size:1.1rem;font-weight:700;margin:0 0 8px;color:#fff;font-family:'Segoe UI',sans-serif}
+.guide-card p{font-size:.9rem;color:#888;margin:0;line-height:1.5;font-family:'Segoe UI',sans-serif}
+.guide-time{font-size:.78rem;color:#00AA66;margin-top:10px;font-family:'Segoe UI',sans-serif}
+.steps{list-style:none;padding:0;counter-reset:steps}
+.step{counter-increment:steps;background:#141414;border-radius:12px;padding:24px 24px 24px 80px;margin-bottom:16px;position:relative;border:1px solid #1a1a1a}
+.step::before{content:counter(steps);position:absolute;left:20px;top:24px;background:#00AA66;color:#fff;font-weight:900;font-size:1rem;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Segoe UI',sans-serif}
+.step h4{font-size:1.05rem;font-weight:700;margin-bottom:8px;color:#fff;font-family:'Segoe UI',sans-serif}
+.step p{font-size:.92rem;color:#999;margin:0;font-family:'Segoe UI',sans-serif}
+.tip-box{background:#0a1a0a;border-left:4px solid #00AA66;padding:20px 24px;border-radius:0 10px 10px 0;margin:28px 0}
+.tip-label{font-size:.72rem;color:#00AA66;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-family:'Segoe UI',sans-serif}
+.tip-box p{color:#aaa;margin:0;font-size:.95rem}
+.faq-item{border-bottom:1px solid #1a1a1a;padding:20px 0}
+.faq-q{font-size:1.05rem;font-weight:600;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'Segoe UI',sans-serif}
+.faq-q::after{content:'▼';font-size:.8rem;color:#00AA66;transition:transform .2s}
+.faq-item.open .faq-q::after{transform:rotate(180deg)}
+.faq-a{font-size:.92rem;color:#999;padding-top:12px;display:none;font-family:'Segoe UI',sans-serif;line-height:1.7}
+.faq-item.open .faq-a{display:block}
+.cta-section{background:#0a1a0a;border:2px solid #00AA66;border-radius:16px;padding:48px;text-align:center;max-width:700px;margin:60px auto}
+.cta-section h2{color:#00AA66;font-size:1.8rem;margin-bottom:14px;font-family:'Segoe UI',sans-serif}
+.cta-section p{color:#aaa;margin-bottom:28px;font-size:1rem;font-family:'Segoe UI',sans-serif}
+.text-size-bar{position:fixed;bottom:20px;right:20px;background:#141414;border:1px solid #2a2a2a;border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:10px;z-index:999;font-family:'Segoe UI',sans-serif}
+.text-size-bar span{font-size:.75rem;color:#666}
+.size-btn{background:#1a1a1a;border:1px solid #2a2a2a;color:#aaa;width:32px;height:32px;border-radius:6px;cursor:pointer;font-size:1rem;font-family:inherit}
+.size-btn:hover{border-color:#00AA66;color:#00AA66}
+footer{text-align:center;padding:40px;color:#444;border-top:1px solid #111;font-size:.9rem;font-family:'Segoe UI',sans-serif}
+footer a{color:#00AA66;text-decoration:none}
+.path-card{background:#141414;border:2px solid #1a1a1a;border-radius:14px;padding:24px 28px;margin-bottom:14px;display:flex;align-items:center;gap:20px;text-decoration:none;color:inherit;transition:border-color .2s}
+.path-card:hover{border-color:#00AA66}
+.path-num{background:#00AA66;color:#fff;font-weight:900;font-size:1.1rem;min-width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Segoe UI',sans-serif;flex-shrink:0}
+.path-card h3{font-size:1.05rem;font-weight:700;margin:0 0 4px;color:#fff;font-family:'Segoe UI',sans-serif}
+.path-card p{font-size:.85rem;color:#888;margin:0;font-family:'Segoe UI',sans-serif}
+.warning-box{background:#1a0a0a;border-left:4px solid #cc4444;padding:20px 24px;border-radius:0 10px 10px 0;margin:28px 0}
+.warning-label{font-size:.72rem;color:#cc4444;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-family:'Segoe UI',sans-serif}
+.warning-box p{color:#bbb;margin:0;font-size:.95rem}
+.tool-card{background:#141414;border:1px solid #1a1a1a;border-radius:14px;padding:24px;margin-bottom:16px}
+.tool-card h3{font-size:1.1rem;font-weight:700;margin:0 0 8px;color:#fff;font-family:'Segoe UI',sans-serif}
+.tool-card p{font-size:.92rem;color:#999;margin:0 0 12px;font-family:'Segoe UI',sans-serif}
+.tool-link{display:inline-block;background:#00AA66;color:#fff;font-weight:700;padding:10px 22px;border-radius:8px;text-decoration:none;font-size:.9rem;font-family:'Segoe UI',sans-serif}
+.glossary-item{border-bottom:1px solid #1a1a1a;padding:16px 0}
+.glossary-term{font-size:1.05rem;font-weight:700;color:#00AA66;font-family:'Segoe UI',sans-serif;margin-bottom:4px}
+.glossary-def{font-size:.95rem;color:#ccc;font-family:'Segoe UI',sans-serif;line-height:1.6}
+.prompt-example{background:#141414;border:1px solid #1a1a1a;border-radius:10px;padding:16px 20px;margin-bottom:12px;font-family:'Segoe UI',sans-serif;font-size:.92rem;color:#ccc;cursor:pointer;transition:border-color .2s}
+.prompt-example:hover{border-color:#00AA66;color:#fff}
+.next-btn{display:inline-block;background:#141414;border:2px solid #00AA66;color:#00AA66;font-size:1rem;font-weight:700;padding:14px 32px;border-radius:10px;text-decoration:none;font-family:'Segoe UI',sans-serif;transition:background .2s,color .2s;margin-top:20px}
+.next-btn:hover{background:#00AA66;color:#fff}
+</style>
+
+</head>
+<body>
+<nav>
+  <a class="logo" href="/beginners/">AI for Beginners</a>
+  <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+    <a class="nav-home" href="/">Full Site</a>
+    <a class="nav-home" href="/beginners/what-is-ai/">What is AI?</a>
+    <a class="nav-home" href="/beginners/chatgpt-for-beginners/">ChatGPT Guide</a>
+    <a class="nav-home" href="/beginners/ask-ai/">Ask AI Anything</a>
+    <a class="nav-cta" href="https://skool.com/aiguerrilla">Free Community</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>How to Ask AI <span>Good Questions</span></h1>
+  <p class="hero-subtitle">One simple trick makes AI 10 times more helpful. Here's exactly what to do — with 20 real examples you can copy today.</p>
+</div>
+
+<div class="section">
+  <h2>Why How You Ask Matters</h2>
+  <p>AI is incredibly helpful — but it works best when you give it a little context. Think of it like asking a friend for help. If you just say "help me write something," your friend would say "write what, for who, about what?" The more you tell AI, the better the help you get back.</p>
+  <p>The good news: it's very simple. You don't need any special skills. Just a bit more detail in how you phrase your question.</p>
+
+  <h2>The Magic Formula</h2>
+  <div class="tip-box">
+    <div class="tip-label">✨ The Simple Formula</div>
+    <p><strong>1. Be specific</strong> — What exactly do you need?<br>
+    <strong>2. Give context</strong> — Who is it for? What's the situation?<br>
+    <strong>3. Say what you want</strong> — What should the response look like?</p>
+  </div>
+
+  <p>Instead of: <em>"Write a card"</em></p>
+  <p>Try: <em>"Write a heartfelt birthday card for my sister who is turning 65. She loves gardening and has had a tough year. Keep it warm and uplifting."</em></p>
+  <p>See the difference? More detail = much better answer.</p>
+
+  <h2>20 Prompts You Can Use Today</h2>
+  <p>Copy any of these exactly, or change the details to fit your situation:</p>
+
+  <h3>For Writing &amp; Communication</h3>
+  <div class="prompt-example">"Help me write a thank you note to my doctor who has been very kind and attentive during my treatments."</div>
+  <div class="prompt-example">"Write a birthday message for my granddaughter who is 8 years old and loves horses."</div>
+  <div class="prompt-example">"Help me write a polite complaint letter to my insurance company about a claim they denied. Keep it professional."</div>
+  <div class="prompt-example">"Write a kind condolence note to my neighbor whose husband just passed away."</div>
+  <div class="prompt-example">"Help me write a message to my landlord asking them to fix the leaking faucet in my bathroom. I've mentioned it twice before."</div>
+
+  <h3>For Health &amp; Medical</h3>
+  <div class="prompt-example">"My doctor said my A1C is 6.8. Explain what this means in simple terms and what questions I should ask at my next appointment."</div>
+  <div class="prompt-example">"What questions should I ask my mechanic about my car? It's making a grinding noise when I brake."</div>
+  <div class="prompt-example">"I've been prescribed metformin. In simple terms, what is it for and what should I know about taking it?"</div>
+  <div class="prompt-example">"What are some gentle exercises for someone over 70 with knee pain? Please be specific and simple."</div>
+
+  <h3>For Daily Life &amp; Planning</h3>
+  <div class="prompt-example">"Suggest five easy dinner recipes for two people. We like comfort food, nothing too spicy. We have chicken, potatoes, and canned vegetables."</div>
+  <div class="prompt-example">"Help me plan a 3-day trip to visit my grandchildren in Nashville. We're driving from Atlanta. I'm 68 and like to take it easy."</div>
+  <div class="prompt-example">"I need to cancel my cable subscription. Help me write a script of what to say when I call them."</div>
+  <div class="prompt-example">"What questions should I ask before buying a used car? I have a budget of $12,000."</div>
+  <div class="prompt-example">"Give me a simple weekly shopping list for two people who are trying to eat healthier."</div>
+
+  <h3>For Understanding Things</h3>
+  <div class="prompt-example">"Explain what this legal document means in plain English. Here is the text: [paste the text here]"</div>
+  <div class="prompt-example">"My Medicare explanation of benefits is confusing. What does 'patient responsibility' mean and why is it different from my deductible?"</div>
+  <div class="prompt-example">"Explain what 5G means on my phone and if I need to do anything about it."</div>
+  <div class="prompt-example">"What does it mean when my computer says 'your connection is not private'? Is it dangerous?"</div>
+
+  <h3>For Fun &amp; Entertainment</h3>
+  <div class="prompt-example">"I loved the TV show Downton Abbey. What similar shows would you recommend that are also on Netflix?"</div>
+  <div class="prompt-example">"Write me a short funny poem about my cat who thinks she owns the house."</div>
+
+  <h2>When AI Gets Something Wrong</h2>
+  <p>AI is very helpful, but it's not perfect. Sometimes it makes mistakes — especially with recent news, specific facts, or specialized topics like medical or legal matters. Here's what to do:</p>
+  <div class="tip-box">
+    <div class="tip-label">When AI Makes a Mistake</div>
+    <p>
+    ✓ Say: "Are you sure about that? Can you double-check?"<br>
+    ✓ Say: "I think that might be wrong. Can you reconsider?"<br>
+    ✓ Always verify important information (medical, legal, financial) with a real professional.<br>
+    ✓ Use AI as a starting point, not the final word on important decisions.
+    </p>
+  </div>
+
+  <h2>How to Start a New Conversation</h2>
+  <p>If a conversation isn't going the way you want, just start fresh. In ChatGPT, look for a button that says "New Chat" or has a pencil icon on the left side. Click it and you'll have a clean slate. Nothing from the old conversation carries over.</p>
+
+  <div style="margin-top:40px;text-align:center">
+    <a href="/beginners/ai-for-daily-life/" class="next-btn">Next: AI for Daily Life &rarr;</a>
+  </div>
+</div>
+
+<div style="background:#0a0a0a;border-top:1px solid #1a1a1a;padding:32px 20px;text-align:center;font-family:'Segoe UI',sans-serif">
+  <p style="color:#555;font-size:.95rem;margin-bottom:8px">Free community where you can ask questions and learn at your own pace</p>
+  <a href="https://skool.com/aiguerrilla" style="color:#00AA66;text-decoration:none;font-size:1rem;font-weight:600">Join free at skool.com/aiguerrilla &rarr;</a>
+</div>
+<footer>
+  <p>&copy; 2026 <a href="https://aiguerrilla.net">AI Guerrilla</a> &mdash; 
+  <a href="/beginners/">Beginners Home</a> &mdash; 
+  <a href="/beginners/staying-safe/">Stay Safe Online</a> &mdash;
+  <a href="https://skool.com/aiguerrilla">Free Community</a></p>
+</footer>
+
+<div class="text-size-bar">
+  <span>Text size:</span>
+  <button class="size-btn" onclick="changeSize(-1)" title="Smaller text">A−</button>
+  <button class="size-btn" onclick="changeSize(1)" title="Larger text">A+</button>
+</div>
+<script>
+let fontSize = parseInt(localStorage.getItem('beginnerFontSize') || '19');
+document.body.style.fontSize = fontSize + 'px';
+function changeSize(dir) {
+  fontSize = Math.max(16, Math.min(28, fontSize + dir * 2));
+  document.body.style.fontSize = fontSize + 'px';
+  localStorage.setItem('beginnerFontSize', fontSize);
+}
+</script>
+</body>
+</html>
