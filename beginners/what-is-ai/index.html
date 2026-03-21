@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is AI? A Simple Guide for Beginners & Seniors</title>
+<meta name="description" content="What is artificial intelligence? A simple, jargon-free explanation for seniors and beginners. No tech background needed.">
+<link rel="canonical" href="https://aiguerrilla.net/beginners/what-is-ai/">
+<meta property="og:title" content="What is AI? A Simple Guide for Beginners & Seniors">
+<meta property="og:description" content="What is artificial intelligence? A simple, jargon-free explanation for seniors and beginners. No tech background needed.">
+<meta property="og:url" content="https://aiguerrilla.net/beginners/what-is-ai/">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d0d0d;color:#e8e8e8;font-family:Georgia,'Times New Roman',serif;font-size:19px;line-height:1.85}
+nav{padding:20px 40px;border-bottom:1px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#0d0d0d;position:sticky;top:0;z-index:100}
+.logo{color:#00AA66;font-weight:900;font-size:1.4rem;text-decoration:none;font-family:'Segoe UI',sans-serif}
+.nav-home{color:#aaa;text-decoration:none;font-size:1rem;font-family:'Segoe UI',sans-serif}
+.nav-home:hover{color:#00AA66}
+.nav-cta{background:#00AA66;color:#fff;font-weight:700;padding:10px 22px;border-radius:8px;text-decoration:none;font-size:.95rem;font-family:'Segoe UI',sans-serif}
+.hero{padding:80px 20px 60px;max-width:800px;margin:0 auto;text-align:center}
+h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:700;margin-bottom:20px;line-height:1.2;color:#fff}
+h1 span{color:#00AA66}
+.hero-subtitle{font-size:1.25rem;color:#aaa;max-width:600px;margin:0 auto 40px;line-height:1.7}
+.start-btn{display:inline-block;background:#00AA66;color:#fff;font-size:1.2rem;font-weight:700;padding:20px 48px;border-radius:12px;text-decoration:none;font-family:'Segoe UI',sans-serif;transition:transform .2s}
+.start-btn:hover{transform:scale(1.03)}
+.reassurance{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+.reassurance-item{display:flex;align-items:center;gap:8px;font-size:.95rem;color:#888;font-family:'Segoe UI',sans-serif}
+.reassurance-item span{font-size:1.2rem}
+.section{max-width:760px;margin:0 auto;padding:60px 20px}
+h2{font-size:1.8rem;font-weight:700;margin-bottom:16px;color:#fff;line-height:1.3}
+h3{font-size:1.3rem;font-weight:600;margin:36px 0 12px;color:#ddd}
+p{margin-bottom:20px;color:#ccc;line-height:1.85}
+.guide-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;max-width:1000px;margin:0 auto;padding:0 20px 60px}
+.guide-card{background:#141414;border:2px solid #1a1a1a;border-radius:14px;padding:28px;transition:border-color .2s,transform .2s;text-decoration:none;color:inherit;display:block}
+.guide-card:hover{border-color:#00AA66;transform:translateY(-2px)}
+.guide-icon{font-size:2.5rem;margin-bottom:14px}
+.guide-card h3{font-size:1.1rem;font-weight:700;margin:0 0 8px;color:#fff;font-family:'Segoe UI',sans-serif}
+.guide-card p{font-size:.9rem;color:#888;margin:0;line-height:1.5;font-family:'Segoe UI',sans-serif}
+.guide-time{font-size:.78rem;color:#00AA66;margin-top:10px;font-family:'Segoe UI',sans-serif}
+.steps{list-style:none;padding:0;counter-reset:steps}
+.step{counter-increment:steps;background:#141414;border-radius:12px;padding:24px 24px 24px 80px;margin-bottom:16px;position:relative;border:1px solid #1a1a1a}
+.step::before{content:counter(steps);position:absolute;left:20px;top:24px;background:#00AA66;color:#fff;font-weight:900;font-size:1rem;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Segoe UI',sans-serif}
+.step h4{font-size:1.05rem;font-weight:700;margin-bottom:8px;color:#fff;font-family:'Segoe UI',sans-serif}
+.step p{font-size:.92rem;color:#999;margin:0;font-family:'Segoe UI',sans-serif}
+.tip-box{background:#0a1a0a;border-left:4px solid #00AA66;padding:20px 24px;border-radius:0 10px 10px 0;margin:28px 0}
+.tip-label{font-size:.72rem;color:#00AA66;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-family:'Segoe UI',sans-serif}
+.tip-box p{color:#aaa;margin:0;font-size:.95rem}
+.faq-item{border-bottom:1px solid #1a1a1a;padding:20px 0}
+.faq-q{font-size:1.05rem;font-weight:600;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'Segoe UI',sans-serif}
+.faq-q::after{content:'▼';font-size:.8rem;color:#00AA66;transition:transform .2s}
+.faq-item.open .faq-q::after{transform:rotate(180deg)}
+.faq-a{font-size:.92rem;color:#999;padding-top:12px;display:none;font-family:'Segoe UI',sans-serif;line-height:1.7}
+.faq-item.open .faq-a{display:block}
+.cta-section{background:#0a1a0a;border:2px solid #00AA66;border-radius:16px;padding:48px;text-align:center;max-width:700px;margin:60px auto}
+.cta-section h2{color:#00AA66;font-size:1.8rem;margin-bottom:14px;font-family:'Segoe UI',sans-serif}
+.cta-section p{color:#aaa;margin-bottom:28px;font-size:1rem;font-family:'Segoe UI',sans-serif}
+.text-size-bar{position:fixed;bottom:20px;right:20px;background:#141414;border:1px solid #2a2a2a;border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:10px;z-index:999;font-family:'Segoe UI',sans-serif}
+.text-size-bar span{font-size:.75rem;color:#666}
+.size-btn{background:#1a1a1a;border:1px solid #2a2a2a;color:#aaa;width:32px;height:32px;border-radius:6px;cursor:pointer;font-size:1rem;font-family:inherit}
+.size-btn:hover{border-color:#00AA66;color:#00AA66}
+footer{text-align:center;padding:40px;color:#444;border-top:1px solid #111;font-size:.9rem;font-family:'Segoe UI',sans-serif}
+footer a{color:#00AA66;text-decoration:none}
+.path-card{background:#141414;border:2px solid #1a1a1a;border-radius:14px;padding:24px 28px;margin-bottom:14px;display:flex;align-items:center;gap:20px;text-decoration:none;color:inherit;transition:border-color .2s}
+.path-card:hover{border-color:#00AA66}
+.path-num{background:#00AA66;color:#fff;font-weight:900;font-size:1.1rem;min-width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Segoe UI',sans-serif;flex-shrink:0}
+.path-card h3{font-size:1.05rem;font-weight:700;margin:0 0 4px;color:#fff;font-family:'Segoe UI',sans-serif}
+.path-card p{font-size:.85rem;color:#888;margin:0;font-family:'Segoe UI',sans-serif}
+.warning-box{background:#1a0a0a;border-left:4px solid #cc4444;padding:20px 24px;border-radius:0 10px 10px 0;margin:28px 0}
+.warning-label{font-size:.72rem;color:#cc4444;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-family:'Segoe UI',sans-serif}
+.warning-box p{color:#bbb;margin:0;font-size:.95rem}
+.tool-card{background:#141414;border:1px solid #1a1a1a;border-radius:14px;padding:24px;margin-bottom:16px}
+.tool-card h3{font-size:1.1rem;font-weight:700;margin:0 0 8px;color:#fff;font-family:'Segoe UI',sans-serif}
+.tool-card p{font-size:.92rem;color:#999;margin:0 0 12px;font-family:'Segoe UI',sans-serif}
+.tool-link{display:inline-block;background:#00AA66;color:#fff;font-weight:700;padding:10px 22px;border-radius:8px;text-decoration:none;font-size:.9rem;font-family:'Segoe UI',sans-serif}
+.glossary-item{border-bottom:1px solid #1a1a1a;padding:16px 0}
+.glossary-term{font-size:1.05rem;font-weight:700;color:#00AA66;font-family:'Segoe UI',sans-serif;margin-bottom:4px}
+.glossary-def{font-size:.95rem;color:#ccc;font-family:'Segoe UI',sans-serif;line-height:1.6}
+.prompt-example{background:#141414;border:1px solid #1a1a1a;border-radius:10px;padding:16px 20px;margin-bottom:12px;font-family:'Segoe UI',sans-serif;font-size:.92rem;color:#ccc;cursor:pointer;transition:border-color .2s}
+.prompt-example:hover{border-color:#00AA66;color:#fff}
+.next-btn{display:inline-block;background:#141414;border:2px solid #00AA66;color:#00AA66;font-size:1rem;font-weight:700;padding:14px 32px;border-radius:10px;text-decoration:none;font-family:'Segoe UI',sans-serif;transition:background .2s,color .2s;margin-top:20px}
+.next-btn:hover{background:#00AA66;color:#fff}
+</style>
+
+</head>
+<body>
+<nav>
+  <a class="logo" href="/beginners/">AI for Beginners</a>
+  <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+    <a class="nav-home" href="/">Full Site</a>
+    <a class="nav-home" href="/beginners/what-is-ai/">What is AI?</a>
+    <a class="nav-home" href="/beginners/chatgpt-for-beginners/">ChatGPT Guide</a>
+    <a class="nav-home" href="/beginners/ask-ai/">Ask AI Anything</a>
+    <a class="nav-cta" href="https://skool.com/aiguerrilla">Free Community</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>What is <span>Artificial Intelligence</span>?</h1>
+  <p class="hero-subtitle">A simple, friendly explanation for anyone who's never used AI before. No tech background needed — just curiosity.</p>
+</div>
+
+<div class="section">
+  <h3>Welcome to the World of AI</h3>
+<p>Imagine having a knowledgeable assistant by your side, helping you with various tasks and making your life easier. This is what Artificial Intelligence, or AI, is all about. AI is like a smart computer program that can think and learn like a human being, but much faster and more accurately. It's designed to assist and augment human capabilities, making our lives more convenient and enjoyable. You might be surprised to know that you're already using AI in your daily life, even if you're not aware of it.</p>
+
+<h3>AI in Daily Life</h3>
+<p>Let's take a look at some examples of AI that you might be familiar with. Have you ever noticed how your phone or computer can autocorrect your spelling mistakes? That's AI at work. Or, have you ever wondered how Netflix recommends movies and TV shows that you might like? That's AI too. It's analyzing your viewing history and preferences to suggest new content that you'll enjoy. Even GPS navigation systems like Google Maps use AI to provide you with the most efficient route to your destination. These are just a few examples of how AI is already integrated into our daily lives, making things easier and more convenient for us.</p>
+
+<h3>What AI Can and Cannot Do</h3>
+<p>So, what can AI do, and what are its limitations? AI can process vast amounts of data, recognize patterns, and make decisions based on that data. It can also learn from experience and improve its performance over time. However, AI is not a replacement for human intelligence and common sense. It can't think creatively or make decisions that require empathy and emotional understanding. AI is best at performing repetitive tasks, analyzing data, and providing insights, but it's not a substitute for human judgment and decision-making.</p>
+
+<h3>Is AI Scary?</h3>
+<p>Some people might find AI intimidating or even scary, but there's no need to be afraid. AI is designed to assist and augment human capabilities, not replace them. It's a tool that can help us with various tasks, freeing up our time and energy for more important things. Think of AI like a very smart and helpful robot that can perform tasks for you, but it's still a machine that needs to be programmed and controlled by humans. AI is not capable of thinking or acting on its own, and it's not a threat to human existence. In fact, AI has the potential to greatly improve our lives, from healthcare and education to transportation and entertainment.</p>
+
+<h3>Real Examples of AI</h3>
+<p>Let's take a look at some real examples of AI that you might be familiar with. ChatGPT is a language model that can have conversations with you, answering your questions and providing information on a wide range of topics. Siri and Alexa are virtual assistants that can perform tasks for you, from setting reminders to playing music. Google Maps is a navigation system that uses AI to provide you with the most efficient route to your destination. These are just a few examples of how AI is being used in real-world applications, making our lives easier and more convenient.</p>
+
+<h3>How AI is Different from a Google Search</h3>
+<p>Some people might think that AI is just like a Google search, but it's not. When you do a Google search, you're searching for information that's already available on the internet. AI, on the other hand, can generate new information, answer questions, and even create content for you. AI can also learn from experience and improve its performance over time, whereas a Google search is just a static search result. Think of AI like a knowledgeable assistant that can help you with your questions and tasks, whereas a Google search is more like looking up information in a library. AI is a much more interactive and dynamic tool that can provide you with personalized assistance and insights.</p>
+
+<h3>Conclusion</h3>
+<p>In conclusion, AI is a powerful tool that can assist and augment human capabilities, making our lives easier and more convenient. It's already integrated into our daily lives, from autocorrect and Netflix recommendations to GPS navigation systems. AI is not scary, but rather a helpful technology that can improve our lives in many ways. With real examples like ChatGPT, Siri, Alexa, and Google Maps, we can see how AI is being used in real-world applications to make our lives better. So, don't be afraid of AI – instead, embrace it and explore its many possibilities. Who knows, you might just discover a new world of convenience and enjoyment that you never thought possible.</p>
+
+  <div class="tip-box">
+    <div class="tip-label">💡 A Helpful Way to Think About It</div>
+    <p>Think of AI like a very well-read friend who never gets tired of answering questions. They've read millions of books, articles, and websites — and they can explain anything in simple terms, help you write a letter, suggest a recipe, or answer your medical questions. And they're available any time of day, for free.</p>
+  </div>
+
+  <h3>Your First AI Conversation — 3 Simple Steps</h3>
+  <ul class="steps">
+    <li class="step">
+      <h4>Open your web browser</h4>
+      <p>On your computer, tablet, or phone — open Chrome, Firefox, Safari, or Edge. This is the same program you use to visit websites.</p>
+    </li>
+    <li class="step">
+      <h4>Go to chat.openai.com</h4>
+      <p>Type "chat.openai.com" in the address bar at the top and press Enter. This takes you to ChatGPT — one of the most popular free AI tools.</p>
+    </li>
+    <li class="step">
+      <h4>Type a question and press Enter</h4>
+      <p>Try something simple: "What's a good recipe for chicken soup?" or "Help me write a thank you note to my neighbor." Then press Enter or click the Send button. That's it — you're using AI!</p>
+    </li>
+  </ul>
+
+  <div class="tip-box">
+    <div class="tip-label">✅ Remember This</div>
+    <p>AI is just a tool — like a calculator or a microwave. It does what you ask it to do. You are always in control. You can ask, change your mind, ask again, or just close the window. Nothing bad will happen if you "do it wrong."</p>
+  </div>
+
+  <div style="margin-top:40px;text-align:center">
+    <p style="color:#888;font-size:1rem;font-family:'Segoe UI',sans-serif">Ready for your next step?</p>
+    <a href="/beginners/chatgpt-for-beginners/" class="next-btn">Next: ChatGPT Step-by-Step Guide &rarr;</a>
+  </div>
+</div>
+
+<div style="background:#0a0a0a;border-top:1px solid #1a1a1a;padding:32px 20px;text-align:center;font-family:'Segoe UI',sans-serif">
+  <p style="color:#555;font-size:.95rem;margin-bottom:8px">Free community where you can ask questions and learn at your own pace</p>
+  <a href="https://skool.com/aiguerrilla" style="color:#00AA66;text-decoration:none;font-size:1rem;font-weight:600">Join free at skool.com/aiguerrilla &rarr;</a>
+</div>
+<footer>
+  <p>&copy; 2026 <a href="https://aiguerrilla.net">AI Guerrilla</a> &mdash; 
+  <a href="/beginners/">Beginners Home</a> &mdash; 
+  <a href="/beginners/staying-safe/">Stay Safe Online</a> &mdash;
+  <a href="https://skool.com/aiguerrilla">Free Community</a></p>
+</footer>
+
+<div class="text-size-bar">
+  <span>Text size:</span>
+  <button class="size-btn" onclick="changeSize(-1)" title="Smaller text">A−</button>
+  <button class="size-btn" onclick="changeSize(1)" title="Larger text">A+</button>
+</div>
+<script>
+let fontSize = parseInt(localStorage.getItem('beginnerFontSize') || '19');
+document.body.style.fontSize = fontSize + 'px';
+function changeSize(dir) {
+  fontSize = Math.max(16, Math.min(28, fontSize + dir * 2));
+  document.body.style.fontSize = fontSize + 'px';
+  localStorage.setItem('beginnerFontSize', fontSize);
+}
+</script>
+</body>
+</html>
