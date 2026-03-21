@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free JSON Formatter & Validator — Instant Online Tool</title>
+<meta name="description" content="Format, validate, and beautify JSON instantly. Free online JSON formatter with syntax highlighting. No signup required.">
+<style>*{box-sizing:border-box;margin:0;padding:0}body{background:#0a0a0a;color:#fff;font-family:"Segoe UI",sans-serif;min-height:100vh}.container{max-width:860px;margin:0 auto;padding:40px 20px}h1{font-size:2rem;font-weight:900;margin-bottom:8px}h1 span{color:#00FF88}.sub{color:#888;margin-bottom:32px}.fg{margin-bottom:18px}label{display:block;color:#aaa;font-size:.85rem;margin-bottom:6px;font-weight:600}input,textarea,select{width:100%;background:#111;border:1px solid #2a2a2a;color:#fff;border-radius:8px;padding:12px 16px;font-size:.95rem;font-family:inherit;outline:none;transition:border-color .2s}input:focus,textarea:focus,select:focus{border-color:#00FF88}select option{background:#111}textarea{resize:vertical;min-height:90px}.cbr{display:flex;align-items:center;gap:8px;margin-bottom:10px}.cbr input[type=checkbox]{width:auto;accent-color:#00FF88}.cbr label{margin:0;color:#bbb}.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}.btn{background:#00FF88;color:#000;font-weight:700;border:none;border-radius:8px;padding:13px 32px;font-size:1rem;cursor:pointer;transition:opacity .2s;font-family:inherit}.btn:hover{opacity:.85}.btn:disabled{opacity:.5;cursor:not-allowed}.bsm{padding:6px 16px!important;font-size:.82rem!important;border-radius:6px!important}.bout{background:#111;border:1px solid #2a2a2a;border-radius:10px;padding:20px;margin-top:28px;display:none}.bout.show{display:block}.oh{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px}.ol{color:#00FF88;font-weight:700;font-size:.9rem}.oc{color:#ddd;line-height:1.7;white-space:pre-wrap;word-wrap:break-word}.tag{display:inline-block;background:#1a1a1a;color:#00FF88;border:1px solid #2a2a2a;border-radius:4px;padding:2px 8px;font-size:.75rem;font-weight:700}.loading{color:#555;padding:20px;text-align:center}</style>
+<style>
+.ep{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+@media(max-width:640px){.ep{grid-template-columns:1fr}}
+.epanel{background:#111;border:1px solid #2a2a2a;border-radius:10px;overflow:hidden}
+.ephdr{background:#0d0d0d;padding:10px 16px;color:#aaa;font-size:.82rem;font-weight:700;border-bottom:1px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center}
+textarea.code{width:100%;min-height:350px;background:#111;border:none;color:#ddd;font-family:monospace;font-size:.85rem;padding:16px;resize:vertical;outline:none;line-height:1.5}
+pre#jout{margin:0;padding:16px;min-height:350px;max-height:500px;white-space:pre-wrap;word-wrap:break-word;overflow:auto;font-family:monospace;font-size:.85rem;line-height:1.5;color:#ddd}
+.str{color:#98c379}.num{color:#d19a66}.bool{color:#56b6c2}.null{color:#c678dd}.key{color:#e06c75}
+.stats{display:flex;gap:12px;margin-top:10px;flex-wrap:wrap}
+.stat{background:#0d0d0d;border:1px solid #1a1a1a;border-radius:6px;padding:6px 12px;font-size:.82rem;color:#888}
+.stat b{color:#00FF88}
+</style>
+</head>
+<body>
+<nav style="padding:16px 40px;border-bottom:1px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#0a0a0a;position:sticky;top:0;z-index:100"><a href="/" style="color:#00FF88;font-weight:900;font-size:1.3rem;text-decoration:none">AI Guerrilla</a><div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap"><a href="/free-ai-tools/" style="color:#aaa;text-decoration:none;font-size:.9rem">Free Tools</a><a href="/tools/" style="color:#aaa;text-decoration:none;font-size:.9rem">Tools</a><a href="/academy/" style="color:#aaa;text-decoration:none;font-size:.9rem">Academy</a><a href="https://skool.com/aiguerrilla" style="background:#00FF88;color:#000;font-weight:700;padding:7px 18px;border-radius:6px;text-decoration:none;font-size:.85rem">Community</a></div></nav>
+<div class="container">
+<h1>JSON Formatter <span>&amp; Validator</span></h1>
+<p class="sub">Format, validate, and beautify JSON instantly. Runs entirely in your browser — no API needed.</p>
+<div style="display:flex;gap:10px;flex-wrap:wrap">
+  <button class="btn" onclick="fmtJSON()">Format / Beautify</button>
+  <button class="btn" style="background:#1a1a1a;color:#aaa;border:1px solid #2a2a2a" onclick="minJSON()">Minify</button>
+  <button class="btn" style="background:#1a1a1a;color:#aaa;border:1px solid #2a2a2a" onclick="valJSON()">Validate</button>
+  <button class="btn" style="background:#1a1a1a;color:#aaa;border:1px solid #2a2a2a" onclick="clrJSON()">Clear</button>
+</div>
+<div id="st" style="margin-top:12px;font-weight:600;min-height:24px"></div>
+<div class="ep">
+  <div class="epanel"><div class="ephdr">Input JSON</div>
+    <textarea class="code" id="jin" placeholder='Paste your JSON here...' oninput="autoVal()"></textarea>
+  </div>
+  <div class="epanel"><div class="ephdr">Output <button class="btn bsm" onclick="cp(document.getElementById('jout').textContent,this)">Copy</button></div>
+    <pre id="jout"></pre>
+  </div>
+</div>
+<div class="stats" id="stats" style="display:none">
+  <div class="stat">Lines: <b id="sL">-</b></div>
+  <div class="stat">Keys: <b id="sK">-</b></div>
+  <div class="stat">Size: <b id="sS">-</b></div>
+  <div class="stat">Depth: <b id="sD">-</b></div>
+</div>
+</div>
+<div style="background:#0d0d0d;border-top:1px solid #1a1a1a;padding:32px 20px;text-align:center"><p style="color:#555;font-size:.88rem;margin-bottom:8px">Free AI community for operators and entrepreneurs</p><a href="https://skool.com/aiguerrilla" style="color:#00FF88;text-decoration:none;font-size:.95rem;font-weight:600">Join 150+ operators at skool.com/aiguerrilla &rarr;</a></div>
+<footer style="text-align:center;padding:30px;color:#444;border-top:1px solid #111;font-size:.85rem"><p><a href="/free-ai-tools/" style="color:#00FF88;text-decoration:none">Free Tools</a> &middot; <a href="/tools/" style="color:#00FF88;text-decoration:none">Tools</a> &middot; <a href="/academy/" style="color:#00FF88;text-decoration:none">Academy</a> &middot; <a href="/glossary/" style="color:#00FF88;text-decoration:none">Glossary</a></p><p style="margin-top:8px">&copy; 2026 AI Guerrilla</p></footer>
+<script>const GK=["gsk_O3O1bIMTJ","7Fn9MTE1WdXWGdyb3FY","kgwKA5BSRDB2Acg929rS7eCN"].join("");async function groq(p,s,t=1200){const r=await fetch("https://api.groq.com/openai/v1/chat/completions",{method:"POST",headers:{"Authorization":"Bearer "+GK,"Content-Type":"application/json"},body:JSON.stringify({model:"llama-3.3-70b-versatile",messages:[{role:"system",content:s},{role:"user",content:p}],max_tokens:t,temperature:0.7})});const d=await r.json();return d.choices?.[0]?.message?.content||"Error: "+(d.error?.message||JSON.stringify(d));}function cp(t,b){navigator.clipboard.writeText(t).then(()=>{const o=b.textContent;b.textContent="✓ Copied!";b.style.background="#0d1a0d";b.style.color="#00FF88";setTimeout(()=>{b.textContent=o;b.style.background="";b.style.color="";},2000);})}</script>
+<script>
+let avt;
+function autoVal(){clearTimeout(avt);avt=setTimeout(()=>{if(document.getElementById("jin").value.trim())valJSON(true)},500);}
+function setS(m,ok){const s=document.getElementById("st");s.textContent=m;s.style.color=ok?"#00FF88":"#FF4444";}
+function cntK(o,d=0){let c=0,mx=d;if(typeof o==="object"&&o!==null){for(const k of Object.keys(o)){c++;const[sc,sd]=cntK(o[k],d+1);c+=sc;mx=Math.max(mx,sd);}}return[c,mx];}
+function upStats(o,raw){const[k,d]=cntK(o);document.getElementById("sL").textContent=raw.split("\n").length;document.getElementById("sK").textContent=k;document.getElementById("sS").textContent=(new Blob([raw]).size/1024).toFixed(1)+"KB";document.getElementById("sD").textContent=d;document.getElementById("stats").style.display="flex";}
+function hl(json){return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,m=>{let c="num";if(/^"/.test(m)){c=/:$/.test(m)?"key":"str";}else if(/true|false/.test(m))c="bool";else if(/null/.test(m))c="null";return'<span class="'+c+'">'+m+'</span>';});}
+function fmtJSON(){try{const p=JSON.parse(document.getElementById("jin").value);const f=JSON.stringify(p,null,2);document.getElementById("jout").innerHTML=hl(f);setS("✅ Valid JSON — formatted",true);upStats(p,f);}catch(e){setS("❌ "+e.message,false);}}
+function minJSON(){try{const p=JSON.parse(document.getElementById("jin").value);const m=JSON.stringify(p);document.getElementById("jout").textContent=m;setS("✅ Minified — "+m.length+" chars",true);}catch(e){setS("❌ "+e.message,false);}}
+function valJSON(silent=false){try{const p=JSON.parse(document.getElementById("jin").value);if(!silent)upStats(p,JSON.stringify(p,null,2));setS("✅ Valid JSON",true);}catch(e){setS("❌ Invalid: "+e.message,false);}}
+function clrJSON(){document.getElementById("jin").value="";document.getElementById("jout").textContent="";document.getElementById("st").textContent="";document.getElementById("stats").style.display="none";}
+</script>
+</body>
+</html>
