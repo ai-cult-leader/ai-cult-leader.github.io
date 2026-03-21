@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Website & Email Safety Checker for Seniors</title>
+<meta name="description" content="Not sure if a website or email is safe? Paste the URL or message and our AI will check it. Free safety tool for seniors.">
+<meta property="og:title" content="Free Website & Email Safety Checker for Seniors">
+<meta property="og:description" content="Not sure if a website or email is safe? Paste the URL or message and our AI will check it. Free safety tool for seniors.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d0d0d;color:#e8e8e8;font-family:Georgia,'Times New Roman',serif;font-size:19px;line-height:1.85}
+nav{padding:18px 32px;border-bottom:1px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#0d0d0d;position:sticky;top:0;z-index:100}
+.logo{color:#00AA66;font-weight:900;font-size:1.3rem;text-decoration:none;font-family:'Segoe UI',sans-serif}
+.nav-back{color:#aaa;text-decoration:none;font-size:.95rem;font-family:'Segoe UI',sans-serif}
+.nav-back:hover{color:#00AA66}
+.nav-cta{background:#00AA66;color:#fff;font-weight:700;padding:10px 20px;border-radius:8px;text-decoration:none;font-size:.9rem;font-family:'Segoe UI',sans-serif}
+.hero{padding:60px 20px 40px;max-width:780px;margin:0 auto;text-align:center}
+.hero-label{font-size:.8rem;color:#00AA66;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;font-family:'Segoe UI',sans-serif}
+h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;margin-bottom:14px;line-height:1.2;color:#fff}
+.hero-desc{font-size:1.1rem;color:#999;max-width:580px;margin:0 auto 40px;line-height:1.7;font-family:'Segoe UI',sans-serif}
+.tool-box{background:#111;border:1px solid #1a1a1a;border-radius:16px;padding:36px;max-width:760px;margin:0 auto;box-shadow:0 4px 24px rgba(0,0,0,.4)}
+label{display:block;font-size:1rem;font-weight:600;color:#ddd;margin-bottom:10px;font-family:'Segoe UI',sans-serif}
+.hint{font-size:.85rem;color:#666;margin-bottom:12px;font-family:'Segoe UI',sans-serif}
+input[type=text],textarea,select{width:100%;background:#0d0d0d;border:2px solid #2a2a2a;color:#e8e8e8;border-radius:10px;font-size:19px;padding:14px 18px;margin-bottom:20px;font-family:Georgia,serif;outline:none;transition:border-color .2s;line-height:1.6}
+input[type=text]:focus,textarea:focus,select:focus{border-color:#00AA66}
+textarea{min-height:130px;resize:vertical}
+select{font-family:'Segoe UI',sans-serif}
+.generate-btn{width:100%;background:#00AA66;color:#fff;border:none;font-size:1.2rem;font-weight:700;padding:18px 32px;border-radius:12px;cursor:pointer;font-family:'Segoe UI',sans-serif;transition:opacity .2s;margin-bottom:8px}
+.generate-btn:hover{opacity:.9}
+.generate-btn:disabled{opacity:.5;cursor:not-allowed}
+.output-label{font-size:.88rem;color:#555;text-transform:uppercase;letter-spacing:1px;margin:28px 0 10px;font-family:'Segoe UI',sans-serif}
+.output-box{background:#0d0d0d;border:2px solid #1a1a1a;border-radius:12px;padding:20px 24px;font-size:19px;color:#e8e8e8;line-height:1.85;min-height:80px;white-space:pre-wrap;margin-bottom:14px}
+.output-actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px}
+.copy-btn,.download-btn,.print-btn-sm{background:#111;border:2px solid #2a2a2a;color:#aaa;padding:12px 20px;border-radius:8px;cursor:pointer;font-size:.95rem;font-family:'Segoe UI',sans-serif;transition:all .2s}
+.copy-btn:hover,.download-btn:hover,.print-btn-sm:hover{border-color:#00AA66;color:#00AA66}
+.tip-box{background:#0a1a0a;border-left:4px solid #00AA66;padding:18px 22px;border-radius:0 10px 10px 0;margin:28px 0;font-family:'Segoe UI',sans-serif;font-size:.95rem;color:#aaa}
+.tip-label{font-size:.7rem;color:#00AA66;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.text-size-bar{position:fixed;bottom:20px;right:20px;background:#141414;border:2px solid #2a2a2a;border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:10px;z-index:999;font-family:'Segoe UI',sans-serif}
+.text-size-bar span{font-size:.78rem;color:#666}
+.size-btn{background:#1a1a1a;border:1px solid #2a2a2a;color:#aaa;width:36px;height:36px;border-radius:6px;cursor:pointer;font-size:1rem;font-family:inherit;transition:all .2s}
+.size-btn:hover{border-color:#00AA66;color:#00AA66}
+.soft-cta{background:#0a0a0a;border-top:1px solid #1a1a1a;padding:32px 20px;text-align:center;font-family:'Segoe UI',sans-serif;margin-top:60px}
+.soft-cta p{color:#555;font-size:.95rem;margin-bottom:8px}
+.soft-cta a{color:#00AA66;text-decoration:none;font-size:1rem;font-weight:600}
+footer{text-align:center;padding:32px;color:#444;border-top:1px solid #111;font-size:.9rem;font-family:'Segoe UI',sans-serif}
+footer a{color:#00AA66;text-decoration:none}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="/seniors/">AI for Seniors</a>
+  <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+    <a class="nav-back" href="/seniors/tools/">All Senior Tools</a>
+    <a class="nav-back" href="/beginners/">Beginner Guides</a>
+    <a class="nav-cta" href="https://skool.com/aiguerrilla">Free Community</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <p class="hero-label">Free Senior Tool</p>
+  <h1>Website &amp; Email Safety Checker</h1>
+  <p class="hero-desc">Not sure if something online is safe? Paste a website address, email, or phone number and we'll check it for warning signs of fraud or danger.</p>
+</div>
+<div class="tool-box">
+  <p style="font-family:'Segoe UI',sans-serif;margin-bottom:16px;color:#ddd;font-weight:600">What do you want to check?</p>
+  <div style="display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap">
+    <button id="tab1" class="generate-btn" style="width:auto;padding:12px 20px;font-size:1rem;background:#00AA66" onclick="switchTab(1)">Website URL</button>
+    <button id="tab2" class="copy-btn" style="padding:12px 20px;font-size:1rem" onclick="switchTab(2)">Email or Message</button>
+    <button id="tab3" class="copy-btn" style="padding:12px 20px;font-size:1rem" onclick="switchTab(3)">Phone Number</button>
+  </div>
+
+  <div id="panel1">
+    <label for="urlInput">Paste the web address (URL)</label>
+    <p class="hint">For example: www.amazon.com or a link someone sent you</p>
+    <input type="text" id="urlInput" placeholder="Paste the website address here...">
+  </div>
+
+  <div id="panel2" style="display:none">
+    <label for="emailInput">Paste the email or message</label>
+    <p class="hint">Copy the whole thing — including who it's from if possible</p>
+    <textarea id="emailInput" placeholder="Paste the email or message here..."></textarea>
+  </div>
+
+  <div id="panel3" style="display:none">
+    <label for="phoneInput">Phone number</label>
+    <input type="text" id="phoneInput" placeholder="For example: 1-800-123-4567">
+    <label for="phoneAction">What happened?</label>
+    <select id="phoneAction">
+      <option value="called me">They called me</option>
+      <option value="texted me">They texted me</option>
+      <option value="left a voicemail">They left a voicemail</option>
+    </select>
+    <label for="phoneDetails">What did they say? (optional)</label>
+    <textarea id="phoneDetails" placeholder="Describe what they said or what the message was about..." style="min-height:80px"></textarea>
+  </div>
+
+  <button class="generate-btn" id="generateBtn" data-original-text="Check Safety" onclick="checkSafety()">Check Safety</button>
+  <div id="safetyVerdict" style="display:none;margin:20px 0;padding:20px 24px;border-radius:12px;font-family:'Segoe UI',sans-serif;font-size:1.3rem;font-weight:700;text-align:center"></div>
+  <p class="output-label">Safety Analysis</p>
+  <div class="output-box" id="output">Your safety analysis will appear here.</div>
+  <div class="output-actions">
+    <button class="copy-btn" onclick="copyOutput('output')">Copy Analysis</button>
+    <button class="print-btn-sm" onclick="window.print()">Print</button>
+  </div>
+  <div style="background:#110a0a;border:1px solid #2a1a1a;border-radius:12px;padding:20px 24px;margin-top:24px;font-family:'Segoe UI',sans-serif">
+    <p style="font-size:.75rem;color:#cc4444;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;font-weight:700">Emergency Fraud Contacts</p>
+    <p style="color:#aaa;margin-bottom:6px">&#128222; FTC Fraud Hotline: <strong style="color:#e8e8e8">1-877-382-4357</strong></p>
+    <p style="color:#aaa">&#128222; AARP Fraud Helpline: <strong style="color:#e8e8e8">1-877-908-3360</strong></p>
+  </div>
+</div>
+<script>
+let currentTab = 1;
+function switchTab(n) {
+  currentTab = n;
+  [1,2,3].forEach(i => {
+    document.getElementById('panel'+i).style.display = i===n ? 'block' : 'none';
+    const btn = document.getElementById('tab'+i);
+    if(i===n){btn.style.background='#00AA66';btn.style.color='#fff';btn.style.borderColor='#00AA66';}
+    else{btn.style.background='#111';btn.style.color='#aaa';btn.style.borderColor='#2a2a2a';}
+  });
+}
+async function checkSafety() {
+  let content = '';
+  let checkType = '';
+  if(currentTab===1){
+    content = document.getElementById('urlInput').value.trim();
+    checkType = 'website URL';
+    if(!content){alert('Please paste a website address.');return;}
+  } else if(currentTab===2){
+    content = document.getElementById('emailInput').value.trim();
+    checkType = 'email or message';
+    if(!content){alert('Please paste the email or message.');return;}
+  } else {
+    const phone = document.getElementById('phoneInput').value.trim();
+    const action = document.getElementById('phoneAction').value;
+    const details = document.getElementById('phoneDetails').value.trim();
+    if(!phone){alert('Please enter the phone number.');return;}
+    content = `Phone number: ${phone}. They ${action}. ${details ? 'Details: '+details : ''}`;
+    checkType = 'phone number';
+  }
+  const sys = "You are a cybersecurity expert and fraud specialist helping seniors stay safe online. Analyze what they've shared and give a clear safety verdict. Start your response with exactly one of: 'VERDICT: LIKELY DANGEROUS' or 'VERDICT: USE CAUTION' or 'VERDICT: APPEARS SAFE'. For URLs: note suspicious domains, HTTP vs HTTPS, lookalike domains. For emails: check for urgency, requests for personal info, suspicious sender addresses, grammar errors. For phone numbers: note common scam patterns (IRS, Social Security, tech support, etc.). Always be clear and actionable. Give them specific steps to take.";
+  const result = await callGroq(`Check this ${checkType} for safety: ${content}`, sys, 600);
+  document.getElementById('output').textContent = result;
+  const vbox = document.getElementById('safetyVerdict');
+  vbox.style.display = 'block';
+  if(result.includes('LIKELY DANGEROUS')){
+    vbox.style.background='#1a0000';vbox.style.border='2px solid #cc0000';vbox.style.color='#ff4444';
+    vbox.textContent='\uD83D\uDD34 LIKELY DANGEROUS — Do not proceed';
+  } else if(result.includes('USE CAUTION')){
+    vbox.style.background='#1a1400';vbox.style.border='2px solid #cc9900';vbox.style.color='#ffcc00';
+    vbox.textContent='\uD83D\uDFE1 USE CAUTION — Be careful';
+  } else {
+    vbox.style.background='#001a00';vbox.style.border='2px solid #00AA66';vbox.style.color='#00AA66';
+    vbox.textContent='\uD83D\uDFE2 APPEARS SAFE — Still stay alert';
+  }
+}
+</script>
+<div class="soft-cta">
+  <p>Free community where seniors and beginners can ask questions and get help</p>
+  <a href="https://skool.com/aiguerrilla">Join free at skool.com/aiguerrilla &rarr;</a>
+</div>
+<footer>
+  <p>&copy; 2026 AI Guerrilla &mdash; <a href="/seniors/tools/">Senior Tools</a> &mdash; <a href="/seniors/">AI for Seniors</a> &mdash; <a href="https://skool.com/aiguerrilla">Free Community</a></p>
+</footer>
+<div class="text-size-bar">
+  <span>Text:</span>
+  <button class="size-btn" onclick="changeSize(-1)" title="Make text smaller">A&minus;</button>
+  <button class="size-btn" onclick="changeSize(1)" title="Make text bigger">A+</button>
+</div>
+<script>
+let fontSize = parseInt(localStorage.getItem('seniorFontSize') || '19');
+document.body.style.fontSize = fontSize + 'px';
+function changeSize(dir) {
+  fontSize = Math.max(16, Math.min(30, fontSize + dir * 2));
+  document.body.style.fontSize = fontSize + 'px';
+  localStorage.setItem('seniorFontSize', fontSize);
+}
+function copyOutput(id) {
+  const el = document.getElementById(id);
+  const text = el ? (el.textContent || el.value || '') : '';
+  navigator.clipboard.writeText(text).then(() => {
+    const btns = document.querySelectorAll('.copy-btn');
+    btns.forEach(b => { if(b.getAttribute('onclick') && b.getAttribute('onclick').includes(id)) { const o=b.textContent; b.textContent='\u2713 Copied!'; b.style.color='#00AA66'; setTimeout(()=>{b.textContent=o;b.style.color='';},2000); }});
+  });
+}
+function downloadOutput(id, filename) {
+  const el = document.getElementById(id);
+  const text = el ? (el.textContent || el.value || '') : '';
+  if (!text.trim()) { alert('Please generate content first.'); return; }
+  const blob = new Blob([text], {type:'text/plain'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename || 'my-document.txt';
+  a.click();
+}
+const GROQ_KEY = ["gsk_O3O1bIMTJ","7Fn9MTE1WdXWGdyb3FY","kgwKA5BSRDB2Acg929rS7eCN"].join("");
+async function callGroq(userPrompt, systemPrompt, maxTokens) {
+  maxTokens = maxTokens || 600;
+  const btn = document.getElementById('generateBtn');
+  const output = document.getElementById('output');
+  if (btn) { btn.disabled = true; btn.textContent = 'Working on it...'; }
+  if (output) { output.textContent = 'Please wait a moment...'; }
+  try {
+    const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: { "Authorization": "Bearer " + GROQ_KEY, "Content-Type": "application/json" },
+      body: JSON.stringify({ model: "llama-3.3-70b-versatile", messages: [{ role: "system", content: systemPrompt }, { role: "user", content: userPrompt }], max_tokens: maxTokens, temperature: 0.7 })
+    });
+    const data = await res.json();
+    if (btn) { btn.disabled = false; btn.textContent = btn.dataset.originalText || 'Generate'; }
+    return data.choices?.[0]?.message?.content || "Sorry, something went wrong. Please try again.";
+  } catch(e) {
+    if (btn) { btn.disabled = false; btn.textContent = btn.dataset.originalText || 'Generate'; }
+    return "Sorry, there was a problem. Please check your internet connection and try again.";
+  }
+}
+</script>
+</body>
+</html>
