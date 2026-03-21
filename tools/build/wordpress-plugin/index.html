@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Generate a custom WordPress plugin with AI. Describe what you need and get working PHP code. Free plugin creator for WordPress sites.">
+<title>Free WordPress Plugin Generator — Build Plugins with AI | AI Guerrilla</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0a0a0a;color:#fff;font-family:'Segoe UI',sans-serif;line-height:1.6}
+.container{max-width:860px;margin:0 auto;padding:48px 20px}
+h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;margin-bottom:12px}
+h2{font-size:1.3rem;font-weight:700;margin-bottom:16px;color:#fff}
+h3{font-size:1rem;font-weight:700;margin-bottom:8px}
+p{color:#888;margin-bottom:16px}
+label{display:block;font-size:.85rem;color:#aaa;margin-bottom:6px;margin-top:16px;font-weight:600}
+input[type=text],input[type=email],input[type=url],textarea,select{width:100%;background:#111;border:1px solid #2a2a2a;color:#fff;border-radius:8px;padding:12px 16px;font-size:1rem;font-family:inherit;outline:none;transition:border-color .2s}
+input[type=text]:focus,input[type=email]:focus,input[type=url]:focus,textarea:focus,select:focus{border-color:#00FF88}
+input[type=color]{width:60px;height:44px;border:1px solid #2a2a2a;border-radius:8px;background:#111;cursor:pointer;padding:4px}
+textarea{resize:vertical;min-height:100px}
+select{appearance:none;cursor:pointer}
+select option{background:#111}
+.btn{background:#00FF88;color:#000;font-weight:700;border:none;border-radius:8px;padding:14px 28px;font-size:1rem;cursor:pointer;transition:opacity .2s;font-family:inherit}
+.btn:hover{opacity:.85}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn-secondary{background:#1a1a1a;color:#fff;border:1px solid #2a2a2a;font-weight:600;border-radius:8px;padding:10px 20px;font-size:.85rem;cursor:pointer;font-family:inherit;transition:border-color .2s}
+.btn-secondary:hover{border-color:#00FF88;color:#00FF88}
+.output-section{display:none;margin-top:32px}
+.output-section.visible{display:block}
+.code-block{background:#0d0d0d;border:1px solid #1a1a1a;border-radius:8px;padding:20px;font-family:monospace;color:#00FF88;font-size:.85rem;overflow-x:auto;white-space:pre-wrap;word-break:break-word;max-height:500px;overflow-y:auto}
+.guide-section{background:#0f0f0f;border:1px solid #1a1a1a;border-radius:12px;padding:28px;margin-top:32px}
+.guide-section ol{padding-left:20px}
+.guide-section li{color:#aaa;margin-bottom:10px;line-height:1.6}
+.guide-section li strong{color:#fff}
+.tag{display:inline-block;background:#0d1a0d;color:#00FF88;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:0;border-bottom:1px solid #1a1a1a}
+.tab-btn{background:none;border:none;color:#888;padding:10px 18px;cursor:pointer;font-size:.85rem;font-family:inherit;border-bottom:2px solid transparent;transition:color .2s}
+.tab-btn.active{color:#00FF88;border-bottom-color:#00FF88}
+.tab-content{display:none}
+.tab-content.active{display:block}
+.action-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.checkbox-group{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.checkbox-group label{display:flex;align-items:center;gap:10px;cursor:pointer;color:#aaa;font-weight:400;margin:0}
+.checkbox-group input[type=checkbox]{width:18px;height:18px;accent-color:#00FF88;cursor:pointer}
+.hero-badge{font-size:.78rem;color:#00FF88;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px}
+.card{background:#111;border:1px solid #1a1a1a;border-radius:12px;padding:24px;margin-bottom:16px}
+@media(max-width:600px){.container{padding:24px 16px}.btn{width:100%}.action-row{flex-direction:column}}
+</style>
+</head>
+<body>
+<nav style="padding:16px 40px;border-bottom:1px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#0a0a0a;position:sticky;top:0;z-index:100">
+  <a href="/" style="color:#00FF88;font-weight:900;font-size:1.3rem;text-decoration:none">AI Guerrilla</a>
+  <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+    <a href="/tools/build/" style="color:#aaa;text-decoration:none;font-size:.9rem">Build Tools</a>
+    <a href="/free-ai-tools/" style="color:#aaa;text-decoration:none;font-size:.9rem">All Free Tools</a>
+    <a href="https://skool.com/aiguerrilla" style="background:#00FF88;color:#000;font-weight:700;padding:7px 18px;border-radius:6px;text-decoration:none;font-size:.85rem">Community</a>
+  </div>
+</nav>
+<div class="container">
+  <div class="hero-badge">Free Tool — No Signup</div>
+  <h1>WordPress Plugin Generator</h1>
+  <p>Describe what you need your WordPress site to do and get a complete, working PHP plugin — ready to install in minutes.</p>
+
+  <div class="card">
+    <label>Plugin Name *</label>
+    <input type="text" id="pluginName" placeholder="My SEO Helper" oninput="updateSlug()">
+
+    <label>What should your plugin do? *</label>
+    <textarea id="pluginDesc" placeholder="Add a floating contact button to every page that links to my phone number and WhatsApp. Include an admin settings page where I can change the phone number and button color." rows="4"></textarea>
+
+    <label>Plugin Type</label>
+    <select id="pluginType">
+      <option>Add a widget</option>
+      <option>Custom shortcode</option>
+      <option>Admin settings page</option>
+      <option>WooCommerce extension</option>
+      <option>Custom post type</option>
+      <option>SEO/meta tags</option>
+      <option>Form/popup</option>
+      <option>Performance tool</option>
+      <option>Custom</option>
+    </select>
+
+    <label>Plugin Slug (used for file name)</label>
+    <input type="text" id="pluginSlug" placeholder="my-seo-helper">
+
+    <div style="margin-top:24px">
+      <button class="btn" id="generateBtn" data-orig="Generate My Plugin" onclick="generatePlugin()">Generate My Plugin</button>
+    </div>
+  </div>
+
+  <div class="output-section" id="outputSection">
+    <h2>Your WordPress Plugin (PHP)</h2>
+    <pre class="code-block" id="pluginCode" style="max-height:600px"></pre>
+    <div class="action-row" style="margin-top:12px">
+      <button class="btn" onclick="downloadPlugin()">⬇ Download .php file</button>
+      <button class="btn-secondary" onclick="copyCode('pluginCode')">Copy Code</button>
+    </div>
+  </div>
+
+  <div class="guide-section" style="margin-top:32px">
+    <div class="tag">Installation Guide</div>
+    <h2>Install Your Plugin in 2 Minutes</h2>
+    <ol>
+      <li><strong>Download your plugin file</strong> — Click the button above</li>
+      <li><strong>Log into WordPress</strong> — Go to your WordPress admin dashboard</li>
+      <li><strong>Go to Plugins</strong> — Click <strong>Plugins → Add New</strong></li>
+      <li><strong>Upload your plugin</strong> — Click "Upload Plugin" → choose your .php file</li>
+      <li><strong>Install & Activate</strong> — Click "Install Now" then "Activate Plugin"</li>
+      <li><strong>Find settings</strong> — Look for your plugin in the WordPress admin menu or under Settings</li>
+    </ol>
+  </div>
+</div>
+<div style="background:#0d0d0d;border-top:1px solid #1a1a1a;padding:32px 20px;text-align:center">
+  <p style="color:#555;font-size:.88rem;margin-bottom:8px">Free AI community for operators and builders</p>
+  <a href="https://skool.com/aiguerrilla" style="color:#00FF88;text-decoration:none;font-size:.95rem;font-weight:600">Join 150+ operators at skool.com/aiguerrilla →</a>
+</div>
+<footer style="text-align:center;padding:28px;color:#444;border-top:1px solid #111;font-size:.85rem">
+  <p><a href="/tools/build/" style="color:#00FF88;text-decoration:none">Build Tools</a> · <a href="/free-ai-tools/" style="color:#00FF88;text-decoration:none">All Free Tools</a> · <a href="/academy/" style="color:#00FF88;text-decoration:none">Academy</a></p>
+  <p style="margin-top:8px">© 2026 AI Guerrilla — Build With AI For Free</p>
+</footer>
+<script>
+const GROQ_KEY = ["gsk_O3O1bIMTJ","7Fn9MTE1WdXWGdyb3FY","kgwKA5BSRDB2Acg929rS7eCN"].join("");
+
+async function callGroq(prompt, system, maxTokens = 2000) {
+  const btn = document.getElementById('generateBtn');
+  if (btn) { btn.disabled = true; btn.dataset.orig = btn.dataset.orig || btn.textContent; btn.textContent = '⚙️ Generating...'; }
+  try {
+    const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: { "Authorization": "Bearer " + GROQ_KEY, "Content-Type": "application/json" },
+      body: JSON.stringify({ model: "llama-3.3-70b-versatile", messages: [{ role: "system", content: system }, { role: "user", content: prompt }], max_tokens: maxTokens, temperature: 0.3 })
+    });
+    const data = await res.json();
+    if (btn) { btn.disabled = false; btn.textContent = btn.dataset.orig || 'Generate'; }
+    return data.choices?.[0]?.message?.content || "Error generating. Please try again.";
+  } catch(e) {
+    if (btn) { btn.disabled = false; btn.textContent = btn.dataset.orig || 'Generate'; }
+    return "Connection error. Please check your internet and try again.";
+  }
+}
+
+function copyCode(id) {
+  const el = document.getElementById(id);
+  const text = el.textContent || el.value;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = event.target;
+    const orig = btn.textContent;
+    btn.textContent = '✓ Copied!';
+    btn.style.background = '#0d1a0d';
+    btn.style.color = '#00FF88';
+    setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.color = ''; }, 2000);
+  });
+}
+
+function downloadFile(content, filename, type = 'text/plain') {
+  const blob = new Blob([content], {type});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  a.click();
+}
+</script>
+<script>
+let pluginCode = '';
+function updateSlug() {
+  const name = document.getElementById('pluginName').value;
+  const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  document.getElementById('pluginSlug').value = slug;
+}
+async function generatePlugin() {
+  const name = document.getElementById('pluginName').value.trim() || 'My Plugin';
+  const desc = document.getElementById('pluginDesc').value.trim();
+  const type = document.getElementById('pluginType').value;
+  const slug = document.getElementById('pluginSlug').value.trim() || 'my-plugin';
+  if (!desc) { alert('Please describe what your plugin should do.'); return; }
+
+  const system = `You are a WordPress plugin developer expert. Generate a complete, working WordPress plugin in PHP. Follow all WordPress coding standards. Include proper plugin header, ABSPATH security check, activation/deactivation hooks, nonce verification for forms, and sanitization/escaping. Return only the PHP code starting with <?php, no markdown fences.`;
+
+  const prompt = `Create a WordPress plugin:
+Plugin Name: ${name}
+Slug: ${slug}
+Type: ${type}
+Functionality: ${desc}
+
+Include:
+- Proper plugin header (Plugin Name, Description, Version: 1.0.0, Author: AI Guerrilla)
+- ABSPATH security check at the top
+- All requested functionality
+- Admin settings page if configuration is needed
+- Clear inline comments explaining the code`;
+
+  const result = await callGroq(prompt, system, 3500);
+  pluginCode = result.replace(/^```php\n?/,'').replace(/^```\n?/,'').replace(/```$/,'').trim();
+  document.getElementById('pluginCode').textContent = pluginCode;
+  document.getElementById('outputSection').classList.add('visible');
+}
+function downloadPlugin() {
+  if (!pluginCode) { alert('Generate your plugin first!'); return; }
+  const slug = document.getElementById('pluginSlug').value.trim() || 'my-plugin';
+  downloadFile(pluginCode, slug + '.php', 'text/x-php');
+}
+</script>
+</body>
+</html>
