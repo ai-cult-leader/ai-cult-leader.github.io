@@ -275,4 +275,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Visual Guide Pages -->
+  <url><loc>https://aiguerrilla.net/guides/</loc><changefreq>weekly</changefreq><priority>0.9</priority><lastmod>2026-03-21</lastmod></url>
+  <url><loc>https://aiguerrilla.net/guides/courses/</loc><changefreq>monthly</changefreq><priority>0.85</priority><lastmod>2026-03-21</lastmod></url>
+  <url><loc>https://aiguerrilla.net/guides/tools/</loc><changefreq>monthly</changefreq><priority>0.85</priority><lastmod>2026-03-21</lastmod></url>
+  <url><loc>https://aiguerrilla.net/guides/build-apps/</loc><changefreq>monthly</changefreq><priority>0.85</priority><lastmod>2026-03-21</lastmod></url>
+  <url><loc>https://aiguerrilla.net/guides/seniors/</loc><changefreq>monthly</changefreq><priority>0.85</priority><lastmod>2026-03-21</lastmod></url>
+  <url><loc>https://aiguerrilla.net/guides/by-category/</loc><changefreq>weekly</changefreq><priority>0.8</priority><lastmod>2026-03-21</lastmod></url>
 </urlset>
