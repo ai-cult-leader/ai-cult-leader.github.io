@@ -193,6 +193,11 @@ document.addEventListener('click',function(e){
     <label>Plugin Slug (used for file name)</label>
     <input type="text" id="pluginSlug" placeholder="my-seo-helper">
 
+<div style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:10px;padding:16px 20px;margin-bottom:20px">
+  <div style="font-size:.72rem;color:#00FF88;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;font-weight:700">💡 Example Output</div>
+  <p style="font-size:.83rem;color:#888;margin-bottom:8px">See a complete WordPress plugin that adds a [recent-posts] shortcode to display your latest posts anywhere.</p>
+  <button onclick="loadExample()" style="background:transparent;border:1px solid #00FF88;color:#00FF88;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:.8rem;font-family:inherit">Load Example →</button>
+</div>
     <div style="margin-top:24px">
       <button class="btn" id="generateBtn" data-orig="Generate My Plugin" onclick="generatePlugin()">Generate My Plugin</button>
     </div>
@@ -389,6 +394,112 @@ function _download(content, filename, type) {
   a.href = URL.createObjectURL(blob);
   a.download = filename;
   a.click();
+}
+</script>
+<script>
+function loadExample() {
+  document.getElementById('pluginName').value = 'Recent Posts Grid';
+  if(document.getElementById('pluginDesc')) document.getElementById('pluginDesc').value = 'Displays recent posts in a beautiful grid layout using a simple shortcode [recent-posts]';
+  if(document.getElementById('pluginSlug')) document.getElementById('pluginSlug').value = 'recent-posts-grid';
+
+  const exampleCode = `<?php
+/**
+ * Plugin Name: Recent Posts Grid
+ * Description: Displays recent posts in a beautiful grid layout using [recent-posts]
+ * Version: 1.0.0
+ * Author: AI Guerrilla
+ * License: GPL2
+ */
+
+// Prevent direct access
+defined('ABSPATH') || exit;
+
+// ── Shortcode: [recent-posts count="6" category=""] ───────────
+add_shortcode('recent-posts', 'rpg_recent_posts_shortcode');
+
+function rpg_recent_posts_shortcode($atts) {
+    $atts = shortcode_atts([
+        'count'    => 6,
+        'category' => '',
+        'columns'  => 3,
+    ], $atts, 'recent-posts');
+
+    $args = [
+        'post_type'      => 'post',
+        'posts_per_page' => intval($atts['count']),
+        'post_status'    => 'publish',
+        'orderby'        => 'date',
+        'order'          => 'DESC',
+    ];
+
+    if ($atts['category']) {
+        $args['category_name'] = sanitize_text_field($atts['category']);
+    }
+
+    $query = new WP_Query($args);
+    if (!$query->have_posts()) return '<p>No posts found.</p>';
+
+    ob_start();
+    $cols = max(1, min(4, intval($atts['columns'])));
+    ?>
+    <div class="rpg-grid rpg-cols-<?php echo $cols; ?>">
+        <?php while ($query->have_posts()) : $query->the_post(); ?>
+        <article class="rpg-card">
+            <?php if (has_post_thumbnail()) : ?>
+                <a href="<?php the_permalink(); ?>" class="rpg-thumb">
+                    <?php the_post_thumbnail('medium'); ?>
+                </a>
+            <?php endif; ?>
+            <div class="rpg-body">
+                <time class="rpg-date"><?php echo get_the_date(); ?></time>
+                <h3 class="rpg-title">
+                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                </h3>
+                <p class="rpg-excerpt"><?php echo wp_trim_words(get_the_excerpt(), 18); ?></p>
+                <a href="<?php the_permalink(); ?>" class="rpg-read-more">Read More →</a>
+            </div>
+        </article>
+        <?php endwhile; wp_reset_postdata(); ?>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+
+// ── Enqueue Styles ────────────────────────────────────────────
+add_action('wp_enqueue_scripts', 'rpg_enqueue_styles');
+
+function rpg_enqueue_styles() {
+    wp_add_inline_style('wp-block-library', '
+        .rpg-grid { display: grid; gap: 24px; margin: 32px 0; }
+        .rpg-cols-2 { grid-template-columns: repeat(2, 1fr); }
+        .rpg-cols-3 { grid-template-columns: repeat(3, 1fr); }
+        .rpg-cols-4 { grid-template-columns: repeat(4, 1fr); }
+        .rpg-card { background: #fff; border: 1px solid #eee; border-radius: 10px; overflow: hidden; transition: box-shadow .2s; }
+        .rpg-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,.1); }
+        .rpg-thumb img { width: 100%; height: 200px; object-fit: cover; display: block; }
+        .rpg-body { padding: 20px; }
+        .rpg-date { font-size: .8rem; color: #999; }
+        .rpg-title { margin: 8px 0; font-size: 1.05rem; }
+        .rpg-title a { text-decoration: none; color: #111; }
+        .rpg-title a:hover { color: #00AA55; }
+        .rpg-excerpt { font-size: .88rem; color: #666; line-height: 1.5; margin-bottom: 12px; }
+        .rpg-read-more { font-size: .85rem; font-weight: 600; color: #00AA55; text-decoration: none; }
+        @media (max-width: 768px) { .rpg-cols-3, .rpg-cols-4 { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 480px) { .rpg-grid { grid-template-columns: 1fr; } }
+    ');
+}
+
+// ── Usage ─────────────────────────────────────────────────────
+// Add to any page/post: [recent-posts]
+// Show 4 posts: [recent-posts count="4"]
+// From a category: [recent-posts category="news" count="3"]
+// 2 columns: [recent-posts columns="2"]`;
+
+  const outputSection = document.getElementById('outputSection');
+  if (outputSection) { outputSection.style.display = 'block'; outputSection.classList.add('visible'); }
+  const codeDisplay = document.getElementById('generatedCode') || document.querySelector('.code-block');
+  if (codeDisplay) codeDisplay.textContent = exampleCode;
+  if (typeof showOutput === 'function') showOutput(exampleCode, 'plugin.php', false);
 }
 </script>
 </body>
