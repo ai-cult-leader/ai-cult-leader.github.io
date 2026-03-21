@@ -22,7 +22,124 @@
   </style>
 </head>
 <body>
-  <nav><a href="https://aiguerrilla.net">AI Guerrilla</a> › <a href="https://aiguerrilla.net/tools/">Tools</a> › Is ChatGPT Free?</nav>
+  <nav id="ag-nav" style="padding:0;border-bottom:2px solid #1a1a1a;background:#0a0a0a;position:sticky;top:0;z-index:9999;font-family:'Segoe UI',sans-serif">
+  <div style="max-width:1400px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+    <a href="/" style="color:#00FF88;font-weight:900;font-size:1.2rem;text-decoration:none;flex-shrink:0">AI Guerrilla</a>
+    <div id="ag-menu" style="display:flex;align-items:center;gap:4px;flex-wrap:wrap">
+      <div class="ag-dd" style="position:relative">
+        <button class="ag-btn" onclick="agToggle('ag-d1')">Academy &#9662;</button>
+        <div id="ag-d1" class="ag-drop" style="display:none">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+            <div>
+              <div class="ag-dh">Courses</div>
+              <a class="ag-di" href="/academy/">All Courses</a>
+              <a class="ag-di" href="/academy/ai-fundamentals/">AI Fundamentals</a>
+              <a class="ag-di" href="/academy/ai-content-machine/">Content Machine</a>
+              <a class="ag-di" href="/academy/ai-monetization/">AI Monetization</a>
+              <a class="ag-di" href="/academy/developer/">Developer &amp; APIs</a>
+              <a class="ag-di" href="/academy/seo/">SEO with AI</a>
+            </div>
+            <div>
+              <div class="ag-dh">More Courses</div>
+              <a class="ag-di" href="/academy/social-media/">Social Media</a>
+              <a class="ag-di" href="/academy/business/">Business</a>
+              <a class="ag-di" href="/academy/fields/">All Fields</a>
+              <a class="ag-di" href="/academy/agents/">AI Agents</a>
+              <a class="ag-di" href="/academy/life/">Daily Life</a>
+              <a class="ag-di" href="/academy/tools/">Tool Deep Dives</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ag-dd" style="position:relative">
+        <button class="ag-btn" onclick="agToggle('ag-d2')">Tools &#9662;</button>
+        <div id="ag-d2" class="ag-drop" style="display:none">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+            <div>
+              <div class="ag-dh">Database</div>
+              <a class="ag-di" href="/tools/">All Tools (300+)</a>
+              <a class="ag-di" href="/llms/">LLMs (40+)</a>
+              <a class="ag-di" href="/founders/">Founders</a>
+              <a class="ag-di" href="/compare/">Compare</a>
+              <a class="ag-di" href="/alternatives/">Alternatives</a>
+            </div>
+            <div>
+              <div class="ag-dh">Free Tools</div>
+              <a class="ag-di ag-green" href="/free-ai-tools/">All Free Tools &#10022;</a>
+              <a class="ag-di" href="/tools/build/">Build Apps</a>
+              <a class="ag-di" href="/tools/prompt-generator/">Prompt Generator</a>
+              <a class="ag-di" href="/tools/blog-post-generator/">Blog Generator</a>
+              <a class="ag-di" href="/tools/token-counter/">Token Counter</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ag-dd" style="position:relative">
+        <button class="ag-btn" onclick="agToggle('ag-d3')">Learn &#9662;</button>
+        <div id="ag-d3" class="ag-drop" style="display:none">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+            <div>
+              <div class="ag-dh">Reference</div>
+              <a class="ag-di" href="/glossary/">AI Glossary</a>
+              <a class="ag-di" href="/use-cases/">Use Cases</a>
+              <a class="ag-di ag-green" href="/api-keys/">API Keys &#10022;</a>
+              <a class="ag-di" href="/guides/">Visual Guides</a>
+              <a class="ag-di" href="/sitemap-page/">Full Sitemap</a>
+            </div>
+            <div>
+              <div class="ag-dh">For Everyone</div>
+              <a class="ag-di" href="/seniors/">AI for Seniors</a>
+              <a class="ag-di" href="/beginners/">Beginners Guide</a>
+              <a class="ag-di" href="/seniors/tools/">Senior Tools</a>
+              <a class="ag-di" href="/news/">AI News</a>
+              <a class="ag-di" href="/tutorials/">Tutorials</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="/news/" style="color:#aaa;text-decoration:none;font-size:.85rem;padding:8px 10px;white-space:nowrap">News</a>
+      <a href="/free-ai-tools/" style="color:#00FF88;font-weight:700;text-decoration:none;font-size:.85rem;padding:8px 10px;white-space:nowrap">Free Tools</a>
+      <a href="https://skool.com/aiguerrilla" style="background:#00FF88;color:#000;font-weight:700;padding:8px 16px;border-radius:6px;text-decoration:none;font-size:.85rem;white-space:nowrap;flex-shrink:0">Community</a>
+    </div>
+    <button id="ag-burger" onclick="document.getElementById('ag-menu').classList.toggle('ag-open')" style="display:none;background:none;border:1px solid #333;color:#fff;padding:5px 10px;border-radius:6px;cursor:pointer;font-size:1.1rem">&#9776;</button>
+  </div>
+</nav>
+<style>
+.ag-btn{background:none;border:none;color:#aaa;font-size:.85rem;padding:8px 10px;cursor:pointer;font-family:'Segoe UI',sans-serif;white-space:nowrap;border-radius:6px;transition:color .2s}
+.ag-btn:hover{color:#00FF88}
+.ag-drop{position:absolute;top:calc(100% + 6px);left:50%;transform:translateX(-50%);background:#111;border:1px solid #222;border-radius:10px;padding:16px;min-width:340px;z-index:10000;box-shadow:0 8px 32px rgba(0,0,0,.9)}
+.ag-dh{font-size:.65rem;color:#555;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;font-weight:700;padding:0 10px}
+.ag-di{display:block;color:#aaa;text-decoration:none;font-size:.83rem;padding:5px 10px;border-radius:5px;transition:background .15s,color .15s;white-space:nowrap}
+.ag-di:hover{background:#1a1a1a;color:#fff}
+.ag-green{color:#00FF88!important}
+@media(max-width:820px){
+  #ag-burger{display:block!important}
+  #ag-menu{display:none;width:100%;flex-direction:column;align-items:flex-start;padding:8px 0}
+  #ag-menu.ag-open{display:flex!important}
+  .ag-drop{position:static;transform:none;min-width:0;width:100%;box-shadow:none;background:transparent;border:none;padding:4px 0 4px 16px}
+  .ag-dd{width:100%}
+  .ag-btn{width:100%;text-align:left;padding:10px 4px}
+}
+</style>
+<script>
+function agToggle(id){
+  var el=document.getElementById(id);
+  var isOpen=el.style.display!=='none';
+  ['ag-d1','ag-d2','ag-d3'].forEach(function(d){
+    var e=document.getElementById(d);
+    if(e) e.style.display='none';
+  });
+  if(!isOpen) el.style.display='block';
+}
+document.addEventListener('click',function(e){
+  if(!e.target.closest('#ag-nav')){
+    ['ag-d1','ag-d2','ag-d3'].forEach(function(d){
+      var el=document.getElementById(d);
+      if(el) el.style.display='none';
+    });
+  }
+});
+</script>
   <h1>Is ChatGPT Free?</h1>
   <article>
 <p>As of 2026, ChatGPT is not entirely free, but it does offer a free tier with limited features. The free version allows users to access basic chat functionality, but with certain restrictions. This means that users can still utilize the platform without paying, but with some limitations.</p>
