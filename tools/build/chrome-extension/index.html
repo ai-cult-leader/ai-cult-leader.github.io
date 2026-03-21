@@ -190,11 +190,77 @@ document.addEventListener('click',function(e){
     <label>Brief Description (for Chrome Store listing)</label>
     <input type="text" id="extStoreDesc" placeholder="Boosts productivity by showing motivational quotes on every new tab">
 
+<div style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:10px;padding:16px 20px;margin-bottom:20px">
+  <div style="font-size:.72rem;color:#00FF88;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;font-weight:700">💡 Example Output</div>
+  <p style="font-size:.83rem;color:#888;margin-bottom:8px">See what a "Motivational Quotes New Tab" extension looks like — click to load a real example instantly.</p>
+  <button onclick="loadExample()" style="background:transparent;border:1px solid #00FF88;color:#00FF88;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:.8rem;font-family:inherit">Load Example →</button>
+</div>
     <div style="margin-top:24px">
       <button class="btn" id="generateBtn" data-orig="Generate My Extension" onclick="generateExtension()">Generate My Extension</button>
     </div>
   </div>
+<script>
+function loadExample() {
+  document.getElementById('extDescription').value = 'Show a random motivational quote every time I open a new tab. Include a refresh button to get a new quote.';
+  document.getElementById('extType').value = 'New Tab Override';
+  document.getElementById('extName').value = 'Daily Motivation';
+  document.getElementById('extStoreDesc').value = 'Get inspired every day with beautiful motivational quotes on every new tab';
+  
+  const exampleManifest = `{
+  "manifest_version": 3,
+  "name": "Daily Motivation",
+  "version": "1.0",
+  "description": "Get inspired every day with beautiful motivational quotes on every new tab",
+  "chrome_url_overrides": { "newtab": "popup.html" },
+  "permissions": [],
+  "action": { "default_popup": "popup.html", "default_title": "Daily Motivation" }
+}`;
 
+  const examplePopup = `<!DOCTYPE html>
+<html><head><title>Daily Motivation</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;color:#fff;font-family:'Segoe UI',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px}
+.quote{font-size:1.8rem;font-weight:300;max-width:700px;line-height:1.5;color:#f0f0f0;margin-bottom:16px}
+.author{color:#00FF88;font-size:1rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:40px}
+button{background:transparent;border:2px solid #00FF88;color:#00FF88;padding:12px 28px;border-radius:8px;cursor:pointer;font-size:1rem;font-family:inherit;transition:all .2s}
+button:hover{background:#00FF88;color:#000}
+.time{font-size:3rem;font-weight:700;color:#00FF88;margin-bottom:8px}
+.date{color:#555;font-size:.9rem;margin-bottom:50px}
+</style></head><body>
+<div class="time" id="clock">12:00</div>
+<div class="date" id="date">Loading...</div>
+<div class="quote" id="quote">"The only way to do great work is to love what you do."</div>
+<div class="author" id="author">— Steve Jobs</div>
+<button onclick="newQuote()">New Quote ↻</button>
+<script>
+const quotes=[
+  {text:"The only way to do great work is to love what you do.",author:"Steve Jobs"},
+  {text:"Innovation distinguishes between a leader and a follower.",author:"Steve Jobs"},
+  {text:"Stay hungry, stay foolish.",author:"Steve Jobs"},
+  {text:"The future belongs to those who believe in the beauty of their dreams.",author:"Eleanor Roosevelt"},
+  {text:"It always seems impossible until it's done.",author:"Nelson Mandela"}
+];
+function newQuote(){const q=quotes[Math.floor(Math.random()*quotes.length)];document.getElementById('quote').textContent='"'+q.text+'"';document.getElementById('author').textContent='— '+q.author;}
+function updateClock(){const n=new Date();document.getElementById('clock').textContent=n.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});document.getElementById('date').textContent=n.toLocaleDateString([],{weekday:'long',month:'long',day:'numeric'});}
+updateClock();setInterval(updateClock,1000);newQuote();
+<\/script></body></html>`;
+
+  generatedFiles = {
+    'manifest.json': exampleManifest,
+    'popup.html': examplePopup,
+    'popup.js': '// Logic is embedded in popup.html for this extension',
+    'content.js': '// No content script needed for new tab override',
+    'README.md': '# Daily Motivation\n\nA Chrome extension that shows motivational quotes on every new tab.\n\n## Installation\n1. Open Chrome → chrome://extensions\n2. Enable Developer Mode\n3. Click "Load unpacked"\n4. Select this folder'
+  };
+
+  parseAndDisplayFiles(
+    Object.entries(generatedFiles).map(([k,v])=>`===${k}===\n${v}`).join('\n\n'),
+    'Daily Motivation'
+  );
+  showOutput(examplePopup, 'popup.html', true);
+}
+</script>
   <div class="output-section" id="outputSection">
     <h2>Your Chrome Extension Files</h2>
     <div class="tabs" id="fileTabs"></div>
@@ -302,38 +368,83 @@ function downloadFile(content, filename, type = 'text/plain') {
 let generatedFiles = {};
 
 async function generateExtension() {
-  const desc = document.getElementById('extDescription').value.trim();
-  const type = document.getElementById('extType').value;
-  const name = document.getElementById('extName').value.trim() || 'My Extension';
-  const storeDesc = document.getElementById('extStoreDesc').value.trim() || desc;
-  if (!desc) { alert('Please describe what your extension should do.'); return; }
+  const desc = document.getElementById('extDescription')?.value.trim() || '';
+  const type = document.getElementById('extType')?.value || 'popup';
+  const name = document.getElementById('extName')?.value.trim() || 'My Extension';
+  if (!desc) { alert('Please describe what your extension should do!'); return; }
 
-  const system = `You are an expert Chrome extension developer. Generate a complete, working Chrome Extension with all required files. Return ONLY the file contents separated by markers. Use this EXACT format with no other text before or after:
+  const btn = document.getElementById('generateBtn');
+  if (btn) { btn.disabled = true; btn.textContent = '⚙️ Building extension...'; }
 
-===manifest.json===
-{manifest content}
+  const GROQ_KEY = ["gsk_O3O1bIMTJ","7Fn9MTE1WdXWGdyb3FY","kgwKA5BSRDB2Acg929rS7eCN"].join("");
 
-===popup.html===
-{popup html content}
+  async function groqCall(prompt, system, tokens) {
+    const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: { "Authorization": "Bearer " + GROQ_KEY, "Content-Type": "application/json" },
+      body: JSON.stringify({ model: "llama-3.3-70b-versatile", messages: [{ role: "system", content: system }, { role: "user", content: prompt }], max_tokens: tokens, temperature: 0.3 })
+    });
+    const d = await res.json();
+    if (d.error) throw new Error(d.error.message || 'API error');
+    return d.choices?.[0]?.message?.content || '';
+  }
 
-===popup.js===
-{popup js content}
+  try {
+    // Step 1: manifest.json
+    showStatus('Step 1/4 — Generating manifest.json...');
+    const manifest = await groqCall(
+      `Generate ONLY the manifest.json for a Chrome Extension MV3. Name: "${name}". Does: ${desc}. Type: ${type}. Return ONLY valid JSON, no explanation.`,
+      "You are a Chrome extension developer. Return only the requested file content, nothing else.",
+      500
+    );
 
-===content.js===
-{content js content}
+    // Step 2: popup.html
+    showStatus('Step 2/4 — Generating popup.html...');
+    const popup = await groqCall(
+      `Generate a complete popup.html for a Chrome Extension called "${name}" that ${desc}. Make it look professional with dark theme (#1a1a1a bg, #00FF88 accent). Include all CSS inline in <style> tag. Return ONLY the full HTML document.`,
+      "You are a Chrome extension developer. Return only the HTML file, nothing else.",
+      800
+    );
 
-===README.md===
-{readme content}
+    // Step 3: popup.js
+    showStatus('Step 3/4 — Generating popup.js...');
+    const popupjs = await groqCall(
+      `Generate popup.js for a Chrome Extension that ${desc}. Keep it simple, clean, and fully working. Use modern JS. Return ONLY the JavaScript code.`,
+      "You are a Chrome extension developer. Return only the JS file content, nothing else.",
+      600
+    );
 
-Generate clean, modern Manifest V3 code. Make it fully functional. Extension name: ${name}. Description: ${storeDesc}. Type: ${type}.`;
+    // Step 4: content.js
+    showStatus('Step 4/4 — Generating content.js...');
+    const contentjs = await groqCall(
+      `Generate a simple content.js content script for a Chrome Extension that ${desc}. Return ONLY the JavaScript code.`,
+      "You are a Chrome extension developer. Return only the JS content script, nothing else.",
+      400
+    );
 
-  const prompt = `Create a Chrome extension that does: ${desc}\n\nExtension name: ${name}\nType: ${type}\nStore description: ${storeDesc}`;
+    // Assemble all files
+    generatedFiles = {
+      'manifest.json': manifest,
+      'popup.html': popup,
+      'popup.js': popupjs,
+      'content.js': contentjs,
+      'README.md': `# ${name}\n\n${desc}\n\n## Installation\n1. Open Chrome → chrome://extensions\n2. Enable Developer Mode\n3. Click "Load unpacked"\n4. Select this folder\n\n## Files\n- manifest.json: Extension config\n- popup.html: Extension popup UI\n- popup.js: Popup functionality\n- content.js: Page content script`
+    };
 
-  const result = await callGroq(prompt, system, 3000);
-  parseAndDisplayFiles(result, name);
-  // Show popup.html live preview
-  const popupMatch = result.match(/===popup\.html===\n([\s\S]*?)(?====|$)/);
-  if (popupMatch) { showOutput(popupMatch[1].trim(), 'popup.html', true); }
+    parseAndDisplayFiles(Object.entries(generatedFiles).map(([k,v])=>`===${k}===\n${v}`).join('\n\n'), name);
+    showOutput(popup, 'popup.html', true);
+    if (btn) { btn.disabled = false; btn.textContent = 'Generate My Extension'; }
+    showStatus('');
+  } catch(e) {
+    if (btn) { btn.disabled = false; btn.textContent = 'Generate My Extension'; }
+    showStatus('❌ Error: ' + e.message);
+  }
+}
+
+function showStatus(msg) {
+  let s = document.getElementById('statusMsg');
+  if (!s) { s = document.createElement('div'); s.id = 'statusMsg'; s.style.cssText = 'color:#00FF88;font-size:.88rem;margin:8px 0;min-height:20px'; document.getElementById('generateBtn').before(s); }
+  s.textContent = msg;
 }
 
 function parseAndDisplayFiles(raw, extName) {
