@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Browse all 38 free AI tools visually. Writing, social media, business, developer, senior tools, and app builders. No signup required.">
+<title>Free AI Tools Visual Guide — Browse All 38 Tools</title>
+<link rel="canonical" href="https://aiguerrilla.net/guides/tools/">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;color:#fff;font-family:'Segoe UI',sans-serif;line-height:1.7}
+nav{padding:16px 40px;border-bottom:1px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#0a0a0a;position:sticky;top:0;z-index:100}
+.logo{color:#00FF88;font-weight:900;font-size:1.3rem;text-decoration:none}
+.nav-links{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.nav-links a{color:#aaa;text-decoration:none;font-size:.9rem}
+.nav-links a:hover{color:#00FF88}
+.nav-cta{background:#00FF88!important;color:#000!important;font-weight:700;padding:7px 18px;border-radius:6px}
+.page-hero{padding:60px 20px 40px;text-align:center;max-width:860px;margin:0 auto}
+.hero-badge{display:inline-block;background:#0d1a0d;color:#00FF88;font-size:.72rem;font-weight:700;padding:5px 14px;border-radius:20px;border:1px solid #00FF88;margin-bottom:16px;letter-spacing:1px;text-transform:uppercase}
+h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;margin-bottom:14px}
+.page-desc{color:#888;font-size:1rem;max-width:600px;margin:0 auto 40px}
+.progress-bar{height:4px;background:#1a1a1a;border-radius:2px;margin:0 20px 40px;max-width:1160px;margin-left:auto;margin-right:auto}
+.progress-fill{height:100%;background:#00FF88;border-radius:2px;transition:width .3s}
+.section-header{max-width:1200px;margin:0 auto 20px;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+.section-title{font-size:1.1rem;font-weight:700;color:#fff;display:flex;align-items:center;gap:10px}
+.section-count{font-size:.78rem;color:#555;background:#111;padding:4px 12px;border-radius:20px}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;max-width:1200px;margin:0 auto;padding:0 20px 48px}
+.card{background:#111;border:1px solid #1a1a1a;border-radius:12px;overflow:hidden;transition:border-color .2s,transform .2s;position:relative}
+.card:hover{border-color:#00FF88;transform:translateY(-2px)}
+.card-img{width:100%;height:140px;object-fit:cover;background:linear-gradient(135deg,#0d1a0d,#1a1a2e)}
+.card-img-placeholder{width:100%;height:140px;display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,#0d1a0d 0%,#111 100%)}
+.card-body{padding:18px}
+.card-cat{font-size:.68rem;color:#00FF88;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-weight:600}
+.card-title{font-size:.97rem;font-weight:700;margin-bottom:6px;color:#fff;line-height:1.3}
+.card-desc{font-size:.82rem;color:#666;margin-bottom:14px;line-height:1.5}
+.card-footer{display:flex;justify-content:space-between;align-items:center}
+.card-link{color:#00FF88;text-decoration:none;font-size:.82rem;font-weight:600}
+.card-link:hover{text-decoration:underline}
+.card-meta{font-size:.75rem;color:#444}
+.lesson-card{background:#111;border:1px solid #1a1a1a;border-radius:10px;padding:18px;display:flex;gap:14px;align-items:flex-start;transition:border-color .2s;text-decoration:none;color:inherit}
+.lesson-card:hover{border-color:#00FF88}
+.lesson-num{min-width:36px;height:36px;background:#0d1a0d;border:1px solid #00FF88;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.85rem;color:#00FF88;flex-shrink:0}
+.lesson-num.done{background:#00FF88;color:#000;border-color:#00FF88}
+.lesson-info h3{font-size:.93rem;font-weight:700;margin-bottom:4px;color:#fff}
+.lesson-info p{font-size:.8rem;color:#666;margin:0}
+.lesson-duration{font-size:.72rem;color:#555;margin-top:6px}
+.tool-card{background:#111;border:1px solid #1a1a1a;border-radius:12px;padding:22px;transition:border-color .2s,transform .2s;text-decoration:none;color:inherit;display:block}
+.tool-card:hover{border-color:#00FF88;transform:translateY(-2px)}
+.tool-icon{font-size:2.2rem;margin-bottom:12px}
+.tool-tag{font-size:.68rem;color:#00FF88;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-weight:600}
+.tool-card h3{font-size:1rem;font-weight:700;margin-bottom:6px;color:#fff}
+.tool-card p{font-size:.82rem;color:#666;line-height:1.5;margin-bottom:14px}
+.tool-card .free-badge{display:inline-block;background:#0d1a0d;color:#00FF88;font-size:.7rem;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a}
+.featured-card{background:linear-gradient(135deg,#0d1a0d 0%,#111 100%);border:1px solid #00FF88;border-radius:16px;padding:32px;grid-column:1/-1;display:flex;gap:32px;align-items:center;flex-wrap:wrap}
+.featured-card .fc-content{flex:1;min-width:200px}
+.featured-card .fc-badge{font-size:.7rem;color:#00FF88;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;font-weight:700}
+.featured-card h2{font-size:1.6rem;font-weight:900;margin-bottom:10px}
+.featured-card p{color:#888;margin-bottom:20px;font-size:.95rem}
+.featured-card .fc-btn{display:inline-block;background:#00FF88;color:#000;font-weight:700;padding:12px 28px;border-radius:8px;text-decoration:none;font-size:.9rem}
+.featured-card .fc-stats{display:flex;gap:24px;flex-wrap:wrap}
+.featured-card .fc-stat{text-align:center}
+.featured-card .fc-stat-num{font-size:1.4rem;font-weight:900;color:#00FF88}
+.featured-card .fc-stat-label{font-size:.7rem;color:#555;text-transform:uppercase;letter-spacing:1px}
+.cta-strip{background:#0d1a0d;border-top:1px solid #1a1a1a;padding:32px 20px;text-align:center}
+.cta-strip p{color:#555;font-size:.88rem;margin-bottom:8px}
+.cta-strip a{color:#00FF88;text-decoration:none;font-size:.95rem;font-weight:600}
+footer{text-align:center;padding:28px;color:#444;border-top:1px solid #111;font-size:.85rem}
+footer a{color:#00FF88;text-decoration:none}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="/">AI Guerrilla</a>
+  <div class="nav-links">
+    <a href="/academy/">Academy</a>
+    <a href="/tools/">Tools</a>
+    <a href="/free-ai-tools/" style="color:#00FF88;font-weight:700">Free Tools</a>
+    <a href="/guides/" style="color:#fff;font-weight:600">Guides</a>
+    <a href="/news/">News</a>
+    <a href="https://skool.com/aiguerrilla" class="nav-cta" target="_blank">Join Free</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <span class="hero-badge">38 Free Tools</span>
+  <h1>Free AI Tools Visual Guide</h1>
+  <p class="page-desc">Every free AI tool on the site — organized by category. Writing, video, business, developer, app builders, and senior tools. No signup, no paywall.</p>
+</div>
+
+<div class="section-header">
+  <span class="section-title">Writing & Content</span>
+  <span class="section-count">8 tools</span>
+</div>
+<div class="cards-grid">
+  <a href="/tools/blog-post-generator/" class="tool-card">
+    <div class="tool-icon">📝</div>
+    <div class="tool-tag">Writing & Content</div>
+    <h3>Blog Post Generator</h3>
+    <p>Full SEO-optimized blog posts from a single topic or keyword.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/youtube-description-generator/" class="tool-card">
+    <div class="tool-icon">📄</div>
+    <div class="tool-tag">Writing & Content</div>
+    <h3>YouTube Description Generator</h3>
+    <p>Keyword-rich YouTube descriptions that rank and convert.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/cold-email-generator/" class="tool-card">
+    <div class="tool-icon">📧</div>
+    <div class="tool-tag">Writing & Content</div>
+    <h3>Cold Email Generator</h3>
+    <p>Personalized cold emails that get replies. Paste a prospect's info.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/email-subject-generator/" class="tool-card">
+    <div class="tool-icon">✉️</div>
+    <div class="tool-tag">Writing & Content</div>
+    <h3>Email Subject Generator</h3>
+    <p>Click-worthy subject lines tested against spam filters.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/cover-letter-writer/" class="tool-card">
+    <div class="tool-icon">💼</div>
+    <div class="tool-tag">Writing & Content</div>
+    <h3>Cover Letter Writer</h3>
+    <p>Tailored cover letters that stand out. Paste the job listing.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/product-description-generator/" class="tool-card">
+    <div class="tool-icon">🛒</div>
+    <div class="tool-tag">Writing & Content</div>
+    <h3>Product Description Generator</h3>
+    <p>Conversion-optimized product copy for any e-commerce platform.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/faq-generator/" class="tool-card">
+    <div class="tool-icon">❓</div>
+    <div class="tool-tag">Writing & Content</div>
+    <h3>FAQ Generator</h3>
+    <p>Generate SEO-boosting FAQs for any topic or product page.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/press-release-generator/" class="tool-card">
+    <div class="tool-icon">📰</div>
+    <div class="tool-tag">Writing & Content</div>
+    <h3>Press Release Generator</h3>
+    <p>Professional press releases in AP style. Any announcement.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+</div>
+
+<div class="section-header">
+  <span class="section-title">Social & Video</span>
+  <span class="section-count">4 tools</span>
+</div>
+<div class="cards-grid">
+  <a href="/tools/viral-hook-generator/" class="tool-card">
+    <div class="tool-icon">🪝</div>
+    <div class="tool-tag">Social & Video</div>
+    <h3>Viral Hook Generator</h3>
+    <p>Scroll-stopping opening lines for any platform or format.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/tiktok-script-generator/" class="tool-card">
+    <div class="tool-icon">🎵</div>
+    <div class="tool-tag">Social & Video</div>
+    <h3>TikTok Script Generator</h3>
+    <p>Short-form video scripts with hooks, body, and CTA built in.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/ai-youtube-title-generator/" class="tool-card">
+    <div class="tool-icon">🎬</div>
+    <div class="tool-tag">Social & Video</div>
+    <h3>YouTube Title Generator</h3>
+    <p>Click-worthy titles optimized for search and psychology.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/social-bio-generator/" class="tool-card">
+    <div class="tool-icon">👤</div>
+    <div class="tool-tag">Social & Video</div>
+    <h3>Social Bio Generator</h3>
+    <p>Compelling bios for Twitter, Instagram, LinkedIn, and TikTok.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+</div>
+
+<div class="section-header">
+  <span class="section-title">Business</span>
+  <span class="section-count">4 tools</span>
+</div>
+<div class="cards-grid">
+  <a href="/tools/business-name-generator/" class="tool-card">
+    <div class="tool-icon">💡</div>
+    <div class="tool-tag">Business</div>
+    <h3>Business Name Generator</h3>
+    <p>Unique, brandable business names with domain availability tips.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/swot-analysis-generator/" class="tool-card">
+    <div class="tool-icon">📊</div>
+    <div class="tool-tag">Business</div>
+    <h3>SWOT Analysis Generator</h3>
+    <p>Complete SWOT analysis for any business, product, or strategy.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/job-description-writer/" class="tool-card">
+    <div class="tool-icon">📋</div>
+    <div class="tool-tag">Business</div>
+    <h3>Job Description Writer</h3>
+    <p>Attract top talent with clear, compelling job descriptions.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/meeting-agenda-generator/" class="tool-card">
+    <div class="tool-icon">📅</div>
+    <div class="tool-tag">Business</div>
+    <h3>Meeting Agenda Generator</h3>
+    <p>Structured meeting agendas that keep meetings on track.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+</div>
+
+<div class="section-header">
+  <span class="section-title">Original Tools</span>
+  <span class="section-count">8 tools</span>
+</div>
+<div class="cards-grid">
+  <a href="/tools/ai-prompt-generator/" class="tool-card">
+    <div class="tool-icon">✨</div>
+    <div class="tool-tag">Original Tools</div>
+    <h3>Prompt Generator</h3>
+    <p>Generate powerful prompts for ChatGPT, Claude, Gemini, and more.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/ai-image-prompt-generator/" class="tool-card">
+    <div class="tool-icon">🖼️</div>
+    <div class="tool-tag">Original Tools</div>
+    <h3>Image Prompt Enhancer</h3>
+    <p>Turn basic image ideas into detailed Midjourney/DALL-E prompts.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/ai-linkedin-bio/" class="tool-card">
+    <div class="tool-icon">💼</div>
+    <div class="tool-tag">Original Tools</div>
+    <h3>LinkedIn Bio Generator</h3>
+    <p>Professional LinkedIn bios that attract recruiters and clients.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/ai-hashtag-generator/" class="tool-card">
+    <div class="tool-icon">🏷️</div>
+    <div class="tool-tag">Original Tools</div>
+    <h3>Hashtag Generator</h3>
+    <p>Reach-maximizing hashtag sets for any platform or niche.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/ai-token-counter/" class="tool-card">
+    <div class="tool-icon">🔢</div>
+    <div class="tool-tag">Original Tools</div>
+    <h3>Token Counter</h3>
+    <p>Count tokens before sending. Know costs before you run.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/ai-api-cost-calculator/" class="tool-card">
+    <div class="tool-icon">💵</div>
+    <div class="tool-tag">Original Tools</div>
+    <h3>API Cost Calculator</h3>
+    <p>Compare costs across OpenAI, Anthropic, Groq, and 15+ APIs.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/ai-tool-finder/" class="tool-card">
+    <div class="tool-icon">🎯</div>
+    <div class="tool-tag">Original Tools</div>
+    <h3>AI Tool Finder Quiz</h3>
+    <p>Answer 5 questions. Get the exact AI tool you need.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/prompt-library/" class="tool-card">
+    <div class="tool-icon">📚</div>
+    <div class="tool-tag">Original Tools</div>
+    <h3>Prompt Library</h3>
+    <p>200+ tested prompts for every use case. Copy and deploy.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+</div>
+
+<div class="section-header">
+  <span class="section-title">Developer Tools</span>
+  <span class="section-count">3 tools</span>
+</div>
+<div class="cards-grid">
+  <a href="/tools/json-formatter/" class="tool-card">
+    <div class="tool-icon">🔧</div>
+    <div class="tool-tag">Developer Tools</div>
+    <h3>JSON Formatter</h3>
+    <p>Format, validate, and minify JSON instantly. Error highlighting.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/base64-encoder/" class="tool-card">
+    <div class="tool-icon">🔒</div>
+    <div class="tool-tag">Developer Tools</div>
+    <h3>Base64 Encoder</h3>
+    <p>Encode and decode Base64 strings. Handles any input.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/markdown-to-html/" class="tool-card">
+    <div class="tool-icon">📄</div>
+    <div class="tool-tag">Developer Tools</div>
+    <h3>Markdown to HTML</h3>
+    <p>Convert Markdown to clean HTML. Preview in real time.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+</div>
+
+<div class="section-header">
+  <span class="section-title">App Builders</span>
+  <span class="section-count">10 tools</span>
+</div>
+<div class="cards-grid">
+  <a href="/tools/chrome-extension-creator/" class="tool-card">
+    <div class="tool-icon">🔌</div>
+    <div class="tool-tag">App Builders</div>
+    <h3>Chrome Extension Creator</h3>
+    <p>Describe it → AI builds your Chrome extension. No coding.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/website-generator/" class="tool-card">
+    <div class="tool-icon">🌐</div>
+    <div class="tool-tag">App Builders</div>
+    <h3>Website Generator</h3>
+    <p>Full HTML/CSS/JS website from a description. Launch-ready.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/telegram-bot-creator/" class="tool-card">
+    <div class="tool-icon">🤖</div>
+    <div class="tool-tag">App Builders</div>
+    <h3>Telegram Bot Creator</h3>
+    <p>Build a Telegram bot with AI brains. No code, just describe.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/pwa-app-creator/" class="tool-card">
+    <div class="tool-icon">📱</div>
+    <div class="tool-tag">App Builders</div>
+    <h3>PWA App Creator</h3>
+    <p>Progressive Web App that installs on any phone. No app store.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/google-sheets-script/" class="tool-card">
+    <div class="tool-icon">📊</div>
+    <div class="tool-tag">App Builders</div>
+    <h3>Google Sheets Script</h3>
+    <p>Custom Google Sheets automation scripts. Describe what you want.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/landing-page-generator/" class="tool-card">
+    <div class="tool-icon">🚀</div>
+    <div class="tool-tag">App Builders</div>
+    <h3>Landing Page Generator</h3>
+    <p>High-converting landing pages with copy, design, and CTA built in.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/discord-bot-creator/" class="tool-card">
+    <div class="tool-icon">🎮</div>
+    <div class="tool-tag">App Builders</div>
+    <h3>Discord Bot Creator</h3>
+    <p>Build a Discord bot with commands, roles, and AI responses.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/ai-chatbot-widget/" class="tool-card">
+    <div class="tool-icon">💬</div>
+    <div class="tool-tag">App Builders</div>
+    <h3>AI Chatbot Widget</h3>
+    <p>Embeddable chat widget for any website. AI-powered support.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/zapier-automation/" class="tool-card">
+    <div class="tool-icon">⚡</div>
+    <div class="tool-tag">App Builders</div>
+    <h3>Zapier Automation</h3>
+    <p>AI-generated Zapier workflows. Describe the automation you want.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/tools/wordpress-plugin/" class="tool-card">
+    <div class="tool-icon">🔌</div>
+    <div class="tool-tag">App Builders</div>
+    <h3>WordPress Plugin</h3>
+    <p>Custom WordPress plugins generated by AI. Install and go.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+</div>
+
+<div class="section-header">
+  <span class="section-title">Senior Tools</span>
+  <span class="section-count">10 tools</span>
+</div>
+<div class="cards-grid">
+  <a href="/seniors/tools/medical-term-explainer/" class="tool-card">
+    <div class="tool-icon">🏥</div>
+    <div class="tool-tag">Senior Tools</div>
+    <h3>Medical Term Explainer</h3>
+    <p>Paste any medical term or note. Get a plain-English explanation.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/seniors/tools/doctor-visit-prep/" class="tool-card">
+    <div class="tool-icon">👨‍⚕️</div>
+    <div class="tool-tag">Senior Tools</div>
+    <h3>Doctor Visit Prep</h3>
+    <p>Prepare questions and summaries before any medical appointment.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/seniors/tools/letter-writer/" class="tool-card">
+    <div class="tool-icon">✉️</div>
+    <div class="tool-tag">Senior Tools</div>
+    <h3>Letter Writer</h3>
+    <p>Draft formal or informal letters. Complaints, thank-yous, inquiries.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/seniors/tools/scam-checker/" class="tool-card">
+    <div class="tool-icon">🛡️</div>
+    <div class="tool-tag">Senior Tools</div>
+    <h3>Scam Checker</h3>
+    <p>Paste any suspicious message. AI identifies scams instantly.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/seniors/tools/medication-schedule/" class="tool-card">
+    <div class="tool-icon">💊</div>
+    <div class="tool-tag">Senior Tools</div>
+    <h3>Medication Schedule</h3>
+    <p>Track medications, dosages, and timing. Clear reminder format.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/seniors/tools/news-in-plain-english/" class="tool-card">
+    <div class="tool-icon">📰</div>
+    <div class="tool-tag">Senior Tools</div>
+    <h3>News in Plain English</h3>
+    <p>Paste any news article. Get a simple, clear summary.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/seniors/tools/family-letter-writer/" class="tool-card">
+    <div class="tool-icon">👨‍👩‍👧</div>
+    <div class="tool-tag">Senior Tools</div>
+    <h3>Family Letter Writer</h3>
+    <p>Write heartfelt letters to family. AI helps with the words.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/seniors/tools/recipe-simplifier/" class="tool-card">
+    <div class="tool-icon">🍳</div>
+    <div class="tool-tag">Senior Tools</div>
+    <h3>Recipe Simplifier</h3>
+    <p>Simplify any complex recipe into easy-to-follow steps.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/seniors/tools/large-print-tool/" class="tool-card">
+    <div class="tool-icon">🔍</div>
+    <div class="tool-tag">Senior Tools</div>
+    <h3>Large Print Tool</h3>
+    <p>Convert any text to large-print format for easier reading.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+  <a href="/seniors/tools/safety-checker/" class="tool-card">
+    <div class="tool-icon">🔒</div>
+    <div class="tool-tag">Senior Tools</div>
+    <h3>Safety Checker</h3>
+    <p>Check if a product, website, or situation is safe. AI explains.</p>
+    <span class="free-badge">No Signup</span>
+  </a>
+</div>
+
+
+<div class="cta-strip">
+  <p>150+ operators building with AI — free community</p>
+  <a href="https://skool.com/aiguerrilla" target="_blank">Join AI Guerrilla Free &rarr; skool.com/aiguerrilla</a>
+</div>
+<footer>
+  <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:12px">
+    <a href="/">Home</a>
+    <a href="/academy/">Academy</a>
+    <a href="/free-ai-tools/">Free Tools</a>
+    <a href="/guides/">Visual Guides</a>
+    <a href="/seniors/">For Seniors</a>
+    <a href="/news/">News</a>
+  </div>
+  <p>&copy; 2026 AI Guerrilla &mdash; <a href="https://skool.com/aiguerrilla">skool.com/aiguerrilla</a></p>
+</footer>
+</body>
+</html>
