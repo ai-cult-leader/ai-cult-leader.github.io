@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Words Explained in Plain English — Beginner's Glossary</title>
+<meta name="description" content="Simple definitions of 50 AI and technology terms for beginners and seniors. No jargon — every word explained in plain English.">
+<link rel="canonical" href="https://aiguerrilla.net/beginners/glossary/">
+<meta property="og:title" content="AI Words Explained in Plain English — Beginner's Glossary">
+<meta property="og:description" content="Simple definitions of 50 AI and technology terms for beginners and seniors. No jargon — every word explained in plain English.">
+<meta property="og:url" content="https://aiguerrilla.net/beginners/glossary/">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d0d0d;color:#e8e8e8;font-family:Georgia,'Times New Roman',serif;font-size:19px;line-height:1.85}
+nav{padding:20px 40px;border-bottom:1px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#0d0d0d;position:sticky;top:0;z-index:100}
+.logo{color:#00AA66;font-weight:900;font-size:1.4rem;text-decoration:none;font-family:'Segoe UI',sans-serif}
+.nav-home{color:#aaa;text-decoration:none;font-size:1rem;font-family:'Segoe UI',sans-serif}
+.nav-home:hover{color:#00AA66}
+.nav-cta{background:#00AA66;color:#fff;font-weight:700;padding:10px 22px;border-radius:8px;text-decoration:none;font-size:.95rem;font-family:'Segoe UI',sans-serif}
+.hero{padding:80px 20px 60px;max-width:800px;margin:0 auto;text-align:center}
+h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:700;margin-bottom:20px;line-height:1.2;color:#fff}
+h1 span{color:#00AA66}
+.hero-subtitle{font-size:1.25rem;color:#aaa;max-width:600px;margin:0 auto 40px;line-height:1.7}
+.start-btn{display:inline-block;background:#00AA66;color:#fff;font-size:1.2rem;font-weight:700;padding:20px 48px;border-radius:12px;text-decoration:none;font-family:'Segoe UI',sans-serif;transition:transform .2s}
+.start-btn:hover{transform:scale(1.03)}
+.reassurance{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+.reassurance-item{display:flex;align-items:center;gap:8px;font-size:.95rem;color:#888;font-family:'Segoe UI',sans-serif}
+.reassurance-item span{font-size:1.2rem}
+.section{max-width:760px;margin:0 auto;padding:60px 20px}
+h2{font-size:1.8rem;font-weight:700;margin-bottom:16px;color:#fff;line-height:1.3}
+h3{font-size:1.3rem;font-weight:600;margin:36px 0 12px;color:#ddd}
+p{margin-bottom:20px;color:#ccc;line-height:1.85}
+.guide-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;max-width:1000px;margin:0 auto;padding:0 20px 60px}
+.guide-card{background:#141414;border:2px solid #1a1a1a;border-radius:14px;padding:28px;transition:border-color .2s,transform .2s;text-decoration:none;color:inherit;display:block}
+.guide-card:hover{border-color:#00AA66;transform:translateY(-2px)}
+.guide-icon{font-size:2.5rem;margin-bottom:14px}
+.guide-card h3{font-size:1.1rem;font-weight:700;margin:0 0 8px;color:#fff;font-family:'Segoe UI',sans-serif}
+.guide-card p{font-size:.9rem;color:#888;margin:0;line-height:1.5;font-family:'Segoe UI',sans-serif}
+.guide-time{font-size:.78rem;color:#00AA66;margin-top:10px;font-family:'Segoe UI',sans-serif}
+.steps{list-style:none;padding:0;counter-reset:steps}
+.step{counter-increment:steps;background:#141414;border-radius:12px;padding:24px 24px 24px 80px;margin-bottom:16px;position:relative;border:1px solid #1a1a1a}
+.step::before{content:counter(steps);position:absolute;left:20px;top:24px;background:#00AA66;color:#fff;font-weight:900;font-size:1rem;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Segoe UI',sans-serif}
+.step h4{font-size:1.05rem;font-weight:700;margin-bottom:8px;color:#fff;font-family:'Segoe UI',sans-serif}
+.step p{font-size:.92rem;color:#999;margin:0;font-family:'Segoe UI',sans-serif}
+.tip-box{background:#0a1a0a;border-left:4px solid #00AA66;padding:20px 24px;border-radius:0 10px 10px 0;margin:28px 0}
+.tip-label{font-size:.72rem;color:#00AA66;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-family:'Segoe UI',sans-serif}
+.tip-box p{color:#aaa;margin:0;font-size:.95rem}
+.faq-item{border-bottom:1px solid #1a1a1a;padding:20px 0}
+.faq-q{font-size:1.05rem;font-weight:600;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'Segoe UI',sans-serif}
+.faq-q::after{content:'▼';font-size:.8rem;color:#00AA66;transition:transform .2s}
+.faq-item.open .faq-q::after{transform:rotate(180deg)}
+.faq-a{font-size:.92rem;color:#999;padding-top:12px;display:none;font-family:'Segoe UI',sans-serif;line-height:1.7}
+.faq-item.open .faq-a{display:block}
+.cta-section{background:#0a1a0a;border:2px solid #00AA66;border-radius:16px;padding:48px;text-align:center;max-width:700px;margin:60px auto}
+.cta-section h2{color:#00AA66;font-size:1.8rem;margin-bottom:14px;font-family:'Segoe UI',sans-serif}
+.cta-section p{color:#aaa;margin-bottom:28px;font-size:1rem;font-family:'Segoe UI',sans-serif}
+.text-size-bar{position:fixed;bottom:20px;right:20px;background:#141414;border:1px solid #2a2a2a;border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:10px;z-index:999;font-family:'Segoe UI',sans-serif}
+.text-size-bar span{font-size:.75rem;color:#666}
+.size-btn{background:#1a1a1a;border:1px solid #2a2a2a;color:#aaa;width:32px;height:32px;border-radius:6px;cursor:pointer;font-size:1rem;font-family:inherit}
+.size-btn:hover{border-color:#00AA66;color:#00AA66}
+footer{text-align:center;padding:40px;color:#444;border-top:1px solid #111;font-size:.9rem;font-family:'Segoe UI',sans-serif}
+footer a{color:#00AA66;text-decoration:none}
+.path-card{background:#141414;border:2px solid #1a1a1a;border-radius:14px;padding:24px 28px;margin-bottom:14px;display:flex;align-items:center;gap:20px;text-decoration:none;color:inherit;transition:border-color .2s}
+.path-card:hover{border-color:#00AA66}
+.path-num{background:#00AA66;color:#fff;font-weight:900;font-size:1.1rem;min-width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Segoe UI',sans-serif;flex-shrink:0}
+.path-card h3{font-size:1.05rem;font-weight:700;margin:0 0 4px;color:#fff;font-family:'Segoe UI',sans-serif}
+.path-card p{font-size:.85rem;color:#888;margin:0;font-family:'Segoe UI',sans-serif}
+.warning-box{background:#1a0a0a;border-left:4px solid #cc4444;padding:20px 24px;border-radius:0 10px 10px 0;margin:28px 0}
+.warning-label{font-size:.72rem;color:#cc4444;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-family:'Segoe UI',sans-serif}
+.warning-box p{color:#bbb;margin:0;font-size:.95rem}
+.tool-card{background:#141414;border:1px solid #1a1a1a;border-radius:14px;padding:24px;margin-bottom:16px}
+.tool-card h3{font-size:1.1rem;font-weight:700;margin:0 0 8px;color:#fff;font-family:'Segoe UI',sans-serif}
+.tool-card p{font-size:.92rem;color:#999;margin:0 0 12px;font-family:'Segoe UI',sans-serif}
+.tool-link{display:inline-block;background:#00AA66;color:#fff;font-weight:700;padding:10px 22px;border-radius:8px;text-decoration:none;font-size:.9rem;font-family:'Segoe UI',sans-serif}
+.glossary-item{border-bottom:1px solid #1a1a1a;padding:16px 0}
+.glossary-term{font-size:1.05rem;font-weight:700;color:#00AA66;font-family:'Segoe UI',sans-serif;margin-bottom:4px}
+.glossary-def{font-size:.95rem;color:#ccc;font-family:'Segoe UI',sans-serif;line-height:1.6}
+.prompt-example{background:#141414;border:1px solid #1a1a1a;border-radius:10px;padding:16px 20px;margin-bottom:12px;font-family:'Segoe UI',sans-serif;font-size:.92rem;color:#ccc;cursor:pointer;transition:border-color .2s}
+.prompt-example:hover{border-color:#00AA66;color:#fff}
+.next-btn{display:inline-block;background:#141414;border:2px solid #00AA66;color:#00AA66;font-size:1rem;font-weight:700;padding:14px 32px;border-radius:10px;text-decoration:none;font-family:'Segoe UI',sans-serif;transition:background .2s,color .2s;margin-top:20px}
+.next-btn:hover{background:#00AA66;color:#fff}
+</style>
+
+</head>
+<body>
+<nav>
+  <a class="logo" href="/beginners/">AI for Beginners</a>
+  <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+    <a class="nav-home" href="/">Full Site</a>
+    <a class="nav-home" href="/beginners/what-is-ai/">What is AI?</a>
+    <a class="nav-home" href="/beginners/chatgpt-for-beginners/">ChatGPT Guide</a>
+    <a class="nav-home" href="/beginners/ask-ai/">Ask AI Anything</a>
+    <a class="nav-cta" href="https://skool.com/aiguerrilla">Free Community</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>AI Words in <span>Plain English</span></h1>
+  <p class="hero-subtitle">50 AI and technology words explained simply. Look up any word that confuses you — no jargon, no tech-speak.</p>
+</div>
+
+<div class="section">
+  <div class="tip-box">
+    <div class="tip-label">💡 How to Use This Glossary</div>
+    <p>If you come across a word you don't understand while reading about AI, look it up here. Every definition is written in plain English. No prior knowledge needed.</p>
+  </div>
+
+  <div id="glossary-search" style="margin:32px 0">
+    <input type="text" id="searchInput" placeholder="Search for a word..." onkeyup="searchGlossary()"
+      style="width:100%;background:#141414;border:2px solid #2a2a2a;border-radius:10px;padding:16px 20px;font-size:1.05rem;color:#e8e8e8;font-family:'Segoe UI',sans-serif;outline:none">
+  </div>
+
+  <div id="glossary-list">
+    <div class="glossary-item">
+  <div class="glossary-term">Artificial Intelligence (AI)</div>
+  <div class="glossary-def">A computer program that can learn from information and answer questions, have conversations, write text, or create images. Think of it like a very knowledgeable assistant.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Algorithm</div>
+  <div class="glossary-def">A set of instructions a computer follows, like a recipe. When you search Google, an algorithm decides which results to show you first.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">App</div>
+  <div class="glossary-def">Short for 'application' — a program you open on your phone or computer to do something specific, like check the weather, send email, or chat with AI.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Attachment</div>
+  <div class="glossary-def">A file (like a photo or document) that you send along with an email, the way you might clip a note to a paper letter.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Browser</div>
+  <div class="glossary-def">The program you use to visit websites. Common browsers include Google Chrome, Safari, Firefox, and Microsoft Edge.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Chatbot</div>
+  <div class="glossary-def">A computer program you can have a conversation with by typing. ChatGPT is a very advanced chatbot.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">ChatGPT</div>
+  <div class="glossary-def">A popular AI assistant made by a company called OpenAI. It's free to use at chat.openai.com and can help you write, answer questions, and much more.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Cloud</div>
+  <div class="glossary-def">Storing your photos, documents, or information on the internet instead of only on your device. This means you can access your files from any device, anywhere.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Cookie</div>
+  <div class="glossary-def">A small piece of data a website saves on your device to remember who you are, like remembering your login or preferences.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Deepfake</div>
+  <div class="glossary-def">A fake photo, video, or audio recording made by AI that looks and sounds real. Scammers use deepfakes to create false videos of celebrities or family members.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Download</div>
+  <div class="glossary-def">Saving something from the internet to your device. When you save a photo or install an app, you are downloading it.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Email</div>
+  <div class="glossary-def">Electronic mail — messages sent over the internet, like digital letters. Gmail, Yahoo Mail, and Outlook are popular email services.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Encryption</div>
+  <div class="glossary-def">A way of scrambling information so that only the intended person can read it. When a website shows a padlock icon, your connection is encrypted and secure.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Generate</div>
+  <div class="glossary-def">When AI creates something new from scratch, like writing a letter, making an image, or composing a song.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Google</div>
+  <div class="glossary-def">The world's most popular search engine. You can also use Google's AI assistant called Gemini at gemini.google.com.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Hallucination</div>
+  <div class="glossary-def">When AI makes up information that isn't true and presents it confidently. Always double-check important facts from AI with a trusted source.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Internet</div>
+  <div class="glossary-def">A worldwide network connecting billions of computers, phones, and devices. It's what allows you to browse websites, send emails, and use AI tools.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Link</div>
+  <div class="glossary-def">A clickable piece of text or image on a website that takes you to another page. Usually shown in blue or underlined.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Login / Sign In</div>
+  <div class="glossary-def">Entering your username and password to access a website or app. Like using a key to open a door.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Password</div>
+  <div class="glossary-def">A secret word or phrase that keeps your online accounts private. A strong password uses letters, numbers, and symbols.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Phishing</div>
+  <div class="glossary-def">A scam where someone sends a fake email or message pretending to be a trustworthy company to trick you into giving them your personal information.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Plugin</div>
+  <div class="glossary-def">An add-on that gives a program extra abilities — like adding a spell-checker to your browser.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Privacy</div>
+  <div class="glossary-def">Keeping your personal information safe and under your control. Good privacy means being careful about what you share online.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Prompt</div>
+  <div class="glossary-def">The question or instruction you give to an AI. 'Help me write a birthday card for my grandson' is a prompt.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Search Engine</div>
+  <div class="glossary-def">A website like Google or Bing that helps you find information online by typing in keywords.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Spam</div>
+  <div class="glossary-def">Unwanted emails or messages you didn't ask for. Often trying to sell something, scam you, or advertise a product. Move them to your trash folder.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Streaming</div>
+  <div class="glossary-def">Watching or listening to content (movies, music, TV shows) over the internet without downloading it first. Netflix and Spotify are streaming services.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Text-to-Speech</div>
+  <div class="glossary-def">AI technology that reads written text out loud in a human-sounding voice. Useful if reading on screens is difficult.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Two-Factor Authentication (2FA)</div>
+  <div class="glossary-def">An extra security step when logging into an account. After entering your password, the website sends a code to your phone to confirm it's really you.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Update</div>
+  <div class="glossary-def">Installing the newest version of an app or your device's software. Updates fix problems and improve security — it's a good idea to do them.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Upload</div>
+  <div class="glossary-def">Sending a file (like a photo or document) from your device to the internet. The opposite of download.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">URL</div>
+  <div class="glossary-def">The web address of a website — the text that starts with 'https://' that you type in your browser's address bar.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Username</div>
+  <div class="glossary-def">The name you use to log into a website. Often your email address or a name you chose when you signed up.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Verification</div>
+  <div class="glossary-def">Confirming that you are who you say you are. Websites may send a code to your email or phone to verify your identity.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Virtual Assistant</div>
+  <div class="glossary-def">An AI helper you can talk to or type to. Siri (Apple), Alexa (Amazon), and Google Assistant are popular virtual assistants.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Virus</div>
+  <div class="glossary-def">A harmful program that can damage your computer or steal information. Keep your device's security software updated to protect against viruses.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">VPN</div>
+  <div class="glossary-def">Short for Virtual Private Network — a tool that makes your internet connection more private. Like browsing with a disguise.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Wi-Fi</div>
+  <div class="glossary-def">Wireless internet connection that lets your phone, tablet, or computer connect to the internet without a cable. Your home router creates your Wi-Fi network.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Website</div>
+  <div class="glossary-def">A collection of pages on the internet with related information, all under the same web address. Like aiguerrilla.net.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Wireless</div>
+  <div class="glossary-def">Connecting to the internet or other devices without a physical cable, using Wi-Fi or Bluetooth.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">World Wide Web</div>
+  <div class="glossary-def">The collection of all websites on the internet. Often just called 'the web.' When you browse websites, you're using the World Wide Web.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Zoom</div>
+  <div class="glossary-def">A popular video calling program for seeing and talking to family or friends over the internet. Often used for video meetings.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Password Manager</div>
+  <div class="glossary-def">An app or program that securely stores all your passwords so you only need to remember one master password.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Siri</div>
+  <div class="glossary-def">Apple's voice-activated AI assistant, built into iPhones, iPads, and Macs. Say 'Hey Siri' followed by a question.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Alexa</div>
+  <div class="glossary-def">Amazon's voice-activated AI assistant, built into Amazon Echo devices. Say 'Alexa' followed by your question.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Bluetooth</div>
+  <div class="glossary-def">A wireless technology that connects devices over short distances — like connecting wireless headphones to your phone.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Tablet</div>
+  <div class="glossary-def">A flat, portable computer with a touchscreen. The iPad is the most popular tablet.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Touchscreen</div>
+  <div class="glossary-def">A screen you control by touching it with your fingers instead of using a mouse.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">QR Code</div>
+  <div class="glossary-def">A square pattern of black and white dots that your phone camera can scan to open a website or get information. Like a barcode for the internet.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Screenshot</div>
+  <div class="glossary-def">A picture of whatever is currently displayed on your screen. Useful for saving information or sharing what you see.</div>
+</div>
+<div class="glossary-item">
+  <div class="glossary-term">Subscription</div>
+  <div class="glossary-def">Paying a regular fee (usually monthly or yearly) to use a service, like Netflix or a news website.</div>
+</div>
+
+  </div>
+</div>
+
+<script>
+function searchGlossary() {
+  const filter = document.getElementById('searchInput').value.toLowerCase();
+  const items = document.querySelectorAll('.glossary-item');
+  items.forEach(item => {
+    const text = item.textContent.toLowerCase();
+    item.style.display = text.includes(filter) ? '' : 'none';
+  });
+}
+document.getElementById('searchInput').addEventListener('focus', function() {
+  this.style.borderColor = '#00AA66';
+});
+document.getElementById('searchInput').addEventListener('blur', function() {
+  this.style.borderColor = '#2a2a2a';
+});
+</script>
+
+<div style="background:#0a0a0a;border-top:1px solid #1a1a1a;padding:32px 20px;text-align:center;font-family:'Segoe UI',sans-serif">
+  <p style="color:#555;font-size:.95rem;margin-bottom:8px">Free community where you can ask questions and learn at your own pace</p>
+  <a href="https://skool.com/aiguerrilla" style="color:#00AA66;text-decoration:none;font-size:1rem;font-weight:600">Join free at skool.com/aiguerrilla &rarr;</a>
+</div>
+<footer>
+  <p>&copy; 2026 <a href="https://aiguerrilla.net">AI Guerrilla</a> &mdash; 
+  <a href="/beginners/">Beginners Home</a> &mdash; 
+  <a href="/beginners/staying-safe/">Stay Safe Online</a> &mdash;
+  <a href="https://skool.com/aiguerrilla">Free Community</a></p>
+</footer>
+
+<div class="text-size-bar">
+  <span>Text size:</span>
+  <button class="size-btn" onclick="changeSize(-1)" title="Smaller text">A−</button>
+  <button class="size-btn" onclick="changeSize(1)" title="Larger text">A+</button>
+</div>
+<script>
+let fontSize = parseInt(localStorage.getItem('beginnerFontSize') || '19');
+document.body.style.fontSize = fontSize + 'px';
+function changeSize(dir) {
+  fontSize = Math.max(16, Math.min(28, fontSize + dir * 2));
+  document.body.style.fontSize = fontSize + 'px';
+  localStorage.setItem('beginnerFontSize', fontSize);
+}
+</script>
+</body>
+</html>
