@@ -216,6 +216,19 @@ document.addEventListener('click',function(e){
     </ol>
   </div>
 </div>
+
+  <!-- Code Preview Section -->
+  <div id="previewSection" style="display:none;margin-top:24px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+      <span style="font-size:.88rem;color:#aaa;font-weight:600">📋 Your Code</span>
+      <button onclick="copyCode()" style="background:#00FF88;color:#000;border:none;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:.82rem;font-weight:700;font-family:inherit">Copy All</button>
+    </div>
+    <pre id="codeDisplay" style="background:#0d0d0d;border:1px solid #1a1a1a;border-radius:10px;padding:20px;overflow-x:auto;font-size:.82rem;color:#00FF88;line-height:1.6;white-space:pre-wrap;max-height:400px;overflow-y:auto"></pre>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+      <button onclick="downloadCode()" style="background:#00FF88;color:#000;font-weight:700;padding:12px 24px;border-radius:8px;cursor:pointer;font-size:.9rem;border:none;font-family:inherit">⬇ Download File</button>
+      <button onclick="copyCode()" style="background:#111;border:1px solid #2a2a2a;color:#aaa;padding:12px 20px;border-radius:8px;cursor:pointer;font-size:.88rem;font-family:inherit">📋 Copy Code</button>
+    </div>
+  </div>
 <div style="background:#0d0d0d;border-top:1px solid #1a1a1a;padding:32px 20px;text-align:center">
   <p style="color:#555;font-size:.88rem;margin-bottom:8px">Free AI community for operators and builders</p>
   <a href="https://skool.com/aiguerrilla" style="color:#00FF88;text-decoration:none;font-size:.95rem;font-weight:600">Join 150+ operators at skool.com/aiguerrilla →</a>
@@ -289,10 +302,78 @@ Add comments explaining how to configure it (email addresses, column names, etc.
   scriptCode = result.replace(/^```javascript\n?/,'').replace(/^```js\n?/,'').replace(/^```\n?/,'').replace(/```$/,'').trim();
   document.getElementById('scriptCode').textContent = scriptCode;
   document.getElementById('outputSection').classList.add('visible');
+  showOutput(scriptCode, 'script.js', false);
 }
 function downloadScript() {
   if (!scriptCode) { alert('Generate your script first!'); return; }
   downloadFile(scriptCode, 'script.gs', 'text/plain');
+}
+</script>
+
+<script>
+/* ── Live Preview Engine ───────────────────────────────── */
+let _generatedCode = '';
+let _codeFilename = 'output.html';
+let _isHTML = true;
+
+function showOutput(code, filename, isHTML) {
+  _generatedCode = code;
+  _codeFilename = filename || 'output.html';
+  _isHTML = isHTML !== false;
+  const section = document.getElementById('previewSection');
+  if (section) section.style.display = 'block';
+  if (_isHTML) {
+    const frame = document.getElementById('previewFrame');
+    if (frame) frame.srcdoc = code;
+    const editor = document.getElementById('codeEditor');
+    if (editor) editor.value = code;
+  } else {
+    const display = document.getElementById('codeDisplay');
+    if (display) display.textContent = code;
+  }
+  if (section) section.scrollIntoView({behavior: 'smooth', block: 'start'});
+}
+function applyEdits() {
+  const code = document.getElementById('codeEditor')?.value;
+  if (code) { _generatedCode = code; document.getElementById('previewFrame').srcdoc = code; }
+}
+function refreshPreview() {
+  const frame = document.getElementById('previewFrame');
+  if (frame && _generatedCode) frame.srcdoc = _generatedCode;
+}
+function openFullscreen() {
+  const win = window.open('', '_blank');
+  win.document.write(_generatedCode);
+  win.document.close();
+}
+function downloadHTML() {
+  const code = document.getElementById('codeEditor')?.value || _generatedCode;
+  _download(code, _codeFilename, 'text/html');
+}
+function downloadCode() {
+  _download(_generatedCode, _codeFilename, 'text/plain');
+}
+function copyCode() {
+  const code = document.getElementById('codeEditor')?.value ||
+               document.getElementById('codeDisplay')?.textContent ||
+               _generatedCode;
+  navigator.clipboard.writeText(code).then(() => {
+    const btn = event?.target;
+    if (btn) {
+      const orig = btn.textContent;
+      btn.textContent = '✅ Copied!';
+      btn.style.background = '#0d1a0d';
+      btn.style.color = '#00FF88';
+      setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.color = ''; }, 2000);
+    }
+  });
+}
+function _download(content, filename, type) {
+  const blob = new Blob([content], {type});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  a.click();
 }
 </script>
 </body>
