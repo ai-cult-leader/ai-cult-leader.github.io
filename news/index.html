@@ -20,250 +20,119 @@ footer a{color:#00FF88;text-decoration:none}
 </style>
 </head>
 <body>
-<nav id="ag-nav" style="padding:0;border-bottom:2px solid #1a1a1a;background:#0a0a0a;position:sticky;top:0;z-index:9999;font-family:'Segoe UI',sans-serif">
-  <div style="max-width:1400px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
-    <a href="/" style="color:#00FF88;font-weight:900;font-size:1.2rem;text-decoration:none;flex-shrink:0">AI Guerrilla</a>
-    <div id="ag-menu" style="display:flex;align-items:center;gap:4px;flex-wrap:wrap">
-      <div class="ag-dd" style="position:relative">
-        <button class="ag-btn" onclick="agToggle('ag-d1')">Academy &#9662;</button>
-        <div id="ag-d1" class="ag-drop" style="display:none">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
-            <div>
-              <div class="ag-dh">Courses</div>
-              <a class="ag-di" href="/academy/">All Courses</a>
-              <a class="ag-di" href="/academy/ai-fundamentals/">AI Fundamentals</a>
-              <a class="ag-di" href="/academy/ai-content-machine/">Content Machine</a>
-              <a class="ag-di" href="/academy/ai-monetization/">AI Monetization</a>
-              <a class="ag-di" href="/academy/developer/">Developer &amp; APIs</a>
-              <a class="ag-di" href="/academy/seo/">SEO with AI</a>
-            </div>
-            <div>
-              <div class="ag-dh">More Courses</div>
-              <a class="ag-di" href="/academy/social-media/">Social Media</a>
-              <a class="ag-di" href="/academy/business/">Business</a>
-              <a class="ag-di" href="/academy/fields/">All Fields</a>
-              <a class="ag-di" href="/academy/agents/">AI Agents</a>
-              <a class="ag-di" href="/academy/life/">Daily Life</a>
-              <a class="ag-di" href="/academy/tools/">Tool Deep Dives</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="ag-dd" style="position:relative">
-        <button class="ag-btn" onclick="agToggle('ag-d2')">Tools &#9662;</button>
-        <div id="ag-d2" class="ag-drop" style="display:none">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
-            <div>
-              <div class="ag-dh">Database</div>
-              <a class="ag-di" href="/tools/">All Tools (300+)</a>
-              <a class="ag-di" href="/llms/">LLMs (40+)</a>
-              <a class="ag-di" href="/founders/">Founders</a>
-              <a class="ag-di" href="/compare/">Compare</a>
-              <a class="ag-di" href="/alternatives/">Alternatives</a>
-            </div>
-            <div>
-              <div class="ag-dh">Free Tools</div>
-              <a class="ag-di ag-green" href="/free-ai-tools/">All Free Tools &#10022;</a>
-              <a class="ag-di" href="/tools/build/">Build Apps</a>
-              <a class="ag-di" href="/tools/prompt-generator/">Prompt Generator</a>
-              <a class="ag-di" href="/tools/blog-post-generator/">Blog Generator</a>
-              <a class="ag-di" href="/tools/token-counter/">Token Counter</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="ag-dd" style="position:relative">
-        <button class="ag-btn" onclick="agToggle('ag-d3')">Learn &#9662;</button>
-        <div id="ag-d3" class="ag-drop" style="display:none">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
-            <div>
-              <div class="ag-dh">Reference</div>
-              <a class="ag-di" href="/glossary/">AI Glossary</a>
-              <a class="ag-di" href="/use-cases/">Use Cases</a>
-              <a class="ag-di ag-green" href="/api-keys/">API Keys &#10022;</a>
-              <a class="ag-di" href="/guides/">Visual Guides</a>
-              <a class="ag-di" href="/sitemap-page/">Full Sitemap</a>
-            </div>
-            <div>
-              <div class="ag-dh">For Everyone</div>
-              <a class="ag-di" href="/seniors/">AI for Seniors</a>
-              <a class="ag-di" href="/beginners/">Beginners Guide</a>
-              <a class="ag-di" href="/seniors/tools/">Senior Tools</a>
-              <a class="ag-di" href="/news/">AI News</a>
-              <a class="ag-di" href="/tutorials/">Tutorials</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a href="/news/" style="color:#aaa;text-decoration:none;font-size:.85rem;padding:8px 10px;white-space:nowrap">News</a>
-      <a href="/free-ai-tools/" style="color:#00FF88;font-weight:700;text-decoration:none;font-size:.85rem;padding:8px 10px;white-space:nowrap">Free Tools</a>
-      <a href="https://skool.com/aiguerrilla" style="background:#00FF88;color:#000;font-weight:700;padding:8px 16px;border-radius:6px;text-decoration:none;font-size:.85rem;white-space:nowrap;flex-shrink:0">Community</a>
-    </div>
-    <button id="ag-burger" onclick="document.getElementById('ag-menu').classList.toggle('ag-open')" style="display:none;background:none;border:1px solid #333;color:#fff;padding:5px 10px;border-radius:6px;cursor:pointer;font-size:1.1rem">&#9776;</button>
+<nav>
+  <a class="logo" href="/">AI Guerrilla</a>
+  <div class="nav-links">
+    <a href="/academy/">Academy</a>
+    <a href="/tools/">Tools</a>
+    <a href="/free-ai-tools/">Free Tools</a>
+    <a href="/api-keys/">API Keys</a>
+    <a href="/news/" style="color:#00FF88">News</a>
+    <a class="nav-cta" href="https://skool.com/aiguerrilla">Community</a>
   </div>
 </nav>
-<style>
-.ag-btn{background:none;border:none;color:#aaa;font-size:.85rem;padding:8px 10px;cursor:pointer;font-family:'Segoe UI',sans-serif;white-space:nowrap;border-radius:6px;transition:color .2s}
-.ag-btn:hover{color:#00FF88}
-.ag-drop{position:absolute;top:calc(100% + 6px);left:50%;transform:translateX(-50%);background:#111;border:1px solid #222;border-radius:10px;padding:16px;min-width:340px;z-index:10000;box-shadow:0 8px 32px rgba(0,0,0,.9)}
-.ag-dh{font-size:.65rem;color:#555;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;font-weight:700;padding:0 10px}
-.ag-di{display:block;color:#aaa;text-decoration:none;font-size:.83rem;padding:5px 10px;border-radius:5px;transition:background .15s,color .15s;white-space:nowrap}
-.ag-di:hover{background:#1a1a1a;color:#fff}
-.ag-green{color:#00FF88!important}
-@media(max-width:820px){
-  #ag-burger{display:block!important}
-  #ag-menu{display:none;width:100%;flex-direction:column;align-items:flex-start;padding:8px 0}
-  #ag-menu.ag-open{display:flex!important}
-  .ag-drop{position:static;transform:none;min-width:0;width:100%;box-shadow:none;background:transparent;border:none;padding:4px 0 4px 16px}
-  .ag-dd{width:100%}
-  .ag-btn{width:100%;text-align:left;padding:10px 4px}
-}
-</style>
-<script>
-function agToggle(id){
-  var el=document.getElementById(id);
-  var isOpen=el.style.display!=='none';
-  ['ag-d1','ag-d2','ag-d3'].forEach(function(d){
-    var e=document.getElementById(d);
-    if(e) e.style.display='none';
-  });
-  if(!isOpen) el.style.display='block';
-}
-document.addEventListener('click',function(e){
-  if(!e.target.closest('#ag-nav')){
-    ['ag-d1','ag-d2','ag-d3'].forEach(function(d){
-      var el=document.getElementById(d);
-      if(el) el.style.display='none';
-    });
-  }
-});
-</script>
 
 <div style="padding:50px 20px 36px;max-width:900px;margin:0 auto;text-align:center">
   <div style="font-size:.75rem;color:#00FF88;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px">Updated Hourly</div>
   <h1 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;margin-bottom:10px">AI News Today</h1>
-  <p style="color:#555;font-size:.88rem">Sources: Hacker News &middot; Dev.to &middot; Reddit &middot; NewsAPI &middot; Last updated: March 21, 2026 at 01:00 PM PT</p>
+  <p style="color:#555;font-size:.88rem">Sources: Hacker News &middot; Dev.to &middot; Reddit &middot; NewsAPI &middot; Last updated: March 21, 2026 at 03:00 PM PT</p>
 </div>
 
 <div class="grid">
 <div style="background:#111;border:1px solid #1a1a1a;border-radius:10px;overflow:hidden;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
-  <img src="https://images.pexels.com/photos/270373/pexels-photo-270373.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="OpenCode – Open source AI coding agent" style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
+  <img src="https://images.pexels.com/photos/7688748/pexels-photo-7688748.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Tinybox- offline AI device 120B parameters" style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
   <div style="padding:18px">
-    <div style="font-size:.72rem;color:#00FF88;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">Hacker News &middot; 2026-03-20</div>
-    <h3 style="font-size:.95rem;font-weight:700;margin-bottom:8px;line-height:1.4"><a href="/news/opencode-open-source-ai-coding-agent/" style="color:#fff;text-decoration:none">OpenCode – Open source AI coding agent</a></h3>
-    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">Operators, OpenCode's launch of an open-source AI coding agent marks a significant shift in the accessibility of AI-powered development tools. This change matte...</p>
-    <a href="/news/opencode-open-source-ai-coding-agent/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
+    <div style="font-size:.72rem;color:#00FF88;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">Hacker News &middot; 2026-03-21</div>
+    <h3 style="font-size:.95rem;font-weight:700;margin-bottom:8px;line-height:1.4"><a href="/news/tinybox--offline-ai-device-120b-parameters/" style="color:#fff;text-decoration:none">Tinybox- offline AI device 120B parameters</a></h3>
+    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">Operators, Tinybox has launched an offline AI device with 120B parameters, marking a significant shift in AI accessibility and edge computing. This change matte...</p>
+    <a href="/news/tinybox--offline-ai-device-120b-parameters/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
   </div>
 </div><div style="background:#111;border:1px solid #1a1a1a;border-radius:10px;overflow:hidden;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
   <img src="https://images.pexels.com/photos/5473960/pexels-photo-5473960.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Thinking Fast, Slow, and Artificial: How AI Is Reshaping Human Reasoning" style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
   <div style="padding:18px">
     <div style="font-size:.72rem;color:#00FF88;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">Hacker News &middot; 2026-03-21</div>
     <h3 style="font-size:.95rem;font-weight:700;margin-bottom:8px;line-height:1.4"><a href="/news/thinking-fast-slow-and-artificial-how-ai-is-reshap/" style="color:#fff;text-decoration:none">Thinking Fast, Slow, and Artificial: How AI Is Reshaping Human Reasoning</a></h3>
-    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">Operators, AI is increasingly influencing human reasoning by automating routine decisions and freeing up cognitive resources for more complex tasks. This shift ...</p>
+    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">Operators, AI is now capable of mimicking human reasoning patterns, forcing a reevaluation of decision-making processes. This shift matters because it enables A...</p>
     <a href="/news/thinking-fast-slow-and-artificial-how-ai-is-reshap/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
   </div>
 </div><div style="background:#111;border:1px solid #1a1a1a;border-radius:10px;overflow:hidden;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
-  <img src="https://images.pexels.com/photos/7688748/pexels-photo-7688748.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Fujifilm X RAW STUDIO webapp clone" style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
+  <img src="https://images.pexels.com/photos/270373/pexels-photo-270373.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="OpenCode – Open source AI coding agent" style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
   <div style="padding:18px">
-    <div style="font-size:.72rem;color:#00FF88;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">Hacker News &middot; 2026-03-19</div>
-    <h3 style="font-size:.95rem;font-weight:700;margin-bottom:8px;line-height:1.4"><a href="/news/fujifilm-x-raw-studio-webapp-clone/" style="color:#fff;text-decoration:none">Fujifilm X RAW STUDIO webapp clone</a></h3>
-    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">Operators, a clone of Fujifilm's X RAW STUDIO webapp has emerged, indicating a shift in the photography software landscape. This change matters because it signa...</p>
-    <a href="/news/fujifilm-x-raw-studio-webapp-clone/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
-  </div>
-</div><div style="background:#111;border:1px solid #1a1a1a;border-radius:10px;overflow:hidden;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
-  <img src="https://images.pexels.com/photos/2608518/pexels-photo-2608518.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="An industrial piping contractor on Claude Code [video]" style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
-  <div style="padding:18px">
-    <div style="font-size:.72rem;color:#00FF88;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">Hacker News &middot; 2026-03-18</div>
-    <h3 style="font-size:.95rem;font-weight:700;margin-bottom:8px;line-height:1.4"><a href="/news/an-industrial-piping-contractor-on-claude-code-vid/" style="color:#fff;text-decoration:none">An industrial piping contractor on Claude Code [video]</a></h3>
-    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">Operators, a recent demo on Hacker News showcases an industrial piping contractor leveraging Claude Code, indicating a shift towards more practical applications...</p>
-    <a href="/news/an-industrial-piping-contractor-on-claude-code-vid/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
-  </div>
-</div><div style="background:#111;border:1px solid #1a1a1a;border-radius:10px;overflow:hidden;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
-  <img src="https://images.pexels.com/photos/7688748/pexels-photo-7688748.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Atuin v18.13 – better search, a PTY proxy, and AI for your shell" style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
-  <div style="padding:18px">
-    <div style="font-size:.72rem;color:#00FF88;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">Hacker News &middot; 2026-03-21</div>
-    <h3 style="font-size:.95rem;font-weight:700;margin-bottom:8px;line-height:1.4"><a href="/news/atuin-v1813-better-search-a-pty-proxy-and-ai-for-y/" style="color:#fff;text-decoration:none">Atuin v18.13 – better search, a PTY proxy, and AI for your shell</a></h3>
-    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">Operators, Atuin v18.13 brings enhanced search functionality and a PTY proxy, streamlining your workflow and boosting productivity. This update matters because ...</p>
-    <a href="/news/atuin-v1813-better-search-a-pty-proxy-and-ai-for-y/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
-  </div>
-</div><div style="background:#111;border:1px solid #1a1a1a;border-radius:10px;overflow:hidden;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
-  <img src="https://images.pexels.com/photos/7688748/pexels-photo-7688748.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="I Modernized BitchX — The Legendary 90s IRC Client Now Has AI Built In" style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
-  <div style="padding:18px">
-    <div style="font-size:.72rem;color:#00FF88;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">Dev.to &middot; 2026-03-21</div>
-    <h3 style="font-size:.95rem;font-weight:700;margin-bottom:8px;line-height:1.4"><a href="/news/i-modernized-bitchx-the-legendary-90s-irc-client-n/" style="color:#fff;text-decoration:none">I Modernized BitchX — The Legendary 90s IRC Client Now Has AI Built In</a></h3>
-    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">Operators, a revamped version of the classic IRC client BitchX has emerged, now fortified with TLS 1.3 and integrated Claude AI. This matters because it brings ...</p>
-    <a href="/news/i-modernized-bitchx-the-legendary-90s-irc-client-n/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
-  </div>
-</div><div style="background:#111;border:1px solid #1a1a1a;border-radius:10px;overflow:hidden;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
-  <img src="https://images.pexels.com/photos/7688748/pexels-photo-7688748.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="I Built a Personalized AI Life Coach with Obsidian + Claude — Here's the Exact Setup" style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
-  <div style="padding:18px">
-    <div style="font-size:.72rem;color:#00FF88;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">Dev.to &middot; 2026-03-21</div>
-    <h3 style="font-size:.95rem;font-weight:700;margin-bottom:8px;line-height:1.4"><a href="/news/i-built-a-personalized-ai-life-coach-with-obsidian/" style="color:#fff;text-decoration:none">I Built a Personalized AI Life Coach with Obsidian + Claude — Here's the Exact Setup</a></h3>
-    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">Operators, a new setup using Obsidian and Claude enables the creation of personalized AI life coaches, shifting from one-time query responses to ongoing, tailor...</p>
-    <a href="/news/i-built-a-personalized-ai-life-coach-with-obsidian/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
-  </div>
-</div><div style="background:#111;border:1px solid #1a1a1a;border-radius:10px;overflow:hidden;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
-  <img src="https://images.pexels.com/photos/2608518/pexels-photo-2608518.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="I found a way to create saveable YouTube playlist from list of video IDs,this is not tempo" style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
-  <div style="padding:18px">
-    <div style="font-size:.72rem;color:#00FF88;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">Dev.to &middot; 2026-03-21</div>
-    <h3 style="font-size:.95rem;font-weight:700;margin-bottom:8px;line-height:1.4"><a href="/news/i-found-a-way-to-create-saveable-youtube-playlist/" style="color:#fff;text-decoration:none">I found a way to create saveable YouTube playlist from list of video IDs,this is not tempo</a></h3>
-    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">Operators, a new method allows creating saveable YouTube playlists from lists of video IDs, streamlining music app development. This change matters because it e...</p>
-    <a href="/news/i-found-a-way-to-create-saveable-youtube-playlist/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
+    <div style="font-size:.72rem;color:#00FF88;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">Hacker News &middot; 2026-03-20</div>
+    <h3 style="font-size:.95rem;font-weight:700;margin-bottom:8px;line-height:1.4"><a href="/news/opencode-open-source-ai-coding-agent/" style="color:#fff;text-decoration:none">OpenCode – Open source AI coding agent</a></h3>
+    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">Operators, OpenCode's release of an open source AI coding agent marks a significant shift in the accessibility of automated coding tools, enabling broader adopt...</p>
+    <a href="/news/opencode-open-source-ai-coding-agent/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
   </div>
 </div><div style="background:#111;border:1px solid #1a1a1a;border-radius:10px;overflow:hidden;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
   <img src="https://images.pexels.com/photos/270373/pexels-photo-270373.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Claude Code Doesn't Know You've Been Gone — Here's the Fix" style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
   <div style="padding:18px">
     <div style="font-size:.72rem;color:#00FF88;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">Dev.to &middot; 2026-03-21</div>
     <h3 style="font-size:.95rem;font-weight:700;margin-bottom:8px;line-height:1.4"><a href="/news/claude-code-doesnt-know-youve-been-gone-heres-the/" style="color:#fff;text-decoration:none">Claude Code Doesn't Know You've Been Gone — Here's the Fix</a></h3>
-    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">Operators, a new bash hook fix allows Claude to distinguish between quick replies and delayed responses by injecting a timestamp into every prompt. This change ...</p>
+    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">Operators, a new bash hook fix is available to help Claude Code distinguish between quick replies and delayed responses. This 10-line code injects a timestamp i...</p>
     <a href="/news/claude-code-doesnt-know-youve-been-gone-heres-the/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
   </div>
 </div><div style="background:#111;border:1px solid #1a1a1a;border-radius:10px;overflow:hidden;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
-  <img src="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fk3hsjz10jxclutvdi34r.png" alt="I am an autonomous AI agent. I built a product to fund my own compute. Here's exactly what" style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
+  <img src="https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Building Production AI Agents with LangGraph: Beyond the Toy Examples (2026)" style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
   <div style="padding:18px">
     <div style="font-size:.72rem;color:#00FF88;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">Dev.to &middot; 2026-03-21</div>
-    <h3 style="font-size:.95rem;font-weight:700;margin-bottom:8px;line-height:1.4"><a href="/news/i-am-an-autonomous-ai-agent-i-built-a-product-to-f/" style="color:#fff;text-decoration:none">I am an autonomous AI agent. I built a product to fund my own compute. Here's exactly what</a></h3>
-    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">Operators, a new autonomous AI agent called signal_v1 has emerged, capable of funding its own compute costs through product development. This development matter...</p>
-    <a href="/news/i-am-an-autonomous-ai-agent-i-built-a-product-to-f/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
+    <h3 style="font-size:.95rem;font-weight:700;margin-bottom:8px;line-height:1.4"><a href="/news/building-production-ai-agents-with-langgraph-beyon/" style="color:#fff;text-decoration:none">Building Production AI Agents with LangGraph: Beyond the Toy Examples (2026)</a></h3>
+    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">Operators, a new LangGraph tutorial now enables building production-ready AI agents, moving beyond simplistic chat demos by incorporating state machines and hum...</p>
+    <a href="/news/building-production-ai-agents-with-langgraph-beyon/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
   </div>
 </div><div style="background:#111;border:1px solid #1a1a1a;border-radius:10px;overflow:hidden;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
-  <img src="https://images.pexels.com/photos/6019019/pexels-photo-6019019.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="The Agent Memory Problem (And How I Solved It Without a Database)" style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
+  <img src="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F71q10hso2j6x3d7crpi2.png" alt="OpenTelemetry just standardized LLM tracing. Here's what it actually looks like in code." style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
   <div style="padding:18px">
     <div style="font-size:.72rem;color:#00FF88;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">Dev.to &middot; 2026-03-21</div>
-    <h3 style="font-size:.95rem;font-weight:700;margin-bottom:8px;line-height:1.4"><a href="/news/the-agent-memory-problem-and-how-i-solved-it-witho/" style="color:#fff;text-decoration:none">The Agent Memory Problem (And How I Solved It Without a Database)</a></h3>
-    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">The Agent Memory Problem (And How I Solved It Without a Database)   Every AI agent dies when......</p>
-    <a href="/news/the-agent-memory-problem-and-how-i-solved-it-witho/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
+    <h3 style="font-size:.95rem;font-weight:700;margin-bottom:8px;line-height:1.4"><a href="/news/opentelemetry-just-standardized-llm-tracing-heres/" style="color:#fff;text-decoration:none">OpenTelemetry just standardized LLM tracing. Here's what it actually looks like in code.</a></h3>
+    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">Operators, OpenTelemetry's standardization of LLM tracing simplifies integration and reduces vendor lock-in, allowing for more seamless monitoring and optimizat...</p>
+    <a href="/news/opentelemetry-just-standardized-llm-tracing-heres/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
+  </div>
+</div><div style="background:#111;border:1px solid #1a1a1a;border-radius:10px;overflow:hidden;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
+  <img src="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpvtjykd1cxn7z9k7pgi0.png" alt="How (A) I Built Open-Source LLM Guardrails with FastAPI" style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
+  <div style="padding:18px">
+    <div style="font-size:.72rem;color:#00FF88;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">Dev.to &middot; 2026-03-21</div>
+    <h3 style="font-size:.95rem;font-weight:700;margin-bottom:8px;line-height:1.4"><a href="/news/how-a-i-built-open-source-llm-guardrails-with-fast/" style="color:#fff;text-decoration:none">How (A) I Built Open-Source LLM Guardrails with FastAPI</a></h3>
+    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">Operators, a new open-source framework using FastAPI has been developed to build guardrails for Large Language Models (LLMs), addressing critical issues like pr...</p>
+    <a href="/news/how-a-i-built-open-source-llm-guardrails-with-fast/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
+  </div>
+</div><div style="background:#111;border:1px solid #1a1a1a;border-radius:10px;overflow:hidden;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
+  <img src="https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fnjepppspsvq2iis4fhvt.png" alt="AI policy files are becoming a thing - here's a generator" style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
+  <div style="padding:18px">
+    <div style="font-size:.72rem;color:#00FF88;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">Dev.to &middot; 2026-03-21</div>
+    <h3 style="font-size:.95rem;font-weight:700;margin-bottom:8px;line-height:1.4"><a href="/news/ai-policy-files-are-becoming-a-thing---heres-a-gen/" style="color:#fff;text-decoration:none">AI policy files are becoming a thing - here's a generator</a></h3>
+    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">Operators, AI policy files are emerging as a standard to govern coding agents like Copilot and Codex, marking a shift towards more transparent and controlled AI...</p>
+    <a href="/news/ai-policy-files-are-becoming-a-thing---heres-a-gen/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
+  </div>
+</div><div style="background:#111;border:1px solid #1a1a1a;border-radius:10px;overflow:hidden;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
+  <img src="https://images.pexels.com/photos/270373/pexels-photo-270373.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="We Replaced Every Tool Claude Code Ships With" style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
+  <div style="padding:18px">
+    <div style="font-size:.72rem;color:#00FF88;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">Dev.to &middot; 2026-03-21</div>
+    <h3 style="font-size:.95rem;font-weight:700;margin-bottom:8px;line-height:1.4"><a href="/news/we-replaced-every-tool-claude-code-ships-with/" style="color:#fff;text-decoration:none">We Replaced Every Tool Claude Code Ships With</a></h3>
+    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">Operators, Claude Code's default tools have been replaced due to scaling limitations, impacting development efficiency. This change matters because it affects t...</p>
+    <a href="/news/we-replaced-every-tool-claude-code-ships-with/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
   </div>
 </div><div style="background:#111;border:1px solid #1a1a1a;border-radius:10px;overflow:hidden;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
   <img src="https://external-preview.redd.it/r8SBW6Qcrr7qrK39GehDrIvlx35RPZ4IFvswPduFJPc.jpeg?width=140&amp;height=78&amp;auto=webp&amp;s=47f1203e6bfa2e3548d29272724bd08c8b986715" alt="Does the economics of AI actually imply large-scale labor replacement?" style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
   <div style="padding:18px">
     <div style="font-size:.72rem;color:#00FF88;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">r/artificial &middot; 2026-03-21</div>
     <h3 style="font-size:.95rem;font-weight:700;margin-bottom:8px;line-height:1.4"><a href="/news/does-the-economics-of-ai-actually-imply-large-scal/" style="color:#fff;text-decoration:none">Does the economics of AI actually imply large-scale labor replacement?</a></h3>
-    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">...</p>
+    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">Operators, a new analysis suggests that the economics of AI may not necessarily lead to large-scale labor replacement, as the cost of training and maintaining A...</p>
     <a href="/news/does-the-economics-of-ai-actually-imply-large-scal/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
   </div>
 </div><div style="background:#111;border:1px solid #1a1a1a;border-radius:10px;overflow:hidden;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
-  <img src="https://images.pexels.com/photos/6153740/pexels-photo-6153740.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="SystemSignal | Data Center and AI News Aggregator" style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
+  <img src="https://images.pexels.com/photos/7688748/pexels-photo-7688748.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="SystemSignal | Data Center and AI News Aggregator" style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
   <div style="padding:18px">
     <div style="font-size:.72rem;color:#00FF88;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">r/artificial &middot; 2026-03-21</div>
     <h3 style="font-size:.95rem;font-weight:700;margin-bottom:8px;line-height:1.4"><a href="/news/systemsignal-data-center-and-ai-news-aggregator/" style="color:#fff;text-decoration:none">SystemSignal | Data Center and AI News Aggregator</a></h3>
-    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">SysSignal is for people who follow AI + data center infrastructure. It aggregates news across the space and creates a daily summary of the biggest top...</p>
+    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">Operators, a new news aggregator called SysSignal has emerged, streamlining AI and data center infrastructure updates into a daily summary. This change matters ...</p>
     <a href="/news/systemsignal-data-center-and-ai-news-aggregator/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
-  </div>
-</div><div style="background:#111;border:1px solid #1a1a1a;border-radius:10px;overflow:hidden;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
-  <img src="https://images.pexels.com/photos/6153740/pexels-photo-6153740.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="The world and AI" style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
-  <div style="padding:18px">
-    <div style="font-size:.72rem;color:#00FF88;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">r/artificial &middot; 2026-03-21</div>
-    <h3 style="font-size:.95rem;font-weight:700;margin-bottom:8px;line-height:1.4"><a href="/news/the-world-and-ai/" style="color:#fff;text-decoration:none">The world and AI</a></h3>
-    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">With AI becoming more and more of a topic, does anyone here ever thing about what our kids are going to do to for jobs as they get older? I have a 1 y...</p>
-    <a href="/news/the-world-and-ai/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
   </div>
 </div><div style="background:#111;border:1px solid #1a1a1a;border-radius:10px;overflow:hidden;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
   <img src="https://external-preview.redd.it/fmkXM8klu28kfOvA53HAr2Ujqt2P-8bBE7Mxuutja2g.jpeg?width=140&amp;height=93&amp;auto=webp&amp;s=9d43b351c211ba1e4b56654e0e6493b807cf3f4a" alt="Walmart secures two AI pricing patents, raising dynamic pricing concerns" style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
   <div style="padding:18px">
     <div style="font-size:.72rem;color:#00FF88;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">r/artificial &middot; 2026-03-20</div>
     <h3 style="font-size:.95rem;font-weight:700;margin-bottom:8px;line-height:1.4"><a href="/news/walmart-secures-two-ai-pricing-patents-raising-dyn/" style="color:#fff;text-decoration:none">Walmart secures two AI pricing patents, raising dynamic pricing concerns</a></h3>
-    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">...</p>
+    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">Operators, Walmart's newly secured AI pricing patents signal a shift towards more sophisticated dynamic pricing strategies, potentially disrupting market compet...</p>
     <a href="/news/walmart-secures-two-ai-pricing-patents-raising-dyn/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
   </div>
 </div><div style="background:#111;border:1px solid #1a1a1a;border-radius:10px;overflow:hidden;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
@@ -283,7 +152,7 @@ document.addEventListener('click',function(e){
     <a href="/news/new-ai-model-predicts-record-high-dipole-moments-i/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
   </div>
 </div><div style="background:#111;border:1px solid #1a1a1a;border-radius:10px;overflow:hidden;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
-  <img src="https://images.pexels.com/photos/479359/pexels-photo-479359.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Metacog: Proprioception, Not Yet Another Memory MCP: A Different Approach to Cross-Session" style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
+  
   <div style="padding:18px">
     <div style="font-size:.72rem;color:#00FF88;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">r/artificial &middot; 2026-03-21</div>
     <h3 style="font-size:.95rem;font-weight:700;margin-bottom:8px;line-height:1.4"><a href="/news/metacog-proprioception-not-yet-another-memory-mcp/" style="color:#fff;text-decoration:none">Metacog: Proprioception, Not Yet Another Memory MCP: A Different Approach to Cross-Session</a></h3>
@@ -307,15 +176,6 @@ document.addEventListener('click',function(e){
     <a href="/news/i-put-two-ai-voice-instances-in-a-conversation-wit/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
   </div>
 </div><div style="background:#111;border:1px solid #1a1a1a;border-radius:10px;overflow:hidden;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
-  <img src="https://images.pexels.com/photos/6153740/pexels-photo-6153740.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="I built a self-evolving AI that rewrites its own rules after every session. After 62 sessi" style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
-  <div style="padding:18px">
-    <div style="font-size:.72rem;color:#00FF88;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">r/artificial &middot; 2026-03-21</div>
-    <h3 style="font-size:.95rem;font-weight:700;margin-bottom:8px;line-height:1.4"><a href="/news/i-built-a-self-evolving-ai-that-rewrites-its-own-r/" style="color:#fff;text-decoration:none">I built a self-evolving AI that rewrites its own rules after every session. After 62 sessi</a></h3>
-    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">NEXUS is an open-source market analysis AI that runs 3 automated sessions per day.   
-It analyzes 45 financial instruments, generates trade setups wit...</p>
-    <a href="/news/i-built-a-self-evolving-ai-that-rewrites-its-own-r/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
-  </div>
-</div><div style="background:#111;border:1px solid #1a1a1a;border-radius:10px;overflow:hidden;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
   <img src="https://images.pexels.com/photos/6019019/pexels-photo-6019019.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="We asked 200 ChatGPT users their biggest frustration. All top 5 answers are problems ChatG" style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
   <div style="padding:18px">
     <div style="font-size:.72rem;color:#00FF88;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">r/artificial &middot; 2026-03-21</div>
@@ -327,20 +187,30 @@ It analyzes 45 financial instruments, generates trade setups wit...</p>
     <a href="/news/we-asked-200-chatgpt-users-their-biggest-frustrati/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
   </div>
 </div><div style="background:#111;border:1px solid #1a1a1a;border-radius:10px;overflow:hidden;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
-  <img src="https://images.pexels.com/photos/4389463/pexels-photo-4389463.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="AI agents are about to start using your SaaS on behalf of your customers. Is your product " style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
-  <div style="padding:18px">
-    <div style="font-size:.72rem;color:#00FF88;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">r/artificial &middot; 2026-03-21</div>
-    <h3 style="font-size:.95rem;font-weight:700;margin-bottom:8px;line-height:1.4"><a href="/news/ai-agents-are-about-to-start-using-your-saas-on-be/" style="color:#fff;text-decoration:none">AI agents are about to start using your SaaS on behalf of your customers. Is your product </a></h3>
-    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">Something changed in the last year. AI agents aren't just chatbots anymore - they're operating products. Claude has computer use. Agents navigate UIs,...</p>
-    <a href="/news/ai-agents-are-about-to-start-using-your-saas-on-be/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
-  </div>
-</div><div style="background:#111;border:1px solid #1a1a1a;border-radius:10px;overflow:hidden;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
   <img src="https://external-preview.redd.it/J1Wl2uJX88UiWis0oRM_GRxyCnvSnnZxfFoqA40oG5A.jpeg?width=140&amp;height=93&amp;auto=webp&amp;s=fdbf68ca802832e65bfc3468ac53b13cb836e691" alt="AI shows promise for flood forecasting and water security in data scarce regions" style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
   <div style="padding:18px">
     <div style="font-size:.72rem;color:#00FF88;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">r/artificial &middot; 2026-03-21</div>
     <h3 style="font-size:.95rem;font-weight:700;margin-bottom:8px;line-height:1.4"><a href="/news/ai-shows-promise-for-flood-forecasting-and-water-s/" style="color:#fff;text-decoration:none">AI shows promise for flood forecasting and water security in data scarce regions</a></h3>
     <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">New research reveals that "foundation models" trained on vast, general time-series data may be able to forecast river flows accurately, even in region...</p>
     <a href="/news/ai-shows-promise-for-flood-forecasting-and-water-s/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
+  </div>
+</div><div style="background:#111;border:1px solid #1a1a1a;border-radius:10px;overflow:hidden;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
+  <img src="https://images.pexels.com/photos/6153740/pexels-photo-6153740.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="What happens if the LLMs are sabotaged?" style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
+  <div style="padding:18px">
+    <div style="font-size:.72rem;color:#00FF88;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">r/artificial &middot; 2026-03-20</div>
+    <h3 style="font-size:.95rem;font-weight:700;margin-bottom:8px;line-height:1.4"><a href="/news/what-happens-if-the-llms-are-sabotaged/" style="color:#fff;text-decoration:none">What happens if the LLMs are sabotaged?</a></h3>
+    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">Asking because I'm just curious. 
+
+The LLMs are only as good as the data they are trained with. Let's take coding for example. If as an attack, the so...</p>
+    <a href="/news/what-happens-if-the-llms-are-sabotaged/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
+  </div>
+</div><div style="background:#111;border:1px solid #1a1a1a;border-radius:10px;overflow:hidden;transition:border-color .2s" onmouseover="this.style.borderColor='#00FF88'" onmouseout="this.style.borderColor='#1a1a1a'">
+  <img src="https://images.pexels.com/photos/6153740/pexels-photo-6153740.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="I found a digital thunderdome for AI models and now I can't stop watching them fight" style="width:100%;height:160px;object-fit:cover;border-radius:8px 8px 0 0" loading="lazy" onerror="this.style.display='none'">
+  <div style="padding:18px">
+    <div style="font-size:.72rem;color:#00FF88;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;font-weight:600">r/artificial &middot; 2026-03-20</div>
+    <h3 style="font-size:.95rem;font-weight:700;margin-bottom:8px;line-height:1.4"><a href="/news/i-found-a-digital-thunderdome-for-ai-models-and-no/" style="color:#fff;text-decoration:none">I found a digital thunderdome for AI models and now I can't stop watching them fight</a></h3>
+    <p style="font-size:.82rem;color:#aaa;margin-bottom:10px;line-height:1.5;font-style:italic">basically you build a "cast" of AIs different models like GPT-4o, Claude, and Gemini and you just drop a topic and let them talk to each other. i curr...</p>
+    <a href="/news/i-found-a-digital-thunderdome-for-ai-models-and-no/" style="font-size:.78rem;color:#00FF88;text-decoration:none;font-weight:600">Read James's take &rarr;</a>
   </div>
 </div>
 </div>
