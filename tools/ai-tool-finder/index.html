@@ -337,6 +337,29 @@ function restartQuiz() {
   document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
 }
 
+
+function downloadOutput(elementId, filename) {
+  const el = document.getElementById(elementId);
+  const text = el ? (el.value || el.textContent || el.innerText) : '';
+  if (!text.trim()) { alert('Generate content first!'); return; }
+  const blob = new Blob([text], {type: 'text/plain'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename || 'ai-guerrilla-output.txt';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+function downloadHTML(elementId, filename) {
+  const el = document.getElementById(elementId);
+  const text = el ? (el.innerHTML || el.value || el.textContent) : '';
+  if (!text.trim()) { alert('Generate content first!'); return; }
+  const blob = new Blob([text], {type: 'text/html'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename || 'ai-guerrilla-output.html';
+  a.click();
+}
+
 </script>
 </body>
 </html>
