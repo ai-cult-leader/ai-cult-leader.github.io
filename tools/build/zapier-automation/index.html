@@ -197,6 +197,11 @@ document.addEventListener('click',function(e){
       <option>Both event and schedule</option>
     </select>
 
+<div style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:10px;padding:16px 20px;margin-bottom:20px">
+  <div style="font-size:.72rem;color:#00FF88;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;font-weight:700">💡 Example Output</div>
+  <p style="font-size:.83rem;color:#888;margin-bottom:8px">See how to automatically add Typeform responses to Google Sheets — a step-by-step Zapier workflow.</p>
+  <button onclick="loadExample()" style="background:transparent;border:1px solid #00FF88;color:#00FF88;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:.8rem;font-family:inherit">Load Example →</button>
+</div>
     <div style="margin-top:24px">
       <button class="btn" id="generateBtn" data-orig="Build My Automation" onclick="buildAutomation()">Build My Automation</button>
     </div>
@@ -392,6 +397,92 @@ function _download(content, filename, type) {
   a.href = URL.createObjectURL(blob);
   a.download = filename;
   a.click();
+}
+</script>
+<script>
+function loadExample() {
+  document.getElementById('autoDesc').value = 'When someone fills out my Typeform contact form, add their details to a Google Sheet and send me a Slack notification';
+  if(document.getElementById('app_typeform')) document.getElementById('app_typeform').checked = true;
+  if(document.getElementById('app_sheets')) document.getElementById('app_sheets').checked = true;
+  if(document.getElementById('app_slack')) document.getElementById('app_slack').checked = true;
+
+  const exampleCode = `# Zapier Automation Workflow
+# "Typeform → Google Sheets + Slack Notification"
+# ═══════════════════════════════════════════════
+
+WORKFLOW NAME: "Collect Contact Form Submissions"
+ESTIMATED SETUP TIME: 15 minutes
+APPS NEEDED: Typeform, Google Sheets, Slack
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 1: TRIGGER — Typeform (New Entry)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+App: Typeform
+Event: New Entry
+Config:
+  • Connect your Typeform account
+  • Select your form: "Contact Form"
+  • Test trigger with a sample submission
+Fields available for next steps:
+  → Name, Email, Message, Submitted At, Form ID
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 2: ACTION — Google Sheets (Create Row)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+App: Google Sheets
+Event: Create Spreadsheet Row
+Config:
+  • Connect your Google account
+  • Spreadsheet: "Contact Form Responses"
+  • Worksheet: "Sheet1"
+  • Column mapping:
+    A (Date)    → {{1. Submitted At}}
+    B (Name)    → {{1. Name}}
+    C (Email)   → {{1. Email}}
+    D (Message) → {{1. Message}}
+    E (Status)  → "New"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 3: ACTION — Slack (Send Channel Message)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+App: Slack
+Event: Send Channel Message
+Config:
+  • Channel: #leads
+  • Message:
+    "📬 New Contact Form Submission!
+     Name: {{1. Name}}
+     Email: {{1. Email}}
+     Message: {{1. Message}}
+     Time: {{1. Submitted At}}"
+  • Bot name: "Form Bot"
+  • Bot icon: 📋
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SETUP CHECKLIST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+□ Create Zapier account at zapier.com
+□ Connect Typeform account (Settings → Connected Accounts)
+□ Connect Google account
+□ Connect Slack workspace
+□ Create Google Sheet with columns: Date, Name, Email, Message, Status
+□ Create the Zap following steps above
+□ Test with a sample Typeform submission
+□ Turn Zap ON
+
+ESTIMATED MONTHLY TASKS: ~100 (well within free plan)
+ZAPIER PLAN NEEDED: Free (up to 100 tasks/month, 5 Zaps)
+
+PRO TIPS:
+• Add a Filter step to only process responses from specific forms
+• Add a Gmail step to auto-reply to the person who submitted
+• Use Formatter step to clean up phone numbers or dates`;
+
+  const outputSection = document.getElementById('outputSection');
+  if (outputSection) { outputSection.style.display = 'block'; outputSection.classList.add('visible'); }
+  const codeDisplay = document.getElementById('generatedCode') || document.querySelector('.code-block');
+  if (codeDisplay) codeDisplay.textContent = exampleCode;
+  if (typeof showOutput === 'function') showOutput(exampleCode, 'zapier-workflow.txt', false);
 }
 </script>
 </body>
