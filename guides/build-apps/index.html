@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Build real apps with AI for free. Visual guide to Chrome extensions, websites, bots, PWAs and more. Step-by-step with no coding needed.">
+<title>Build Apps with AI — Visual Guide to All App Creators</title>
+<link rel="canonical" href="https://aiguerrilla.net/guides/build-apps/">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;color:#fff;font-family:'Segoe UI',sans-serif;line-height:1.7}
+nav{padding:16px 40px;border-bottom:1px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#0a0a0a;position:sticky;top:0;z-index:100}
+.logo{color:#00FF88;font-weight:900;font-size:1.3rem;text-decoration:none}
+.nav-links{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.nav-links a{color:#aaa;text-decoration:none;font-size:.9rem}
+.nav-links a:hover{color:#00FF88}
+.nav-cta{background:#00FF88!important;color:#000!important;font-weight:700;padding:7px 18px;border-radius:6px}
+.page-hero{padding:60px 20px 40px;text-align:center;max-width:860px;margin:0 auto}
+.hero-badge{display:inline-block;background:#0d1a0d;color:#00FF88;font-size:.72rem;font-weight:700;padding:5px 14px;border-radius:20px;border:1px solid #00FF88;margin-bottom:16px;letter-spacing:1px;text-transform:uppercase}
+h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;margin-bottom:14px}
+.page-desc{color:#888;font-size:1rem;max-width:600px;margin:0 auto 40px}
+.progress-bar{height:4px;background:#1a1a1a;border-radius:2px;margin:0 20px 40px;max-width:1160px;margin-left:auto;margin-right:auto}
+.progress-fill{height:100%;background:#00FF88;border-radius:2px;transition:width .3s}
+.section-header{max-width:1200px;margin:0 auto 20px;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+.section-title{font-size:1.1rem;font-weight:700;color:#fff;display:flex;align-items:center;gap:10px}
+.section-count{font-size:.78rem;color:#555;background:#111;padding:4px 12px;border-radius:20px}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;max-width:1200px;margin:0 auto;padding:0 20px 48px}
+.card{background:#111;border:1px solid #1a1a1a;border-radius:12px;overflow:hidden;transition:border-color .2s,transform .2s;position:relative}
+.card:hover{border-color:#00FF88;transform:translateY(-2px)}
+.card-img{width:100%;height:140px;object-fit:cover;background:linear-gradient(135deg,#0d1a0d,#1a1a2e)}
+.card-img-placeholder{width:100%;height:140px;display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,#0d1a0d 0%,#111 100%)}
+.card-body{padding:18px}
+.card-cat{font-size:.68rem;color:#00FF88;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-weight:600}
+.card-title{font-size:.97rem;font-weight:700;margin-bottom:6px;color:#fff;line-height:1.3}
+.card-desc{font-size:.82rem;color:#666;margin-bottom:14px;line-height:1.5}
+.card-footer{display:flex;justify-content:space-between;align-items:center}
+.card-link{color:#00FF88;text-decoration:none;font-size:.82rem;font-weight:600}
+.card-link:hover{text-decoration:underline}
+.card-meta{font-size:.75rem;color:#444}
+.lesson-card{background:#111;border:1px solid #1a1a1a;border-radius:10px;padding:18px;display:flex;gap:14px;align-items:flex-start;transition:border-color .2s;text-decoration:none;color:inherit}
+.lesson-card:hover{border-color:#00FF88}
+.lesson-num{min-width:36px;height:36px;background:#0d1a0d;border:1px solid #00FF88;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.85rem;color:#00FF88;flex-shrink:0}
+.lesson-num.done{background:#00FF88;color:#000;border-color:#00FF88}
+.lesson-info h3{font-size:.93rem;font-weight:700;margin-bottom:4px;color:#fff}
+.lesson-info p{font-size:.8rem;color:#666;margin:0}
+.lesson-duration{font-size:.72rem;color:#555;margin-top:6px}
+.tool-card{background:#111;border:1px solid #1a1a1a;border-radius:12px;padding:22px;transition:border-color .2s,transform .2s;text-decoration:none;color:inherit;display:block}
+.tool-card:hover{border-color:#00FF88;transform:translateY(-2px)}
+.tool-icon{font-size:2.2rem;margin-bottom:12px}
+.tool-tag{font-size:.68rem;color:#00FF88;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-weight:600}
+.tool-card h3{font-size:1rem;font-weight:700;margin-bottom:6px;color:#fff}
+.tool-card p{font-size:.82rem;color:#666;line-height:1.5;margin-bottom:14px}
+.tool-card .free-badge{display:inline-block;background:#0d1a0d;color:#00FF88;font-size:.7rem;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a}
+.featured-card{background:linear-gradient(135deg,#0d1a0d 0%,#111 100%);border:1px solid #00FF88;border-radius:16px;padding:32px;grid-column:1/-1;display:flex;gap:32px;align-items:center;flex-wrap:wrap}
+.featured-card .fc-content{flex:1;min-width:200px}
+.featured-card .fc-badge{font-size:.7rem;color:#00FF88;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;font-weight:700}
+.featured-card h2{font-size:1.6rem;font-weight:900;margin-bottom:10px}
+.featured-card p{color:#888;margin-bottom:20px;font-size:.95rem}
+.featured-card .fc-btn{display:inline-block;background:#00FF88;color:#000;font-weight:700;padding:12px 28px;border-radius:8px;text-decoration:none;font-size:.9rem}
+.featured-card .fc-stats{display:flex;gap:24px;flex-wrap:wrap}
+.featured-card .fc-stat{text-align:center}
+.featured-card .fc-stat-num{font-size:1.4rem;font-weight:900;color:#00FF88}
+.featured-card .fc-stat-label{font-size:.7rem;color:#555;text-transform:uppercase;letter-spacing:1px}
+.cta-strip{background:#0d1a0d;border-top:1px solid #1a1a1a;padding:32px 20px;text-align:center}
+.cta-strip p{color:#555;font-size:.88rem;margin-bottom:8px}
+.cta-strip a{color:#00FF88;text-decoration:none;font-size:.95rem;font-weight:600}
+footer{text-align:center;padding:28px;color:#444;border-top:1px solid #111;font-size:.85rem}
+footer a{color:#00FF88;text-decoration:none}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="/">AI Guerrilla</a>
+  <div class="nav-links">
+    <a href="/academy/">Academy</a>
+    <a href="/tools/">Tools</a>
+    <a href="/free-ai-tools/" style="color:#00FF88;font-weight:700">Free Tools</a>
+    <a href="/guides/" style="color:#fff;font-weight:600">Guides</a>
+    <a href="/news/">News</a>
+    <a href="https://skool.com/aiguerrilla" class="nav-cta" target="_blank">Join Free</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <span class="hero-badge">10 App Builders</span>
+  <h1>Build Real Apps with AI</h1>
+  <p class="page-desc">Build Chrome extensions, websites, bots, and mobile apps without writing a single line of code. AI generates everything — you just describe what you want.</p>
+</div>
+
+<div style="background:#0d1a0d;border-top:1px solid #1a3a1a;border-bottom:1px solid #1a3a1a;padding:32px 20px;margin-bottom:48px">
+  <div style="max-width:860px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:24px">
+      <div style="font-size:.75rem;color:#00FF88;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-weight:600">How It Works</div>
+      <div style="color:#fff;font-weight:700;font-size:1.1rem">5 Steps to a Live App</div>
+    </div>
+    <div style="display:flex;gap:0;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px">
+      <div style="background:#111;border:1px solid #1a3a1a;border-radius:10px;padding:16px 20px;text-align:center;min-width:140px">
+        <div style="font-size:1.8rem;margin-bottom:6px">📝</div>
+        <div style="font-size:.82rem;font-weight:700;color:#fff">1. Describe</div>
+        <div style="font-size:.72rem;color:#555">Tell AI what you want</div>
+      </div>
+      <div style="color:#00FF88;font-size:1.4rem;padding:0 4px">&rarr;</div>
+      <div style="background:#111;border:1px solid #1a3a1a;border-radius:10px;padding:16px 20px;text-align:center;min-width:140px">
+        <div style="font-size:1.8rem;margin-bottom:6px">🤖</div>
+        <div style="font-size:.82rem;font-weight:700;color:#fff">2. AI Generates</div>
+        <div style="font-size:.72rem;color:#555">Code created instantly</div>
+      </div>
+      <div style="color:#00FF88;font-size:1.4rem;padding:0 4px">&rarr;</div>
+      <div style="background:#111;border:1px solid #1a3a1a;border-radius:10px;padding:16px 20px;text-align:center;min-width:140px">
+        <div style="font-size:1.8rem;margin-bottom:6px">📥</div>
+        <div style="font-size:.82rem;font-weight:700;color:#fff">3. Download</div>
+        <div style="font-size:.72rem;color:#555">Get your files</div>
+      </div>
+      <div style="color:#00FF88;font-size:1.4rem;padding:0 4px">&rarr;</div>
+      <div style="background:#111;border:1px solid #1a3a1a;border-radius:10px;padding:16px 20px;text-align:center;min-width:140px">
+        <div style="font-size:1.8rem;margin-bottom:6px">🚀</div>
+        <div style="font-size:.82rem;font-weight:700;color:#fff">4. Follow Guide</div>
+        <div style="font-size:.72rem;color:#555">Step-by-step publish</div>
+      </div>
+      <div style="color:#00FF88;font-size:1.4rem;padding:0 4px">&rarr;</div>
+      <div style="background:#111;border:1px solid #00FF88;border-radius:10px;padding:16px 20px;text-align:center;min-width:140px">
+        <div style="font-size:1.8rem;margin-bottom:6px">✅</div>
+        <div style="font-size:.82rem;font-weight:700;color:#00FF88">5. App is Live</div>
+        <div style="font-size:.72rem;color:#555">Share it with the world</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-header">
+  <span class="section-title">⚡ All App Builders</span>
+  <span class="section-count">10 builders</span>
+</div>
+<div class="cards-grid">
+
+  <div class="card" style="background:#111;border:1px solid #1a1a1a;border-radius:14px;overflow:hidden;transition:border-color .2s,transform .2s" onmouseover="this.style.borderColor='#00FF88';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1a1a1a';this.style.transform='translateY(0)'">
+    <div style="height:120px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:linear-gradient(135deg,#0d1a0d,#111)">
+      🔌
+    </div>
+    <div class="card-body">
+      <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+        <span style="background:#0d1a0d;color:#00FF88;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a">Free</span>
+        <span style="background:#111;color:#666;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #222">⏱ 15 min</span>
+        <span style="background:#111;color:#666;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #222">No coding needed</span>
+      </div>
+      <div class="card-title" style="font-size:1.05rem;margin-bottom:6px">Chrome Extension Creator</div>
+      <div style="font-size:.74rem;color:#00AA44;margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:.5px">You'll Build: Add custom features to any website in Chrome</div>
+      <div class="card-desc">Describe your extension idea and AI generates all the files. Download, unzip, load in Chrome. Done.</div>
+      <a href="/tools/chrome-extension-creator/" style="display:inline-block;background:#00FF88;color:#000;font-weight:700;padding:10px 22px;border-radius:7px;text-decoration:none;font-size:.85rem;margin-top:6px">Build Now &rarr;</a>
+    </div>
+  </div>
+  <div class="card" style="background:#111;border:1px solid #1a1a1a;border-radius:14px;overflow:hidden;transition:border-color .2s,transform .2s" onmouseover="this.style.borderColor='#00FF88';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1a1a1a';this.style.transform='translateY(0)'">
+    <div style="height:120px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:linear-gradient(135deg,#0d1a0d,#111)">
+      🌐
+    </div>
+    <div class="card-body">
+      <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+        <span style="background:#0d1a0d;color:#00FF88;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a">Free</span>
+        <span style="background:#111;color:#666;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #222">⏱ 20 min</span>
+        <span style="background:#111;color:#666;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #222">No coding needed</span>
+      </div>
+      <div class="card-title" style="font-size:1.05rem;margin-bottom:6px">Website Generator</div>
+      <div style="font-size:.74rem;color:#00AA44;margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:.5px">You'll Build: A complete responsive website for any purpose</div>
+      <div class="card-desc">Describe your site — business, portfolio, landing page. AI writes all HTML, CSS, and JavaScript.</div>
+      <a href="/tools/website-generator/" style="display:inline-block;background:#00FF88;color:#000;font-weight:700;padding:10px 22px;border-radius:7px;text-decoration:none;font-size:.85rem;margin-top:6px">Build Now &rarr;</a>
+    </div>
+  </div>
+  <div class="card" style="background:#111;border:1px solid #1a1a1a;border-radius:14px;overflow:hidden;transition:border-color .2s,transform .2s" onmouseover="this.style.borderColor='#00FF88';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1a1a1a';this.style.transform='translateY(0)'">
+    <div style="height:120px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:linear-gradient(135deg,#0d1a0d,#111)">
+      🤖
+    </div>
+    <div class="card-body">
+      <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+        <span style="background:#0d1a0d;color:#00FF88;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a">Free</span>
+        <span style="background:#111;color:#666;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #222">⏱ 10 min</span>
+        <span style="background:#111;color:#666;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #222">No coding needed</span>
+      </div>
+      <div class="card-title" style="font-size:1.05rem;margin-bottom:6px">Telegram Bot Creator</div>
+      <div style="font-size:.74rem;color:#00AA44;margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:.5px">You'll Build: A Telegram bot with AI-powered commands</div>
+      <div class="card-desc">Tell the bot what to do. AI generates Python code you can deploy to any server or free hosting.</div>
+      <a href="/tools/telegram-bot-creator/" style="display:inline-block;background:#00FF88;color:#000;font-weight:700;padding:10px 22px;border-radius:7px;text-decoration:none;font-size:.85rem;margin-top:6px">Build Now &rarr;</a>
+    </div>
+  </div>
+  <div class="card" style="background:#111;border:1px solid #1a1a1a;border-radius:14px;overflow:hidden;transition:border-color .2s,transform .2s" onmouseover="this.style.borderColor='#00FF88';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1a1a1a';this.style.transform='translateY(0)'">
+    <div style="height:120px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:linear-gradient(135deg,#0d1a0d,#111)">
+      📱
+    </div>
+    <div class="card-body">
+      <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+        <span style="background:#0d1a0d;color:#00FF88;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a">Free</span>
+        <span style="background:#111;color:#666;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #222">⏱ 20 min</span>
+        <span style="background:#111;color:#666;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #222">No coding needed</span>
+      </div>
+      <div class="card-title" style="font-size:1.05rem;margin-bottom:6px">PWA App Creator</div>
+      <div style="font-size:.74rem;color:#00AA44;margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:.5px">You'll Build: A mobile app that installs from any browser</div>
+      <div class="card-desc">Build an app that works offline, sends notifications, and installs on iOS and Android.</div>
+      <a href="/tools/pwa-app-creator/" style="display:inline-block;background:#00FF88;color:#000;font-weight:700;padding:10px 22px;border-radius:7px;text-decoration:none;font-size:.85rem;margin-top:6px">Build Now &rarr;</a>
+    </div>
+  </div>
+  <div class="card" style="background:#111;border:1px solid #1a1a1a;border-radius:14px;overflow:hidden;transition:border-color .2s,transform .2s" onmouseover="this.style.borderColor='#00FF88';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1a1a1a';this.style.transform='translateY(0)'">
+    <div style="height:120px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:linear-gradient(135deg,#0d1a0d,#111)">
+      📊
+    </div>
+    <div class="card-body">
+      <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+        <span style="background:#0d1a0d;color:#00FF88;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a">Free</span>
+        <span style="background:#111;color:#666;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #222">⏱ 5 min</span>
+        <span style="background:#111;color:#666;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #222">No coding needed</span>
+      </div>
+      <div class="card-title" style="font-size:1.05rem;margin-bottom:6px">Google Sheets Script</div>
+      <div style="font-size:.74rem;color:#00AA44;margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:.5px">You'll Build: Custom automation for your Google Sheets</div>
+      <div class="card-desc">Describe what you want automated. AI generates Google Apps Script you paste directly in.</div>
+      <a href="/tools/google-sheets-script/" style="display:inline-block;background:#00FF88;color:#000;font-weight:700;padding:10px 22px;border-radius:7px;text-decoration:none;font-size:.85rem;margin-top:6px">Build Now &rarr;</a>
+    </div>
+  </div>
+  <div class="card" style="background:#111;border:1px solid #1a1a1a;border-radius:14px;overflow:hidden;transition:border-color .2s,transform .2s" onmouseover="this.style.borderColor='#00FF88';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1a1a1a';this.style.transform='translateY(0)'">
+    <div style="height:120px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:linear-gradient(135deg,#0d1a0d,#111)">
+      🚀
+    </div>
+    <div class="card-body">
+      <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+        <span style="background:#0d1a0d;color:#00FF88;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a">Free</span>
+        <span style="background:#111;color:#666;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #222">⏱ 15 min</span>
+        <span style="background:#111;color:#666;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #222">No coding needed</span>
+      </div>
+      <div class="card-title" style="font-size:1.05rem;margin-bottom:6px">Landing Page Generator</div>
+      <div style="font-size:.74rem;color:#00AA44;margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:.5px">You'll Build: A high-converting landing page with copy</div>
+      <div class="card-desc">Input your product or offer. AI writes the headline, benefits, social proof, and CTA.</div>
+      <a href="/tools/landing-page-generator/" style="display:inline-block;background:#00FF88;color:#000;font-weight:700;padding:10px 22px;border-radius:7px;text-decoration:none;font-size:.85rem;margin-top:6px">Build Now &rarr;</a>
+    </div>
+  </div>
+  <div class="card" style="background:#111;border:1px solid #1a1a1a;border-radius:14px;overflow:hidden;transition:border-color .2s,transform .2s" onmouseover="this.style.borderColor='#00FF88';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1a1a1a';this.style.transform='translateY(0)'">
+    <div style="height:120px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:linear-gradient(135deg,#0d1a0d,#111)">
+      🎮
+    </div>
+    <div class="card-body">
+      <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+        <span style="background:#0d1a0d;color:#00FF88;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a">Free</span>
+        <span style="background:#111;color:#666;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #222">⏱ 15 min</span>
+        <span style="background:#111;color:#666;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #222">No coding needed</span>
+      </div>
+      <div class="card-title" style="font-size:1.05rem;margin-bottom:6px">Discord Bot Creator</div>
+      <div style="font-size:.74rem;color:#00AA44;margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:.5px">You'll Build: A Discord bot with custom commands and AI</div>
+      <div class="card-desc">Build moderation bots, game bots, or AI chat bots. Describe it, AI builds it.</div>
+      <a href="/tools/discord-bot-creator/" style="display:inline-block;background:#00FF88;color:#000;font-weight:700;padding:10px 22px;border-radius:7px;text-decoration:none;font-size:.85rem;margin-top:6px">Build Now &rarr;</a>
+    </div>
+  </div>
+  <div class="card" style="background:#111;border:1px solid #1a1a1a;border-radius:14px;overflow:hidden;transition:border-color .2s,transform .2s" onmouseover="this.style.borderColor='#00FF88';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1a1a1a';this.style.transform='translateY(0)'">
+    <div style="height:120px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:linear-gradient(135deg,#0d1a0d,#111)">
+      💬
+    </div>
+    <div class="card-body">
+      <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+        <span style="background:#0d1a0d;color:#00FF88;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a">Free</span>
+        <span style="background:#111;color:#666;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #222">⏱ 10 min</span>
+        <span style="background:#111;color:#666;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #222">No coding needed</span>
+      </div>
+      <div class="card-title" style="font-size:1.05rem;margin-bottom:6px">AI Chatbot Widget</div>
+      <div style="font-size:.74rem;color:#00AA44;margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:.5px">You'll Build: An embeddable AI chat widget for your site</div>
+      <div class="card-desc">Drop a script tag into any webpage. Your visitors get instant AI-powered answers.</div>
+      <a href="/tools/ai-chatbot-widget/" style="display:inline-block;background:#00FF88;color:#000;font-weight:700;padding:10px 22px;border-radius:7px;text-decoration:none;font-size:.85rem;margin-top:6px">Build Now &rarr;</a>
+    </div>
+  </div>
+  <div class="card" style="background:#111;border:1px solid #1a1a1a;border-radius:14px;overflow:hidden;transition:border-color .2s,transform .2s" onmouseover="this.style.borderColor='#00FF88';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1a1a1a';this.style.transform='translateY(0)'">
+    <div style="height:120px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:linear-gradient(135deg,#0d1a0d,#111)">
+      ⚡
+    </div>
+    <div class="card-body">
+      <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+        <span style="background:#0d1a0d;color:#00FF88;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a">Free</span>
+        <span style="background:#111;color:#666;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #222">⏱ 10 min</span>
+        <span style="background:#111;color:#666;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #222">No coding needed</span>
+      </div>
+      <div class="card-title" style="font-size:1.05rem;margin-bottom:6px">Zapier Automation Builder</div>
+      <div style="font-size:.74rem;color:#00AA44;margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:.5px">You'll Build: Automated workflows between your favorite apps</div>
+      <div class="card-desc">Describe the trigger and action. AI generates the complete Zapier workflow JSON.</div>
+      <a href="/tools/zapier-automation/" style="display:inline-block;background:#00FF88;color:#000;font-weight:700;padding:10px 22px;border-radius:7px;text-decoration:none;font-size:.85rem;margin-top:6px">Build Now &rarr;</a>
+    </div>
+  </div>
+  <div class="card" style="background:#111;border:1px solid #1a1a1a;border-radius:14px;overflow:hidden;transition:border-color .2s,transform .2s" onmouseover="this.style.borderColor='#00FF88';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#1a1a1a';this.style.transform='translateY(0)'">
+    <div style="height:120px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:linear-gradient(135deg,#0d1a0d,#111)">
+      🔌
+    </div>
+    <div class="card-body">
+      <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+        <span style="background:#0d1a0d;color:#00FF88;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a">Free</span>
+        <span style="background:#111;color:#666;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #222">⏱ 20 min</span>
+        <span style="background:#111;color:#666;font-size:.68rem;padding:3px 10px;border-radius:20px;border:1px solid #222">No coding needed</span>
+      </div>
+      <div class="card-title" style="font-size:1.05rem;margin-bottom:6px">WordPress Plugin Creator</div>
+      <div style="font-size:.74rem;color:#00AA44;margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:.5px">You'll Build: A custom WordPress plugin for any feature</div>
+      <div class="card-desc">Need a feature your theme doesn't have? Describe it. AI builds the plugin PHP file.</div>
+      <a href="/tools/wordpress-plugin/" style="display:inline-block;background:#00FF88;color:#000;font-weight:700;padding:10px 22px;border-radius:7px;text-decoration:none;font-size:.85rem;margin-top:6px">Build Now &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<div class="cta-strip">
+  <p>150+ operators building with AI — free community</p>
+  <a href="https://skool.com/aiguerrilla" target="_blank">Join AI Guerrilla Free &rarr; skool.com/aiguerrilla</a>
+</div>
+<footer>
+  <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:12px">
+    <a href="/">Home</a>
+    <a href="/academy/">Academy</a>
+    <a href="/free-ai-tools/">Free Tools</a>
+    <a href="/guides/">Visual Guides</a>
+    <a href="/seniors/">For Seniors</a>
+    <a href="/news/">News</a>
+  </div>
+  <p>&copy; 2026 AI Guerrilla &mdash; <a href="https://skool.com/aiguerrilla">skool.com/aiguerrilla</a></p>
+</footer>
+</body>
+</html>
