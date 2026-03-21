@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="API Key Settings — Enter your own free Groq API key to use AI Guerrilla tools without limits.">
+<title>API Key Settings | AI Guerrilla</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;color:#fff;font-family:'Segoe UI',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px}
+.card{background:#111;border:2px solid #1a1a1a;border-radius:16px;padding:40px;max-width:560px;width:100%}
+.logo{color:#00FF88;font-weight:900;font-size:1.3rem;text-decoration:none;display:block;text-align:center;margin-bottom:32px}
+h1{font-size:1.5rem;font-weight:700;margin-bottom:8px;text-align:center}
+.subtitle{color:#888;font-size:.9rem;text-align:center;margin-bottom:32px;line-height:1.6}
+.status-bar{padding:12px 16px;border-radius:8px;margin-bottom:24px;font-size:.88rem;text-align:center;display:none}
+.status-ok{background:#0d1a0d;border:1px solid #00FF88;color:#00FF88}
+.status-err{background:#1a0d0d;border:1px solid #FF4444;color:#FF4444}
+label{display:block;font-size:.9rem;font-weight:600;color:#ddd;margin-bottom:8px}
+.hint{font-size:.8rem;color:#555;margin-bottom:12px}
+input{width:100%;background:#0d0d0d;border:2px solid #2a2a2a;color:#fff;border-radius:8px;font-size:1rem;padding:12px 16px;outline:none;font-family:monospace;margin-bottom:8px}
+input:focus{border-color:#00FF88}
+.input-row{display:flex;gap:8px;margin-bottom:20px}
+.input-row input{flex:1;margin:0}
+.toggle-btn{background:#111;border:1px solid #2a2a2a;color:#aaa;padding:12px 14px;border-radius:8px;cursor:pointer;font-size:.9rem}
+.save-btn{width:100%;background:#00FF88;color:#000;border:none;font-size:1rem;font-weight:700;padding:14px;border-radius:10px;cursor:pointer;font-family:inherit;margin-bottom:16px}
+.save-btn:hover{opacity:.9}
+.clear-btn{width:100%;background:transparent;border:1px solid #2a2a2a;color:#555;font-size:.88rem;padding:10px;border-radius:8px;cursor:pointer;font-family:inherit;margin-bottom:24px}
+.clear-btn:hover{border-color:#FF4444;color:#FF4444}
+.divider{border:none;border-top:1px solid #1a1a1a;margin:24px 0}
+.get-key{background:#0d1a0d;border:1px solid #1a3a1a;border-radius:12px;padding:20px;text-align:center}
+.get-key h3{color:#00FF88;font-size:1rem;margin-bottom:8px}
+.get-key p{color:#888;font-size:.85rem;margin-bottom:14px;line-height:1.5}
+.get-key a{display:inline-block;background:#00FF88;color:#000;font-weight:700;padding:10px 24px;border-radius:8px;text-decoration:none;font-size:.9rem}
+.steps{margin-top:16px;text-align:left}
+.steps ol{color:#666;font-size:.82rem;padding-left:20px;line-height:2}
+.steps li a{color:#00FF88;text-decoration:none}
+.back-link{display:block;text-align:center;margin-top:20px;color:#555;text-decoration:none;font-size:.85rem}
+.back-link:hover{color:#00FF88}
+</style>
+</head>
+<body>
+<div class="card">
+  <a class="logo" href="/">AI Guerrilla</a>
+  <h1>🔑 API Key Settings</h1>
+  <p class="subtitle">Enter your own free Groq API key to use all tools without rate limits.<br>Your key is saved only on this device — never sent to our servers.</p>
+  <div id="statusBar" class="status-bar"></div>
+  <label>Your Groq API Key</label>
+  <p class="hint">Get a free key at <a href="https://console.groq.com/keys" target="_blank" style="color:#00FF88">console.groq.com/keys</a> — takes 2 minutes</p>
+  <div class="input-row">
+    <input type="password" id="apiKeyInput" placeholder="gsk_..." autocomplete="off" spellcheck="false">
+    <button class="toggle-btn" onclick="toggleVisibility()" id="toggleBtn">👁</button>
+  </div>
+  <button class="save-btn" onclick="saveKey()">💾 Save My API Key</button>
+  <button class="clear-btn" onclick="clearKey()">🗑 Remove Saved Key</button>
+  <hr class="divider">
+  <div class="get-key">
+    <h3>Don't have an API key yet?</h3>
+    <p>Groq gives you a free API key with 14,000 requests per day. No credit card needed.</p>
+    <a href="https://console.groq.com/keys" target="_blank" rel="noopener">Get Your Free Key →</a>
+    <div class="steps">
+      <ol>
+        <li>Go to <a href="https://console.groq.com/keys" target="_blank">console.groq.com/keys</a></li>
+        <li>Sign up for free (no credit card)</li>
+        <li>Click "Create API Key"</li>
+        <li>Copy your key and paste it above</li>
+        <li>Click "Save My API Key"</li>
+      </ol>
+    </div>
+  </div>
+</div>
+<a class="back-link" href="/">← Back to AI Guerrilla</a>
+<a class="back-link" href="/ai-for-kids/">← Back to AI for Kids</a>
+<script>
+const STORAGE_KEY = 'ag_user_groq_key';
+window.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) {
+    document.getElementById('apiKeyInput').value = saved;
+    showStatus('✅ API key is saved and active on this device', 'ok');
+  }
+});
+function toggleVisibility() {
+  const input = document.getElementById('apiKeyInput');
+  const btn = document.getElementById('toggleBtn');
+  if (input.type === 'password') { input.type = 'text'; btn.textContent = '🙈'; }
+  else { input.type = 'password'; btn.textContent = '👁'; }
+}
+function saveKey() {
+  const key = document.getElementById('apiKeyInput').value.trim();
+  if (!key) { showStatus('❌ Please enter your API key first', 'err'); return; }
+  if (!key.startsWith('gsk_')) { showStatus('❌ That doesn\'t look like a Groq key. It should start with gsk_', 'err'); return; }
+  if (key.length < 40) { showStatus('❌ Key seems too short — copy the full key from Groq', 'err'); return; }
+  localStorage.setItem(STORAGE_KEY, key);
+  showStatus('✅ Key saved! All tools on this site will use your key now.', 'ok');
+}
+function clearKey() {
+  localStorage.removeItem(STORAGE_KEY);
+  document.getElementById('apiKeyInput').value = '';
+  showStatus('🗑 API key removed. Tools will use the shared key again.', 'ok');
+}
+function showStatus(msg, type) {
+  const bar = document.getElementById('statusBar');
+  bar.textContent = msg;
+  bar.className = 'status-bar ' + (type === 'ok' ? 'status-ok' : 'status-err');
+  bar.style.display = 'block';
+  if (type === 'ok') setTimeout(() => { bar.style.display = 'none'; }, 4000);
+}
+</script>
+</body>
+</html>
