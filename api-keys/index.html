@@ -92,27 +92,26 @@ footer a{color:#00FF88;text-decoration:none}
 <div class="stats">
   <div style="text-align:center"><div class="stat-num" id="totalCount">200+</div><div class="stat-label">APIs Listed</div></div>
   <div style="text-align:center"><div class="stat-num">80+</div><div class="stat-label">Free Tiers</div></div>
-  <div style="text-align:center"><div class="stat-label" style="font-size:.9rem;color:#aaa;margin-top:8px">Updated March 2026</div></div>
+  <div style="text-align:center"><div class="stat-label" style="font-size:.9rem;color:#aaa;margin-top:8px">Free tier shown by default</div></div>
 </div>
 
 <div class="filter-bar">
-  <button class="filter-btn active" onclick="filterCategory(this,'all')">All</button>
-  <button class="filter-btn" onclick="filterCategory(this,'ai')">🤖 AI & LLM</button>
-  <button class="filter-btn" onclick="filterCategory(this,'image')">🎨 Image Gen</button>
-  <button class="filter-btn" onclick="filterCategory(this,'audio')">🎵 Audio & Voice</button>
+  <button class="filter-btn active" onclick="filterCategory(this,'free')" id="btnFree">✅ Free Only</button>
+  <button class="filter-btn" onclick="filterCategory(this,'all')">All APIs</button>
+  <button class="filter-btn" onclick="filterCategory(this,'ai')">🤖 AI &amp; LLM</button>
+  <button class="filter-btn" onclick="filterCategory(this,'image')">🎨 Image</button>
   <button class="filter-btn" onclick="filterCategory(this,'video')">🎬 Video</button>
-  <button class="filter-btn" onclick="filterCategory(this,'search')">🔍 Search & Data</button>
-  <button class="filter-btn" onclick="filterCategory(this,'news')">📰 News & Media</button>
-  <button class="filter-btn" onclick="filterCategory(this,'code')">💻 Code & Dev</button>
-  <button class="filter-btn" onclick="filterCategory(this,'email')">📧 Email & SMS</button>
+  <button class="filter-btn" onclick="filterCategory(this,'audio')">🎵 Audio</button>
+  <button class="filter-btn" onclick="filterCategory(this,'search')">🔍 Search</button>
+  <button class="filter-btn" onclick="filterCategory(this,'news')">📰 News</button>
+  <button class="filter-btn" onclick="filterCategory(this,'email')">📧 Email</button>
   <button class="filter-btn" onclick="filterCategory(this,'payment')">💳 Payments</button>
-  <button class="filter-btn" onclick="filterCategory(this,'social')">📱 Social Media</button>
-  <button class="filter-btn" onclick="filterCategory(this,'maps')">🗺️ Maps & Location</button>
-  <button class="filter-btn" onclick="filterCategory(this,'finance')">📈 Finance & Crypto</button>
-  <button class="filter-btn" onclick="filterCategory(this,'database')">🗄️ Database & Storage</button>
+  <button class="filter-btn" onclick="filterCategory(this,'social')">📱 Social</button>
+  <button class="filter-btn" onclick="filterCategory(this,'maps')">🗺️ Maps</button>
+  <button class="filter-btn" onclick="filterCategory(this,'database')">🗄️ Database</button>
+  <button class="filter-btn" onclick="filterCategory(this,'code')">💻 Dev Tools</button>
   <button class="filter-btn" onclick="filterCategory(this,'analytics')">📊 Analytics</button>
-  <button class="filter-btn" onclick="filterCategory(this,'auth')">🔐 Auth & Security</button>
-  <button class="filter-btn" onclick="filterCategory(this,'free')">✅ Free Only</button>
+  <button class="filter-btn" onclick="filterCategory(this,'auth')">🔐 Auth</button>
 </div>
 
 <div id="noResults" class="no-results">No APIs found matching your search. Try different keywords.</div>
@@ -896,22 +895,27 @@ footer a{color:#00FF88;text-decoration:none}
 </footer>
 
 <script>
-let activeCategory = 'all';
+let activeCategory = 'free'; // Start with free
 
 function filterCards() {
   const query = document.getElementById('searchInput').value.toLowerCase();
   const cards = document.querySelectorAll('.card');
   let visible = 0;
-  
+
   cards.forEach(card => {
     const name = (card.dataset.name || '').toLowerCase();
     const tags = (card.dataset.tags || '').toLowerCase();
-    const text = (card.textContent || '').toLowerCase();
-    const cat = card.dataset.cat || '';
-    
+    const text = card.textContent.toLowerCase();
+    const cat = (card.dataset.cat || '').toLowerCase();
+    const hasFree = card.querySelector('.badge-free') !== null;
+    const hasFreemium = card.querySelector('.badge-freemium') !== null;
+
     const matchesSearch = !query || name.includes(query) || tags.includes(query) || text.includes(query);
-    const matchesCat = activeCategory === 'all' || cat.includes(activeCategory) || (activeCategory === 'free' && card.querySelector('.badge-free'));
-    
+    let matchesCat = false;
+    if (activeCategory === 'all') matchesCat = true;
+    else if (activeCategory === 'free') matchesCat = hasFree;
+    else matchesCat = cat.includes(activeCategory);
+
     if (matchesSearch && matchesCat) {
       card.style.display = '';
       visible++;
@@ -919,19 +923,29 @@ function filterCards() {
       card.style.display = 'none';
     }
   });
-  
-  // Show/hide section titles
+
+  // Show/hide section titles based on visible cards
   document.querySelectorAll('.section-title').forEach(title => {
-    const grid = title.nextElementSibling;
-    if (grid) {
-      const visibleCards = [...grid.querySelectorAll('.card')].filter(c => c.style.display !== 'none');
-      title.style.display = visibleCards.length ? '' : 'none';
-      grid.style.display = visibleCards.length ? '' : 'none';
+    let sibling = title.nextElementSibling;
+    let hasVisible = false;
+    while (sibling && sibling.classList.contains('grid')) {
+      const visCards = [...sibling.querySelectorAll('.card')].filter(c => c.style.display !== 'none');
+      if (visCards.length) hasVisible = true;
+      sibling = sibling.nextElementSibling;
+    }
+    title.style.display = hasVisible ? '' : 'none';
+    let grid = title.nextElementSibling;
+    while (grid && grid.classList.contains('grid')) {
+      const vis = [...grid.querySelectorAll('.card')].filter(c => c.style.display !== 'none');
+      grid.style.display = vis.length ? '' : 'none';
+      grid = grid.nextElementSibling;
     }
   });
-  
-  document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
-  document.getElementById('totalCount').textContent = visible;
+
+  const noResults = document.getElementById('noResults');
+  if (noResults) noResults.style.display = visible === 0 ? 'block' : 'none';
+  const countEl = document.getElementById('totalCount');
+  if (countEl) countEl.textContent = visible;
 }
 
 function filterCategory(btn, cat) {
@@ -943,28 +957,25 @@ function filterCategory(btn, cat) {
 
 function exportCSV() {
   const cards = document.querySelectorAll('.card');
-  let csv = 'Name,Category,Free Tier,Get API Key,Docs
-';
+  let csv = 'Name,Category,Free Tier,Get API Key,Docs\n';
   cards.forEach(card => {
-    const name = card.dataset.name || '';
+    const name = (card.dataset.name || '').replace(/"/g,'');
     const cat = card.dataset.cat || '';
     const free = card.querySelector('.badge-free') ? 'Yes' : card.querySelector('.badge-freemium') ? 'Freemium' : 'Paid';
     const link = card.querySelector('.card-link')?.href || '';
     const docs = card.querySelector('.card-link-secondary')?.href || '';
-    csv += `"${name}","${cat}","${free}","${link}","${docs}"
-`;
+    csv += `"${name}","${cat}","${free}","${link}","${docs}"\n`;
   });
   const blob = new Blob([csv], {type:'text/csv'});
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = 'api-keys-directory.csv';
+  a.download = 'ai-guerrilla-api-keys.csv';
   a.click();
 }
 
-// Count on load
+// Run on load — show free APIs by default
 document.addEventListener('DOMContentLoaded', () => {
-  const total = document.querySelectorAll('.card').length;
-  document.getElementById('totalCount').textContent = total + '+';
+  filterCards();
 });
 </script>
 </body>
