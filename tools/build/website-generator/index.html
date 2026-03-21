@@ -207,6 +207,11 @@ document.addEventListener('click',function(e){
     <label>Contact Email (optional)</label>
     <input type="email" id="contactEmail" placeholder="hello@yourbusiness.com">
 
+<div style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:10px;padding:16px 20px;margin-bottom:20px">
+  <div style="font-size:.72rem;color:#00FF88;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;font-weight:700">💡 Example Output</div>
+  <p style="font-size:.83rem;color:#888;margin-bottom:8px">See a complete personal portfolio website for a web developer — generated in seconds.</p>
+  <button onclick="loadExample()" style="background:transparent;border:1px solid #00FF88;color:#00FF88;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:.8rem;font-family:inherit">Load Example →</button>
+</div>
     <div style="margin-top:24px">
       <button class="btn" id="generateBtn" data-orig="Generate My Website" onclick="generateWebsite()">Generate My Website</button>
     </div>
@@ -412,6 +417,77 @@ function _download(content, filename, type) {
   a.href = URL.createObjectURL(blob);
   a.download = filename;
   a.click();
+}
+</script>
+<script>
+function loadExample() {
+  document.getElementById('bizName').value = 'Alex Chen — Web Developer';
+  document.getElementById('siteDesc').value = 'Full-stack developer specializing in React and Node.js. Available for freelance projects.';
+  if(document.getElementById('siteType')) document.getElementById('siteType').value = document.getElementById('siteType').options[0]?.value;
+  if(document.getElementById('contactEmail')) document.getElementById('contactEmail').value = 'alex@example.com';
+
+  const exampleHTML = `<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alex Chen — Web Developer</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;color:#fff;font-family:'Segoe UI',sans-serif;line-height:1.6}
+nav{position:sticky;top:0;background:#0a0a0aee;backdrop-filter:blur(10px);border-bottom:1px solid #1a1a1a;padding:16px 40px;display:flex;justify-content:space-between;align-items:center;z-index:100}
+.logo{color:#00FF88;font-weight:900;font-size:1.2rem}
+.nav-links a{color:#aaa;text-decoration:none;margin-left:24px;font-size:.9rem;transition:color .2s}
+.nav-links a:hover{color:#00FF88}
+.hero{max-width:900px;margin:0 auto;padding:100px 40px 60px;text-align:center}
+.hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;margin-bottom:20px;line-height:1.2}
+.hero h1 span{color:#00FF88}
+.hero p{color:#888;font-size:1.1rem;max-width:600px;margin:0 auto 40px}
+.btn{display:inline-block;background:#00FF88;color:#000;font-weight:700;padding:14px 32px;border-radius:8px;text-decoration:none;font-size:1rem;transition:opacity .2s}
+.btn:hover{opacity:.85}
+.btn-outline{background:transparent;border:2px solid #00FF88;color:#00FF88;margin-left:16px}
+.section{max-width:900px;margin:0 auto;padding:80px 40px}
+.section h2{font-size:1.8rem;font-weight:900;margin-bottom:40px}
+.section h2 span{color:#00FF88}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:#111;border:1px solid #1a1a1a;border-radius:12px;padding:28px;transition:border-color .2s}
+.card:hover{border-color:#00FF88}
+.card h3{font-size:1.1rem;margin-bottom:8px}
+.card p{color:#888;font-size:.9rem}
+.skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.skill{background:#1a1a1a;color:#00FF88;padding:6px 14px;border-radius:20px;font-size:.82rem;font-weight:600}
+footer{text-align:center;padding:40px;border-top:1px solid #1a1a1a;color:#555;font-size:.88rem}
+footer a{color:#00FF88;text-decoration:none}
+</style></head><body>
+<nav><div class="logo">AC</div><div class="nav-links"><a href="#about">About</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div></nav>
+<div class="hero">
+  <h1>Hi, I'm <span>Alex Chen</span><br>Web Developer</h1>
+  <p>Full-stack developer specializing in React and Node.js. I build fast, beautiful web experiences. Available for freelance projects.</p>
+  <a href="#contact" class="btn">Hire Me</a>
+  <a href="#projects" class="btn btn-outline">View Work</a>
+</div>
+<div class="section" id="projects">
+  <h2>Featured <span>Projects</span></h2>
+  <div class="grid">
+    <div class="card"><h3>E-Commerce Platform</h3><p>Full-stack store with React frontend, Node.js API, and Stripe payments. 10k+ monthly users.</p></div>
+    <div class="card"><h3>SaaS Dashboard</h3><p>Analytics dashboard with real-time data visualization. Built with Next.js and Chart.js.</p></div>
+    <div class="card"><h3>AI Content Tool</h3><p>GPT-4 powered writing assistant with subscription billing. Grew to 500 paid users in 3 months.</p></div>
+  </div>
+</div>
+<div class="section" id="about">
+  <h2>Tech <span>Stack</span></h2>
+  <div class="skills">
+    <span class="skill">React</span><span class="skill">Node.js</span><span class="skill">TypeScript</span>
+    <span class="skill">Next.js</span><span class="skill">PostgreSQL</span><span class="skill">AWS</span>
+    <span class="skill">Docker</span><span class="skill">GraphQL</span>
+  </div>
+</div>
+<div class="section" id="contact">
+  <h2>Let's <span>Work Together</span></h2>
+  <p style="color:#888;margin-bottom:24px">Available for freelance projects and full-time opportunities.</p>
+  <a href="mailto:alex@example.com" class="btn">alex@example.com</a>
+</div>
+<footer><p>Built with AI Guerrilla · <a href="https://skool.com/aiguerrilla">Join the community</a></p></footer>
+</body></html>`;
+  
+  showOutput(exampleHTML, 'website.html', true);
 }
 </script>
 </body>
