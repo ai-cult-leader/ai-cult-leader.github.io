@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Browse all AI Guerrilla resources by category. Tools, courses, guides — organized by use case, skill level, and topic.">
+<title>Browse AI Resources by Category | AI Guerrilla</title>
+<link rel="canonical" href="https://aiguerrilla.net/guides/by-category/">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;color:#fff;font-family:'Segoe UI',sans-serif;line-height:1.7}
+nav{padding:16px 40px;border-bottom:1px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#0a0a0a;position:sticky;top:0;z-index:100}
+.logo{color:#00FF88;font-weight:900;font-size:1.3rem;text-decoration:none}
+.nav-links{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.nav-links a{color:#aaa;text-decoration:none;font-size:.9rem}
+.nav-links a:hover{color:#00FF88}
+.nav-cta{background:#00FF88!important;color:#000!important;font-weight:700;padding:7px 18px;border-radius:6px}
+.page-hero{padding:60px 20px 40px;text-align:center;max-width:860px;margin:0 auto}
+.hero-badge{display:inline-block;background:#0d1a0d;color:#00FF88;font-size:.72rem;font-weight:700;padding:5px 14px;border-radius:20px;border:1px solid #00FF88;margin-bottom:16px;letter-spacing:1px;text-transform:uppercase}
+h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;margin-bottom:14px}
+.page-desc{color:#888;font-size:1rem;max-width:600px;margin:0 auto 40px}
+.progress-bar{height:4px;background:#1a1a1a;border-radius:2px;margin:0 20px 40px;max-width:1160px;margin-left:auto;margin-right:auto}
+.progress-fill{height:100%;background:#00FF88;border-radius:2px;transition:width .3s}
+.section-header{max-width:1200px;margin:0 auto 20px;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+.section-title{font-size:1.1rem;font-weight:700;color:#fff;display:flex;align-items:center;gap:10px}
+.section-count{font-size:.78rem;color:#555;background:#111;padding:4px 12px;border-radius:20px}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;max-width:1200px;margin:0 auto;padding:0 20px 48px}
+.card{background:#111;border:1px solid #1a1a1a;border-radius:12px;overflow:hidden;transition:border-color .2s,transform .2s;position:relative}
+.card:hover{border-color:#00FF88;transform:translateY(-2px)}
+.card-img{width:100%;height:140px;object-fit:cover;background:linear-gradient(135deg,#0d1a0d,#1a1a2e)}
+.card-img-placeholder{width:100%;height:140px;display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,#0d1a0d 0%,#111 100%)}
+.card-body{padding:18px}
+.card-cat{font-size:.68rem;color:#00FF88;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-weight:600}
+.card-title{font-size:.97rem;font-weight:700;margin-bottom:6px;color:#fff;line-height:1.3}
+.card-desc{font-size:.82rem;color:#666;margin-bottom:14px;line-height:1.5}
+.card-footer{display:flex;justify-content:space-between;align-items:center}
+.card-link{color:#00FF88;text-decoration:none;font-size:.82rem;font-weight:600}
+.card-link:hover{text-decoration:underline}
+.card-meta{font-size:.75rem;color:#444}
+.lesson-card{background:#111;border:1px solid #1a1a1a;border-radius:10px;padding:18px;display:flex;gap:14px;align-items:flex-start;transition:border-color .2s;text-decoration:none;color:inherit}
+.lesson-card:hover{border-color:#00FF88}
+.lesson-num{min-width:36px;height:36px;background:#0d1a0d;border:1px solid #00FF88;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.85rem;color:#00FF88;flex-shrink:0}
+.lesson-num.done{background:#00FF88;color:#000;border-color:#00FF88}
+.lesson-info h3{font-size:.93rem;font-weight:700;margin-bottom:4px;color:#fff}
+.lesson-info p{font-size:.8rem;color:#666;margin:0}
+.lesson-duration{font-size:.72rem;color:#555;margin-top:6px}
+.tool-card{background:#111;border:1px solid #1a1a1a;border-radius:12px;padding:22px;transition:border-color .2s,transform .2s;text-decoration:none;color:inherit;display:block}
+.tool-card:hover{border-color:#00FF88;transform:translateY(-2px)}
+.tool-icon{font-size:2.2rem;margin-bottom:12px}
+.tool-tag{font-size:.68rem;color:#00FF88;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-weight:600}
+.tool-card h3{font-size:1rem;font-weight:700;margin-bottom:6px;color:#fff}
+.tool-card p{font-size:.82rem;color:#666;line-height:1.5;margin-bottom:14px}
+.tool-card .free-badge{display:inline-block;background:#0d1a0d;color:#00FF88;font-size:.7rem;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a}
+.featured-card{background:linear-gradient(135deg,#0d1a0d 0%,#111 100%);border:1px solid #00FF88;border-radius:16px;padding:32px;grid-column:1/-1;display:flex;gap:32px;align-items:center;flex-wrap:wrap}
+.featured-card .fc-content{flex:1;min-width:200px}
+.featured-card .fc-badge{font-size:.7rem;color:#00FF88;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;font-weight:700}
+.featured-card h2{font-size:1.6rem;font-weight:900;margin-bottom:10px}
+.featured-card p{color:#888;margin-bottom:20px;font-size:.95rem}
+.featured-card .fc-btn{display:inline-block;background:#00FF88;color:#000;font-weight:700;padding:12px 28px;border-radius:8px;text-decoration:none;font-size:.9rem}
+.featured-card .fc-stats{display:flex;gap:24px;flex-wrap:wrap}
+.featured-card .fc-stat{text-align:center}
+.featured-card .fc-stat-num{font-size:1.4rem;font-weight:900;color:#00FF88}
+.featured-card .fc-stat-label{font-size:.7rem;color:#555;text-transform:uppercase;letter-spacing:1px}
+.cta-strip{background:#0d1a0d;border-top:1px solid #1a1a1a;padding:32px 20px;text-align:center}
+.cta-strip p{color:#555;font-size:.88rem;margin-bottom:8px}
+.cta-strip a{color:#00FF88;text-decoration:none;font-size:.95rem;font-weight:600}
+footer{text-align:center;padding:28px;color:#444;border-top:1px solid #111;font-size:.85rem}
+footer a{color:#00FF88;text-decoration:none}
+
+.filter-btn{background:#111;border:1px solid #1a1a1a;color:#aaa;padding:8px 18px;border-radius:20px;cursor:pointer;font-size:.85rem;transition:all .2s;font-family:'Segoe UI',sans-serif}
+.filter-btn:hover{border-color:#00FF88;color:#00FF88}
+.filter-btn.active{background:#00FF88;color:#000;border-color:#00FF88;font-weight:700}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="/">AI Guerrilla</a>
+  <div class="nav-links">
+    <a href="/academy/">Academy</a>
+    <a href="/tools/">Tools</a>
+    <a href="/free-ai-tools/" style="color:#00FF88;font-weight:700">Free Tools</a>
+    <a href="/guides/" style="color:#fff;font-weight:600">Guides</a>
+    <a href="/news/">News</a>
+    <a href="https://skool.com/aiguerrilla" class="nav-cta" target="_blank">Join Free</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <span class="hero-badge">100+ Resources</span>
+  <h1>Browse by Category</h1>
+  <p class="page-desc">Every course, tool, app builder, and guide on the site — filterable by category. Find exactly what you need.</p>
+</div>
+
+<div style="max-width:1200px;margin:0 auto 32px;padding:0 20px;display:flex;gap:10px;flex-wrap:wrap">
+  <button class="filter-btn active" data-cat="all" onclick="filterCards('all')">All</button>
+  <button class="filter-btn" data-cat="courses" onclick="filterCards('courses')">Courses</button>
+  <button class="filter-btn" data-cat="tools" onclick="filterCards('tools')">Free Tools</button>
+  <button class="filter-btn" data-cat="apps" onclick="filterCards('apps')">App Builders</button>
+  <button class="filter-btn" data-cat="seniors" onclick="filterCards('seniors')">Senior Tools</button>
+  <button class="filter-btn" data-cat="beginners" onclick="filterCards('beginners')">Beginner Guides</button>
+</div>
+
+<div id="countBadge" style="max-width:1200px;margin:0 auto 12px;padding:0 20px;font-size:.82rem;color:#555">
+  Showing all resources
+</div>
+
+<div id="cardsContainer" class="cards-grid"></div>
+
+<script>
+const allResources = [{"cat": "courses", "icon": "\ud83c\udf93", "name": "AI Fundamentals for Entrepreneurs", "url": "/academy/ai-fundamentals/", "badge": "Beginner", "desc": "Everything to start using AI in your business. Prompting, workflows, and real use cases.", "meta": "18 lessons"}, {"cat": "courses", "icon": "\ud83d\udcf9", "name": "AI Content Machine", "url": "/academy/ai-content-machine/", "badge": "Intermediate", "desc": "Build a full AI-powered content pipeline. Scripts, video, scheduling, automation.", "meta": "15 lessons"}, {"cat": "courses", "icon": "\ud83d\udcb0", "name": "AI Monetization", "url": "/academy/ai-monetization/", "badge": "Advanced", "desc": "Turn your AI skills into real income. Freelancing, products, and passive revenue streams.", "meta": "15 lessons"}, {"cat": "courses", "icon": "\ud83d\udcbb", "name": "Developer & APIs", "url": "/academy/developer/", "badge": "Developer", "desc": "Build with AI APIs. OpenAI, Anthropic, Groq \u2014 real integrations from scratch.", "meta": "20 lessons"}, {"cat": "courses", "icon": "\ud83d\udd0d", "name": "SEO with AI", "url": "/academy/seo/", "badge": "Marketing", "desc": "Rank faster with AI-powered SEO. Content, keywords, and technical SEO workflows.", "meta": "10 lessons"}, {"cat": "courses", "icon": "\ud83d\udcf1", "name": "AI for Social Media", "url": "/academy/social-media/", "badge": "Creator", "desc": "Automate your social presence. X, TikTok, Instagram, LinkedIn \u2014 all on autopilot.", "meta": "12 lessons"}, {"cat": "courses", "icon": "\ud83c\udfe0", "name": "AI in Daily Life", "url": "/academy/life/", "badge": "General", "desc": "Use AI for health, finances, travel, cooking, and more. Practical everyday tools.", "meta": "10 lessons"}, {"cat": "courses", "icon": "\ud83d\udcbc", "name": "AI for Business", "url": "/academy/business/", "badge": "Business", "desc": "AI for operations, sales, customer service, and strategy. Real business outcomes.", "meta": "15 lessons"}, {"cat": "courses", "icon": "\ud83c\udf0d", "name": "AI for Every Field", "url": "/academy/fields/", "badge": "Professional", "desc": "AI applications for healthcare, law, education, engineering, and more professions.", "meta": "20 lessons"}, {"cat": "courses", "icon": "\ud83d\udee0\ufe0f", "name": "AI Tool Deep Dives", "url": "/academy/tools/", "badge": "Intermediate", "desc": "In-depth breakdowns of the best AI tools. ChatGPT, Midjourney, HeyGen, and more.", "meta": "10 lessons"}, {"cat": "courses", "icon": "\ud83e\udd16", "name": "AI Agents & OpenClaw", "url": "/academy/agents/", "badge": "Advanced", "desc": "Build and deploy autonomous AI agents. OpenClaw integration, workflows, and automation.", "meta": "10 lessons"}, {"cat": "courses", "icon": "\ud83d\udc74", "name": "AI for Seniors", "url": "/beginners/", "badge": "Beginner", "desc": "Gentle, clear guides for older adults. Big text, simple steps, no tech jargon.", "meta": "10 guides"}, {"cat": "courses", "icon": "\ud83c\udf31", "name": "AI for Beginners", "url": "/beginners/", "badge": "Starter", "desc": "Zero to AI in one afternoon. Start here if you've never used AI tools before.", "meta": "10 guides"}, {"cat": "tools", "icon": "\ud83d\udcdd", "name": "Blog Post Generator", "url": "/tools/blog-post-generator/", "badge": "Free Tool", "desc": "Full SEO-optimized blog posts from a single topic or keyword.", "meta": "Writing"}, {"cat": "tools", "icon": "\ud83d\udcc4", "name": "YouTube Description Generator", "url": "/tools/youtube-description-generator/", "badge": "Free Tool", "desc": "Keyword-rich YouTube descriptions that rank and convert.", "meta": "Writing"}, {"cat": "tools", "icon": "\ud83d\udce7", "name": "Cold Email Generator", "url": "/tools/cold-email-generator/", "badge": "Free Tool", "desc": "Personalized cold emails that get replies. Paste a prospect's info.", "meta": "Writing"}, {"cat": "tools", "icon": "\u2709\ufe0f", "name": "Email Subject Generator", "url": "/tools/email-subject-generator/", "badge": "Free Tool", "desc": "Click-worthy subject lines tested against spam filters.", "meta": "Writing"}, {"cat": "tools", "icon": "\ud83d\udcbc", "name": "Cover Letter Writer", "url": "/tools/cover-letter-writer/", "badge": "Free Tool", "desc": "Tailored cover letters that stand out. Paste the job listing.", "meta": "Writing"}, {"cat": "tools", "icon": "\ud83d\uded2", "name": "Product Description Generator", "url": "/tools/product-description-generator/", "badge": "Free Tool", "desc": "Conversion-optimized product copy for any e-commerce platform.", "meta": "Writing"}, {"cat": "tools", "icon": "\u2753", "name": "FAQ Generator", "url": "/tools/faq-generator/", "badge": "Free Tool", "desc": "Generate SEO-boosting FAQs for any topic or product page.", "meta": "Writing"}, {"cat": "tools", "icon": "\ud83d\udcf0", "name": "Press Release Generator", "url": "/tools/press-release-generator/", "badge": "Free Tool", "desc": "Professional press releases in AP style. Any announcement.", "meta": "Writing"}, {"cat": "tools", "icon": "\ud83e\ude9d", "name": "Viral Hook Generator", "url": "/tools/viral-hook-generator/", "badge": "Free Tool", "desc": "Scroll-stopping opening lines for any platform or format.", "meta": "Social"}, {"cat": "tools", "icon": "\ud83c\udfb5", "name": "TikTok Script Generator", "url": "/tools/tiktok-script-generator/", "badge": "Free Tool", "desc": "Short-form video scripts with hooks, body, and CTA built in.", "meta": "Social"}, {"cat": "tools", "icon": "\ud83c\udfac", "name": "YouTube Title Generator", "url": "/tools/ai-youtube-title-generator/", "badge": "Free Tool", "desc": "Click-worthy titles optimized for search and psychology.", "meta": "Social"}, {"cat": "tools", "icon": "\ud83d\udc64", "name": "Social Bio Generator", "url": "/tools/social-bio-generator/", "badge": "Free Tool", "desc": "Compelling bios for Twitter, Instagram, LinkedIn, and TikTok.", "meta": "Social"}, {"cat": "tools", "icon": "\ud83d\udca1", "name": "Business Name Generator", "url": "/tools/business-name-generator/", "badge": "Free Tool", "desc": "Unique, brandable business names with domain availability tips.", "meta": "Business"}, {"cat": "tools", "icon": "\ud83d\udcca", "name": "SWOT Analysis Generator", "url": "/tools/swot-analysis-generator/", "badge": "Free Tool", "desc": "Complete SWOT analysis for any business, product, or strategy.", "meta": "Business"}, {"cat": "tools", "icon": "\ud83d\udccb", "name": "Job Description Writer", "url": "/tools/job-description-writer/", "badge": "Free Tool", "desc": "Attract top talent with clear, compelling job descriptions.", "meta": "Business"}, {"cat": "tools", "icon": "\ud83d\udcc5", "name": "Meeting Agenda Generator", "url": "/tools/meeting-agenda-generator/", "badge": "Free Tool", "desc": "Structured meeting agendas that keep meetings on track.", "meta": "Business"}, {"cat": "tools", "icon": "\u2728", "name": "Prompt Generator", "url": "/tools/ai-prompt-generator/", "badge": "Free Tool", "desc": "Generate powerful prompts for ChatGPT, Claude, Gemini, and more.", "meta": "Original"}, {"cat": "tools", "icon": "\ud83d\uddbc\ufe0f", "name": "Image Prompt Enhancer", "url": "/tools/ai-image-prompt-generator/", "badge": "Free Tool", "desc": "Turn basic image ideas into detailed Midjourney/DALL-E prompts.", "meta": "Original"}, {"cat": "tools", "icon": "\ud83d\udcbc", "name": "LinkedIn Bio Generator", "url": "/tools/ai-linkedin-bio/", "badge": "Free Tool", "desc": "Professional LinkedIn bios that attract recruiters and clients.", "meta": "Original"}, {"cat": "tools", "icon": "\ud83c\udff7\ufe0f", "name": "Hashtag Generator", "url": "/tools/ai-hashtag-generator/", "badge": "Free Tool", "desc": "Reach-maximizing hashtag sets for any platform or niche.", "meta": "Original"}, {"cat": "tools", "icon": "\ud83d\udd22", "name": "Token Counter", "url": "/tools/ai-token-counter/", "badge": "Free Tool", "desc": "Count tokens before sending. Know costs before you run.", "meta": "Original"}, {"cat": "tools", "icon": "\ud83d\udcb5", "name": "API Cost Calculator", "url": "/tools/ai-api-cost-calculator/", "badge": "Free Tool", "desc": "Compare costs across OpenAI, Anthropic, Groq, and 15+ APIs.", "meta": "Original"}, {"cat": "tools", "icon": "\ud83c\udfaf", "name": "AI Tool Finder Quiz", "url": "/tools/ai-tool-finder/", "badge": "Free Tool", "desc": "Answer 5 questions. Get the exact AI tool you need.", "meta": "Original"}, {"cat": "tools", "icon": "\ud83d\udcda", "name": "Prompt Library", "url": "/tools/prompt-library/", "badge": "Free Tool", "desc": "200+ tested prompts for every use case. Copy and deploy.", "meta": "Original"}, {"cat": "tools", "icon": "\ud83d\udd27", "name": "JSON Formatter", "url": "/tools/json-formatter/", "badge": "Dev Tool", "desc": "Format, validate, and minify JSON instantly. Error highlighting.", "meta": "Developer"}, {"cat": "tools", "icon": "\ud83d\udd12", "name": "Base64 Encoder", "url": "/tools/base64-encoder/", "badge": "Dev Tool", "desc": "Encode and decode Base64 strings. Handles any input.", "meta": "Developer"}, {"cat": "tools", "icon": "\ud83d\udcc4", "name": "Markdown to HTML", "url": "/tools/markdown-to-html/", "badge": "Dev Tool", "desc": "Convert Markdown to clean HTML. Preview in real time.", "meta": "Developer"}, {"cat": "apps", "icon": "\ud83d\udd0c", "name": "Chrome Extension Creator", "url": "/tools/chrome-extension-creator/", "badge": "App Builder", "desc": "Describe your extension idea and AI generates all the files. Download, unzip, load in Chrome. Done.", "meta": "15 min"}, {"cat": "apps", "icon": "\ud83c\udf10", "name": "Website Generator", "url": "/tools/website-generator/", "badge": "App Builder", "desc": "Describe your site \u2014 business, portfolio, landing page. AI writes all HTML, CSS, and JavaScript.", "meta": "20 min"}, {"cat": "apps", "icon": "\ud83e\udd16", "name": "Telegram Bot Creator", "url": "/tools/telegram-bot-creator/", "badge": "App Builder", "desc": "Tell the bot what to do. AI generates Python code you can deploy to any server or free hosting.", "meta": "10 min"}, {"cat": "apps", "icon": "\ud83d\udcf1", "name": "PWA App Creator", "url": "/tools/pwa-app-creator/", "badge": "App Builder", "desc": "Build an app that works offline, sends notifications, and installs on iOS and Android.", "meta": "20 min"}, {"cat": "apps", "icon": "\ud83d\udcca", "name": "Google Sheets Script", "url": "/tools/google-sheets-script/", "badge": "App Builder", "desc": "Describe what you want automated. AI generates Google Apps Script you paste directly in.", "meta": "5 min"}, {"cat": "apps", "icon": "\ud83d\ude80", "name": "Landing Page Generator", "url": "/tools/landing-page-generator/", "badge": "App Builder", "desc": "Input your product or offer. AI writes the headline, benefits, social proof, and CTA.", "meta": "15 min"}, {"cat": "apps", "icon": "\ud83c\udfae", "name": "Discord Bot Creator", "url": "/tools/discord-bot-creator/", "badge": "App Builder", "desc": "Build moderation bots, game bots, or AI chat bots. Describe it, AI builds it.", "meta": "15 min"}, {"cat": "apps", "icon": "\ud83d\udcac", "name": "AI Chatbot Widget", "url": "/tools/ai-chatbot-widget/", "badge": "App Builder", "desc": "Drop a script tag into any webpage. Your visitors get instant AI-powered answers.", "meta": "10 min"}, {"cat": "apps", "icon": "\u26a1", "name": "Zapier Automation Builder", "url": "/tools/zapier-automation/", "badge": "App Builder", "desc": "Describe the trigger and action. AI generates the complete Zapier workflow JSON.", "meta": "10 min"}, {"cat": "apps", "icon": "\ud83d\udd0c", "name": "WordPress Plugin Creator", "url": "/tools/wordpress-plugin/", "badge": "App Builder", "desc": "Need a feature your theme doesn't have? Describe it. AI builds the plugin PHP file.", "meta": "20 min"}, {"cat": "seniors", "icon": "\ud83c\udfe5", "name": "Medical Term Explainer", "url": "/seniors/tools/medical-term-explainer/", "badge": "Senior Tool", "desc": "Paste any medical term or note. Get a plain-English explanation.", "meta": "Free"}, {"cat": "seniors", "icon": "\ud83d\udc68\u200d\u2695\ufe0f", "name": "Doctor Visit Prep", "url": "/seniors/tools/doctor-visit-prep/", "badge": "Senior Tool", "desc": "Prepare questions and summaries before any medical appointment.", "meta": "Free"}, {"cat": "seniors", "icon": "\u2709\ufe0f", "name": "Letter Writer", "url": "/seniors/tools/letter-writer/", "badge": "Senior Tool", "desc": "Draft formal or informal letters. Complaints, thank-yous, inquiries.", "meta": "Free"}, {"cat": "seniors", "icon": "\ud83d\udee1\ufe0f", "name": "Scam Checker", "url": "/seniors/tools/scam-checker/", "badge": "Senior Tool", "desc": "Paste any suspicious message. AI identifies scams instantly.", "meta": "Free"}, {"cat": "seniors", "icon": "\ud83d\udc8a", "name": "Medication Schedule", "url": "/seniors/tools/medication-schedule/", "badge": "Senior Tool", "desc": "Track medications, dosages, and timing. Clear reminder format.", "meta": "Free"}, {"cat": "seniors", "icon": "\ud83d\udcf0", "name": "News in Plain English", "url": "/seniors/tools/news-in-plain-english/", "badge": "Senior Tool", "desc": "Paste any news article. Get a simple, clear summary.", "meta": "Free"}, {"cat": "seniors", "icon": "\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67", "name": "Family Letter Writer", "url": "/seniors/tools/family-letter-writer/", "badge": "Senior Tool", "desc": "Write heartfelt letters to family. AI helps with the words.", "meta": "Free"}, {"cat": "seniors", "icon": "\ud83c\udf73", "name": "Recipe Simplifier", "url": "/seniors/tools/recipe-simplifier/", "badge": "Senior Tool", "desc": "Simplify any complex recipe into easy-to-follow steps.", "meta": "Free"}, {"cat": "seniors", "icon": "\ud83d\udd0d", "name": "Large Print Tool", "url": "/seniors/tools/large-print-tool/", "badge": "Senior Tool", "desc": "Convert any text to large-print format for easier reading.", "meta": "Free"}, {"cat": "seniors", "icon": "\ud83d\udd12", "name": "Safety Checker", "url": "/seniors/tools/safety-checker/", "badge": "Senior Tool", "desc": "Check if a product, website, or situation is safe. AI explains.", "meta": "Free"}, {"cat": "beginners", "icon": "\ud83e\udd14", "name": "What is AI?", "url": "/beginners/what-is-ai/", "badge": "Beginner Guide", "desc": "Plain-English explanation of artificial intelligence.", "meta": "Free"}, {"cat": "beginners", "icon": "\ud83d\udcac", "name": "ChatGPT for Beginners", "url": "/beginners/chatgpt-for-beginners/", "badge": "Beginner Guide", "desc": "Start your first AI conversation step by step.", "meta": "Free"}, {"cat": "beginners", "icon": "\ud83d\udde3\ufe0f", "name": "How to Ask AI", "url": "/beginners/how-to-ask-ai/", "badge": "Beginner Guide", "desc": "The technique that gets better answers every time.", "meta": "Free"}, {"cat": "beginners", "icon": "\ud83c\udfe0", "name": "AI in Daily Life", "url": "/beginners/ai-for-daily-life/", "badge": "Beginner Guide", "desc": "Practical AI uses at home for everyone.", "meta": "Free"}, {"cat": "beginners", "icon": "\ud83d\udee1\ufe0f", "name": "Staying Safe Online", "url": "/beginners/staying-safe/", "badge": "Beginner Guide", "desc": "Stay safe while using AI tools and the internet.", "meta": "Free"}, {"cat": "beginners", "icon": "\u26a0\ufe0f", "name": "AI Scam Warning", "url": "/beginners/ai-scam-warning/", "badge": "Beginner Guide", "desc": "How scammers use AI and how to avoid them.", "meta": "Free"}, {"cat": "beginners", "icon": "\ud83d\udcda", "name": "AI Glossary", "url": "/beginners/glossary/", "badge": "Beginner Guide", "desc": "Every AI word explained in simple language.", "meta": "Free"}, {"cat": "beginners", "icon": "\ud83d\udee0\ufe0f", "name": "Free Tools for Seniors", "url": "/beginners/free-tools-for-seniors/", "badge": "Beginner Guide", "desc": "The best free AI tools chosen for older adults.", "meta": "Free"}];
+
+function filterCards(cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector('[data-cat="'+cat+'"]').classList.add('active');
+  
+  const filtered = cat === 'all' ? allResources : allResources.filter(r => r.cat === cat);
+  document.getElementById('countBadge').textContent = 'Showing ' + filtered.length + ' resources' + (cat !== 'all' ? ' in ' + cat : '');
+  
+  const container = document.getElementById('cardsContainer');
+  container.innerHTML = filtered.map(r => `
+    <div class="card" onclick="location.href='${r.url}'" style="cursor:pointer">
+      <div class="card-img-placeholder">${r.icon}</div>
+      <div class="card-body">
+        <div class="card-cat">${r.badge}</div>
+        <div class="card-title">${r.name}</div>
+        <div class="card-desc">${r.desc}</div>
+        <div class="card-footer">
+          <a href="${r.url}" class="card-link">Open &rarr;</a>
+          <span class="card-meta">${r.meta}</span>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+filterCards('all');
+</script>
+
+<div class="cta-strip">
+  <p>150+ operators building with AI — free community</p>
+  <a href="https://skool.com/aiguerrilla" target="_blank">Join AI Guerrilla Free &rarr; skool.com/aiguerrilla</a>
+</div>
+<footer>
+  <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:12px">
+    <a href="/">Home</a>
+    <a href="/academy/">Academy</a>
+    <a href="/free-ai-tools/">Free Tools</a>
+    <a href="/guides/">Visual Guides</a>
+    <a href="/seniors/">For Seniors</a>
+    <a href="/news/">News</a>
+  </div>
+  <p>&copy; 2026 AI Guerrilla &mdash; <a href="https://skool.com/aiguerrilla">skool.com/aiguerrilla</a></p>
+</footer>
+</body>
+</html>
