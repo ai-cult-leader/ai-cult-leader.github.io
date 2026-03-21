@@ -97,9 +97,9 @@ footer .footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap
           <b>Free Tools</b>
           <a href="/free-ai-tools/" style="color:#00FF88;font-weight:600">All Free Tools ✦</a>
           <a href="/tools/prompt-generator/">Prompt Generator</a>
-          <a href="/tools/youtube-title-generator/">YouTube Titles</a>
-          <a href="/tools/token-counter/">Token Counter</a>
           <a href="/tools/blog-post-generator/">Blog Generator</a>
+          <a href="/tools/token-counter/">Token Counter</a>
+          <a href="/tools/api-cost-calculator/">API Cost Calc</a>
         </div>
       </div>
     </div>
@@ -125,14 +125,13 @@ footer .footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap
     <a href="/free-ai-tools/" style="color:#00FF88;font-weight:700;text-decoration:none;font-size:.9rem">Free Tools</a>
     <a href="https://skool.com/aiguerrilla" style="background:#00FF88;color:#000;font-weight:700;padding:8px 18px;border-radius:6px;text-decoration:none;font-size:.88rem">Community</a>
   </div>
-  <button id="burger" onclick="document.getElementById('navMenu').classList.toggle('open')">☰</button>
+  <button id="burger" onclick="document.getElementById('navMenu').classList.toggle('open')">&#9776;</button>
 </nav>
 <style>
 #mainNav{padding:14px 32px;border-bottom:1px solid #1a1a1a;display:flex;align-items:center;justify-content:space-between;background:#0a0a0a;position:sticky;top:0;z-index:9999;flex-wrap:wrap;gap:8px}
 #mainNav .logo{color:#00FF88;font-weight:900;font-size:1.3rem;text-decoration:none;flex-shrink:0}
 #navMenu{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
 #burger{display:none;background:none;border:1px solid #333;color:#fff;font-size:1.2rem;padding:4px 10px;border-radius:6px;cursor:pointer}
-/* Dropdown */
 .dd{position:relative}
 .dd>a{color:#aaa;text-decoration:none;font-size:.9rem;cursor:pointer;padding:6px 2px;display:block;white-space:nowrap}
 .dd>a:hover{color:#00FF88}
@@ -142,7 +141,6 @@ footer .footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap
 .ddc b{display:block;font-size:.68rem;color:#555;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;font-weight:700}
 .ddc a{color:#aaa;text-decoration:none;font-size:.84rem;padding:5px 0;display:block;white-space:nowrap}
 .ddc a:hover{color:#00FF88}
-/* Mobile */
 @media(max-width:860px){
   #burger{display:block}
   #navMenu{display:none;width:100%;flex-direction:column;align-items:flex-start;gap:4px;padding-top:12px}
@@ -155,14 +153,10 @@ footer .footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap
 }
 </style>
 <script>
-// Mobile: tap to toggle dropdowns
 document.addEventListener('DOMContentLoaded',function(){
   document.querySelectorAll('.dd').forEach(function(dd){
     dd.querySelector('a').addEventListener('click',function(e){
-      if(window.innerWidth<=860){
-        e.preventDefault();
-        dd.classList.toggle('open');
-      }
+      if(window.innerWidth<=860){e.preventDefault();dd.classList.toggle('open');}
     });
   });
   document.addEventListener('click',function(e){
@@ -173,6 +167,134 @@ document.addEventListener('DOMContentLoaded',function(){
   });
 });
 </script>
+
+<div class="hero">
+  <div class="hero-label">AI Research Database</div>
+  <h1>Every AI Tool.<br>Every LLM. Every Founder.</h1>
+  <p>The most complete AI resource for operators and entrepreneurs. Free, forever.</p>
+  <div class="search-bar">
+    <input type="text" placeholder="Search tools, LLMs, founders..." id="searchInput" onkeydown="if(event.key==='Enter')doSearch()">
+    <button onclick="doSearch()">Search</button>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">500+</div><div class="stat-label">AI Tools</div></div>
+    <div class="stat"><div class="stat-num">50+</div><div class="stat-label">LLMs</div></div>
+    <div class="stat"><div class="stat-num">80+</div><div class="stat-label">Founders</div></div>
+    <div class="stat"><div class="stat-num">Daily</div><div class="stat-label">Updates</div></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="section">
+  <h2 style="margin-bottom:24px;font-size:1.1rem;color:#888;text-transform:uppercase;letter-spacing:2px">Browse by Category</h2>
+  <div class="cat-grid">
+    <a class="cat-card" href="/tools/llm/"><div class="cat-icon">🧠</div><div class="cat-name">LLMs</div><div class="cat-count">50+ models</div></a>
+    <a class="cat-card" href="/tools/video/"><div class="cat-icon">🎬</div><div class="cat-name">AI Video</div><div class="cat-count">30+ tools</div></a>
+    <a class="cat-card" href="/tools/image/"><div class="cat-icon">🎨</div><div class="cat-name">AI Image</div><div class="cat-count">25+ tools</div></a>
+    <a class="cat-card" href="/tools/audio/"><div class="cat-icon">🎵</div><div class="cat-name">AI Audio</div><div class="cat-count">20+ tools</div></a>
+    <a class="cat-card" href="/tools/code/"><div class="cat-icon">💻</div><div class="cat-name">AI Coding</div><div class="cat-count">20+ tools</div></a>
+    <a class="cat-card" href="/tools/writing/"><div class="cat-icon">✍️</div><div class="cat-name">AI Writing</div><div class="cat-count">30+ tools</div></a>
+    <a class="cat-card" href="/tools/automation/"><div class="cat-icon">⚡</div><div class="cat-name">Automation</div><div class="cat-count">25+ tools</div></a>
+    <a class="cat-card" href="/tools/business/"><div class="cat-icon">📊</div><div class="cat-name">Business AI</div><div class="cat-count">40+ tools</div></a>
+    <a class="cat-card" href="/tools/search/"><div class="cat-icon">🔍</div><div class="cat-name">AI Search</div><div class="cat-count">10+ tools</div></a>
+    <a class="cat-card" href="/founders/"><div class="cat-icon">👤</div><div class="cat-name">Founders</div><div class="cat-count">80+ profiles</div></a>
+    <a class="cat-card" href="/compare/"><div class="cat-icon">⚖️</div><div class="cat-name">Compare</div><div class="cat-count">50+ comparisons</div></a>
+    <a class="cat-card" href="/tutorials/"><div class="cat-icon">📹</div><div class="cat-name">Tutorials</div><div class="cat-count">Video guides</div></a>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="section">
+  <div class="section-header">
+    <h2>Featured AI Tools</h2>
+    <a href="/tools/">View all →</a>
+  </div>
+  <div class="grid">
+    <div class="card"><a href="/tools/chatgpt/"><div class="card-cat">LLM · Writing</div><div class="card-title">ChatGPT</div><div class="card-desc">OpenAI's flagship conversational AI. The most widely used AI tool in the world.</div><div class="card-tags"><span class="tag">free-tier</span><span class="tag">api</span><span class="tag">multimodal</span></div></a></div>
+    <div class="card"><a href="/tools/claude/"><div class="card-cat">LLM · Code</div><div class="card-title">Claude</div><div class="card-desc">Anthropic's AI assistant. Best-in-class for long documents, coding, and reasoning.</div><div class="card-tags"><span class="tag">200k-context</span><span class="tag">api</span><span class="tag">coding</span></div></a></div>
+    <div class="card"><a href="/tools/midjourney/"><div class="card-cat">Image Generation</div><div class="card-title">Midjourney</div><div class="card-desc">The leading AI image generator. Produces stunning artistic and photorealistic images.</div><div class="card-tags"><span class="tag">discord</span><span class="tag">paid</span><span class="tag">art</span></div></a></div>
+    <div class="card"><a href="/tools/heygen/"><div class="card-cat">AI Video</div><div class="card-title">HeyGen</div><div class="card-desc">Create professional AI avatar videos. Used by 40,000+ businesses for video at scale.</div><div class="card-tags"><span class="tag">avatar</span><span class="tag">api</span><span class="tag">business</span></div></a></div>
+    <div class="card"><a href="/tools/runway/"><div class="card-cat">AI Video</div><div class="card-title">Runway</div><div class="card-desc">Professional AI video generation and editing. Industry standard for AI filmmaking.</div><div class="card-tags"><span class="tag">video-gen</span><span class="tag">editing</span><span class="tag">pro</span></div></a></div>
+    <div class="card"><a href="/tools/elevenlabs/"><div class="card-cat">AI Audio</div><div class="card-title">ElevenLabs</div><div class="card-desc">Most realistic AI voice cloning and text-to-speech. Used by major media companies.</div><div class="card-tags"><span class="tag">voice-clone</span><span class="tag">api</span><span class="tag">tts</span></div></a></div>
+    <div class="card"><a href="/tools/cursor/"><div class="card-cat">AI Coding</div><div class="card-title">Cursor</div><div class="card-desc">AI-first code editor. Write, edit, and understand code with AI built into every keystroke.</div><div class="card-tags"><span class="tag">vscode</span><span class="tag">coding</span><span class="tag">free-tier</span></div></a></div>
+    <div class="card"><a href="/tools/suno/"><div class="card-cat">AI Music</div><div class="card-title">Suno</div><div class="card-desc">Create full songs with vocals and instrumentation from a text prompt in seconds.</div><div class="card-tags"><span class="tag">music-gen</span><span class="tag">vocals</span><span class="tag">free-tier</span></div></a></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="section">
+  <div class="section-header">
+    <h2>Top LLMs Compared</h2>
+    <a href="/llms/">View all →</a>
+  </div>
+  <div class="grid">
+    <div class="card"><a href="/llms/gpt-4o/"><div class="card-cat">OpenAI</div><div class="card-title">GPT-4o</div><div class="card-desc">128K context. Multimodal. Fast and capable. The most widely deployed LLM.</div><div class="card-tags"><span class="tag">multimodal</span><span class="tag">128k</span><span class="tag">api</span></div></a></div>
+    <div class="card"><a href="/llms/claude-opus-46/"><div class="card-cat">Anthropic</div><div class="card-title">Claude Opus 4.6</div><div class="card-desc">1M token context. Best-in-class reasoning and agentic coding. Operators' choice.</div><div class="card-tags"><span class="tag">1m-context</span><span class="tag">coding</span><span class="tag">reasoning</span></div></a></div>
+    <div class="card"><a href="/llms/gemini-15-pro/"><div class="card-cat">Google</div><div class="card-title">Gemini 1.5 Pro</div><div class="card-desc">2M context window. Multimodal. Google's most capable model for complex tasks.</div><div class="card-tags"><span class="tag">2m-context</span><span class="tag">multimodal</span><span class="tag">google</span></div></a></div>
+    <div class="card"><a href="/llms/llama-31-70b/"><div class="card-cat">Meta · Open Source</div><div class="card-title">Llama 3.1 70B</div><div class="card-desc">Meta's best open-source model. Run locally or via API. Rivals GPT-4 on many tasks.</div><div class="card-tags"><span class="tag">open-source</span><span class="tag">local</span><span class="tag">free</span></div></a></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="section">
+  <div class="section-header">
+    <h2>AI Founders & Leaders</h2>
+    <a href="/founders/">View all →</a>
+  </div>
+  <div class="grid">
+    <div class="card"><a href="/founders/sam-altman/"><div class="card-cat">OpenAI</div><div class="card-title">Sam Altman</div><div class="card-desc">CEO of OpenAI. Led the development of ChatGPT, GPT-4, and the modern AI era.</div><div class="card-tags"><span class="tag">ceo</span><span class="tag">openai</span><span class="tag">agi</span></div></a></div>
+    <div class="card"><a href="/founders/dario-amodei/"><div class="card-cat">Anthropic</div><div class="card-title">Dario Amodei</div><div class="card-desc">CEO of Anthropic. Former OpenAI VP. Building safe and reliable AI systems.</div><div class="card-tags"><span class="tag">ceo</span><span class="tag">anthropic</span><span class="tag">safety</span></div></a></div>
+    <div class="card"><a href="/founders/jensen-huang/"><div class="card-cat">NVIDIA</div><div class="card-title">Jensen Huang</div><div class="card-desc">CEO of NVIDIA. Built the GPU infrastructure powering all modern AI development.</div><div class="card-tags"><span class="tag">ceo</span><span class="tag">nvidia</span><span class="tag">hardware</span></div></a></div>
+    <div class="card"><a href="/founders/demis-hassabis/"><div class="card-cat">Google DeepMind</div><div class="card-title">Demis Hassabis</div><div class="card-desc">CEO of Google DeepMind. Nobel Prize winner. AlphaFold, Gemini, and more.</div><div class="card-tags"><span class="tag">ceo</span><span class="tag">deepmind</span><span class="tag">research</span></div></a></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<hr class="divider">
+
+<div class="section">
+  <div class="section-header">
+    <h2>Free AI Tools</h2>
+    <a href="/tools/free-tools/">View all →</a>
+  </div>
+  <p style="color:#666;font-size:.9rem;margin-bottom:24px;margin-top:-16px">Browser-based tools powered by Groq. No signup, no API key needed.</p>
+  <div class="grid">
+    <div class="card"><a href="/tools/prompt-generator/"><div class="card-cat">Free Tool</div><div class="card-title">✨ AI Prompt Generator</div><div class="card-desc">Generate expert prompts for ChatGPT, Claude, Midjourney, and more. Select your tool, purpose, and tone.</div><div class="card-tags"><span class="tag">chatgpt</span><span class="tag">claude</span><span class="tag">midjourney</span></div></a></div>
+    <div class="card"><a href="/tools/youtube-title-generator/"><div class="card-cat">Free Tool</div><div class="card-title">🎬 YouTube Title Generator</div><div class="card-desc">Get 10 click-worthy YouTube titles instantly. AI-powered SEO optimization for any video topic.</div><div class="card-tags"><span class="tag">youtube</span><span class="tag">seo</span><span class="tag">titles</span></div></a></div>
+    <div class="card"><a href="/tools/token-counter/"><div class="card-cat">Free Tool</div><div class="card-title">🔢 AI Token Counter</div><div class="card-desc">Count tokens and estimate API costs for GPT-4o, Claude, Gemini, Groq, and 6 more models. Live updates.</div><div class="card-tags"><span class="tag">tokens</span><span class="tag">costs</span><span class="tag">gpt-4o</span></div></a></div>
+    <div class="card"><a href="/tools/free-tools/"><div class="card-cat">Free Tools</div><div class="card-title">🛠️ See All 8 Free Tools</div><div class="card-desc">Image Prompt Enhancer, LinkedIn Bio Generator, API Cost Calculator, Tool Finder Quiz, Hashtag Generator, and more.</div><div class="card-tags"><span class="tag">free</span><span class="tag">no-signup</span><span class="tag">browser</span></div></a></div>
+  </div>
+</div>
+
+<div style="background:#0d1a0d;padding:60px 20px;text-align:center;border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a">
+  <p style="font-size:.8rem;color:#00FF88;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px">Free Community</p>
+  <h2 style="font-size:2rem;margin-bottom:12px">150+ Operators Building With AI</h2>
+  <p style="color:#777;max-width:500px;margin:0 auto 28px">Share what's working, get feedback, and go deeper on the tools in this database.</p>
+  <a href="https://skool.com/aiguerrilla" style="background:#00FF88;color:#000;font-weight:700;padding:14px 36px;border-radius:8px;text-decoration:none;display:inline-block">Join Free → skool.com/aiguerrilla</a>
+</div>
+
+<div style="background:#0d0d0d;border-top:1px solid #1a1a1a;padding:32px 20px;text-align:center">
+  <p style="color:#555;font-size:.88rem;margin-bottom:8px">Free AI community for operators and entrepreneurs</p>
+  <a href="https://skool.com/aiguerrilla" style="color:#00FF88;text-decoration:none;font-size:.95rem;font-weight:600">Join 150+ operators at skool.com/aiguerrilla &rarr;</a>
+</div>
+<footer>
+  <div class="footer-links">
+    <a href="/tools/">All Tools</a>
+    <a href="/llms/">LLMs</a>
+    <a href="/founders/">Founders</a>
+    <a href="/compare/">Compare</a>
+    <a href="/tutorials/">Tutorials</a>
+    <a href="/free-ai-tools/" style="color:#00FF88;font-weight:600">Free Tools</a>
+    <a href="https://youtube.com/@aiguerrilla">YouTube</a>
+  </div>
+  <p>&copy; 2026 AI Guerrilla &mdash; The AI Research Database for Operators</p>
+</footer>
+
 <script>
 function doSearch() {
   const q = document.getElementById('searchInput').value.trim();
