@@ -38,6 +38,18 @@ input:focus{border-color:#00FF88}
 </style>
 </head>
 <body>
+<nav id="ag-nav" style="padding:0;border-bottom:2px solid #1a1a1a;background:#0a0a0a;position:sticky;top:0;z-index:9999;font-family:'Segoe UI',sans-serif;margin-bottom:0">
+  <div style="max-width:1400px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+    <a href="/" style="color:#00FF88;font-weight:900;font-size:1.2rem;text-decoration:none;flex-shrink:0">AI Guerrilla</a>
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <a href="/" style="color:#aaa;text-decoration:none;font-size:.9rem">← Home</a>
+      <a href="/free-ai-tools/" style="color:#aaa;text-decoration:none;font-size:.9rem">Free Tools</a>
+      <a href="/ai-for-kids/" style="color:#FF6B35;font-weight:700;text-decoration:none;font-size:.9rem">Kids 🚀</a>
+      <a href="https://skool.com/aiguerrilla" style="background:#00FF88;color:#000;font-weight:700;padding:7px 16px;border-radius:6px;text-decoration:none;font-size:.85rem">Community</a>
+    </div>
+  </div>
+</nav>
+
 <div class="card">
   <a class="logo" href="/">AI Guerrilla</a>
   <h1>🔑 API Key Settings</h1>
@@ -47,7 +59,7 @@ input:focus{border-color:#00FF88}
   <p class="hint">Get a free key at <a href="https://console.groq.com/keys" target="_blank" style="color:#00FF88">console.groq.com/keys</a> — takes 2 minutes</p>
   <div class="input-row">
     <input type="password" id="apiKeyInput" placeholder="gsk_..." autocomplete="off" spellcheck="false">
-    <button class="toggle-btn" onclick="toggleVisibility()" id="toggleBtn">👁</button>
+    <button class="toggle-btn" onclick="toggleVisibility()" id="toggleBtn" title="Show/Hide key">👁 Show</button>
   </div>
   <button class="save-btn" onclick="saveKey()">💾 Save My API Key</button>
   <button class="clear-btn" onclick="clearKey()">🗑 Remove Saved Key</button>
@@ -74,7 +86,10 @@ const STORAGE_KEY = 'ag_user_groq_key';
 window.addEventListener('DOMContentLoaded', () => {
   const saved = localStorage.getItem(STORAGE_KEY);
   if (saved) {
-    document.getElementById('apiKeyInput').value = saved;
+    // Show masked version for privacy
+    const masked = saved.slice(0,8) + '●●●●●●●●●●●●●●●●●●●●' + saved.slice(-4);
+    document.getElementById('apiKeyInput').value = masked;
+    document.getElementById('apiKeyInput').dataset.masked = 'true';
     showStatus('✅ API key is saved and active on this device', 'ok');
   }
 });
@@ -90,6 +105,11 @@ function saveKey() {
   if (!key.startsWith('gsk_')) { showStatus('❌ That doesn\'t look like a Groq key. It should start with gsk_', 'err'); return; }
   if (key.length < 40) { showStatus('❌ Key seems too short — copy the full key from Groq', 'err'); return; }
   localStorage.setItem(STORAGE_KEY, key);
+  // Mask the key for privacy — show only first 8 + last 4 chars
+  const masked = key.slice(0,8) + '●●●●●●●●●●●●●●●●●●●●' + key.slice(-4);
+  document.getElementById('apiKeyInput').value = masked;
+  document.getElementById('apiKeyInput').type = 'password';
+  document.getElementById('toggleBtn').textContent = '👁 Show';
   showStatus('✅ Key saved! All tools on this site will use your key now.', 'ok');
 }
 function clearKey() {
@@ -104,6 +124,17 @@ function showStatus(msg, type) {
   bar.style.display = 'block';
   if (type === 'ok') setTimeout(() => { bar.style.display = 'none'; }, 4000);
 }
+
+// Clear masked key when user focuses to type new one
+document.getElementById('apiKeyInput').addEventListener('focus', function() {
+  if (this.dataset.masked === 'true') {
+    this.value = '';
+    this.type = 'text';
+    this.dataset.masked = 'false';
+    document.getElementById('toggleBtn').textContent = '🙈 Hide';
+  }
+});
+
 </script>
 </body>
 </html>
