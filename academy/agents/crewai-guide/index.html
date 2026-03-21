@@ -180,29 +180,16 @@ document.addEventListener('click',function(e){
 <div class="content">
   <img class="hero-img" src="https://images.pexels.com/photos/5453821/pexels-photo-5453821.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="CrewAI Guide: Multi-Agent AI Systems" loading="lazy">
   <p>CrewAI Guide: Multi-Agent AI Systems is an essential skill for modern operators. This guide covers everything you need to get started.</p>
-  <h2>Why This Matters for Operators</h2>
-  <p>AI is reshaping every industry. Operators who learn these tools now will have a significant competitive advantage.</p>
-  <div class="callout">
-    <div class="callout-label">Key Insight</div>
-    <p>The operators who move fastest are the ones who learn in community, not in isolation.</p>
-  </div>
-  <h2>Getting Started: Step by Step</h2>
-  <ol class="steps"><li><h3>Understand the Basics</h3><p>Start by understanding the core concepts before diving into tools.</p></li>
-<li><h3>Set Up Your Environment</h3><p>Install or access the tools needed for this workflow.</p></li>
-<li><h3>Run Your First Test</h3><p>Start with a simple test to validate your setup works.</p></li>
-<li><h3>Build Your First Project</h3><p>Create a small project to apply what you've learned.</p></li>
-<li><h3>Iterate and Improve</h3><p>Refine your approach based on results and community feedback.</p></li>
-</ol>
-  <h2>Key Tools</h2>
-  <div class="tool-grid"><a class="tool-card" href="/tools/chatgpt/"><h4>ChatGPT</h4><p>AI assistant for drafting, research, and analysis.</p></a>
-<a class="tool-card" href="/tools/claude/"><h4>Claude</h4><p>Anthropic's AI for long-form content and code.</p></a>
-<a class="tool-card" href="/tools/groq/"><h4>Groq</h4><p>Fastest free LLM inference API available.</p></a>
-</div>
-  <h2>Pro Tips</h2>
-  <ul><li>Start simple and build complexity gradually.</li><li>Document everything as you go.</li><li>Join a community of operators for faster learning.</li></ul>
-  <h2>Common Mistakes to Avoid</h2>
-  <ul><li>Skipping the fundamentals.</li><li>Over-engineering your first solution.</li><li>Working in isolation instead of leveraging community knowledge.</li></ul>
-  <div class="cta-box">
+  <h2>What You Need to Know</h2>
+<p>CrewAI is a Python framework for building multi-agent AI systems where specialized agents collaborate on complex tasks — each agent has a role, goal, tools, and backstory that guides its behavior.</p>
+<p>CrewAI's crew abstraction makes it easy to define agent teams where a researcher agent gathers information, a writer agent drafts content, and a reviewer agent provides quality control — all coordinated automatically.</p>
+<p>Operators who use CrewAI can build AI workflows that tackle complex, multi-faceted tasks by breaking them into specialized subtasks handled by purpose-built agents working together.</p>
+<h2>Getting Started: Step by Step</h2>
+<ol><li><strong>Install CrewAI and dependencies</strong> — Run 'pip install crewai crewai-tools' and configure your LLM API key for the backend model.</li><li><strong>Define your agents with roles and goals</strong> — Create Agent objects with specific role, goal, backstory, and tools that define each agent's expertise.</li><li><strong>Define your tasks and expected outputs</strong> — Create Task objects with descriptions, expected outputs, and agent assignments for each workflow step.</li><li><strong>Assemble and run your crew</strong> — Create a Crew with your agents and tasks, set process type (sequential or hierarchical), and call crew.kickoff().</li><li><strong>Iterate on agent prompts and tools</strong> — Refine agent roles, tools, and task descriptions based on output quality until the crew reliably delivers your goal.</li></ol>
+<h2>Key Tools</h2>
+<ul><li><strong>CrewAI</strong> — Python framework for building multi-agent AI systems with role-based specialized agents.</li><li><strong>CrewAI Tools</strong> — Pre-built tool library for CrewAI agents including web search, file read/write, and API calling.</li><li><strong>LangChain</strong> — Often used alongside CrewAI to provide the underlying LLM connections and memory systems.</li></ul>
+<div class="callout"><div class="callout-label">Operator Insight</div><p>The operators who move fast on this don't wait for perfect conditions. They start, iterate, and improve. Come build with us at <a href="https://skool.com/aiguerrilla" style="color:#00FF88">skool.com/aiguerrilla</a>.</p></div>
+<div class="cta-box">
     <h2>Ready to Go Deeper?</h2>
     <p>Join 150+ operators applying AI in the real world. Free community, real results.</p>
     <a class="cta-btn" href="https://skool.com/aiguerrilla" target="_blank">Join AI Guerrilla Free →</a>
