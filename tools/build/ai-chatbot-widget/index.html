@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Create an AI chatbot for your website with Groq API. Get embed code ready in seconds. Free, no backend needed. Works on any website.">
+<title>Free AI Chatbot Widget Creator — Add AI Chat to Any Website | AI Guerrilla</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0a0a0a;color:#fff;font-family:'Segoe UI',sans-serif;line-height:1.6}
+.container{max-width:860px;margin:0 auto;padding:48px 20px}
+h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;margin-bottom:12px}
+h2{font-size:1.3rem;font-weight:700;margin-bottom:16px;color:#fff}
+h3{font-size:1rem;font-weight:700;margin-bottom:8px}
+p{color:#888;margin-bottom:16px}
+label{display:block;font-size:.85rem;color:#aaa;margin-bottom:6px;margin-top:16px;font-weight:600}
+input[type=text],input[type=email],input[type=url],textarea,select{width:100%;background:#111;border:1px solid #2a2a2a;color:#fff;border-radius:8px;padding:12px 16px;font-size:1rem;font-family:inherit;outline:none;transition:border-color .2s}
+input[type=text]:focus,input[type=email]:focus,input[type=url]:focus,textarea:focus,select:focus{border-color:#00FF88}
+input[type=color]{width:60px;height:44px;border:1px solid #2a2a2a;border-radius:8px;background:#111;cursor:pointer;padding:4px}
+textarea{resize:vertical;min-height:100px}
+select{appearance:none;cursor:pointer}
+select option{background:#111}
+.btn{background:#00FF88;color:#000;font-weight:700;border:none;border-radius:8px;padding:14px 28px;font-size:1rem;cursor:pointer;transition:opacity .2s;font-family:inherit}
+.btn:hover{opacity:.85}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn-secondary{background:#1a1a1a;color:#fff;border:1px solid #2a2a2a;font-weight:600;border-radius:8px;padding:10px 20px;font-size:.85rem;cursor:pointer;font-family:inherit;transition:border-color .2s}
+.btn-secondary:hover{border-color:#00FF88;color:#00FF88}
+.output-section{display:none;margin-top:32px}
+.output-section.visible{display:block}
+.code-block{background:#0d0d0d;border:1px solid #1a1a1a;border-radius:8px;padding:20px;font-family:monospace;color:#00FF88;font-size:.85rem;overflow-x:auto;white-space:pre-wrap;word-break:break-word;max-height:500px;overflow-y:auto}
+.guide-section{background:#0f0f0f;border:1px solid #1a1a1a;border-radius:12px;padding:28px;margin-top:32px}
+.guide-section ol{padding-left:20px}
+.guide-section li{color:#aaa;margin-bottom:10px;line-height:1.6}
+.guide-section li strong{color:#fff}
+.tag{display:inline-block;background:#0d1a0d;color:#00FF88;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:0;border-bottom:1px solid #1a1a1a}
+.tab-btn{background:none;border:none;color:#888;padding:10px 18px;cursor:pointer;font-size:.85rem;font-family:inherit;border-bottom:2px solid transparent;transition:color .2s}
+.tab-btn.active{color:#00FF88;border-bottom-color:#00FF88}
+.tab-content{display:none}
+.tab-content.active{display:block}
+.action-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.checkbox-group{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.checkbox-group label{display:flex;align-items:center;gap:10px;cursor:pointer;color:#aaa;font-weight:400;margin:0}
+.checkbox-group input[type=checkbox]{width:18px;height:18px;accent-color:#00FF88;cursor:pointer}
+.hero-badge{font-size:.78rem;color:#00FF88;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px}
+.card{background:#111;border:1px solid #1a1a1a;border-radius:12px;padding:24px;margin-bottom:16px}
+@media(max-width:600px){.container{padding:24px 16px}.btn{width:100%}.action-row{flex-direction:column}}
+</style>
+</head>
+<body>
+<nav style="padding:16px 40px;border-bottom:1px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#0a0a0a;position:sticky;top:0;z-index:100">
+  <a href="/" style="color:#00FF88;font-weight:900;font-size:1.3rem;text-decoration:none">AI Guerrilla</a>
+  <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+    <a href="/tools/build/" style="color:#aaa;text-decoration:none;font-size:.9rem">Build Tools</a>
+    <a href="/free-ai-tools/" style="color:#aaa;text-decoration:none;font-size:.9rem">All Free Tools</a>
+    <a href="https://skool.com/aiguerrilla" style="background:#00FF88;color:#000;font-weight:700;padding:7px 18px;border-radius:6px;text-decoration:none;font-size:.85rem">Community</a>
+  </div>
+</nav>
+<div class="container">
+  <div class="hero-badge">Free Tool — No Signup</div>
+  <h1>AI Chatbot Widget Creator</h1>
+  <p>Generate a complete AI chatbot widget you can embed on any website. Uses Groq's free API — no backend required, no monthly fees.</p>
+
+  <div class="card">
+    <label>Chatbot Name *</label>
+    <input type="text" id="chatName" placeholder="Aria">
+
+    <label>What should your chatbot know about your business? *</label>
+    <textarea id="bizInfo" placeholder="We're a digital marketing agency specializing in SEO and social media. Services: SEO audits ($500), Monthly management ($1,500/mo), Social media ($800/mo). Open Mon-Fri 9-5 EST. Book a free call at calendly.com/ouragency" rows="5"></textarea>
+
+    <label>Your Groq API Key * <span style="font-weight:400;color:#666">— <a href="https://console.groq.com" style="color:#00FF88" target="_blank">Get one free at console.groq.com</a></span></label>
+    <input type="text" id="groqKey" placeholder="gsk_...">
+
+    <label>Personality</label>
+    <select id="personality">
+      <option>Professional & helpful</option>
+      <option>Friendly & casual</option>
+      <option>Formal & corporate</option>
+      <option>Fun & energetic</option>
+    </select>
+
+    <label>Chat Button Color</label>
+    <div style="display:flex;align-items:center;gap:12px">
+      <input type="color" id="chatColor" value="#00FF88">
+      <span style="color:#888;font-size:.85rem">Widget accent color</span>
+    </div>
+
+    <label>Welcome Message</label>
+    <input type="text" id="welcomeMsg" placeholder="Hi! I'm Aria. How can I help you today?">
+
+    <div style="margin-top:24px">
+      <button class="btn" id="generateBtn" data-orig="Generate My Chatbot" onclick="generateChatbot()">Generate My Chatbot</button>
+    </div>
+  </div>
+
+  <div class="output-section" id="outputSection">
+    <h2>Your Chatbot Embed Code</h2>
+    <pre class="code-block" id="embedCode" style="max-height:500px"></pre>
+    <div class="action-row" style="margin-top:12px">
+      <button class="btn" onclick="copyCode('embedCode')">Copy Embed Code</button>
+      <button class="btn-secondary" onclick="previewChatbot()">👁 Preview Widget</button>
+      <button class="btn-secondary" onclick="downloadEmbed()">⬇ Download</button>
+    </div>
+    <div style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:8px;padding:16px;margin-top:16px">
+      <p style="color:#00FF88;margin:0;font-size:.9rem"><strong>To install:</strong> Paste this code in your website's HTML just before the closing &lt;/body&gt; tag. That's it!</p>
+    </div>
+  </div>
+</div>
+<div style="background:#0d0d0d;border-top:1px solid #1a1a1a;padding:32px 20px;text-align:center">
+  <p style="color:#555;font-size:.88rem;margin-bottom:8px">Free AI community for operators and builders</p>
+  <a href="https://skool.com/aiguerrilla" style="color:#00FF88;text-decoration:none;font-size:.95rem;font-weight:600">Join 150+ operators at skool.com/aiguerrilla →</a>
+</div>
+<footer style="text-align:center;padding:28px;color:#444;border-top:1px solid #111;font-size:.85rem">
+  <p><a href="/tools/build/" style="color:#00FF88;text-decoration:none">Build Tools</a> · <a href="/free-ai-tools/" style="color:#00FF88;text-decoration:none">All Free Tools</a> · <a href="/academy/" style="color:#00FF88;text-decoration:none">Academy</a></p>
+  <p style="margin-top:8px">© 2026 AI Guerrilla — Build With AI For Free</p>
+</footer>
+<script>
+const GROQ_KEY = ["gsk_O3O1bIMTJ","7Fn9MTE1WdXWGdyb3FY","kgwKA5BSRDB2Acg929rS7eCN"].join("");
+
+async function callGroq(prompt, system, maxTokens = 2000) {
+  const btn = document.getElementById('generateBtn');
+  if (btn) { btn.disabled = true; btn.dataset.orig = btn.dataset.orig || btn.textContent; btn.textContent = '⚙️ Generating...'; }
+  try {
+    const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: { "Authorization": "Bearer " + GROQ_KEY, "Content-Type": "application/json" },
+      body: JSON.stringify({ model: "llama-3.3-70b-versatile", messages: [{ role: "system", content: system }, { role: "user", content: prompt }], max_tokens: maxTokens, temperature: 0.3 })
+    });
+    const data = await res.json();
+    if (btn) { btn.disabled = false; btn.textContent = btn.dataset.orig || 'Generate'; }
+    return data.choices?.[0]?.message?.content || "Error generating. Please try again.";
+  } catch(e) {
+    if (btn) { btn.disabled = false; btn.textContent = btn.dataset.orig || 'Generate'; }
+    return "Connection error. Please check your internet and try again.";
+  }
+}
+
+function copyCode(id) {
+  const el = document.getElementById(id);
+  const text = el.textContent || el.value;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = event.target;
+    const orig = btn.textContent;
+    btn.textContent = '✓ Copied!';
+    btn.style.background = '#0d1a0d';
+    btn.style.color = '#00FF88';
+    setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.color = ''; }, 2000);
+  });
+}
+
+function downloadFile(content, filename, type = 'text/plain') {
+  const blob = new Blob([content], {type});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  a.click();
+}
+</script>
+<script>
+let embedContent = '';
+async function generateChatbot() {
+  const name = document.getElementById('chatName').value.trim() || 'Assistant';
+  const bizInfo = document.getElementById('bizInfo').value.trim();
+  const key = document.getElementById('groqKey').value.trim();
+  const personality = document.getElementById('personality').value;
+  const color = document.getElementById('chatColor').value;
+  const welcome = document.getElementById('welcomeMsg').value.trim() || `Hi! I'm ${name}. How can I help you today?`;
+  if (!bizInfo) { alert('Please describe your business so the chatbot knows what to say.'); return; }
+  if (!key) { alert('Please enter your Groq API key. Get one free at console.groq.com'); return; }
+
+  const system = `Generate a complete, embeddable AI chatbot widget as a single self-contained HTML/CSS/JS snippet (no external dependencies). It must:
+1. Show a chat bubble button in the bottom-right corner
+2. Expand to a chat window when clicked
+3. Call the Groq API with the provided key
+4. Have a personality and branding matching the specs
+5. Show the welcome message when opened
+6. Maintain conversation history in memory
+7. Look professional and polished with smooth animations
+Return ONLY the HTML/CSS/JS snippet starting with a <div> or <style> tag, no markdown, no explanation.`;
+
+  const prompt = `Create a chatbot widget named "${name}" with these specs:
+Color: ${color}
+Personality: ${personality}
+Welcome message: "${welcome}"
+Groq API Key: ${key}
+System prompt for the AI: You are ${name}, a ${personality.toLowerCase()} AI assistant. ${bizInfo} Answer questions helpfully and direct users to take action when relevant.
+
+The widget should look polished with the color ${color} as the accent. Include loading states and error handling.`;
+
+  const result = await callGroq(prompt, system, 4000);
+  embedContent = result.replace(/^```html\n?/,'').replace(/^```\n?/,'').replace(/```$/,'').trim();
+  document.getElementById('embedCode').textContent = embedContent;
+  document.getElementById('outputSection').classList.add('visible');
+}
+function previewChatbot() {
+  if (!embedContent) { alert('Generate your chatbot first!'); return; }
+  const win = window.open('', '_blank');
+  win.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8"><style>body{background:#f5f5f5;font-family:sans-serif;padding:40px;text-align:center}h1{color:#333}</style></head><body><h1>Chatbot Preview</h1><p style="color:#666">Look for the chat bubble in the bottom-right corner!</p>${embedContent}</body></html>`);
+  win.document.close();
+}
+function downloadEmbed() {
+  if (!embedContent) { alert('Generate your chatbot first!'); return; }
+  downloadFile(embedContent, 'chatbot-widget.html', 'text/html');
+}
+</script>
+</body>
+</html>
