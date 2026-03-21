@@ -606,4 +606,56 @@
   <url><loc>https://aiguerrilla.net/academy/agents/rag-explained/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://aiguerrilla.net/academy/agents/vector-databases-guide/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://aiguerrilla.net/academy/agents/ai-memory-systems/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-fundamentals/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-content-machine/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-monetization/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-fundamentals/module-1-what-is-ai/what-is-ai/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-fundamentals/module-1-what-is-ai/how-ai-models-work/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-fundamentals/module-1-what-is-ai/ai-vs-ml-vs-llm/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-fundamentals/module-2-understanding-llms/what-is-an-llm/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-fundamentals/module-2-understanding-llms/how-llms-generate-text/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-fundamentals/module-2-understanding-llms/tokens-and-context-windows/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-fundamentals/module-3-prompt-engineering/what-is-a-prompt/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-fundamentals/module-3-prompt-engineering/anatomy-of-a-great-prompt/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-fundamentals/module-3-prompt-engineering/advanced-prompting-techniques/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-fundamentals/module-4-choosing-ai-tools/ai-tool-landscape-2026/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-fundamentals/module-4-choosing-ai-tools/how-to-evaluate-ai-tools/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-fundamentals/module-4-choosing-ai-tools/building-your-ai-stack/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-fundamentals/module-5-first-ai-workflow/what-is-an-ai-workflow/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-fundamentals/module-5-first-ai-workflow/mapping-your-first-automation/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-fundamentals/module-5-first-ai-workflow/connecting-ai-tools/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-fundamentals/module-6-measuring-roi/measuring-ai-impact/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-fundamentals/module-6-measuring-roi/time-vs-quality/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-fundamentals/module-6-measuring-roi/scaling-ai-workflows/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-content-machine/module-1-content-stack/content-pipeline-overview/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-content-machine/module-1-content-stack/content-tools-you-need/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-content-machine/module-1-content-stack/setting-up-content-workspace/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-content-machine/module-2-video-production/writing-video-scripts/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-content-machine/module-2-video-production/heygen-tutorial/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-content-machine/module-2-video-production/broll-and-music/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-content-machine/module-3-social-media/repurposing-content/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-content-machine/module-3-social-media/ai-social-captions/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-content-machine/module-3-social-media/content-scheduling/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-content-machine/module-4-seo-content/ai-keyword-research/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-content-machine/module-4-seo-content/writing-seo-blog-posts/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-content-machine/module-4-seo-content/topic-clusters/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-content-machine/module-5-building-pipeline/connecting-full-system/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-content-machine/module-5-building-pipeline/daily-vs-weekly-workflows/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-content-machine/module-5-building-pipeline/scaling-content-production/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-monetization/module-1-ai-business-models/5-ai-business-models/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-monetization/module-1-ai-business-models/choosing-your-business-model/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-monetization/module-1-ai-business-models/what-operators-earn/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-monetization/module-2-ai-music-revenue/ai-music-distribution/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-monetization/module-2-ai-music-revenue/creating-ai-music/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-monetization/module-2-ai-music-revenue/maximizing-streaming-royalties/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-monetization/module-3-ai-video-monetization/youtube-monetization/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-monetization/module-3-ai-video-monetization/selling-ai-video-services/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-monetization/module-3-ai-video-monetization/ai-video-licensing/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-monetization/module-4-selling-ai-services/positioning-as-ai-operator/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-monetization/module-4-selling-ai-services/pricing-ai-services/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-monetization/module-4-selling-ai-services/finding-ai-clients/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-monetization/module-5-building-ai-products/ai-product-ideas/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-monetization/module-5-building-ai-products/nocode-ai-building/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://aiguerrilla.net/academy/ai-monetization/module-5-building-ai-products/launching-ai-products/</loc><lastmod>2026-03-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
 </urlset>
