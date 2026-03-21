@@ -29,6 +29,23 @@
   <p>AI isn't just for grown-ups. You can use it to write epic stories, invent games, create songs, build websites, and make your own chatbot — all for free!</p>
   <a href="/ai-for-kids/tools/" class="start-btn">✨ Start Creating Now</a>
 </section>
+<div id="keyStatus" style="text-align:center;padding:8px;font-size:.82rem;margin-bottom:20px"></div>
+<script>
+(function(){
+  const key = localStorage.getItem('ag_user_groq_key');
+  const el = document.getElementById('keyStatus');
+  if (el) {
+    if (key) {
+      el.innerHTML = '🔑 Using your personal API key · <a href="/settings/" style="color:#00FF88;text-decoration:none">Change</a>';
+      el.style.color = '#00FF88';
+    } else {
+      el.innerHTML = 'Using shared key · <a href="/settings/" style="color:#00FF88;text-decoration:none">⚡ Add your own free key for unlimited use</a>';
+      el.style.color = '#555';
+    }
+  }
+})();
+</script>
+
 <div class="stats">
   <div class="stat-badge"><div class="stat-num">10</div><div class="stat-label">Free Tools</div></div>
   <div class="stat-badge"><div class="stat-num">4</div><div class="stat-label">Mini Courses</div></div>
