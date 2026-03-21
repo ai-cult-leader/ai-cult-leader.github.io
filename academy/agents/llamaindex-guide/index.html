@@ -180,29 +180,16 @@ document.addEventListener('click',function(e){
 <div class="content">
   <img class="hero-img" src="https://images.pexels.com/photos/6694481/pexels-photo-6694481.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="LlamaIndex Guide: AI Over Your Data" loading="lazy">
   <p>LlamaIndex Guide: AI Over Your Data is an essential skill for modern operators. This guide covers everything you need to get started.</p>
-  <h2>Why This Matters for Operators</h2>
-  <p>AI is reshaping every industry. Operators who learn these tools now will have a significant competitive advantage.</p>
-  <div class="callout">
-    <div class="callout-label">Key Insight</div>
-    <p>The operators who move fastest are the ones who learn in community, not in isolation.</p>
-  </div>
-  <h2>Getting Started: Step by Step</h2>
-  <ol class="steps"><li><h3>Understand the Basics</h3><p>Start by understanding the core concepts before diving into tools.</p></li>
-<li><h3>Set Up Your Environment</h3><p>Install or access the tools needed for this workflow.</p></li>
-<li><h3>Run Your First Test</h3><p>Start with a simple test to validate your setup works.</p></li>
-<li><h3>Build Your First Project</h3><p>Create a small project to apply what you've learned.</p></li>
-<li><h3>Iterate and Improve</h3><p>Refine your approach based on results and community feedback.</p></li>
-</ol>
-  <h2>Key Tools</h2>
-  <div class="tool-grid"><a class="tool-card" href="/tools/chatgpt/"><h4>ChatGPT</h4><p>AI assistant for drafting, research, and analysis.</p></a>
-<a class="tool-card" href="/tools/claude/"><h4>Claude</h4><p>Anthropic's AI for long-form content and code.</p></a>
-<a class="tool-card" href="/tools/groq/"><h4>Groq</h4><p>Fastest free LLM inference API available.</p></a>
-</div>
-  <h2>Pro Tips</h2>
-  <ul><li>Start simple and build complexity gradually.</li><li>Document everything as you go.</li><li>Join a community of operators for faster learning.</li></ul>
-  <h2>Common Mistakes to Avoid</h2>
-  <ul><li>Skipping the fundamentals.</li><li>Over-engineering your first solution.</li><li>Working in isolation instead of leveraging community knowledge.</li></ul>
-  <div class="cta-box">
+  <h2>What You Need to Know</h2>
+<p>LlamaIndex is a specialized framework for building RAG (Retrieval-Augmented Generation) applications that ground LLM responses in your specific documents and data.</p>
+<p>LlamaIndex handles the complex pipeline of loading documents, chunking text, generating embeddings, storing in vector databases, and retrieving relevant context to answer queries about your data.</p>
+<p>Operators who build with LlamaIndex create AI applications that answer questions about their own documents, knowledge bases, and databases — turning unstructured data into queryable AI-powered interfaces.</p>
+<h2>Getting Started: Step by Step</h2>
+<ol><li><strong>Install LlamaIndex and configure your LLM</strong> — Run 'pip install llama-index' and set up your LLM and embedding model configurations.</li><li><strong>Load your first document set</strong> — Use SimpleDirectoryReader to load PDFs, text files, and other documents into LlamaIndex.</li><li><strong>Build a vector store index</strong> — Create a VectorStoreIndex from your documents — LlamaIndex will chunk, embed, and store them automatically.</li><li><strong>Run your first query</strong> — Use index.as_query_engine() to create a query engine and ask natural language questions about your documents.</li><li><strong>Customize chunk size and retrieval</strong> — Tune chunking strategy and top-k retrieval parameters to improve answer quality for your specific documents.</li></ol>
+<h2>Key Tools</h2>
+<ul><li><strong>LlamaIndex</strong> — Python framework for building RAG applications that ground LLMs in your specific data.</li><li><strong>OpenAI Embeddings API</strong> — Used by LlamaIndex to generate embeddings for document chunks and query matching.</li><li><strong>Chroma / Pinecone</strong> — Vector databases used by LlamaIndex to store and retrieve embeddings efficiently.</li></ul>
+<div class="callout"><div class="callout-label">Operator Insight</div><p>The operators who move fast on this don't wait for perfect conditions. They start, iterate, and improve. Come build with us at <a href="https://skool.com/aiguerrilla" style="color:#00FF88">skool.com/aiguerrilla</a>.</p></div>
+<div class="cta-box">
     <h2>Ready to Go Deeper?</h2>
     <p>Join 150+ operators applying AI in the real world. Free community, real results.</p>
     <a class="cta-btn" href="https://skool.com/aiguerrilla" target="_blank">Join AI Guerrilla Free →</a>
