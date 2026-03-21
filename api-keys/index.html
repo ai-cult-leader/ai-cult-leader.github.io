@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Complete directory of every free and paid API key on the internet — organized by use case. Find API keys for AI, search, data, payments, media, and more.">
+<meta property="og:title" content="API Keys Directory — Every API Key on the Internet | AI Guerrilla">
+<title>API Keys Directory — Every API Key on the Internet | AI Guerrilla</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;color:#fff;font-family:'Segoe UI',sans-serif;line-height:1.75}
+nav{padding:16px 40px;border-bottom:1px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;position:sticky;top:0;background:#0a0a0a;z-index:100}
+.logo{color:#00FF88;font-weight:900;font-size:1.3rem;text-decoration:none}
+.nav-links{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.nav-links a{color:#aaa;text-decoration:none;font-size:.9rem}
+.nav-links a:hover{color:#00FF88}
+.nav-cta{background:#00FF88!important;color:#000!important;font-weight:700;padding:7px 18px;border-radius:6px}
+.hero{padding:60px 20px 40px;max-width:900px;margin:0 auto;text-align:center}
+.hero-label{font-size:.75rem;color:#00FF88;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px}
+h1{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;margin-bottom:14px}
+.hero p{color:#888;font-size:1rem;max-width:600px;margin:0 auto 32px}
+.search-wrap{max-width:640px;margin:0 auto 16px;display:flex;gap:0}
+.search-wrap input{flex:1;padding:14px 20px;background:#111;border:1px solid #2a2a2a;border-right:none;color:#fff;border-radius:8px 0 0 8px;font-size:1rem;outline:none}
+.search-wrap input:focus{border-color:#00FF88}
+.search-wrap button{background:#00FF88;color:#000;border:none;padding:14px 20px;border-radius:0 8px 8px 0;font-weight:700;cursor:pointer}
+.filter-bar{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;max-width:1100px;margin:0 auto 40px;padding:0 20px}
+.filter-btn{background:#111;border:1px solid #1a1a1a;color:#888;padding:7px 16px;border-radius:20px;cursor:pointer;font-size:.82rem;transition:all .2s;font-family:inherit}
+.filter-btn:hover,.filter-btn.active{background:#00FF88;color:#000;border-color:#00FF88;font-weight:600}
+.stats{display:flex;gap:32px;justify-content:center;margin-bottom:48px;flex-wrap:wrap}
+.stat-num{font-size:1.6rem;font-weight:900;color:#00FF88}
+.stat-label{font-size:.72rem;color:#555;text-transform:uppercase;letter-spacing:1px}
+.section{max-width:1200px;margin:0 auto;padding:0 20px 60px}
+.section-title{font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid #1a1a1a;display:flex;align-items:center;gap:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px;margin-bottom:48px}
+.card{background:#111;border:1px solid #1a1a1a;border-radius:10px;padding:20px;transition:border-color .2s;position:relative}
+.card:hover{border-color:#00FF88}
+.card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px}
+.card-name{font-size:1rem;font-weight:700}
+.card-badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.badge{font-size:.68rem;padding:3px 9px;border-radius:20px;font-weight:600}
+.badge-free{background:#0d1a0d;color:#00FF88;border:1px solid #00FF88}
+.badge-freemium{background:#1a1400;color:#FFB800;border:1px solid #FFB800}
+.badge-paid{background:#1a0a0a;color:#FF6B6B;border:1px solid #FF6B6B}
+.badge-new{background:#001a1a;color:#00CCFF;border:1px solid #00CCFF}
+.card-desc{font-size:.83rem;color:#888;margin-bottom:14px;line-height:1.5}
+.card-details{font-size:.78rem;color:#555;margin-bottom:14px}
+.card-details span{color:#aaa}
+.card-link{display:inline-block;background:#00FF88;color:#000;font-weight:700;font-size:.82rem;padding:8px 16px;border-radius:6px;text-decoration:none;transition:opacity .2s}
+.card-link:hover{opacity:.85}
+.card-link-secondary{display:inline-block;color:#00FF88;font-size:.82rem;padding:8px 16px;text-decoration:none;border:1px solid #1a1a1a;border-radius:6px;margin-left:8px}
+.card-link-secondary:hover{border-color:#00FF88}
+.print-btn{background:#111;border:1px solid #1a1a1a;color:#aaa;padding:8px 18px;border-radius:6px;cursor:pointer;font-size:.85rem;font-family:inherit}
+.print-btn:hover{border-color:#00FF88;color:#00FF88}
+.no-results{text-align:center;padding:60px 20px;color:#555;display:none}
+@media print{
+  nav,.filter-bar,.search-wrap,.stats,.print-btn,.nav-cta{display:none!important}
+  .card{break-inside:avoid;border:1px solid #333}
+  body{background:#fff;color:#000}
+  .card-name{color:#000}
+  .card-desc{color:#333}
+}
+footer{text-align:center;padding:30px;color:#444;border-top:1px solid #111;font-size:.85rem}
+footer a{color:#00FF88;text-decoration:none}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="/">AI Guerrilla</a>
+  <div class="nav-links">
+    <a href="/academy/">Academy</a>
+    <a href="/tools/">Tools</a>
+    <a href="/free-ai-tools/">Free Tools</a>
+    <a href="/api-keys/">API Keys</a>
+    <a href="/news/">News</a>
+    <a class="nav-cta" href="https://skool.com/aiguerrilla">Community</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-label">Complete Directory</div>
+  <h1>Every API Key on the Internet</h1>
+  <p>Organized by use case. Direct signup links. Free tier info. Updated regularly. The only API directory you'll ever need.</p>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search APIs... (e.g. AI, image, payment, email)" oninput="filterCards()">
+    <button onclick="filterCards()">Search</button>
+  </div>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:16px">
+    <button class="print-btn" onclick="window.print()">🖨️ Print / Save PDF</button>
+    <button class="print-btn" onclick="exportCSV()">📥 Export CSV</button>
+  </div>
+</div>
+
+<div class="stats">
+  <div style="text-align:center"><div class="stat-num" id="totalCount">200+</div><div class="stat-label">APIs Listed</div></div>
+  <div style="text-align:center"><div class="stat-num">80+</div><div class="stat-label">Free Tiers</div></div>
+  <div style="text-align:center"><div class="stat-label" style="font-size:.9rem;color:#aaa;margin-top:8px">Updated March 2026</div></div>
+</div>
+
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="filterCategory(this,'all')">All</button>
+  <button class="filter-btn" onclick="filterCategory(this,'ai')">🤖 AI & LLM</button>
+  <button class="filter-btn" onclick="filterCategory(this,'image')">🎨 Image Gen</button>
+  <button class="filter-btn" onclick="filterCategory(this,'audio')">🎵 Audio & Voice</button>
+  <button class="filter-btn" onclick="filterCategory(this,'video')">🎬 Video</button>
+  <button class="filter-btn" onclick="filterCategory(this,'search')">🔍 Search & Data</button>
+  <button class="filter-btn" onclick="filterCategory(this,'news')">📰 News & Media</button>
+  <button class="filter-btn" onclick="filterCategory(this,'code')">💻 Code & Dev</button>
+  <button class="filter-btn" onclick="filterCategory(this,'email')">📧 Email & SMS</button>
+  <button class="filter-btn" onclick="filterCategory(this,'payment')">💳 Payments</button>
+  <button class="filter-btn" onclick="filterCategory(this,'social')">📱 Social Media</button>
+  <button class="filter-btn" onclick="filterCategory(this,'maps')">🗺️ Maps & Location</button>
+  <button class="filter-btn" onclick="filterCategory(this,'finance')">📈 Finance & Crypto</button>
+  <button class="filter-btn" onclick="filterCategory(this,'database')">🗄️ Database & Storage</button>
+  <button class="filter-btn" onclick="filterCategory(this,'analytics')">📊 Analytics</button>
+  <button class="filter-btn" onclick="filterCategory(this,'auth')">🔐 Auth & Security</button>
+  <button class="filter-btn" onclick="filterCategory(this,'free')">✅ Free Only</button>
+</div>
+
+<div id="noResults" class="no-results">No APIs found matching your search. Try different keywords.</div>
+
+<div class="section" id="apiGrid">
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div class="section-title" data-cat="ai">🤖 AI & Large Language Models</div>
+<div class="grid">
+
+<div class="card" data-cat="ai" data-name="OpenAI GPT-4o" data-tags="ai llm gpt chatgpt openai text generation">
+  <div class="card-header"><div class="card-name">OpenAI API</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span><span class="badge badge-new">GPT-4o</span></div>
+  <div class="card-desc">Access GPT-4o, GPT-4 Turbo, DALL-E, Whisper, and more. The most widely used AI API. Free $5 credit on signup.</div>
+  <div class="card-details">Free tier: <span>$5 credit</span> &nbsp;|&nbsp; Models: <span>GPT-4o, GPT-3.5, DALL-E 3</span></div>
+  <a class="card-link" href="https://platform.openai.com/api-keys" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://platform.openai.com/docs" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="ai" data-name="Anthropic Claude" data-tags="ai llm claude anthropic text generation reasoning">
+  <div class="card-header"><div class="card-name">Anthropic Claude API</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span><span class="badge badge-new">Claude Opus 4.6</span></div>
+  <div class="card-desc">Claude Opus 4.6, Sonnet, and Haiku. Best for reasoning, coding, and long documents. 1M token context. Free tier available.</div>
+  <div class="card-details">Free tier: <span>Limited credits</span> &nbsp;|&nbsp; Context: <span>1M tokens</span></div>
+  <a class="card-link" href="https://console.anthropic.com/settings/keys" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://docs.anthropic.com" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="ai" data-name="Groq" data-tags="ai llm llama groq fast inference free">
+  <div class="card-header"><div class="card-name">Groq API</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free Tier</span><span class="badge badge-new">Llama 3.3 70B</span></div>
+  <div class="card-desc">Fastest LLM inference available. Runs Llama 3.3 70B, Mixtral, Gemma at 500+ tokens/sec. Generous free tier — 14K requests/day.</div>
+  <div class="card-details">Free tier: <span>14,400 req/day</span> &nbsp;|&nbsp; Speed: <span>500+ tok/sec</span></div>
+  <a class="card-link" href="https://console.groq.com/keys" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://console.groq.com/docs" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="ai" data-name="Google Gemini" data-tags="ai llm gemini google free">
+  <div class="card-header"><div class="card-name">Google Gemini API</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free Tier</span><span class="badge badge-new">Gemini 2.5</span></div>
+  <div class="card-desc">Gemini 2.5 Pro/Flash via Google AI Studio. 1M tokens/day free on Flash model. Multimodal — text, image, audio, video.</div>
+  <div class="card-details">Free tier: <span>1M tokens/day</span> &nbsp;|&nbsp; Models: <span>Gemini 2.5 Pro, Flash</span></div>
+  <a class="card-link" href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://ai.google.dev/docs" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="ai" data-name="Mistral AI" data-tags="ai llm mistral open source european">
+  <div class="card-header"><div class="card-name">Mistral AI API</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">European AI company. Mistral Large, Mixtral 8x7B, Mistral 7B. Strong performance at lower cost. Free tier available.</div>
+  <div class="card-details">Free tier: <span>Free credits on signup</span> &nbsp;|&nbsp; Best for: <span>Cost-effective inference</span></div>
+  <a class="card-link" href="https://console.mistral.ai/api-keys" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://docs.mistral.ai" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="ai" data-name="Cohere" data-tags="ai llm cohere command enterprise rag">
+  <div class="card-header"><div class="card-name">Cohere API</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free Tier</span></div>
+  <div class="card-desc">Command R+ model optimized for RAG and enterprise. Embed, rerank, and generate. Strong for search and retrieval applications.</div>
+  <div class="card-details">Free tier: <span>Trial key available</span> &nbsp;|&nbsp; Best for: <span>RAG, enterprise search</span></div>
+  <a class="card-link" href="https://dashboard.cohere.com/api-keys" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://docs.cohere.com" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="ai" data-name="Together AI" data-tags="ai llm open source inference together">
+  <div class="card-header"><div class="card-name">Together AI</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">Run 100+ open-source models including Llama, Mistral, DBRX, Flux. $1 free credit on signup. Cheap inference at scale.</div>
+  <div class="card-details">Free tier: <span>$1 free credit</span> &nbsp;|&nbsp; Models: <span>100+ open source</span></div>
+  <a class="card-link" href="https://api.together.xyz/settings/api-keys" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://docs.together.ai" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="ai" data-name="OpenRouter" data-tags="ai llm router multiple models free">
+  <div class="card-header"><div class="card-name">OpenRouter</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free Models</span></div>
+  <div class="card-desc">Single API for 200+ models. Many free models available (Llama, Mistral, Gemma). Pay-as-you-go for premium models.</div>
+  <div class="card-details">Free tier: <span>Free models available</span> &nbsp;|&nbsp; Models: <span>200+</span></div>
+  <a class="card-link" href="https://openrouter.ai/keys" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://openrouter.ai/docs" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="ai" data-name="Fireworks AI" data-tags="ai llm inference fast fireworks">
+  <div class="card-header"><div class="card-name">Fireworks AI</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">Ultra-fast inference for open source models. Llama, Mixtral, FireFunction. Free tier available. Production-grade reliability.</div>
+  <div class="card-details">Free tier: <span>Free credits on signup</span></div>
+  <a class="card-link" href="https://fireworks.ai/account/api-keys" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://docs.fireworks.ai" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="ai" data-name="Hugging Face" data-tags="ai models inference huggingface open source free">
+  <div class="card-header"><div class="card-name">Hugging Face Inference API</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free Tier</span></div>
+  <div class="card-desc">Access 200K+ models for free. Text, image, audio, video generation. Serverless inference. Essential for open-source AI.</div>
+  <div class="card-details">Free tier: <span>Rate-limited free access</span></div>
+  <a class="card-link" href="https://huggingface.co/settings/tokens" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://huggingface.co/docs/api-inference" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="ai" data-name="Replicate" data-tags="ai models image video replicate open source">
+  <div class="card-header"><div class="card-name">Replicate</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">Run AI models in the cloud. Flux, Stable Diffusion, Llama, Whisper, and more. Pay per second. Free credits on signup.</div>
+  <div class="card-details">Free tier: <span>Free credits on signup</span> &nbsp;|&nbsp; Models: <span>1000+</span></div>
+  <a class="card-link" href="https://replicate.com/account/api-tokens" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://replicate.com/docs" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="ai" data-name="Fal.ai" data-tags="ai image video fast inference fal">
+  <div class="card-header"><div class="card-name">Fal.ai</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">Fastest image and video AI inference. Flux, SDXL, video generation. Sub-second generation speeds. Free credits available.</div>
+  <div class="card-details">Free tier: <span>Free credits on signup</span></div>
+  <a class="card-link" href="https://fal.ai/dashboard/keys" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://fal.ai/docs" target="_blank" rel="noopener">Docs</a>
+</div>
+
+</div>
+
+<!-- IMAGE GENERATION -->
+<div class="section-title" data-cat="image">🎨 AI Image Generation</div>
+<div class="grid">
+
+<div class="card" data-cat="image" data-name="Stability AI" data-tags="image generation stable diffusion sdxl stability">
+  <div class="card-header"><div class="card-name">Stability AI API</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">Official Stable Diffusion API. SDXL, SD 3.5, inpainting, upscaling. Powers hundreds of AI art apps. Free credits on signup.</div>
+  <div class="card-details">Free tier: <span>Free credits on signup</span> &nbsp;|&nbsp; Models: <span>SDXL, SD 3.5, Stable Video</span></div>
+  <a class="card-link" href="https://platform.stability.ai/account/keys" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://platform.stability.ai/docs/api-reference" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="image" data-name="DALL-E OpenAI" data-tags="image generation dalle openai">
+  <div class="card-header"><div class="card-name">DALL-E 3 (OpenAI)</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">DALL-E 3 via OpenAI API. Best for accurate text in images, realistic scenes. $0.04-0.12 per image. Free $5 credit on signup.</div>
+  <div class="card-details">Pricing: <span>$0.04-0.12/image</span></div>
+  <a class="card-link" href="https://platform.openai.com/api-keys" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://platform.openai.com/docs/guides/images" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="image" data-name="Pexels" data-tags="image stock photos free pexels">
+  <div class="card-header"><div class="card-name">Pexels API</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free</span></div>
+  <div class="card-desc">Free stock photos and videos. 4M+ images and videos. No attribution required for most uses. Perfect for blog and web images.</div>
+  <div class="card-details">Free tier: <span>200 requests/hour</span> &nbsp;|&nbsp; Content: <span>4M+ photos/videos</span></div>
+  <a class="card-link" href="https://www.pexels.com/api/" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://www.pexels.com/api/documentation/" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="image" data-name="Unsplash" data-tags="image stock photos free unsplash">
+  <div class="card-header"><div class="card-name">Unsplash API</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free</span></div>
+  <div class="card-desc">High-quality free stock photos. 3M+ photos. 50 free requests/hour on developer plan. Beautiful, curated photography.</div>
+  <div class="card-details">Free tier: <span>50 req/hour</span></div>
+  <a class="card-link" href="https://unsplash.com/developers" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://unsplash.com/documentation" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="image" data-name="Pixabay" data-tags="image stock photos free pixabay">
+  <div class="card-header"><div class="card-name">Pixabay API</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free</span></div>
+  <div class="card-desc">Free images, videos, and music. 2.6M+ resources. CC0 license — use anywhere without attribution. Simple REST API.</div>
+  <div class="card-details">Free tier: <span>100 req/min</span></div>
+  <a class="card-link" href="https://pixabay.com/api/docs/" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://pixabay.com/api/docs/" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="image" data-name="Adobe Firefly" data-tags="image generation adobe firefly ai">
+  <div class="card-header"><div class="card-name">Adobe Firefly API</div></div>
+  <div class="card-badges"><span class="badge badge-paid">Paid</span></div>
+  <div class="card-desc">Commercially safe AI image generation. Trained on licensed content. No copyright concerns. Enterprise-grade reliability.</div>
+  <div class="card-details">Pricing: <span>Pay per credit</span></div>
+  <a class="card-link" href="https://developer.adobe.com/firefly-api/" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://developer.adobe.com/firefly-api/docs/" target="_blank" rel="noopener">Docs</a>
+</div>
+
+</div>
+
+<!-- AUDIO & VOICE -->
+<div class="section-title" data-cat="audio">🎵 Audio, Voice & Music</div>
+<div class="grid">
+
+<div class="card" data-cat="audio" data-name="ElevenLabs" data-tags="audio voice tts text to speech clone elevenlabs">
+  <div class="card-header"><div class="card-name">ElevenLabs API</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">Most realistic AI voice generation and cloning. 10K free characters/month. 1000+ voices. Clone any voice from 1 min of audio.</div>
+  <div class="card-details">Free tier: <span>10K chars/month</span> &nbsp;|&nbsp; Voices: <span>1000+</span></div>
+  <a class="card-link" href="https://elevenlabs.io/app/settings/api-keys" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://elevenlabs.io/docs" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="audio" data-name="AssemblyAI" data-tags="audio transcription speech to text assemblyai">
+  <div class="card-header"><div class="card-name">AssemblyAI</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">Speech-to-text, speaker diarization, sentiment analysis, PII redaction. $100 free credit on signup. Production-grade accuracy.</div>
+  <div class="card-details">Free tier: <span>$100 credit on signup</span></div>
+  <a class="card-link" href="https://www.assemblyai.com/app" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://www.assemblyai.com/docs" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="audio" data-name="Deepgram" data-tags="audio transcription speech deepgram">
+  <div class="card-header"><div class="card-name">Deepgram</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">Fast speech-to-text API. Real-time and pre-recorded. $200 free credit on signup. 30+ languages. Nova-2 model.</div>
+  <div class="card-details">Free tier: <span>$200 credit</span></div>
+  <a class="card-link" href="https://console.deepgram.com" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://developers.deepgram.com" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="audio" data-name="OpenAI Whisper" data-tags="audio transcription whisper openai speech">
+  <div class="card-header"><div class="card-name">OpenAI Whisper API</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">Best-in-class speech recognition. 99 languages. $0.006/minute. Part of OpenAI API — use same key. Open source model also available.</div>
+  <div class="card-details">Pricing: <span>$0.006/min</span></div>
+  <a class="card-link" href="https://platform.openai.com/api-keys" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://platform.openai.com/docs/guides/speech-to-text" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="audio" data-name="Murf AI" data-tags="audio voice tts murf studio">
+  <div class="card-header"><div class="card-name">Murf API</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">Studio-quality AI voices for business. 120+ voices, 20+ languages. Used by enterprises for training videos and marketing.</div>
+  <div class="card-details">Free tier: <span>10 min free</span></div>
+  <a class="card-link" href="https://murf.ai/api" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://murf.ai/resources/murf-api" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="audio" data-name="Suno AI" data-tags="audio music generation suno ai songs">
+  <div class="card-header"><div class="card-name">Suno API</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">Generate full songs with vocals from text prompts. 50 free songs/day on free plan. API access for Pro subscribers.</div>
+  <div class="card-details">Free tier: <span>50 songs/day</span></div>
+  <a class="card-link" href="https://suno.com/account" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://suno.com/blog/api" target="_blank" rel="noopener">Docs</a>
+</div>
+
+</div>
+
+<!-- VIDEO -->
+<div class="section-title" data-cat="video">🎬 Video Generation & Processing</div>
+<div class="grid">
+
+<div class="card" data-cat="video" data-name="HeyGen" data-tags="video avatar ai heygen talking head">
+  <div class="card-header"><div class="card-name">HeyGen API</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">Create AI avatar videos with realistic lip sync. Clone yourself or use 100+ stock avatars. Used by 40K+ businesses. v2 API available.</div>
+  <div class="card-details">Free tier: <span>1 free video</span> &nbsp;|&nbsp; API: <span>v2 available</span></div>
+  <a class="card-link" href="https://app.heygen.com/settings?nav=API" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://docs.heygen.com" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="video" data-name="Runway ML" data-tags="video generation runway ai gen3">
+  <div class="card-header"><div class="card-name">Runway API</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">Gen-3 Alpha video generation. Text-to-video, image-to-video. Industry standard for AI filmmaking. API access on paid plans.</div>
+  <div class="card-details">Free tier: <span>125 free credits</span></div>
+  <a class="card-link" href="https://dev.runwayml.com" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://docs.dev.runwayml.com" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="video" data-name="YouTube Data API" data-tags="video youtube google data api">
+  <div class="card-header"><div class="card-name">YouTube Data API v3</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free</span></div>
+  <div class="card-desc">Upload videos, manage channels, read comments, get analytics. 10K free units/day. Essential for YouTube automation.</div>
+  <div class="card-details">Free tier: <span>10K units/day</span></div>
+  <a class="card-link" href="https://console.cloud.google.com/apis/library/youtube.googleapis.com" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://developers.google.com/youtube/v3" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="video" data-name="Vimeo API" data-tags="video vimeo upload streaming">
+  <div class="card-header"><div class="card-name">Vimeo API</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">Upload, manage, and embed videos. OAuth 2.0. Free tier with 500MB/week storage. Great for portfolio and client work.</div>
+  <div class="card-details">Free tier: <span>500MB/week</span></div>
+  <a class="card-link" href="https://developer.vimeo.com/apps" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://developer.vimeo.com/api/reference" target="_blank" rel="noopener">Docs</a>
+</div>
+
+</div>
+
+<!-- SEARCH & DATA -->
+<div class="section-title" data-cat="search">🔍 Search & Web Data</div>
+<div class="grid">
+
+<div class="card" data-cat="search" data-name="Brave Search" data-tags="search brave web data api free">
+  <div class="card-header"><div class="card-name">Brave Search API</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">Independent web search with no Google dependency. 2,000 free queries/month. Privacy-focused. AI summaries available.</div>
+  <div class="card-details">Free tier: <span>2,000 queries/month</span></div>
+  <a class="card-link" href="https://api.search.brave.com/register" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://api.search.brave.com/app/documentation" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="search" data-name="Serper" data-tags="search google serper web results">
+  <div class="card-header"><div class="card-name">Serper (Google Search)</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">Google search results via API. 2,500 free searches on signup. Instant results, no rate limiting headaches.</div>
+  <div class="card-details">Free tier: <span>2,500 searches</span></div>
+  <a class="card-link" href="https://serper.dev" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://serper.dev/api-reference" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="search" data-name="SerpAPI" data-tags="search google serp results scraping">
+  <div class="card-header"><div class="card-name">SerpAPI</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">Real-time Google, Bing, YouTube search results. 100 free searches/month. Handles CAPTCHAs and blocking automatically.</div>
+  <div class="card-details">Free tier: <span>100 searches/month</span></div>
+  <a class="card-link" href="https://serpapi.com/manage-api-key" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://serpapi.com/search-api" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="search" data-name="Perplexity" data-tags="search ai perplexity sonar web research">
+  <div class="card-header"><div class="card-name">Perplexity API</div></div>
+  <div class="card-badges"><span class="badge badge-paid">Paid</span></div>
+  <div class="card-desc">AI-powered web search with citations. Sonar model. Real-time web access for LLMs. $5/month minimum, pay per token.</div>
+  <div class="card-details">Pricing: <span>From $5/month</span></div>
+  <a class="card-link" href="https://www.perplexity.ai/settings/api" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://docs.perplexity.ai" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="search" data-name="Tavily" data-tags="search ai tavily research agent">
+  <div class="card-header"><div class="card-name">Tavily (AI Search)</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">Search API built for AI agents. Returns clean, structured results. 1,000 free searches/month. Popular for LangChain and CrewAI agents.</div>
+  <div class="card-details">Free tier: <span>1,000 searches/month</span></div>
+  <a class="card-link" href="https://tavily.com" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://docs.tavily.com" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="search" data-name="Bing Search" data-tags="search bing microsoft azure web">
+  <div class="card-header"><div class="card-name">Bing Web Search API</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">Microsoft Bing search via Azure. 1,000 free searches/month on free tier. Web, image, news, and video search in one API.</div>
+  <div class="card-details">Free tier: <span>1,000 calls/month</span></div>
+  <a class="card-link" href="https://www.microsoft.com/en-us/bing/apis/bing-web-search-api" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://learn.microsoft.com/en-us/bing/search-apis/" target="_blank" rel="noopener">Docs</a>
+</div>
+
+</div>
+
+<!-- NEWS & MEDIA -->
+<div class="section-title" data-cat="news">📰 News & Media</div>
+<div class="grid">
+
+<div class="card" data-cat="news" data-name="NewsAPI" data-tags="news media articles headlines newsapi">
+  <div class="card-header"><div class="card-name">NewsAPI</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">Headlines and articles from 80,000+ sources. 100 requests/day free. Search by keyword, source, country, language.</div>
+  <div class="card-details">Free tier: <span>100 req/day</span> &nbsp;|&nbsp; Sources: <span>80K+</span></div>
+  <a class="card-link" href="https://newsapi.org/register" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://newsapi.org/docs" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="news" data-name="The Guardian API" data-tags="news guardian media articles free">
+  <div class="card-header"><div class="card-name">The Guardian API</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free</span></div>
+  <div class="card-desc">Full access to The Guardian content. 12 calls/second free. All articles back to 1999. Great for news and media applications.</div>
+  <div class="card-details">Free tier: <span>12 calls/second</span></div>
+  <a class="card-link" href="https://open-platform.theguardian.com/access/" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://open-platform.theguardian.com/documentation/" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="news" data-name="NY Times API" data-tags="news nytimes articles media">
+  <div class="card-header"><div class="card-name">New York Times API</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free</span></div>
+  <div class="card-desc">Access NYT articles, best sellers, movie reviews. Free with registration. 4,000 requests/day. Archive back to 1851.</div>
+  <div class="card-details">Free tier: <span>4,000 req/day</span></div>
+  <a class="card-link" href="https://developer.nytimes.com/get-started" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://developer.nytimes.com/docs" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="news" data-name="Reddit API" data-tags="news social reddit posts communities">
+  <div class="card-header"><div class="card-name">Reddit API</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">Access posts, comments, subreddits. OAuth required. 100 requests/minute. Great for trend monitoring and community data.</div>
+  <div class="card-details">Free tier: <span>100 req/min</span></div>
+  <a class="card-link" href="https://www.reddit.com/prefs/apps" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://www.reddit.com/dev/api/" target="_blank" rel="noopener">Docs</a>
+</div>
+
+</div>
+
+<!-- EMAIL & SMS -->
+<div class="section-title" data-cat="email">📧 Email, SMS & Communication</div>
+<div class="grid">
+
+<div class="card" data-cat="email" data-name="SendGrid" data-tags="email send transactional sendgrid twilio">
+  <div class="card-header"><div class="card-name">SendGrid API</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free Tier</span></div>
+  <div class="card-desc">Send transactional and marketing emails. 100 free emails/day forever. Reliable delivery, templates, analytics included.</div>
+  <div class="card-details">Free tier: <span>100 emails/day forever</span></div>
+  <a class="card-link" href="https://signup.sendgrid.com" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://docs.sendgrid.com" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="email" data-name="Mailgun" data-tags="email send transactional mailgun">
+  <div class="card-header"><div class="card-name">Mailgun</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">Developer-focused email API. 100 free emails/day for 3 months. Deliverability tools, tracking, and webhooks built in.</div>
+  <div class="card-details">Free tier: <span>100 emails/day (3 months)</span></div>
+  <a class="card-link" href="https://signup.mailgun.com/new/signup" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://documentation.mailgun.com" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="email" data-name="Twilio SMS" data-tags="email sms text message twilio phone">
+  <div class="card-header"><div class="card-name">Twilio SMS API</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">Send and receive SMS, WhatsApp, voice calls. $15 free trial credit. Pay as you go after. 180+ countries supported.</div>
+  <div class="card-details">Free tier: <span>$15 trial credit</span></div>
+  <a class="card-link" href="https://www.twilio.com/try-twilio" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://www.twilio.com/docs" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="email" data-name="Resend" data-tags="email transactional resend developer">
+  <div class="card-header"><div class="card-name">Resend</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free Tier</span></div>
+  <div class="card-desc">Modern email API built for developers. 3,000 emails/month free, 100/day limit. React email templates, webhooks, analytics.</div>
+  <div class="card-details">Free tier: <span>3,000 emails/month</span></div>
+  <a class="card-link" href="https://resend.com/signup" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://resend.com/docs" target="_blank" rel="noopener">Docs</a>
+</div>
+
+</div>
+
+<!-- PAYMENTS -->
+<div class="section-title" data-cat="payment">💳 Payments & Finance</div>
+<div class="grid">
+
+<div class="card" data-cat="payment" data-name="Stripe" data-tags="payment stripe checkout subscription">
+  <div class="card-header"><div class="card-name">Stripe API</div></div>
+  <div class="card-badges"><span class="badge badge-free">No Monthly Fee</span></div>
+  <div class="card-desc">The developer payment platform. Accept cards, subscriptions, invoices globally. 2.9% + 30¢ per transaction. No monthly fees. Test mode free.</div>
+  <div class="card-details">Pricing: <span>2.9% + 30¢/transaction</span></div>
+  <a class="card-link" href="https://dashboard.stripe.com/register" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://stripe.com/docs" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="payment" data-name="PayPal" data-tags="payment paypal checkout">
+  <div class="card-header"><div class="card-name">PayPal API</div></div>
+  <div class="card-badges"><span class="badge badge-free">No Monthly Fee</span></div>
+  <div class="card-desc">Accept PayPal, cards, Venmo, and crypto. Sandbox for free testing. 2.9% + 30¢ per transaction. 400M+ active accounts.</div>
+  <div class="card-details">Pricing: <span>2.9% + 30¢/transaction</span></div>
+  <a class="card-link" href="https://developer.paypal.com/dashboard/applications/live" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://developer.paypal.com/docs/api/overview/" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="payment finance" data-name="CoinGecko" data-tags="payment crypto finance coingecko price">
+  <div class="card-header"><div class="card-name">CoinGecko API</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free Tier</span></div>
+  <div class="card-desc">Crypto prices, market data, historical data. 10,000 free calls/month. 10,000+ coins tracked. No signup required for basic use.</div>
+  <div class="card-details">Free tier: <span>10K calls/month</span></div>
+  <a class="card-link" href="https://www.coingecko.com/en/api" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://www.coingecko.com/api/documentation" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="payment finance" data-name="Alpha Vantage" data-tags="finance stocks market data alphavantage">
+  <div class="card-header"><div class="card-name">Alpha Vantage</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free Tier</span></div>
+  <div class="card-desc">Stock market data, forex, crypto. 25 free requests/day. Historical and real-time data. Used in thousands of financial apps.</div>
+  <div class="card-details">Free tier: <span>25 req/day</span></div>
+  <a class="card-link" href="https://www.alphavantage.co/support/#api-key" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://www.alphavantage.co/documentation/" target="_blank" rel="noopener">Docs</a>
+</div>
+
+</div>
+
+<!-- SOCIAL MEDIA -->
+<div class="section-title" data-cat="social">📱 Social Media</div>
+<div class="grid">
+
+<div class="card" data-cat="social" data-name="Twitter X API" data-tags="social twitter x post tweet api">
+  <div class="card-header"><div class="card-name">X (Twitter) API</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">Post tweets, read timelines, search. Free tier: 1,500 tweets/month. Basic $100/mo for more. Essential for X automation.</div>
+  <div class="card-details">Free tier: <span>1,500 tweets/month</span></div>
+  <a class="card-link" href="https://developer.twitter.com/en/portal/dashboard" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://developer.twitter.com/en/docs" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="social" data-name="Meta Graph API" data-tags="social facebook instagram meta graph api">
+  <div class="card-header"><div class="card-name">Meta Graph API</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free</span></div>
+  <div class="card-desc">Facebook and Instagram publishing, analytics, ads. Free to use. Required for automating FB/IG posts and reading insights.</div>
+  <div class="card-details">Free tier: <span>Free with app approval</span></div>
+  <a class="card-link" href="https://developers.facebook.com/apps/" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://developers.facebook.com/docs/graph-api/" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="social" data-name="LinkedIn API" data-tags="social linkedin posts automation">
+  <div class="card-header"><div class="card-name">LinkedIn API</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free</span></div>
+  <div class="card-desc">Post on behalf of users, read profiles, company pages. OAuth 2.0. Free but requires app review for production access.</div>
+  <div class="card-details">Free tier: <span>Free with approval</span></div>
+  <a class="card-link" href="https://www.linkedin.com/developers/apps" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://learn.microsoft.com/en-us/linkedin/" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="social" data-name="TikTok API" data-tags="social tiktok video api">
+  <div class="card-header"><div class="card-name">TikTok for Developers</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free</span></div>
+  <div class="card-desc">Post videos, read analytics, login with TikTok. Free. Requires business account and app approval. Good for automation tools.</div>
+  <div class="card-details">Free tier: <span>Free with approval</span></div>
+  <a class="card-link" href="https://developers.tiktok.com/" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://developers.tiktok.com/doc/" target="_blank" rel="noopener">Docs</a>
+</div>
+
+</div>
+
+<!-- MAPS & LOCATION -->
+<div class="section-title" data-cat="maps">🗺️ Maps & Location</div>
+<div class="grid">
+
+<div class="card" data-cat="maps" data-name="Google Maps" data-tags="maps location geocoding google places">
+  <div class="card-header"><div class="card-name">Google Maps API</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">Maps, geocoding, places, directions, distance matrix. $200 free credit/month (covers most small apps). 99.9% uptime SLA.</div>
+  <div class="card-details">Free tier: <span>$200/month credit</span></div>
+  <a class="card-link" href="https://console.cloud.google.com/google/maps-apis/credentials" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://developers.google.com/maps" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="maps" data-name="OpenStreetMap" data-tags="maps location free open source nominatim">
+  <div class="card-header"><div class="card-name">OpenStreetMap / Nominatim</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free</span></div>
+  <div class="card-desc">Free open-source maps and geocoding. Nominatim API for geocoding — completely free. No key required for low usage.</div>
+  <div class="card-details">Free tier: <span>1 request/second (no key)</span></div>
+  <a class="card-link" href="https://nominatim.openstreetmap.org/" target="_blank" rel="noopener">Use Free →</a>
+  <a class="card-link-secondary" href="https://nominatim.org/release-docs/develop/api/Overview/" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="maps" data-name="ipapi" data-tags="maps location ip geolocation free">
+  <div class="card-header"><div class="card-name">ip-api (IP Geolocation)</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free</span></div>
+  <div class="card-desc">Get location from IP address. Country, city, timezone, ISP. 45 free requests/minute. No key required for basic use.</div>
+  <div class="card-details">Free tier: <span>45 req/min (no key)</span></div>
+  <a class="card-link" href="http://ip-api.com" target="_blank" rel="noopener">Use Free →</a>
+  <a class="card-link-secondary" href="http://ip-api.com/docs" target="_blank" rel="noopener">Docs</a>
+</div>
+
+</div>
+
+<!-- DATABASE & STORAGE -->
+<div class="section-title" data-cat="database">🗄️ Database, Storage & Backend</div>
+<div class="grid">
+
+<div class="card" data-cat="database" data-name="Supabase" data-tags="database postgres supabase backend free">
+  <div class="card-header"><div class="card-name">Supabase</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free Tier</span></div>
+  <div class="card-desc">Open-source Firebase alternative. PostgreSQL database, auth, storage, realtime. 500MB free forever. Built-in REST API.</div>
+  <div class="card-details">Free tier: <span>500MB database forever</span></div>
+  <a class="card-link" href="https://supabase.com/dashboard/sign-up" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://supabase.com/docs" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="database" data-name="Firebase" data-tags="database firebase google realtime nosql">
+  <div class="card-header"><div class="card-name">Firebase (Google)</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free Tier</span></div>
+  <div class="card-desc">Realtime database, authentication, hosting, storage. Spark plan free forever. Used in millions of mobile and web apps.</div>
+  <div class="card-details">Free tier: <span>Generous free Spark plan</span></div>
+  <a class="card-link" href="https://console.firebase.google.com/" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://firebase.google.com/docs" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="database" data-name="Pinecone" data-tags="database vector pinecone ai embeddings">
+  <div class="card-header"><div class="card-name">Pinecone (Vector DB)</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">Vector database for AI applications. 1 free index, 100K vectors. Essential for RAG, semantic search, and AI memory systems.</div>
+  <div class="card-details">Free tier: <span>1 index, 100K vectors</span></div>
+  <a class="card-link" href="https://app.pinecone.io" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://docs.pinecone.io" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="database" data-name="Cloudflare R2" data-tags="database storage s3 cloudflare r2 free">
+  <div class="card-header"><div class="card-name">Cloudflare R2</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free Tier</span></div>
+  <div class="card-desc">S3-compatible object storage. 10GB free forever, zero egress fees. S3 API compatible. Global CDN included. Great for media.</div>
+  <div class="card-details">Free tier: <span>10GB free, zero egress</span></div>
+  <a class="card-link" href="https://dash.cloudflare.com/sign-up" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://developers.cloudflare.com/r2/" target="_blank" rel="noopener">Docs</a>
+</div>
+
+</div>
+
+<!-- ANALYTICS -->
+<div class="section-title" data-cat="analytics">📊 Analytics & Monitoring</div>
+<div class="grid">
+
+<div class="card" data-cat="analytics" data-name="Google Analytics" data-tags="analytics tracking google website data">
+  <div class="card-header"><div class="card-name">Google Analytics API</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free</span></div>
+  <div class="card-desc">Website analytics, user behavior, conversions. GA4 Data API for programmatic access. Free forever. Used by 50M+ websites.</div>
+  <div class="card-details">Free tier: <span>Free forever</span></div>
+  <a class="card-link" href="https://console.cloud.google.com/apis/library/analyticsdata.googleapis.com" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://developers.google.com/analytics/devguides/reporting/data/v1" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="analytics" data-name="Mixpanel" data-tags="analytics events tracking mixpanel product">
+  <div class="card-header"><div class="card-name">Mixpanel</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free Tier</span></div>
+  <div class="card-desc">Product analytics, event tracking, user journeys. 20M free events/month. Funnels, retention, A/B testing built in.</div>
+  <div class="card-details">Free tier: <span>20M events/month</span></div>
+  <a class="card-link" href="https://mixpanel.com/register/" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://developer.mixpanel.com" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="analytics" data-name="PostHog" data-tags="analytics product events open source posthog">
+  <div class="card-header"><div class="card-name">PostHog</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free Tier</span></div>
+  <div class="card-desc">Open-source product analytics. 1M free events/month on cloud. Self-hostable. Feature flags, session replay, A/B testing.</div>
+  <div class="card-details">Free tier: <span>1M events/month</span></div>
+  <a class="card-link" href="https://app.posthog.com/signup" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://posthog.com/docs/api" target="_blank" rel="noopener">Docs</a>
+</div>
+
+</div>
+
+<!-- AUTH & SECURITY -->
+<div class="section-title" data-cat="auth">🔐 Auth, Identity & Security</div>
+<div class="grid">
+
+<div class="card" data-cat="auth" data-name="Auth0" data-tags="auth login oauth identity auth0">
+  <div class="card-header"><div class="card-name">Auth0</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free Tier</span></div>
+  <div class="card-desc">Authentication and authorization. 7,500 free active users/month. Social login, MFA, passwordless. Drop-in UI components.</div>
+  <div class="card-details">Free tier: <span>7,500 active users/month</span></div>
+  <a class="card-link" href="https://auth0.com/signup" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://auth0.com/docs" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="auth" data-name="Clerk" data-tags="auth login clerk nextjs react identity">
+  <div class="card-header"><div class="card-name">Clerk</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free Tier</span></div>
+  <div class="card-desc">User management for modern apps. 10,000 free monthly active users. Beautiful pre-built UI. Next.js, React, and more.</div>
+  <div class="card-details">Free tier: <span>10K MAU free</span></div>
+  <a class="card-link" href="https://dashboard.clerk.com/sign-up" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://clerk.com/docs" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="auth" data-name="Have I Been Pwned" data-tags="auth security breach password check hibp">
+  <div class="card-header"><div class="card-name">Have I Been Pwned API</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free</span></div>
+  <div class="card-desc">Check if passwords or emails have been in data breaches. Free for personal use. Used by Firefox, 1Password, and governments.</div>
+  <div class="card-details">Free tier: <span>Free with API key</span></div>
+  <a class="card-link" href="https://haveibeenpwned.com/API/Key" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://haveibeenpwned.com/API/v3" target="_blank" rel="noopener">Docs</a>
+</div>
+
+</div>
+
+<!-- CODE & DEV -->
+<div class="section-title" data-cat="code">💻 Developer Tools & Utilities</div>
+<div class="grid">
+
+<div class="card" data-cat="code" data-name="GitHub API" data-tags="code github repos git version control">
+  <div class="card-header"><div class="card-name">GitHub REST API</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free</span></div>
+  <div class="card-desc">Manage repos, issues, PRs, deployments. 5,000 requests/hour with auth. Automate your entire dev workflow. OAuth available.</div>
+  <div class="card-details">Free tier: <span>5,000 req/hour</span></div>
+  <a class="card-link" href="https://github.com/settings/tokens" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://docs.github.com/en/rest" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="code" data-name="Vercel API" data-tags="code deployment vercel serverless hosting">
+  <div class="card-header"><div class="card-name">Vercel API</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free Tier</span></div>
+  <div class="card-desc">Deploy and manage serverless functions and Next.js apps. Free hobby plan. Trigger deployments, manage domains, check build status.</div>
+  <div class="card-details">Free tier: <span>Free hobby plan</span></div>
+  <a class="card-link" href="https://vercel.com/account/tokens" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://vercel.com/docs/rest-api" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="code" data-name="Cloudflare API" data-tags="code cloudflare cdn dns workers">
+  <div class="card-header"><div class="card-name">Cloudflare API</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free Tier</span></div>
+  <div class="card-desc">Manage DNS, CDN, Workers, Pages, R2 storage. Free plan includes 100K Workers requests/day. Essential for web infrastructure.</div>
+  <div class="card-details">Free tier: <span>100K requests/day</span></div>
+  <a class="card-link" href="https://dash.cloudflare.com/profile/api-tokens" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://developers.cloudflare.com/api" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="code" data-name="Airtable API" data-tags="code database airtable spreadsheet no-code">
+  <div class="card-header"><div class="card-name">Airtable API</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free Tier</span></div>
+  <div class="card-desc">Spreadsheet-database hybrid with API. 1,000 records/base free. CRUD operations, webhooks, formulas. Great for no-code backends.</div>
+  <div class="card-details">Free tier: <span>1,000 records/base</span></div>
+  <a class="card-link" href="https://airtable.com/account" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://airtable.com/developers/web/api/introduction" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="code" data-name="Notion API" data-tags="code notion database pages workspace">
+  <div class="card-header"><div class="card-name">Notion API</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free</span></div>
+  <div class="card-desc">Read and write to Notion pages, databases, and blocks. Free with any Notion plan. Build Notion-powered apps and automations.</div>
+  <div class="card-details">Free tier: <span>Free with Notion account</span></div>
+  <a class="card-link" href="https://www.notion.so/my-integrations" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://developers.notion.com" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="code" data-name="n8n" data-tags="code automation workflow n8n open source">
+  <div class="card-header"><div class="card-name">n8n Cloud API</div></div>
+  <div class="card-badges"><span class="badge badge-freemium">Freemium</span></div>
+  <div class="card-desc">Open-source workflow automation. Self-hostable for free. 5 active workflows free on cloud. 400+ integrations including AI tools.</div>
+  <div class="card-details">Free tier: <span>Free self-hosted</span></div>
+  <a class="card-link" href="https://n8n.io/cloud/" target="_blank" rel="noopener">Get Started →</a>
+  <a class="card-link-secondary" href="https://docs.n8n.io" target="_blank" rel="noopener">Docs</a>
+</div>
+
+</div>
+
+<!-- WEATHER & MISC -->
+<div class="section-title">🌤️ Weather, Utilities & Misc Free APIs</div>
+<div class="grid">
+
+<div class="card" data-cat="other" data-name="OpenWeatherMap" data-tags="weather forecast temperature openweather">
+  <div class="card-header"><div class="card-name">OpenWeatherMap API</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free Tier</span></div>
+  <div class="card-desc">Current weather, forecasts, historical data for any location. 60 calls/minute free. 200+ countries. Used in millions of apps.</div>
+  <div class="card-details">Free tier: <span>60 calls/min</span></div>
+  <a class="card-link" href="https://home.openweathermap.org/users/sign_up" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://openweathermap.org/api" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="other" data-name="REST Countries" data-tags="data countries geography free no key">
+  <div class="card-header"><div class="card-name">REST Countries</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free — No Key</span></div>
+  <div class="card-desc">Country data, flags, capitals, currencies, languages. Completely free, no key required. 250 countries with detailed info.</div>
+  <div class="card-details">Free tier: <span>Free, no key needed</span></div>
+  <a class="card-link" href="https://restcountries.com" target="_blank" rel="noopener">Use Free →</a>
+  <a class="card-link-secondary" href="https://restcountries.com/#api-endpoints-v3" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="other" data-name="Dictionary API" data-tags="data dictionary words definitions free">
+  <div class="card-header"><div class="card-name">Free Dictionary API</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free — No Key</span></div>
+  <div class="card-desc">Word definitions, synonyms, antonyms, pronunciations. Completely free, no key required. Great for writing and educational apps.</div>
+  <div class="card-details">Free tier: <span>Free, no key needed</span></div>
+  <a class="card-link" href="https://dictionaryapi.dev" target="_blank" rel="noopener">Use Free →</a>
+  <a class="card-link-secondary" href="https://dictionaryapi.dev" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="other" data-name="Exchange Rates" data-tags="finance currency exchange rates free">
+  <div class="card-header"><div class="card-name">ExchangeRate-API</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free Tier</span></div>
+  <div class="card-desc">Currency exchange rates for 160+ currencies. 1,500 free requests/month. Updated daily. Simple REST API with JSON responses.</div>
+  <div class="card-details">Free tier: <span>1,500 req/month</span></div>
+  <a class="card-link" href="https://www.exchangerate-api.com/docs/free" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://www.exchangerate-api.com/docs" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="other" data-name="QR Code API" data-tags="utility qr code generator free">
+  <div class="card-header"><div class="card-name">QR Code API</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free — No Key</span></div>
+  <div class="card-desc">Generate QR codes for any URL or text. No key required. Just hit the URL with your data. Used in millions of applications.</div>
+  <div class="card-details">Free tier: <span>Free, no key needed</span></div>
+  <a class="card-link" href="https://goqr.me/api/" target="_blank" rel="noopener">Use Free →</a>
+  <a class="card-link-secondary" href="https://goqr.me/api/doc/" target="_blank" rel="noopener">Docs</a>
+</div>
+
+<div class="card" data-cat="other" data-name="IP Geolocation" data-tags="utility ip location ipinfo">
+  <div class="card-header"><div class="card-name">IPInfo.io</div></div>
+  <div class="card-badges"><span class="badge badge-free">Free Tier</span></div>
+  <div class="card-desc">IP address geolocation, ASN, carrier detection. 50,000 free requests/month. Used by 1M+ developers. No credit card required.</div>
+  <div class="card-details">Free tier: <span>50K req/month</span></div>
+  <a class="card-link" href="https://ipinfo.io/signup" target="_blank" rel="noopener">Get API Key →</a>
+  <a class="card-link-secondary" href="https://ipinfo.io/developers" target="_blank" rel="noopener">Docs</a>
+</div>
+
+</div>
+
+</div><!-- end apiGrid -->
+
+<div style="background:#0d0d0d;border-top:1px solid #1a1a1a;padding:32px 20px;text-align:center">
+  <p style="color:#555;font-size:.88rem;margin-bottom:8px">Free AI community for operators and entrepreneurs</p>
+  <a href="https://skool.com/aiguerrilla" style="color:#00FF88;text-decoration:none;font-size:.95rem;font-weight:600">Join 150+ operators at skool.com/aiguerrilla &rarr;</a>
+</div>
+<footer style="text-align:center;padding:30px;color:#444;border-top:1px solid #111;font-size:.85rem">
+  <p><a href="/tools/" style="color:#00FF88;text-decoration:none">Tools</a> &middot; <a href="/academy/" style="color:#00FF88;text-decoration:none">Academy</a> &middot; <a href="/free-ai-tools/" style="color:#00FF88;text-decoration:none">Free Tools</a> &middot; <a href="/glossary/" style="color:#00FF88;text-decoration:none">Glossary</a> &middot; <a href="/api-keys/" style="color:#00FF88;text-decoration:none">API Keys</a></p>
+  <p style="margin-top:8px">&copy; 2026 AI Guerrilla &mdash; Every API Key on the Internet</p>
+</footer>
+
+<script>
+let activeCategory = 'all';
+
+function filterCards() {
+  const query = document.getElementById('searchInput').value.toLowerCase();
+  const cards = document.querySelectorAll('.card');
+  let visible = 0;
+  
+  cards.forEach(card => {
+    const name = (card.dataset.name || '').toLowerCase();
+    const tags = (card.dataset.tags || '').toLowerCase();
+    const text = (card.textContent || '').toLowerCase();
+    const cat = card.dataset.cat || '';
+    
+    const matchesSearch = !query || name.includes(query) || tags.includes(query) || text.includes(query);
+    const matchesCat = activeCategory === 'all' || cat.includes(activeCategory) || (activeCategory === 'free' && card.querySelector('.badge-free'));
+    
+    if (matchesSearch && matchesCat) {
+      card.style.display = '';
+      visible++;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+  
+  // Show/hide section titles
+  document.querySelectorAll('.section-title').forEach(title => {
+    const grid = title.nextElementSibling;
+    if (grid) {
+      const visibleCards = [...grid.querySelectorAll('.card')].filter(c => c.style.display !== 'none');
+      title.style.display = visibleCards.length ? '' : 'none';
+      grid.style.display = visibleCards.length ? '' : 'none';
+    }
+  });
+  
+  document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
+  document.getElementById('totalCount').textContent = visible;
+}
+
+function filterCategory(btn, cat) {
+  activeCategory = cat;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  filterCards();
+}
+
+function exportCSV() {
+  const cards = document.querySelectorAll('.card');
+  let csv = 'Name,Category,Free Tier,Get API Key,Docs
+';
+  cards.forEach(card => {
+    const name = card.dataset.name || '';
+    const cat = card.dataset.cat || '';
+    const free = card.querySelector('.badge-free') ? 'Yes' : card.querySelector('.badge-freemium') ? 'Freemium' : 'Paid';
+    const link = card.querySelector('.card-link')?.href || '';
+    const docs = card.querySelector('.card-link-secondary')?.href || '';
+    csv += `"${name}","${cat}","${free}","${link}","${docs}"
+`;
+  });
+  const blob = new Blob([csv], {type:'text/csv'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'api-keys-directory.csv';
+  a.click();
+}
+
+// Count on load
+document.addEventListener('DOMContentLoaded', () => {
+  const total = document.querySelectorAll('.card').length;
+  document.getElementById('totalCount').textContent = total + '+';
+});
+</script>
+</body>
+</html>
