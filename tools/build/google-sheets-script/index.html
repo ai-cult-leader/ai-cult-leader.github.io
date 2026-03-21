@@ -188,6 +188,11 @@ document.addEventListener('click',function(e){
       </label>
     </div>
 
+<div style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:10px;padding:16px 20px;margin-bottom:20px">
+  <div style="font-size:.72rem;color:#00FF88;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;font-weight:700">💡 Example Output</div>
+  <p style="font-size:.83rem;color:#888;margin-bottom:8px">See a script that automatically sends an email whenever a new row is added to your sheet.</p>
+  <button onclick="loadExample()" style="background:transparent;border:1px solid #00FF88;color:#00FF88;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:.8rem;font-family:inherit">Load Example →</button>
+</div>
     <div style="margin-top:24px">
       <button class="btn" id="generateBtn" data-orig="Generate My Script" onclick="generateScript()">Generate My Script</button>
     </div>
@@ -374,6 +379,86 @@ function _download(content, filename, type) {
   a.href = URL.createObjectURL(blob);
   a.download = filename;
   a.click();
+}
+</script>
+<script>
+function loadExample() {
+  document.getElementById('taskDesc').value = 'Send an email notification to admin@company.com whenever a new row is added to the sheet, including all the row data in the email';
+  if(document.getElementById('sheetName')) document.getElementById('sheetName').value = 'Responses';
+
+  const exampleCode = `// Google Apps Script — Auto Email on New Row
+// Setup: Extensions → Apps Script → paste this → save → set trigger
+
+const CONFIG = {
+  EMAIL_TO: "admin@company.com",
+  SHEET_NAME: "Responses",
+  EMAIL_SUBJECT: "New Submission: {{Sheet Name}}"
+};
+
+// ── Main Function ──────────────────────────────────────────────
+function onNewRow(e) {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet();
+  const activeSheet = sheet.getActiveSheet();
+  
+  // Only trigger on the correct sheet
+  if (activeSheet.getName() !== CONFIG.SHEET_NAME) return;
+  
+  const headers = activeSheet.getRange(1, 1, 1, activeSheet.getLastColumn()).getValues()[0];
+  const newRow = e.range.getValues()[0];
+  
+  // Build email body
+  let emailBody = "New submission received:\n\n";
+  headers.forEach((header, i) => {
+    if (header && newRow[i] !== '') {
+      emailBody += \`\${header}: \${newRow[i]}\n\`;
+    }
+  });
+  emailBody += "\n---\n";
+  emailBody += "View sheet: " + sheet.getUrl();
+  
+  // Send email
+  MailApp.sendEmail({
+    to: CONFIG.EMAIL_TO,
+    subject: \`New Submission — \${activeSheet.getName()}\`,
+    body: emailBody
+  });
+  
+  Logger.log("Email sent for new row: " + newRow.join(", "));
+}
+
+// ── Setup Trigger ──────────────────────────────────────────────
+function setupTrigger() {
+  // Delete existing triggers
+  ScriptApp.getProjectTriggers().forEach(t => ScriptApp.deleteTrigger(t));
+  
+  // Create new on-edit trigger
+  ScriptApp.newTrigger("onNewRow")
+    .forSpreadsheet(SpreadsheetApp.getActive())
+    .onEdit()
+    .create();
+    
+  SpreadsheetApp.getUi().alert("✅ Trigger set! You'll get emails when new rows are added.");
+}
+
+// ── Add Menu ───────────────────────────────────────────────────
+function onOpen() {
+  SpreadsheetApp.getUi()
+    .createMenu("⚡ Automation")
+    .addItem("Setup Email Trigger", "setupTrigger")
+    .addItem("Test: Send Sample Email", "testEmail")
+    .addToUi();
+}
+
+function testEmail() {
+  MailApp.sendEmail(CONFIG.EMAIL_TO, "Test Email from Google Sheets", "Your automation is working! ✅");
+  SpreadsheetApp.getUi().alert("Test email sent to " + CONFIG.EMAIL_TO);
+}`;
+
+  const outputSection = document.getElementById('outputSection');
+  if (outputSection) { outputSection.style.display = 'block'; outputSection.classList.add('visible'); }
+  const codeDisplay = document.getElementById('generatedCode') || document.querySelector('.code-block');
+  if (codeDisplay) codeDisplay.textContent = exampleCode;
+  if (typeof showOutput === 'function') showOutput(exampleCode, 'script.gs', false);
 }
 </script>
 </body>
