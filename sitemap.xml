@@ -34,4 +34,65 @@
   <url><loc>https://aiguerrilla.net/tools/ai-workflow-builder/</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://aiguerrilla.net/tools/ai-tool-finder/</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://aiguerrilla.net/tools/ai-linkedin-bio/</loc><changefreq>monthly</changefreq><priority>0.85</priority></url>
+
+  <url>
+    <loc>https://aiguerrilla.net/beginners/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aiguerrilla.net/beginners/what-is-ai/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aiguerrilla.net/beginners/chatgpt-for-beginners/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aiguerrilla.net/beginners/how-to-ask-ai/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aiguerrilla.net/beginners/ai-for-daily-life/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aiguerrilla.net/beginners/staying-safe/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aiguerrilla.net/beginners/ask-ai/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aiguerrilla.net/beginners/ai-scam-warning/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aiguerrilla.net/beginners/free-tools-for-seniors/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
+  <url>
+    <loc>https://aiguerrilla.net/beginners/glossary/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-03-21</lastmod>
+  </url>
 </urlset>
