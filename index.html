@@ -58,22 +58,18 @@ footer .footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap
 </script>
 </head>
 <body>
-
 <nav id="mainNav">
   <a class="logo" href="/">AI Guerrilla</a>
   <div id="navMenu">
-    <div class="dd">
-      <a href="/academy/">Academy ▾</a>
+    <div class="dd"><a href="/academy/">Academy &#9662;</a>
       <div class="ddm">
-        <div class="ddc">
-          <b>Courses</b>
+        <div class="ddc"><b>Courses</b>
           <a href="/academy/">All Courses</a>
           <a href="/academy/ai-fundamentals/">AI Fundamentals</a>
           <a href="/academy/ai-content-machine/">Content Machine</a>
           <a href="/academy/ai-monetization/">AI Monetization</a>
         </div>
-        <div class="ddc">
-          <b>By Topic</b>
+        <div class="ddc"><b>By Topic</b>
           <a href="/academy/developer/">Developer &amp; APIs</a>
           <a href="/academy/seo/">SEO with AI</a>
           <a href="/academy/social-media/">Social Media</a>
@@ -83,38 +79,31 @@ footer .footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap
         </div>
       </div>
     </div>
-    <div class="dd">
-      <a href="/tools/">Tools ▾</a>
+    <div class="dd"><a href="/tools/">Tools &#9662;</a>
       <div class="ddm">
-        <div class="ddc">
-          <b>Database</b>
+        <div class="ddc"><b>Database</b>
           <a href="/tools/">All Tools (300+)</a>
           <a href="/llms/">LLMs (40+)</a>
           <a href="/founders/">Founders</a>
           <a href="/compare/">Compare</a>
         </div>
-        <div class="ddc">
-          <b>Free Tools</b>
-          <a href="/free-ai-tools/" style="color:#00FF88;font-weight:600">All Free Tools ✦</a>
+        <div class="ddc"><b>Free Tools</b>
+          <a href="/free-ai-tools/" style="color:#00FF88;font-weight:600">All Free Tools</a>
           <a href="/tools/prompt-generator/">Prompt Generator</a>
           <a href="/tools/blog-post-generator/">Blog Generator</a>
           <a href="/tools/token-counter/">Token Counter</a>
-          <a href="/tools/api-cost-calculator/">API Cost Calc</a>
         </div>
       </div>
     </div>
-    <div class="dd">
-      <a href="/glossary/">Learn ▾</a>
+    <div class="dd"><a href="/glossary/">Learn &#9662;</a>
       <div class="ddm">
-        <div class="ddc">
-          <b>Reference</b>
+        <div class="ddc"><b>Reference</b>
           <a href="/glossary/">AI Glossary</a>
           <a href="/alternatives/">Alternatives</a>
           <a href="/use-cases/">Use Cases</a>
-          <a href="/api-keys/" style="color:#00FF88;font-weight:600">API Keys ✦</a>
+          <a href="/api-keys/" style="color:#00FF88">API Keys</a>
         </div>
-        <div class="ddc">
-          <b>Content</b>
+        <div class="ddc"><b>Content</b>
           <a href="/news/">AI News</a>
           <a href="/tutorials/">Tutorials</a>
           <a href="/sitemap-page/">Sitemap</a>
@@ -129,44 +118,48 @@ footer .footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap
 </nav>
 <style>
 #mainNav{padding:14px 32px;border-bottom:1px solid #1a1a1a;display:flex;align-items:center;justify-content:space-between;background:#0a0a0a;position:sticky;top:0;z-index:9999;flex-wrap:wrap;gap:8px}
-#mainNav .logo{color:#00FF88;font-weight:900;font-size:1.3rem;text-decoration:none;flex-shrink:0}
+.logo{color:#00FF88;font-weight:900;font-size:1.3rem;text-decoration:none;flex-shrink:0}
 #navMenu{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
 #burger{display:none;background:none;border:1px solid #333;color:#fff;font-size:1.2rem;padding:4px 10px;border-radius:6px;cursor:pointer}
 .dd{position:relative}
 .dd>a{color:#aaa;text-decoration:none;font-size:.9rem;cursor:pointer;padding:6px 2px;display:block;white-space:nowrap}
 .dd>a:hover{color:#00FF88}
-.ddm{display:none;position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);background:#111;border:1px solid #222;border-radius:10px;padding:18px 20px;min-width:360px;flex-direction:row;gap:24px;z-index:99999;box-shadow:0 12px 40px rgba(0,0,0,.9)}
-.dd:hover .ddm{display:flex!important}
-.ddc{min-width:150px;display:flex;flex-direction:column;gap:0}
-.ddc b{display:block;font-size:.68rem;color:#555;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;font-weight:700}
-.ddc a{color:#aaa;text-decoration:none;font-size:.84rem;padding:5px 0;display:block;white-space:nowrap}
+.ddm{display:none;position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);background:#111;border:1px solid #333;border-radius:10px;padding:18px 20px;min-width:340px;flex-direction:row;gap:24px;z-index:99999;box-shadow:0 12px 40px rgba(0,0,0,.95)}
+.dd:hover>.ddm{display:flex!important}
+.ddc{min-width:140px;display:flex;flex-direction:column}
+.ddc b{font-size:.68rem;color:#555;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px}
+.ddc a{color:#aaa;text-decoration:none;font-size:.84rem;padding:5px 0}
 .ddc a:hover{color:#00FF88}
 @media(max-width:860px){
   #burger{display:block}
   #navMenu{display:none;width:100%;flex-direction:column;align-items:flex-start;gap:4px;padding-top:12px}
   #navMenu.open{display:flex}
-  .ddm{position:static;transform:none;min-width:0;background:transparent;border:none;padding:4px 0 4px 16px;box-shadow:none;flex-direction:column;gap:4px}
-  .dd:hover .ddm{display:none!important}
-  .dd.open .ddm{display:flex!important}
-  .ddc{min-width:0}
+  .ddm{position:static;transform:none;min-width:0;background:transparent;border:none;padding:4px 0 4px 16px;box-shadow:none;flex-direction:column;gap:2px}
+  .dd:hover>.ddm{display:none!important}
+  .dd.mopen>.ddm{display:flex!important}
   .dd>a{padding:8px 0;width:100%}
+  .ddc{min-width:0}
 }
 </style>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
-  document.querySelectorAll('.dd').forEach(function(dd){
-    dd.querySelector('a').addEventListener('click',function(e){
-      if(window.innerWidth<=860){e.preventDefault();dd.classList.toggle('open');}
+  if(window.innerWidth<=860){
+    document.querySelectorAll('.dd>a').forEach(function(a){
+      a.addEventListener('click',function(e){
+        e.preventDefault();
+        this.parentElement.classList.toggle('mopen');
+      });
     });
-  });
+  }
   document.addEventListener('click',function(e){
     if(!e.target.closest('#mainNav')){
       document.getElementById('navMenu').classList.remove('open');
-      document.querySelectorAll('.dd').forEach(function(d){d.classList.remove('open');});
+      document.querySelectorAll('.dd').forEach(function(d){d.classList.remove('mopen');});
     }
   });
 });
 </script>
+
 
 <div class="hero">
   <div class="hero-label">AI Research Database</div>
