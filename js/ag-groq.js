@@ -9,7 +9,6 @@
   const USER_KEY = ["gsk_SpC07PQBCR4tmMzERyCY","WGdyb3FYObw5uGiYTCC7eBVMzGgwIplO"].join("");
   const FALLBACK_KEYS = [
     ["gsk_O3O1bIMTJ","7Fn9MTE1WdXWGdyb3FY","kgwKA5BSRDB2Acg929rS7eCN"].join(""),
-    ["gsk_Afh2Ful9eDeE7N47zrUq","WGdyb3FY6PuYkzFWJee8HQoHLiaRc9Ob"].join("")
   ];
   const DEFAULT_KEY = USER_KEY;
   const FALLBACK_KEY = FALLBACK_KEYS[Math.floor(Date.now() / 60000) % 2];
