@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Browse all free AI courses visually. AI Fundamentals, Content Machine, Monetization, Developer, SEO, Social Media, Business and more.">
+<title>AI Courses Visual Guide — Browse All Free AI Courses</title>
+<link rel="canonical" href="https://aiguerrilla.net/guides/courses/">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a0a;color:#fff;font-family:'Segoe UI',sans-serif;line-height:1.7}
+nav{padding:16px 40px;border-bottom:1px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#0a0a0a;position:sticky;top:0;z-index:100}
+.logo{color:#00FF88;font-weight:900;font-size:1.3rem;text-decoration:none}
+.nav-links{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.nav-links a{color:#aaa;text-decoration:none;font-size:.9rem}
+.nav-links a:hover{color:#00FF88}
+.nav-cta{background:#00FF88!important;color:#000!important;font-weight:700;padding:7px 18px;border-radius:6px}
+.page-hero{padding:60px 20px 40px;text-align:center;max-width:860px;margin:0 auto}
+.hero-badge{display:inline-block;background:#0d1a0d;color:#00FF88;font-size:.72rem;font-weight:700;padding:5px 14px;border-radius:20px;border:1px solid #00FF88;margin-bottom:16px;letter-spacing:1px;text-transform:uppercase}
+h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;margin-bottom:14px}
+.page-desc{color:#888;font-size:1rem;max-width:600px;margin:0 auto 40px}
+.progress-bar{height:4px;background:#1a1a1a;border-radius:2px;margin:0 20px 40px;max-width:1160px;margin-left:auto;margin-right:auto}
+.progress-fill{height:100%;background:#00FF88;border-radius:2px;transition:width .3s}
+.section-header{max-width:1200px;margin:0 auto 20px;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+.section-title{font-size:1.1rem;font-weight:700;color:#fff;display:flex;align-items:center;gap:10px}
+.section-count{font-size:.78rem;color:#555;background:#111;padding:4px 12px;border-radius:20px}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;max-width:1200px;margin:0 auto;padding:0 20px 48px}
+.card{background:#111;border:1px solid #1a1a1a;border-radius:12px;overflow:hidden;transition:border-color .2s,transform .2s;position:relative}
+.card:hover{border-color:#00FF88;transform:translateY(-2px)}
+.card-img{width:100%;height:140px;object-fit:cover;background:linear-gradient(135deg,#0d1a0d,#1a1a2e)}
+.card-img-placeholder{width:100%;height:140px;display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,#0d1a0d 0%,#111 100%)}
+.card-body{padding:18px}
+.card-cat{font-size:.68rem;color:#00FF88;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-weight:600}
+.card-title{font-size:.97rem;font-weight:700;margin-bottom:6px;color:#fff;line-height:1.3}
+.card-desc{font-size:.82rem;color:#666;margin-bottom:14px;line-height:1.5}
+.card-footer{display:flex;justify-content:space-between;align-items:center}
+.card-link{color:#00FF88;text-decoration:none;font-size:.82rem;font-weight:600}
+.card-link:hover{text-decoration:underline}
+.card-meta{font-size:.75rem;color:#444}
+.lesson-card{background:#111;border:1px solid #1a1a1a;border-radius:10px;padding:18px;display:flex;gap:14px;align-items:flex-start;transition:border-color .2s;text-decoration:none;color:inherit}
+.lesson-card:hover{border-color:#00FF88}
+.lesson-num{min-width:36px;height:36px;background:#0d1a0d;border:1px solid #00FF88;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.85rem;color:#00FF88;flex-shrink:0}
+.lesson-num.done{background:#00FF88;color:#000;border-color:#00FF88}
+.lesson-info h3{font-size:.93rem;font-weight:700;margin-bottom:4px;color:#fff}
+.lesson-info p{font-size:.8rem;color:#666;margin:0}
+.lesson-duration{font-size:.72rem;color:#555;margin-top:6px}
+.tool-card{background:#111;border:1px solid #1a1a1a;border-radius:12px;padding:22px;transition:border-color .2s,transform .2s;text-decoration:none;color:inherit;display:block}
+.tool-card:hover{border-color:#00FF88;transform:translateY(-2px)}
+.tool-icon{font-size:2.2rem;margin-bottom:12px}
+.tool-tag{font-size:.68rem;color:#00FF88;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;font-weight:600}
+.tool-card h3{font-size:1rem;font-weight:700;margin-bottom:6px;color:#fff}
+.tool-card p{font-size:.82rem;color:#666;line-height:1.5;margin-bottom:14px}
+.tool-card .free-badge{display:inline-block;background:#0d1a0d;color:#00FF88;font-size:.7rem;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a}
+.featured-card{background:linear-gradient(135deg,#0d1a0d 0%,#111 100%);border:1px solid #00FF88;border-radius:16px;padding:32px;grid-column:1/-1;display:flex;gap:32px;align-items:center;flex-wrap:wrap}
+.featured-card .fc-content{flex:1;min-width:200px}
+.featured-card .fc-badge{font-size:.7rem;color:#00FF88;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;font-weight:700}
+.featured-card h2{font-size:1.6rem;font-weight:900;margin-bottom:10px}
+.featured-card p{color:#888;margin-bottom:20px;font-size:.95rem}
+.featured-card .fc-btn{display:inline-block;background:#00FF88;color:#000;font-weight:700;padding:12px 28px;border-radius:8px;text-decoration:none;font-size:.9rem}
+.featured-card .fc-stats{display:flex;gap:24px;flex-wrap:wrap}
+.featured-card .fc-stat{text-align:center}
+.featured-card .fc-stat-num{font-size:1.4rem;font-weight:900;color:#00FF88}
+.featured-card .fc-stat-label{font-size:.7rem;color:#555;text-transform:uppercase;letter-spacing:1px}
+.cta-strip{background:#0d1a0d;border-top:1px solid #1a1a1a;padding:32px 20px;text-align:center}
+.cta-strip p{color:#555;font-size:.88rem;margin-bottom:8px}
+.cta-strip a{color:#00FF88;text-decoration:none;font-size:.95rem;font-weight:600}
+footer{text-align:center;padding:28px;color:#444;border-top:1px solid #111;font-size:.85rem}
+footer a{color:#00FF88;text-decoration:none}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="/">AI Guerrilla</a>
+  <div class="nav-links">
+    <a href="/academy/">Academy</a>
+    <a href="/tools/">Tools</a>
+    <a href="/free-ai-tools/" style="color:#00FF88;font-weight:700">Free Tools</a>
+    <a href="/guides/" style="color:#fff;font-weight:600">Guides</a>
+    <a href="/news/">News</a>
+    <a href="https://skool.com/aiguerrilla" class="nav-cta" target="_blank">Join Free</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <span class="hero-badge">13 Courses</span>
+  <h1>AI Courses Visual Guide</h1>
+  <p class="page-desc">Browse all free AI courses. From total beginner to advanced developer — every course is free, no signup required.</p>
+</div>
+<div id="progressNote" style="max-width:1160px;margin:0 auto 20px;padding:0 20px">
+  <div style="background:#111;border:1px solid #1a1a1a;border-radius:8px;padding:12px 18px;font-size:.82rem;color:#555">
+    📊 <span id="progressText">Track your progress — your completed lessons are saved in your browser automatically.</span>
+  </div>
+</div>
+<div class="cards-grid">
+
+  <div class="card">
+    <div style="height:140px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;background:linear-gradient(135deg,#0d1a0d,#1a2e1a)">
+      🎓
+    </div>
+    <div class="card-body">
+      <div class="card-cat">Beginner</div>
+      <div class="card-title">AI Fundamentals for Entrepreneurs</div>
+      <div class="card-desc">Everything to start using AI in your business. Prompting, workflows, and real use cases.</div>
+      <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+        <span style="background:#111;border:1px solid #1a1a1a;font-size:.7rem;color:#555;padding:3px 10px;border-radius:20px">6 modules</span>
+        <span style="background:#111;border:1px solid #1a1a1a;font-size:.7rem;color:#555;padding:3px 10px;border-radius:20px">18 lessons</span>
+      </div>
+      <div class="card-footer">
+        <a href="/academy/ai-fundamentals/" class="card-link">Start Course &rarr;</a>
+        <span style="font-size:.7rem;color:#00FF88;background:#0d1a0d;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a">Free</span>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div style="height:140px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;background:linear-gradient(135deg,#1a0d1a,#2e1a2e)">
+      📹
+    </div>
+    <div class="card-body">
+      <div class="card-cat">Intermediate</div>
+      <div class="card-title">AI Content Machine</div>
+      <div class="card-desc">Build a full AI-powered content pipeline. Scripts, video, scheduling, automation.</div>
+      <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+        <span style="background:#111;border:1px solid #1a1a1a;font-size:.7rem;color:#555;padding:3px 10px;border-radius:20px">5 modules</span>
+        <span style="background:#111;border:1px solid #1a1a1a;font-size:.7rem;color:#555;padding:3px 10px;border-radius:20px">15 lessons</span>
+      </div>
+      <div class="card-footer">
+        <a href="/academy/ai-content-machine/" class="card-link">Start Course &rarr;</a>
+        <span style="font-size:.7rem;color:#00FF88;background:#0d1a0d;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a">Free</span>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div style="height:140px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;background:linear-gradient(135deg,#1a1a0d,#2e2e0d)">
+      💰
+    </div>
+    <div class="card-body">
+      <div class="card-cat">Advanced</div>
+      <div class="card-title">AI Monetization</div>
+      <div class="card-desc">Turn your AI skills into real income. Freelancing, products, and passive revenue streams.</div>
+      <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+        <span style="background:#111;border:1px solid #1a1a1a;font-size:.7rem;color:#555;padding:3px 10px;border-radius:20px">5 modules</span>
+        <span style="background:#111;border:1px solid #1a1a1a;font-size:.7rem;color:#555;padding:3px 10px;border-radius:20px">15 lessons</span>
+      </div>
+      <div class="card-footer">
+        <a href="/academy/ai-monetization/" class="card-link">Start Course &rarr;</a>
+        <span style="font-size:.7rem;color:#00FF88;background:#0d1a0d;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a">Free</span>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div style="height:140px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;background:linear-gradient(135deg,#0d0d1a,#1a1a2e)">
+      💻
+    </div>
+    <div class="card-body">
+      <div class="card-cat">Developer</div>
+      <div class="card-title">Developer & APIs</div>
+      <div class="card-desc">Build with AI APIs. OpenAI, Anthropic, Groq — real integrations from scratch.</div>
+      <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+        <span style="background:#111;border:1px solid #1a1a1a;font-size:.7rem;color:#555;padding:3px 10px;border-radius:20px">4 modules</span>
+        <span style="background:#111;border:1px solid #1a1a1a;font-size:.7rem;color:#555;padding:3px 10px;border-radius:20px">20 lessons</span>
+      </div>
+      <div class="card-footer">
+        <a href="/academy/developer/" class="card-link">Start Course &rarr;</a>
+        <span style="font-size:.7rem;color:#00FF88;background:#0d1a0d;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a">Free</span>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div style="height:140px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;background:linear-gradient(135deg,#0d1a0d,#1a2e1a)">
+      🔍
+    </div>
+    <div class="card-body">
+      <div class="card-cat">Marketing</div>
+      <div class="card-title">SEO with AI</div>
+      <div class="card-desc">Rank faster with AI-powered SEO. Content, keywords, and technical SEO workflows.</div>
+      <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+        <span style="background:#111;border:1px solid #1a1a1a;font-size:.7rem;color:#555;padding:3px 10px;border-radius:20px">3 modules</span>
+        <span style="background:#111;border:1px solid #1a1a1a;font-size:.7rem;color:#555;padding:3px 10px;border-radius:20px">10 lessons</span>
+      </div>
+      <div class="card-footer">
+        <a href="/academy/seo/" class="card-link">Start Course &rarr;</a>
+        <span style="font-size:.7rem;color:#00FF88;background:#0d1a0d;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a">Free</span>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div style="height:140px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;background:linear-gradient(135deg,#1a0d0d,#2e1a1a)">
+      📱
+    </div>
+    <div class="card-body">
+      <div class="card-cat">Creator</div>
+      <div class="card-title">AI for Social Media</div>
+      <div class="card-desc">Automate your social presence. X, TikTok, Instagram, LinkedIn — all on autopilot.</div>
+      <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+        <span style="background:#111;border:1px solid #1a1a1a;font-size:.7rem;color:#555;padding:3px 10px;border-radius:20px">3 modules</span>
+        <span style="background:#111;border:1px solid #1a1a1a;font-size:.7rem;color:#555;padding:3px 10px;border-radius:20px">12 lessons</span>
+      </div>
+      <div class="card-footer">
+        <a href="/academy/social-media/" class="card-link">Start Course &rarr;</a>
+        <span style="font-size:.7rem;color:#00FF88;background:#0d1a0d;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a">Free</span>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div style="height:140px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;background:linear-gradient(135deg,#0d1a1a,#1a2e2e)">
+      🏠
+    </div>
+    <div class="card-body">
+      <div class="card-cat">General</div>
+      <div class="card-title">AI in Daily Life</div>
+      <div class="card-desc">Use AI for health, finances, travel, cooking, and more. Practical everyday tools.</div>
+      <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+        <span style="background:#111;border:1px solid #1a1a1a;font-size:.7rem;color:#555;padding:3px 10px;border-radius:20px">3 modules</span>
+        <span style="background:#111;border:1px solid #1a1a1a;font-size:.7rem;color:#555;padding:3px 10px;border-radius:20px">10 lessons</span>
+      </div>
+      <div class="card-footer">
+        <a href="/academy/life/" class="card-link">Start Course &rarr;</a>
+        <span style="font-size:.7rem;color:#00FF88;background:#0d1a0d;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a">Free</span>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div style="height:140px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;background:linear-gradient(135deg,#1a1a0d,#2e2e1a)">
+      💼
+    </div>
+    <div class="card-body">
+      <div class="card-cat">Business</div>
+      <div class="card-title">AI for Business</div>
+      <div class="card-desc">AI for operations, sales, customer service, and strategy. Real business outcomes.</div>
+      <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+        <span style="background:#111;border:1px solid #1a1a1a;font-size:.7rem;color:#555;padding:3px 10px;border-radius:20px">4 modules</span>
+        <span style="background:#111;border:1px solid #1a1a1a;font-size:.7rem;color:#555;padding:3px 10px;border-radius:20px">15 lessons</span>
+      </div>
+      <div class="card-footer">
+        <a href="/academy/business/" class="card-link">Start Course &rarr;</a>
+        <span style="font-size:.7rem;color:#00FF88;background:#0d1a0d;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a">Free</span>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div style="height:140px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;background:linear-gradient(135deg,#0d1a1a,#1a2e2e)">
+      🌍
+    </div>
+    <div class="card-body">
+      <div class="card-cat">Professional</div>
+      <div class="card-title">AI for Every Field</div>
+      <div class="card-desc">AI applications for healthcare, law, education, engineering, and more professions.</div>
+      <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+        <span style="background:#111;border:1px solid #1a1a1a;font-size:.7rem;color:#555;padding:3px 10px;border-radius:20px">5 modules</span>
+        <span style="background:#111;border:1px solid #1a1a1a;font-size:.7rem;color:#555;padding:3px 10px;border-radius:20px">20 lessons</span>
+      </div>
+      <div class="card-footer">
+        <a href="/academy/fields/" class="card-link">Start Course &rarr;</a>
+        <span style="font-size:.7rem;color:#00FF88;background:#0d1a0d;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a">Free</span>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div style="height:140px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;background:linear-gradient(135deg,#1a0d1a,#2e1a2e)">
+      🛠️
+    </div>
+    <div class="card-body">
+      <div class="card-cat">Intermediate</div>
+      <div class="card-title">AI Tool Deep Dives</div>
+      <div class="card-desc">In-depth breakdowns of the best AI tools. ChatGPT, Midjourney, HeyGen, and more.</div>
+      <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+        <span style="background:#111;border:1px solid #1a1a1a;font-size:.7rem;color:#555;padding:3px 10px;border-radius:20px">2 modules</span>
+        <span style="background:#111;border:1px solid #1a1a1a;font-size:.7rem;color:#555;padding:3px 10px;border-radius:20px">10 lessons</span>
+      </div>
+      <div class="card-footer">
+        <a href="/academy/tools/" class="card-link">Start Course &rarr;</a>
+        <span style="font-size:.7rem;color:#00FF88;background:#0d1a0d;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a">Free</span>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div style="height:140px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;background:linear-gradient(135deg,#0d0d1a,#1a1a2e)">
+      🤖
+    </div>
+    <div class="card-body">
+      <div class="card-cat">Advanced</div>
+      <div class="card-title">AI Agents & OpenClaw</div>
+      <div class="card-desc">Build and deploy autonomous AI agents. OpenClaw integration, workflows, and automation.</div>
+      <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+        <span style="background:#111;border:1px solid #1a1a1a;font-size:.7rem;color:#555;padding:3px 10px;border-radius:20px">2 modules</span>
+        <span style="background:#111;border:1px solid #1a1a1a;font-size:.7rem;color:#555;padding:3px 10px;border-radius:20px">10 lessons</span>
+      </div>
+      <div class="card-footer">
+        <a href="/academy/agents/" class="card-link">Start Course &rarr;</a>
+        <span style="font-size:.7rem;color:#00FF88;background:#0d1a0d;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a">Free</span>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div style="height:140px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;background:linear-gradient(135deg,#0d1a0d,#1a2e1a)">
+      👴
+    </div>
+    <div class="card-body">
+      <div class="card-cat">Beginner</div>
+      <div class="card-title">AI for Seniors</div>
+      <div class="card-desc">Gentle, clear guides for older adults. Big text, simple steps, no tech jargon.</div>
+      <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+        <span style="background:#111;border:1px solid #1a1a1a;font-size:.7rem;color:#555;padding:3px 10px;border-radius:20px">—</span>
+        <span style="background:#111;border:1px solid #1a1a1a;font-size:.7rem;color:#555;padding:3px 10px;border-radius:20px">10 guides</span>
+      </div>
+      <div class="card-footer">
+        <a href="/beginners/" class="card-link">Start Course &rarr;</a>
+        <span style="font-size:.7rem;color:#00FF88;background:#0d1a0d;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a">Free</span>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div style="height:140px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;background:linear-gradient(135deg,#0d1a1a,#1a2e2e)">
+      🌱
+    </div>
+    <div class="card-body">
+      <div class="card-cat">Starter</div>
+      <div class="card-title">AI for Beginners</div>
+      <div class="card-desc">Zero to AI in one afternoon. Start here if you've never used AI tools before.</div>
+      <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+        <span style="background:#111;border:1px solid #1a1a1a;font-size:.7rem;color:#555;padding:3px 10px;border-radius:20px">—</span>
+        <span style="background:#111;border:1px solid #1a1a1a;font-size:.7rem;color:#555;padding:3px 10px;border-radius:20px">10 guides</span>
+      </div>
+      <div class="card-footer">
+        <a href="/beginners/" class="card-link">Start Course &rarr;</a>
+        <span style="font-size:.7rem;color:#00FF88;background:#0d1a0d;padding:3px 10px;border-radius:20px;border:1px solid #1a3a1a">Free</span>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+// Progress tracking display
+const keys = Object.keys(localStorage).filter(k => k.startsWith('ag_lesson_'));
+if(keys.length > 0) {
+  document.getElementById('progressText').textContent = keys.length + ' lessons completed. Keep going!';
+}
+</script>
+
+<div class="cta-strip">
+  <p>150+ operators building with AI — free community</p>
+  <a href="https://skool.com/aiguerrilla" target="_blank">Join AI Guerrilla Free &rarr; skool.com/aiguerrilla</a>
+</div>
+<footer>
+  <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:12px">
+    <a href="/">Home</a>
+    <a href="/academy/">Academy</a>
+    <a href="/free-ai-tools/">Free Tools</a>
+    <a href="/guides/">Visual Guides</a>
+    <a href="/seniors/">For Seniors</a>
+    <a href="/news/">News</a>
+  </div>
+  <p>&copy; 2026 AI Guerrilla &mdash; <a href="https://skool.com/aiguerrilla">skool.com/aiguerrilla</a></p>
+</footer>
+</body>
+</html>
