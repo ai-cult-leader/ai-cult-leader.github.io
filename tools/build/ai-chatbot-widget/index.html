@@ -270,15 +270,7 @@ async function generateChatbot() {
   if (!bizInfo) { alert('Please describe your business so the chatbot knows what to say.'); return; }
   if (!key) { alert('Please enter your Groq API key. Get one free at console.groq.com'); return; }
 
-  const system = `Generate a complete, embeddable AI chatbot widget as a single self-contained HTML/CSS/JS snippet (no external dependencies). It must:
-1. Show a chat bubble button in the bottom-right corner
-2. Expand to a chat window when clicked
-3. Call the Groq API with the provided key
-4. Have a personality and branding matching the specs
-5. Show the welcome message when opened
-6. Maintain conversation history in memory
-7. Look professional and polished with smooth animations
-Return ONLY the HTML/CSS/JS snippet starting with a <div> or <style> tag, no markdown, no explanation.`;
+  const system = `You are a senior front-end engineer. Generate a STUNNING, production-ready AI chatbot widget. Requirements: Chat bubble bottom-right with pulse animation. Click opens a beautiful chat window (380px wide, 520px tall) with smooth slide-up animation. Header with bot name, colored initial avatar, close button. Message bubbles — user right (brand color), bot left (dark background). Animated typing indicator (3 dots). Auto-scroll to latest message. Input with send button + Enter key support. Full Groq API integration with conversation history array. Error handling. Local storage to persist chat. Mobile responsive (full-screen on small screens). Looks like iMessage meets Intercom. Return ONLY style+div snippet. No DOCTYPE. Paste-ready.`;
 
   const prompt = `Create a chatbot widget named "${name}" with these specs:
 Color: ${color}
