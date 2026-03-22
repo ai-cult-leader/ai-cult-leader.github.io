@@ -106,12 +106,28 @@ select option{background:#111}
   </div>
 
   <div class="output-section" id="outputSection">
-    <h2>Your Landing Page Code</h2>
-    <pre class="code-block" id="pageCode" style="max-height:500px"></pre>
-    <div class="action-row" style="margin-top:12px">
-      <button class="btn" onclick="downloadPage()">⬇ Download index.html</button>
-      <button class="btn-secondary" onclick="copyCode('pageCode')">Copy All Code</button>
-      <button class="btn-secondary" onclick="previewPage()">👁 Preview</button>
+    <div style="display:flex;border-bottom:1px solid #1a1a1a;margin-bottom:0">
+      <button class="tab-btn" id="lpCodeTab" onclick="switchLpTab('code')">Code</button>
+      <button class="tab-btn active" id="lpPreviewTab" onclick="switchLpTab('preview')">👁 Live Preview</button>
+    </div>
+    <div id="lpCodeView" style="display:none;padding-top:16px">
+      <pre class="code-block" id="pageCode" style="max-height:500px"></pre>
+      <div class="action-row" style="margin-top:12px">
+        <button class="btn" onclick="downloadPage()">⬇ Download index.html</button>
+        <button class="btn-secondary" onclick="copyCode('pageCode')">Copy All Code</button>
+      </div>
+    </div>
+    <div id="lpPreviewView" style="padding-top:16px">
+      <div style="border:1px solid #2a2a2a;border-radius:8px;overflow:hidden">
+        <div style="background:#1a1a1a;padding:8px 14px;font-size:.75rem;color:#aaa;display:flex;gap:12px;align-items:center">
+          <span style="color:#555">●●●</span><span>Landing Page Preview</span>
+        </div>
+        <iframe id="lpPreviewFrame" style="width:100%;height:700px;border:none;background:#fff" sandbox="allow-scripts allow-same-origin"></iframe>
+      </div>
+      <div class="action-row" style="margin-top:12px">
+        <button class="btn" onclick="downloadPage()">⬇ Download index.html</button>
+        <button class="btn-secondary" onclick="switchLpTab('code')">View Code</button>
+      </div>
     </div>
   </div>
 </div>
@@ -228,17 +244,19 @@ Make it highly conversion-optimized with urgency, clear value proposition, and s
   const result = await callGroq(prompt, system, 4000);
   pageContent = result.replace(/^```html\n?/,'').replace(/^```\n?/,'').replace(/```$/,'').trim();
   document.getElementById('pageCode').textContent = pageContent;
+  document.getElementById('lpPreviewFrame').srcdoc = pageContent;
   document.getElementById('outputSection').classList.add('visible');
+  switchLpTab('preview');
+}
+function switchLpTab(tab) {
+  document.getElementById('lpCodeView').style.display = tab === 'code' ? '' : 'none';
+  document.getElementById('lpPreviewView').style.display = tab === 'preview' ? '' : 'none';
+  document.getElementById('lpCodeTab').classList.toggle('active', tab === 'code');
+  document.getElementById('lpPreviewTab').classList.toggle('active', tab === 'preview');
 }
 function downloadPage() {
   if (!pageContent) { alert('Generate your page first!'); return; }
   downloadFile(pageContent, 'index.html', 'text/html');
-}
-function previewPage() {
-  if (!pageContent) { alert('Generate your page first!'); return; }
-  const win = window.open('', '_blank');
-  win.document.write(pageContent);
-  win.document.close();
 }
 </script>
 </body>
