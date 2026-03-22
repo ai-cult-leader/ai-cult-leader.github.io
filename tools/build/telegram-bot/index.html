@@ -126,50 +126,60 @@ const GROQ_KEYS = [
   ["gsk_SpC07PQBCR4t","mMzERyCYWGdyb3FY","Obw5uGiYTCC7eBVMzGgwIplO"].join("")
 ];
 const GEMINI_KEY = ["AIzaSyDb5SKqAIzm","BhBIe1rRpDZSy_FHO_ORq9c"].join("");
+// Model priority: best quality first, fast fallback last
+const GROQ_MODELS = ["llama-3.3-70b-versatile", "llama-3.1-8b-instant"];
 let _groqIdx = 0;
 
 async function callGroq(prompt, system, maxTokens = 2000) {
   const btn = document.getElementById('generateBtn');
   if (btn) { btn.disabled = true; btn.dataset.orig = btn.dataset.orig || btn.textContent; btn.textContent = '⚙️ Generating...'; }
-  // Try both Groq keys in rotation
-  for (let attempt = 0; attempt < GROQ_KEYS.length; attempt++) {
-    const key = GROQ_KEYS[(_groqIdx + attempt) % GROQ_KEYS.length];
-    try {
-      const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-        method: "POST",
-        headers: { "Authorization": "Bearer " + key, "Content-Type": "application/json" },
-        body: JSON.stringify({ model: "llama-3.3-70b-versatile", messages: [{ role: "system", content: system }, { role: "user", content: prompt }], max_tokens: maxTokens, temperature: 0.3 })
-      });
-      const data = await res.json();
-      if (data.choices?.[0]?.message?.content) {
-        _groqIdx = (_groqIdx + attempt + 1) % GROQ_KEYS.length; // rotate for next call
-        if (btn) { btn.disabled = false; btn.textContent = btn.dataset.orig || 'Generate'; }
-        return data.choices[0].message.content;
-      }
-      // rate limit or error — try next key
-      if (data.error?.type === 'tokens' || data.error?.code === 'rate_limit_exceeded') continue;
-    } catch(e) { /* network error, try next */ }
+
+  // Try each model × each key (4 attempts total before Gemini)
+  for (const model of GROQ_MODELS) {
+    for (let attempt = 0; attempt < GROQ_KEYS.length; attempt++) {
+      const key = GROQ_KEYS[(_groqIdx + attempt) % GROQ_KEYS.length];
+      try {
+        const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+          method: "POST",
+          headers: { "Authorization": "Bearer " + key, "Content-Type": "application/json" },
+          body: JSON.stringify({ model, messages: [{ role: "system", content: system }, { role: "user", content: prompt }], max_tokens: maxTokens, temperature: 0.3 })
+        });
+        const data = await res.json();
+        if (data.choices?.[0]?.message?.content) {
+          _groqIdx = (_groqIdx + attempt + 1) % GROQ_KEYS.length;
+          if (btn) { btn.disabled = false; btn.textContent = btn.dataset.orig || 'Generate'; }
+          return data.choices[0].message.content;
+        }
+        // If not rate-limit error, don't retry same model
+        if (!data.error?.code?.includes('rate_limit') && !data.error?.type?.includes('tokens')) break;
+      } catch(e) { /* network — try next */ }
+    }
   }
-  // Groq failed — fall back to Gemini
-  try {
-    const geminiBody = {
-      contents: [{ role: "user", parts: [{ text: system + "
+
+  // All Groq exhausted — fall back to Gemini (gemma-3-12b-it has separate quota)
+  for (const gemModel of ["gemma-3-12b-it", "gemini-2.0-flash", "gemini-2.5-flash"]) {
+    try {
+      const geminiBody = {
+        contents: [{ role: "user", parts: [{ text: system + "
 
 " + prompt }] }],
-      generationConfig: { maxOutputTokens: maxTokens, temperature: 0.3 }
-    };
-    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_KEY}`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(geminiBody)
-    });
-    const data = await res.json();
-    const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-    if (text) {
-      if (btn) { btn.disabled = false; btn.textContent = btn.dataset.orig || 'Generate'; }
-      return text;
-    }
-  } catch(e) {}
+        generationConfig: { maxOutputTokens: maxTokens, temperature: 0.3 }
+      };
+      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${gemModel}:generateContent?key=${GEMINI_KEY}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(geminiBody)
+      });
+      const data = await res.json();
+      const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (text) {
+        if (btn) { btn.disabled = false; btn.textContent = btn.dataset.orig || 'Generate'; }
+        return text;
+      }
+      if (data.error?.code !== 429) break; // non-rate-limit error, stop trying
+    } catch(e) {}
+  }
+
   if (btn) { btn.disabled = false; btn.textContent = btn.dataset.orig || 'Generate'; }
   return "Generation failed. Please try again in a moment.";
 }
