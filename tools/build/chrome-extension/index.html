@@ -47,124 +47,14 @@ select option{background:#111}
 </style>
 </head>
 <body>
-<nav id="ag-nav" style="padding:0;border-bottom:2px solid #1a1a1a;background:#0a0a0a;position:sticky;top:0;z-index:9999;font-family:'Segoe UI',sans-serif">
-  <div style="max-width:1400px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
-    <a href="/" style="color:#00FF88;font-weight:900;font-size:1.2rem;text-decoration:none;flex-shrink:0">AI Guerrilla</a>
-    <div id="ag-menu" style="display:flex;align-items:center;gap:4px;flex-wrap:wrap">
-      <div class="ag-dd" style="position:relative">
-        <button class="ag-btn" onclick="agToggle('ag-d1')">Academy &#9662;</button>
-        <div id="ag-d1" class="ag-drop" style="display:none">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
-            <div>
-              <div class="ag-dh">Courses</div>
-              <a class="ag-di" href="/academy/">All Courses</a>
-              <a class="ag-di" href="/academy/ai-fundamentals/">AI Fundamentals</a>
-              <a class="ag-di" href="/academy/ai-content-machine/">Content Machine</a>
-              <a class="ag-di" href="/academy/ai-monetization/">AI Monetization</a>
-              <a class="ag-di" href="/academy/developer/">Developer &amp; APIs</a>
-              <a class="ag-di" href="/academy/seo/">SEO with AI</a>
-            </div>
-            <div>
-              <div class="ag-dh">More Courses</div>
-              <a class="ag-di" href="/academy/social-media/">Social Media</a>
-              <a class="ag-di" href="/academy/business/">Business</a>
-              <a class="ag-di" href="/academy/fields/">All Fields</a>
-              <a class="ag-di" href="/academy/agents/">AI Agents</a>
-              <a class="ag-di" href="/academy/life/">Daily Life</a>
-              <a class="ag-di" href="/academy/tools/">Tool Deep Dives</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="ag-dd" style="position:relative">
-        <button class="ag-btn" onclick="agToggle('ag-d2')">Tools &#9662;</button>
-        <div id="ag-d2" class="ag-drop" style="display:none">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
-            <div>
-              <div class="ag-dh">Database</div>
-              <a class="ag-di" href="/tools/">All Tools (300+)</a>
-              <a class="ag-di" href="/llms/">LLMs (40+)</a>
-              <a class="ag-di" href="/founders/">Founders</a>
-              <a class="ag-di" href="/compare/">Compare</a>
-              <a class="ag-di" href="/alternatives/">Alternatives</a>
-            </div>
-            <div>
-              <div class="ag-dh">Free Tools</div>
-              <a class="ag-di ag-green" href="/free-ai-tools/">All Free Tools &#10022;</a>
-              <a class="ag-di" href="/tools/build/">Build Apps</a>
-              <a class="ag-di" href="/tools/prompt-generator/">Prompt Generator</a>
-              <a class="ag-di" href="/tools/blog-post-generator/">Blog Generator</a>
-              <a class="ag-di" href="/tools/token-counter/">Token Counter</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="ag-dd" style="position:relative">
-        <button class="ag-btn" onclick="agToggle('ag-d3')">Learn &#9662;</button>
-        <div id="ag-d3" class="ag-drop" style="display:none">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
-            <div>
-              <div class="ag-dh">Reference</div>
-              <a class="ag-di" href="/glossary/">AI Glossary</a>
-              <a class="ag-di" href="/use-cases/">Use Cases</a>
-              <a class="ag-di ag-green" href="/api-keys/">API Keys &#10022;</a>
-              <a class="ag-di" href="/guides/">Visual Guides</a>
-              <a class="ag-di" href="/sitemap-page/">Full Sitemap</a>
-            </div>
-            <div>
-              <div class="ag-dh">For Everyone</div>
-              <a class="ag-di" href="/seniors/">AI for Seniors</a>
-              <a class="ag-di" href="/beginners/">Beginners Guide</a>
-              <a class="ag-di" href="/seniors/tools/">Senior Tools</a>
-              <a class="ag-di" href="/news/">AI News</a>
-              <a class="ag-di" href="/tutorials/">Tutorials</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a href="/news/" style="color:#aaa;text-decoration:none;font-size:.85rem;padding:8px 10px;white-space:nowrap">News</a>
-      <a href="/free-ai-tools/" style="color:#00FF88;font-weight:700;text-decoration:none;font-size:.85rem;padding:8px 10px;white-space:nowrap">Free Tools</a>
-      <a href="https://skool.com/aiguerrilla" style="background:#00FF88;color:#000;font-weight:700;padding:8px 16px;border-radius:6px;text-decoration:none;font-size:.85rem;white-space:nowrap;flex-shrink:0">Community</a>
-    </div>
-    <button id="ag-burger" onclick="document.getElementById('ag-menu').classList.toggle('ag-open')" style="display:none;background:none;border:1px solid #333;color:#fff;padding:5px 10px;border-radius:6px;cursor:pointer;font-size:1.1rem">&#9776;</button>
+<nav style="padding:16px 40px;border-bottom:1px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#0a0a0a;position:sticky;top:0;z-index:100">
+  <a href="/" style="color:#00FF88;font-weight:900;font-size:1.3rem;text-decoration:none">AI Guerrilla</a>
+  <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+    <a href="/tools/build/" style="color:#aaa;text-decoration:none;font-size:.9rem">Build Tools</a>
+    <a href="/free-ai-tools/" style="color:#aaa;text-decoration:none;font-size:.9rem">All Free Tools</a>
+    <a href="https://skool.com/aiguerrilla" style="background:#00FF88;color:#000;font-weight:700;padding:7px 18px;border-radius:6px;text-decoration:none;font-size:.85rem">Community</a>
   </div>
 </nav>
-<style>
-.ag-btn{background:none;border:none;color:#aaa;font-size:.85rem;padding:8px 10px;cursor:pointer;font-family:'Segoe UI',sans-serif;white-space:nowrap;border-radius:6px;transition:color .2s}
-.ag-btn:hover{color:#00FF88}
-.ag-drop{position:absolute;top:calc(100% + 6px);left:50%;transform:translateX(-50%);background:#111;border:1px solid #222;border-radius:10px;padding:16px;min-width:340px;z-index:10000;box-shadow:0 8px 32px rgba(0,0,0,.9)}
-.ag-dh{font-size:.65rem;color:#555;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;font-weight:700;padding:0 10px}
-.ag-di{display:block;color:#aaa;text-decoration:none;font-size:.83rem;padding:5px 10px;border-radius:5px;transition:background .15s,color .15s;white-space:nowrap}
-.ag-di:hover{background:#1a1a1a;color:#fff}
-.ag-green{color:#00FF88!important}
-@media(max-width:820px){
-  #ag-burger{display:block!important}
-  #ag-menu{display:none;width:100%;flex-direction:column;align-items:flex-start;padding:8px 0}
-  #ag-menu.ag-open{display:flex!important}
-  .ag-drop{position:static;transform:none;min-width:0;width:100%;box-shadow:none;background:transparent;border:none;padding:4px 0 4px 16px}
-  .ag-dd{width:100%}
-  .ag-btn{width:100%;text-align:left;padding:10px 4px}
-}
-</style>
-<script>
-function agToggle(id){
-  var el=document.getElementById(id);
-  var isOpen=el.style.display!=='none';
-  ['ag-d1','ag-d2','ag-d3'].forEach(function(d){
-    var e=document.getElementById(d);
-    if(e) e.style.display='none';
-  });
-  if(!isOpen) el.style.display='block';
-}
-document.addEventListener('click',function(e){
-  if(!e.target.closest('#ag-nav')){
-    ['ag-d1','ag-d2','ag-d3'].forEach(function(d){
-      var el=document.getElementById(d);
-      if(el) el.style.display='none';
-    });
-  }
-});
-</script>
 <div class="container">
   <div class="hero-badge">Free Tool — No Signup</div>
   <h1>Chrome Extension Creator</h1>
@@ -190,77 +80,11 @@ document.addEventListener('click',function(e){
     <label>Brief Description (for Chrome Store listing)</label>
     <input type="text" id="extStoreDesc" placeholder="Boosts productivity by showing motivational quotes on every new tab">
 
-<div style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:10px;padding:16px 20px;margin-bottom:20px">
-  <div style="font-size:.72rem;color:#00FF88;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;font-weight:700">💡 Example Output</div>
-  <p style="font-size:.83rem;color:#888;margin-bottom:8px">See what a "Motivational Quotes New Tab" extension looks like — click to load a real example instantly.</p>
-  <button onclick="loadExample()" style="background:transparent;border:1px solid #00FF88;color:#00FF88;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:.8rem;font-family:inherit">Load Example →</button>
-</div>
     <div style="margin-top:24px">
       <button class="btn" id="generateBtn" data-orig="Generate My Extension" onclick="generateExtension()">Generate My Extension</button>
     </div>
   </div>
-<script>
-function loadExample() {
-  document.getElementById('extDescription').value = 'Show a random motivational quote every time I open a new tab. Include a refresh button to get a new quote.';
-  document.getElementById('extType').value = 'New Tab Override';
-  document.getElementById('extName').value = 'Daily Motivation';
-  document.getElementById('extStoreDesc').value = 'Get inspired every day with beautiful motivational quotes on every new tab';
-  
-  const exampleManifest = `{
-  "manifest_version": 3,
-  "name": "Daily Motivation",
-  "version": "1.0",
-  "description": "Get inspired every day with beautiful motivational quotes on every new tab",
-  "chrome_url_overrides": { "newtab": "popup.html" },
-  "permissions": [],
-  "action": { "default_popup": "popup.html", "default_title": "Daily Motivation" }
-}`;
 
-  const examplePopup = `<!DOCTYPE html>
-<html><head><title>Daily Motivation</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0a0a;color:#fff;font-family:'Segoe UI',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 20px}
-.quote{font-size:1.8rem;font-weight:300;max-width:700px;line-height:1.5;color:#f0f0f0;margin-bottom:16px}
-.author{color:#00FF88;font-size:1rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:40px}
-button{background:transparent;border:2px solid #00FF88;color:#00FF88;padding:12px 28px;border-radius:8px;cursor:pointer;font-size:1rem;font-family:inherit;transition:all .2s}
-button:hover{background:#00FF88;color:#000}
-.time{font-size:3rem;font-weight:700;color:#00FF88;margin-bottom:8px}
-.date{color:#555;font-size:.9rem;margin-bottom:50px}
-</style></head><body>
-<div class="time" id="clock">12:00</div>
-<div class="date" id="date">Loading...</div>
-<div class="quote" id="quote">"The only way to do great work is to love what you do."</div>
-<div class="author" id="author">— Steve Jobs</div>
-<button onclick="newQuote()">New Quote ↻</button>
-<script>
-const quotes=[
-  {text:"The only way to do great work is to love what you do.",author:"Steve Jobs"},
-  {text:"Innovation distinguishes between a leader and a follower.",author:"Steve Jobs"},
-  {text:"Stay hungry, stay foolish.",author:"Steve Jobs"},
-  {text:"The future belongs to those who believe in the beauty of their dreams.",author:"Eleanor Roosevelt"},
-  {text:"It always seems impossible until it's done.",author:"Nelson Mandela"}
-];
-function newQuote(){const q=quotes[Math.floor(Math.random()*quotes.length)];document.getElementById('quote').textContent='"'+q.text+'"';document.getElementById('author').textContent='— '+q.author;}
-function updateClock(){const n=new Date();document.getElementById('clock').textContent=n.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});document.getElementById('date').textContent=n.toLocaleDateString([],{weekday:'long',month:'long',day:'numeric'});}
-updateClock();setInterval(updateClock,1000);newQuote();
-<\/script></body></html>`;
-
-  generatedFiles = {
-    'manifest.json': exampleManifest,
-    'popup.html': examplePopup,
-    'popup.js': '// Logic is embedded in popup.html for this extension',
-    'content.js': '// No content script needed for new tab override',
-    'README.md': '# Daily Motivation\n\nA Chrome extension that shows motivational quotes on every new tab.\n\n## Installation\n1. Open Chrome → chrome://extensions\n2. Enable Developer Mode\n3. Click "Load unpacked"\n4. Select this folder'
-  };
-
-  parseAndDisplayFiles(
-    Object.entries(generatedFiles).map(([k,v])=>`===${k}===\n${v}`).join('\n\n'),
-    'Daily Motivation'
-  );
-  showOutput(examplePopup, 'popup.html', true);
-}
-</script>
   <div class="output-section" id="outputSection">
     <h2>Your Chrome Extension Files</h2>
     <div class="tabs" id="fileTabs"></div>
@@ -285,34 +109,6 @@ updateClock();setInterval(updateClock,1000);newQuote();
     </ol>
   </div>
 </div>
-
-  <!-- Live Preview Section -->
-  <div id="previewSection" style="display:none;margin-top:24px">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-      <span style="font-size:.88rem;color:#aaa;font-weight:600">👁️ Live Preview</span>
-      <button onclick="refreshPreview()" style="background:#111;border:1px solid #2a2a2a;color:#aaa;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:.8rem;font-family:inherit">↻ Refresh</button>
-    </div>
-    <iframe id="previewFrame" style="width:100%;height:480px;border:2px solid #1a1a1a;border-radius:12px;background:#fff"></iframe>
-    <div style="margin-top:16px">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-        <span style="font-size:.82rem;color:#555">✏️ Edit code live</span>
-        <button onclick="applyEdits()" style="background:#00FF88;color:#000;border:none;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:.82rem;font-weight:700;font-family:inherit">Apply →</button>
-      </div>
-      <textarea id="codeEditor" style="width:100%;height:180px;background:#0d0d0d;border:1px solid #2a2a2a;color:#aaa;border-radius:8px;padding:12px;font-family:monospace;font-size:.78rem;resize:vertical;outline:none"></textarea>
-    </div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
-      <button onclick="openFullscreen()" style="background:#00FF88;color:#000;font-weight:700;padding:12px 24px;border-radius:8px;cursor:pointer;font-size:.9rem;border:none;font-family:inherit">⛶ Open Full Screen</button>
-      <button onclick="downloadHTML()" style="background:#111;border:2px solid #00FF88;color:#00FF88;font-weight:700;padding:12px 20px;border-radius:8px;cursor:pointer;font-size:.88rem;font-family:inherit">⬇ Download HTML</button>
-      <button onclick="copyCode()" style="background:#111;border:1px solid #2a2a2a;color:#aaa;padding:12px 20px;border-radius:8px;cursor:pointer;font-size:.88rem;font-family:inherit">📋 Copy Code</button>
-    </div>
-    <div style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:10px;padding:14px 18px;margin-top:14px;font-size:.83rem;color:#888;line-height:1.6">
-      💡 <b style="color:#00FF88">How to use it:</b><br>
-      <b>Right now:</b> Click "Open Full Screen" to use it in your browser instantly<br>
-      <b>Save it:</b> Download the HTML file — double-click it to open anytime<br>
-      <b>Edit it:</b> Change the code above and hit "Apply" to see updates live<br>
-      <b>Host it free:</b> Upload to <a href="https://pages.github.com" target="_blank" style="color:#00FF88">GitHub Pages</a> or <a href="https://netlify.com" target="_blank" style="color:#00FF88">Netlify</a>
-    </div>
-  </div>
 <div style="background:#0d0d0d;border-top:1px solid #1a1a1a;padding:32px 20px;text-align:center">
   <p style="color:#555;font-size:.88rem;margin-bottom:8px">Free AI community for operators and builders</p>
   <a href="https://skool.com/aiguerrilla" style="color:#00FF88;text-decoration:none;font-size:.95rem;font-weight:600">Join 150+ operators at skool.com/aiguerrilla →</a>
@@ -323,30 +119,57 @@ updateClock();setInterval(updateClock,1000);newQuote();
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script>
-const GROQ_KEY = (function(){
-  const KEYS = [
-    ["gsk_SpC07PQBCR4tmMzERyCY","WGdyb3FYObw5uGiYTCC7eBVMzGgwIplO"].join(""),
-    ["gsk_O3O1bIMTJ","7Fn9MTE1WdXWGdyb3FY","kgwKA5BSRDB2Acg929rS7eCN"].join("")
-  ];
-  return KEYS[Math.floor(Date.now()/60000)%KEYS.length];
-})();
+const GROQ_KEYS = [
+  ["gsk_O3O1bIMTJ","7Fn9MTE1WdXWGdyb3FY","kgwKA5BSRDB2Acg929rS7eCN"].join(""),
+  ["gsk_SpC07PQBCR4t","mMzERyCYWGdyb3FY","Obw5uGiYTCC7eBVMzGgwIplO"].join("")
+];
+const GEMINI_KEY = ["AIzaSyDb5SKqAIzm","BhBIe1rRpDZSy_FHO_ORq9c"].join("");
+let _groqIdx = 0;
 
 async function callGroq(prompt, system, maxTokens = 2000) {
   const btn = document.getElementById('generateBtn');
   if (btn) { btn.disabled = true; btn.dataset.orig = btn.dataset.orig || btn.textContent; btn.textContent = '⚙️ Generating...'; }
+  // Try both Groq keys in rotation
+  for (let attempt = 0; attempt < GROQ_KEYS.length; attempt++) {
+    const key = GROQ_KEYS[(_groqIdx + attempt) % GROQ_KEYS.length];
+    try {
+      const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+        method: "POST",
+        headers: { "Authorization": "Bearer " + key, "Content-Type": "application/json" },
+        body: JSON.stringify({ model: "llama-3.3-70b-versatile", messages: [{ role: "system", content: system }, { role: "user", content: prompt }], max_tokens: maxTokens, temperature: 0.3 })
+      });
+      const data = await res.json();
+      if (data.choices?.[0]?.message?.content) {
+        _groqIdx = (_groqIdx + attempt + 1) % GROQ_KEYS.length; // rotate for next call
+        if (btn) { btn.disabled = false; btn.textContent = btn.dataset.orig || 'Generate'; }
+        return data.choices[0].message.content;
+      }
+      // rate limit or error — try next key
+      if (data.error?.type === 'tokens' || data.error?.code === 'rate_limit_exceeded') continue;
+    } catch(e) { /* network error, try next */ }
+  }
+  // Groq failed — fall back to Gemini
   try {
-    const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+    const geminiBody = {
+      contents: [{ role: "user", parts: [{ text: system + "
+
+" + prompt }] }],
+      generationConfig: { maxOutputTokens: maxTokens, temperature: 0.3 }
+    };
+    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_KEY}`, {
       method: "POST",
-      headers: { "Authorization": "Bearer " + GROQ_KEY, "Content-Type": "application/json" },
-      body: JSON.stringify({ model: "llama-3.3-70b-versatile", messages: [{ role: "system", content: system }, { role: "user", content: prompt }], max_tokens: maxTokens, temperature: 0.3 })
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(geminiBody)
     });
     const data = await res.json();
-    if (btn) { btn.disabled = false; btn.textContent = btn.dataset.orig || 'Generate'; }
-    return data.choices?.[0]?.message?.content || "Error generating. Please try again.";
-  } catch(e) {
-    if (btn) { btn.disabled = false; btn.textContent = btn.dataset.orig || 'Generate'; }
-    return "Connection error. Please check your internet and try again.";
-  }
+    const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+    if (text) {
+      if (btn) { btn.disabled = false; btn.textContent = btn.dataset.orig || 'Generate'; }
+      return text;
+    }
+  } catch(e) {}
+  if (btn) { btn.disabled = false; btn.textContent = btn.dataset.orig || 'Generate'; }
+  return "Generation failed. Please try again in a moment.";
 }
 
 function copyCode(id) {
@@ -374,83 +197,35 @@ function downloadFile(content, filename, type = 'text/plain') {
 let generatedFiles = {};
 
 async function generateExtension() {
-  const desc = document.getElementById('extDescription')?.value.trim() || '';
-  const type = document.getElementById('extType')?.value || 'popup';
-  const name = document.getElementById('extName')?.value.trim() || 'My Extension';
-  if (!desc) { alert('Please describe what your extension should do!'); return; }
+  const desc = document.getElementById('extDescription').value.trim();
+  const type = document.getElementById('extType').value;
+  const name = document.getElementById('extName').value.trim() || 'My Extension';
+  const storeDesc = document.getElementById('extStoreDesc').value.trim() || desc;
+  if (!desc) { alert('Please describe what your extension should do.'); return; }
 
-  const btn = document.getElementById('generateBtn');
-  if (btn) { btn.disabled = true; btn.textContent = '⚙️ Building extension...'; }
+  const system = `You are an expert Chrome extension developer. Generate a complete, working Chrome Extension with all required files. Return ONLY the file contents separated by markers. Use this EXACT format with no other text before or after:
 
-  const GROQ_KEY = ["gsk_O3O1bIMTJ","7Fn9MTE1WdXWGdyb3FY","kgwKA5BSRDB2Acg929rS7eCN"].join("");
+===manifest.json===
+{manifest content}
 
-  async function groqCall(prompt, system, tokens) {
-    const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-      method: "POST",
-      headers: { "Authorization": "Bearer " + GROQ_KEY, "Content-Type": "application/json" },
-      body: JSON.stringify({ model: "llama-3.3-70b-versatile", messages: [{ role: "system", content: system }, { role: "user", content: prompt }], max_tokens: tokens, temperature: 0.3 })
-    });
-    const d = await res.json();
-    if (d.error) throw new Error(d.error.message || 'API error');
-    return d.choices?.[0]?.message?.content || '';
-  }
+===popup.html===
+{popup html content}
 
-  try {
-    // Step 1: manifest.json
-    showStatus('Step 1/4 — Generating manifest.json...');
-    const manifest = await groqCall(
-      `Generate ONLY the manifest.json for a Chrome Extension MV3. Name: "${name}". Does: ${desc}. Type: ${type}. Return ONLY valid JSON, no explanation.`,
-      "You are a Chrome extension developer. Return only the requested file content, nothing else.",
-      500
-    );
+===popup.js===
+{popup js content}
 
-    // Step 2: popup.html
-    showStatus('Step 2/4 — Generating popup.html...');
-    const popup = await groqCall(
-      `Generate a complete popup.html for a Chrome Extension called "${name}" that ${desc}. Make it look professional with dark theme (#1a1a1a bg, #00FF88 accent). Include all CSS inline in <style> tag. Return ONLY the full HTML document.`,
-      "You are a Chrome extension developer. Return only the HTML file, nothing else.",
-      800
-    );
+===content.js===
+{content js content}
 
-    // Step 3: popup.js
-    showStatus('Step 3/4 — Generating popup.js...');
-    const popupjs = await groqCall(
-      `Generate popup.js for a Chrome Extension that ${desc}. Keep it simple, clean, and fully working. Use modern JS. Return ONLY the JavaScript code.`,
-      "You are a Chrome extension developer. Return only the JS file content, nothing else.",
-      600
-    );
+===README.md===
+{readme content}
 
-    // Step 4: content.js
-    showStatus('Step 4/4 — Generating content.js...');
-    const contentjs = await groqCall(
-      `Generate a simple content.js content script for a Chrome Extension that ${desc}. Return ONLY the JavaScript code.`,
-      "You are a Chrome extension developer. Return only the JS content script, nothing else.",
-      400
-    );
+Generate clean, modern Manifest V3 code. Make it fully functional. Extension name: ${name}. Description: ${storeDesc}. Type: ${type}.`;
 
-    // Assemble all files
-    generatedFiles = {
-      'manifest.json': manifest,
-      'popup.html': popup,
-      'popup.js': popupjs,
-      'content.js': contentjs,
-      'README.md': `# ${name}\n\n${desc}\n\n## Installation\n1. Open Chrome → chrome://extensions\n2. Enable Developer Mode\n3. Click "Load unpacked"\n4. Select this folder\n\n## Files\n- manifest.json: Extension config\n- popup.html: Extension popup UI\n- popup.js: Popup functionality\n- content.js: Page content script`
-    };
+  const prompt = `Create a Chrome extension that does: ${desc}\n\nExtension name: ${name}\nType: ${type}\nStore description: ${storeDesc}`;
 
-    parseAndDisplayFiles(Object.entries(generatedFiles).map(([k,v])=>`===${k}===\n${v}`).join('\n\n'), name);
-    showOutput(popup, 'popup.html', true);
-    if (btn) { btn.disabled = false; btn.textContent = 'Generate My Extension'; }
-    showStatus('');
-  } catch(e) {
-    if (btn) { btn.disabled = false; btn.textContent = 'Generate My Extension'; }
-    showStatus('❌ Error: ' + e.message);
-  }
-}
-
-function showStatus(msg) {
-  let s = document.getElementById('statusMsg');
-  if (!s) { s = document.createElement('div'); s.id = 'statusMsg'; s.style.cssText = 'color:#00FF88;font-size:.88rem;margin:8px 0;min-height:20px'; document.getElementById('generateBtn').before(s); }
-  s.textContent = msg;
+  const result = await callGroq(prompt, system, 3000);
+  parseAndDisplayFiles(result, name);
 }
 
 function parseAndDisplayFiles(raw, extName) {
@@ -516,73 +291,6 @@ async function downloadZip() {
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
   a.download = 'chrome-extension.zip';
-  a.click();
-}
-</script>
-
-<script>
-/* ── Live Preview Engine ───────────────────────────────── */
-let _generatedCode = '';
-let _codeFilename = 'output.html';
-let _isHTML = true;
-
-function showOutput(code, filename, isHTML) {
-  _generatedCode = code;
-  _codeFilename = filename || 'output.html';
-  _isHTML = isHTML !== false;
-  const section = document.getElementById('previewSection');
-  if (section) section.style.display = 'block';
-  if (_isHTML) {
-    const frame = document.getElementById('previewFrame');
-    if (frame) frame.srcdoc = code;
-    const editor = document.getElementById('codeEditor');
-    if (editor) editor.value = code;
-  } else {
-    const display = document.getElementById('codeDisplay');
-    if (display) display.textContent = code;
-  }
-  if (section) section.scrollIntoView({behavior: 'smooth', block: 'start'});
-}
-function applyEdits() {
-  const code = document.getElementById('codeEditor')?.value;
-  if (code) { _generatedCode = code; document.getElementById('previewFrame').srcdoc = code; }
-}
-function refreshPreview() {
-  const frame = document.getElementById('previewFrame');
-  if (frame && _generatedCode) frame.srcdoc = _generatedCode;
-}
-function openFullscreen() {
-  const win = window.open('', '_blank');
-  win.document.write(_generatedCode);
-  win.document.close();
-}
-function downloadHTML() {
-  const code = document.getElementById('codeEditor')?.value || _generatedCode;
-  _download(code, _codeFilename, 'text/html');
-}
-function downloadCode() {
-  _download(_generatedCode, _codeFilename, 'text/plain');
-}
-function copyCode() {
-  const code = document.getElementById('codeEditor')?.value ||
-               document.getElementById('codeDisplay')?.textContent ||
-               _generatedCode;
-  navigator.clipboard.writeText(code).then(() => {
-    const btn = event?.target;
-    if (btn) {
-      const orig = btn.textContent;
-      btn.textContent = '✅ Copied!';
-      btn.style.background = '#0d1a0d';
-      btn.style.color = '#00FF88';
-      setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.color = ''; }, 2000);
-    }
-  });
-}
-function _download(content, filename, type) {
-  const blob = new Blob([content], {type});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = filename;
   a.click();
 }
 </script>
