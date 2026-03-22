@@ -281,7 +281,7 @@ async function generateLandingPage() {
   const testimonial = document.getElementById('testimonial').value.trim();
   if (!name || !offer || !benefits) { alert('Please fill in the business name, offer, and benefits.'); return; }
 
-  const system = `Generate a complete, high-converting landing page as a single HTML file with embedded CSS and JS. Include: compelling hero section, benefits/features section, social proof, CTA section, and footer. Make it look professionally designed. Return ONLY the HTML code starting with <!DOCTYPE html>, no markdown, no explanation.`;
+  const system = `You are a CRO expert and world-class web designer. Generate a HIGH-CONVERTING landing page that looks like a $10k agency built it. Requirements: Write REAL compelling copy using the exact offer and benefits provided — NOT placeholders. Power words, urgency, specific numbers. Hero with gradient/dark overlay, massive bold headline, subheadline, bright CTA button. Benefit cards with CSS icons. Testimonials with star ratings and initial avatars. FAQ accordion with working JS. Sticky nav. Scroll animations with IntersectionObserver. CTA button in hero AND at bottom. Mobile responsive. Return ONLY HTML starting with <!DOCTYPE html>. No markdown. Deploy-ready.`;
 
   const prompt = `Business: ${name}
 Industry: ${industry}
