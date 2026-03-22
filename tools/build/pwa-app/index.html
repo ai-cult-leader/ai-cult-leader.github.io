@@ -47,124 +47,14 @@ select option{background:#111}
 </style>
 </head>
 <body>
-<nav id="ag-nav" style="padding:0;border-bottom:2px solid #1a1a1a;background:#0a0a0a;position:sticky;top:0;z-index:9999;font-family:'Segoe UI',sans-serif">
-  <div style="max-width:1400px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
-    <a href="/" style="color:#00FF88;font-weight:900;font-size:1.2rem;text-decoration:none;flex-shrink:0">AI Guerrilla</a>
-    <div id="ag-menu" style="display:flex;align-items:center;gap:4px;flex-wrap:wrap">
-      <div class="ag-dd" style="position:relative">
-        <button class="ag-btn" onclick="agToggle('ag-d1')">Academy &#9662;</button>
-        <div id="ag-d1" class="ag-drop" style="display:none">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
-            <div>
-              <div class="ag-dh">Courses</div>
-              <a class="ag-di" href="/academy/">All Courses</a>
-              <a class="ag-di" href="/academy/ai-fundamentals/">AI Fundamentals</a>
-              <a class="ag-di" href="/academy/ai-content-machine/">Content Machine</a>
-              <a class="ag-di" href="/academy/ai-monetization/">AI Monetization</a>
-              <a class="ag-di" href="/academy/developer/">Developer &amp; APIs</a>
-              <a class="ag-di" href="/academy/seo/">SEO with AI</a>
-            </div>
-            <div>
-              <div class="ag-dh">More Courses</div>
-              <a class="ag-di" href="/academy/social-media/">Social Media</a>
-              <a class="ag-di" href="/academy/business/">Business</a>
-              <a class="ag-di" href="/academy/fields/">All Fields</a>
-              <a class="ag-di" href="/academy/agents/">AI Agents</a>
-              <a class="ag-di" href="/academy/life/">Daily Life</a>
-              <a class="ag-di" href="/academy/tools/">Tool Deep Dives</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="ag-dd" style="position:relative">
-        <button class="ag-btn" onclick="agToggle('ag-d2')">Tools &#9662;</button>
-        <div id="ag-d2" class="ag-drop" style="display:none">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
-            <div>
-              <div class="ag-dh">Database</div>
-              <a class="ag-di" href="/tools/">All Tools (300+)</a>
-              <a class="ag-di" href="/llms/">LLMs (40+)</a>
-              <a class="ag-di" href="/founders/">Founders</a>
-              <a class="ag-di" href="/compare/">Compare</a>
-              <a class="ag-di" href="/alternatives/">Alternatives</a>
-            </div>
-            <div>
-              <div class="ag-dh">Free Tools</div>
-              <a class="ag-di ag-green" href="/free-ai-tools/">All Free Tools &#10022;</a>
-              <a class="ag-di" href="/tools/build/">Build Apps</a>
-              <a class="ag-di" href="/tools/prompt-generator/">Prompt Generator</a>
-              <a class="ag-di" href="/tools/blog-post-generator/">Blog Generator</a>
-              <a class="ag-di" href="/tools/token-counter/">Token Counter</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="ag-dd" style="position:relative">
-        <button class="ag-btn" onclick="agToggle('ag-d3')">Learn &#9662;</button>
-        <div id="ag-d3" class="ag-drop" style="display:none">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
-            <div>
-              <div class="ag-dh">Reference</div>
-              <a class="ag-di" href="/glossary/">AI Glossary</a>
-              <a class="ag-di" href="/use-cases/">Use Cases</a>
-              <a class="ag-di ag-green" href="/api-keys/">API Keys &#10022;</a>
-              <a class="ag-di" href="/guides/">Visual Guides</a>
-              <a class="ag-di" href="/sitemap-page/">Full Sitemap</a>
-            </div>
-            <div>
-              <div class="ag-dh">For Everyone</div>
-              <a class="ag-di" href="/seniors/">AI for Seniors</a>
-              <a class="ag-di" href="/beginners/">Beginners Guide</a>
-              <a class="ag-di" href="/seniors/tools/">Senior Tools</a>
-              <a class="ag-di" href="/news/">AI News</a>
-              <a class="ag-di" href="/tutorials/">Tutorials</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a href="/news/" style="color:#aaa;text-decoration:none;font-size:.85rem;padding:8px 10px;white-space:nowrap">News</a>
-      <a href="/free-ai-tools/" style="color:#00FF88;font-weight:700;text-decoration:none;font-size:.85rem;padding:8px 10px;white-space:nowrap">Free Tools</a>
-      <a href="https://skool.com/aiguerrilla" style="background:#00FF88;color:#000;font-weight:700;padding:8px 16px;border-radius:6px;text-decoration:none;font-size:.85rem;white-space:nowrap;flex-shrink:0">Community</a>
-    </div>
-    <button id="ag-burger" onclick="document.getElementById('ag-menu').classList.toggle('ag-open')" style="display:none;background:none;border:1px solid #333;color:#fff;padding:5px 10px;border-radius:6px;cursor:pointer;font-size:1.1rem">&#9776;</button>
+<nav style="padding:16px 40px;border-bottom:1px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;background:#0a0a0a;position:sticky;top:0;z-index:100">
+  <a href="/" style="color:#00FF88;font-weight:900;font-size:1.3rem;text-decoration:none">AI Guerrilla</a>
+  <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+    <a href="/tools/build/" style="color:#aaa;text-decoration:none;font-size:.9rem">Build Tools</a>
+    <a href="/free-ai-tools/" style="color:#aaa;text-decoration:none;font-size:.9rem">All Free Tools</a>
+    <a href="https://skool.com/aiguerrilla" style="background:#00FF88;color:#000;font-weight:700;padding:7px 18px;border-radius:6px;text-decoration:none;font-size:.85rem">Community</a>
   </div>
 </nav>
-<style>
-.ag-btn{background:none;border:none;color:#aaa;font-size:.85rem;padding:8px 10px;cursor:pointer;font-family:'Segoe UI',sans-serif;white-space:nowrap;border-radius:6px;transition:color .2s}
-.ag-btn:hover{color:#00FF88}
-.ag-drop{position:absolute;top:calc(100% + 6px);left:50%;transform:translateX(-50%);background:#111;border:1px solid #222;border-radius:10px;padding:16px;min-width:340px;z-index:10000;box-shadow:0 8px 32px rgba(0,0,0,.9)}
-.ag-dh{font-size:.65rem;color:#555;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;font-weight:700;padding:0 10px}
-.ag-di{display:block;color:#aaa;text-decoration:none;font-size:.83rem;padding:5px 10px;border-radius:5px;transition:background .15s,color .15s;white-space:nowrap}
-.ag-di:hover{background:#1a1a1a;color:#fff}
-.ag-green{color:#00FF88!important}
-@media(max-width:820px){
-  #ag-burger{display:block!important}
-  #ag-menu{display:none;width:100%;flex-direction:column;align-items:flex-start;padding:8px 0}
-  #ag-menu.ag-open{display:flex!important}
-  .ag-drop{position:static;transform:none;min-width:0;width:100%;box-shadow:none;background:transparent;border:none;padding:4px 0 4px 16px}
-  .ag-dd{width:100%}
-  .ag-btn{width:100%;text-align:left;padding:10px 4px}
-}
-</style>
-<script>
-function agToggle(id){
-  var el=document.getElementById(id);
-  var isOpen=el.style.display!=='none';
-  ['ag-d1','ag-d2','ag-d3'].forEach(function(d){
-    var e=document.getElementById(d);
-    if(e) e.style.display='none';
-  });
-  if(!isOpen) el.style.display='block';
-}
-document.addEventListener('click',function(e){
-  if(!e.target.closest('#ag-nav')){
-    ['ag-d1','ag-d2','ag-d3'].forEach(function(d){
-      var el=document.getElementById(d);
-      if(el) el.style.display='none';
-    });
-  }
-});
-</script>
 <div class="container">
   <div class="hero-badge">Free Tool — No Signup</div>
   <h1>PWA Mobile App Creator</h1>
@@ -207,11 +97,6 @@ document.addEventListener('click',function(e){
       </label>
     </div>
 
-<div style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:10px;padding:16px 20px;margin-bottom:20px">
-  <div style="font-size:.72rem;color:#00FF88;text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;font-weight:700">💡 Example Output</div>
-  <p style="font-size:.83rem;color:#888;margin-bottom:8px">See a digital business card PWA for a freelance designer — installable, offline-ready, mobile-perfect.</p>
-  <button onclick="loadExample()" style="background:transparent;border:1px solid #00FF88;color:#00FF88;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:.8rem;font-family:inherit">Load Example →</button>
-</div>
     <div style="margin-top:24px">
       <button class="btn" id="generateBtn" data-orig="Generate My App" onclick="generatePWA()">Generate My App</button>
     </div>
@@ -239,34 +124,6 @@ document.addEventListener('click',function(e){
     </ol>
   </div>
 </div>
-
-  <!-- Live Preview Section -->
-  <div id="previewSection" style="display:none;margin-top:24px">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-      <span style="font-size:.88rem;color:#aaa;font-weight:600">👁️ Live Preview</span>
-      <button onclick="refreshPreview()" style="background:#111;border:1px solid #2a2a2a;color:#aaa;padding:5px 12px;border-radius:6px;cursor:pointer;font-size:.8rem;font-family:inherit">↻ Refresh</button>
-    </div>
-    <iframe id="previewFrame" style="width:100%;height:480px;border:2px solid #1a1a1a;border-radius:12px;background:#fff"></iframe>
-    <div style="margin-top:16px">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
-        <span style="font-size:.82rem;color:#555">✏️ Edit code live</span>
-        <button onclick="applyEdits()" style="background:#00FF88;color:#000;border:none;padding:6px 14px;border-radius:6px;cursor:pointer;font-size:.82rem;font-weight:700;font-family:inherit">Apply →</button>
-      </div>
-      <textarea id="codeEditor" style="width:100%;height:180px;background:#0d0d0d;border:1px solid #2a2a2a;color:#aaa;border-radius:8px;padding:12px;font-family:monospace;font-size:.78rem;resize:vertical;outline:none"></textarea>
-    </div>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
-      <button onclick="openFullscreen()" style="background:#00FF88;color:#000;font-weight:700;padding:12px 24px;border-radius:8px;cursor:pointer;font-size:.9rem;border:none;font-family:inherit">⛶ Open Full Screen</button>
-      <button onclick="downloadHTML()" style="background:#111;border:2px solid #00FF88;color:#00FF88;font-weight:700;padding:12px 20px;border-radius:8px;cursor:pointer;font-size:.88rem;font-family:inherit">⬇ Download HTML</button>
-      <button onclick="copyCode()" style="background:#111;border:1px solid #2a2a2a;color:#aaa;padding:12px 20px;border-radius:8px;cursor:pointer;font-size:.88rem;font-family:inherit">📋 Copy Code</button>
-    </div>
-    <div style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:10px;padding:14px 18px;margin-top:14px;font-size:.83rem;color:#888;line-height:1.6">
-      💡 <b style="color:#00FF88">How to use it:</b><br>
-      <b>Right now:</b> Click "Open Full Screen" to use it in your browser instantly<br>
-      <b>Save it:</b> Download the HTML file — double-click it to open anytime<br>
-      <b>Edit it:</b> Change the code above and hit "Apply" to see updates live<br>
-      <b>Host it free:</b> Upload to <a href="https://pages.github.com" target="_blank" style="color:#00FF88">GitHub Pages</a> or <a href="https://netlify.com" target="_blank" style="color:#00FF88">Netlify</a>
-    </div>
-  </div>
 <div style="background:#0d0d0d;border-top:1px solid #1a1a1a;padding:32px 20px;text-align:center">
   <p style="color:#555;font-size:.88rem;margin-bottom:8px">Free AI community for operators and builders</p>
   <a href="https://skool.com/aiguerrilla" style="color:#00FF88;text-decoration:none;font-size:.95rem;font-weight:600">Join 150+ operators at skool.com/aiguerrilla →</a>
@@ -277,30 +134,57 @@ document.addEventListener('click',function(e){
 </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script>
-const GROQ_KEY = (function(){
-  const KEYS = [
-    ["gsk_SpC07PQBCR4tmMzERyCY","WGdyb3FYObw5uGiYTCC7eBVMzGgwIplO"].join(""),
-    ["gsk_O3O1bIMTJ","7Fn9MTE1WdXWGdyb3FY","kgwKA5BSRDB2Acg929rS7eCN"].join("")
-  ];
-  return KEYS[Math.floor(Date.now()/60000)%KEYS.length];
-})();
+const GROQ_KEYS = [
+  ["gsk_O3O1bIMTJ","7Fn9MTE1WdXWGdyb3FY","kgwKA5BSRDB2Acg929rS7eCN"].join(""),
+  ["gsk_SpC07PQBCR4t","mMzERyCYWGdyb3FY","Obw5uGiYTCC7eBVMzGgwIplO"].join("")
+];
+const GEMINI_KEY = ["AIzaSyDb5SKqAIzm","BhBIe1rRpDZSy_FHO_ORq9c"].join("");
+let _groqIdx = 0;
 
 async function callGroq(prompt, system, maxTokens = 2000) {
   const btn = document.getElementById('generateBtn');
   if (btn) { btn.disabled = true; btn.dataset.orig = btn.dataset.orig || btn.textContent; btn.textContent = '⚙️ Generating...'; }
+  // Try both Groq keys in rotation
+  for (let attempt = 0; attempt < GROQ_KEYS.length; attempt++) {
+    const key = GROQ_KEYS[(_groqIdx + attempt) % GROQ_KEYS.length];
+    try {
+      const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+        method: "POST",
+        headers: { "Authorization": "Bearer " + key, "Content-Type": "application/json" },
+        body: JSON.stringify({ model: "llama-3.3-70b-versatile", messages: [{ role: "system", content: system }, { role: "user", content: prompt }], max_tokens: maxTokens, temperature: 0.3 })
+      });
+      const data = await res.json();
+      if (data.choices?.[0]?.message?.content) {
+        _groqIdx = (_groqIdx + attempt + 1) % GROQ_KEYS.length; // rotate for next call
+        if (btn) { btn.disabled = false; btn.textContent = btn.dataset.orig || 'Generate'; }
+        return data.choices[0].message.content;
+      }
+      // rate limit or error — try next key
+      if (data.error?.type === 'tokens' || data.error?.code === 'rate_limit_exceeded') continue;
+    } catch(e) { /* network error, try next */ }
+  }
+  // Groq failed — fall back to Gemini
   try {
-    const res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+    const geminiBody = {
+      contents: [{ role: "user", parts: [{ text: system + "
+
+" + prompt }] }],
+      generationConfig: { maxOutputTokens: maxTokens, temperature: 0.3 }
+    };
+    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_KEY}`, {
       method: "POST",
-      headers: { "Authorization": "Bearer " + GROQ_KEY, "Content-Type": "application/json" },
-      body: JSON.stringify({ model: "llama-3.3-70b-versatile", messages: [{ role: "system", content: system }, { role: "user", content: prompt }], max_tokens: maxTokens, temperature: 0.3 })
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(geminiBody)
     });
     const data = await res.json();
-    if (btn) { btn.disabled = false; btn.textContent = btn.dataset.orig || 'Generate'; }
-    return data.choices?.[0]?.message?.content || "Error generating. Please try again.";
-  } catch(e) {
-    if (btn) { btn.disabled = false; btn.textContent = btn.dataset.orig || 'Generate'; }
-    return "Connection error. Please check your internet and try again.";
-  }
+    const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+    if (text) {
+      if (btn) { btn.disabled = false; btn.textContent = btn.dataset.orig || 'Generate'; }
+      return text;
+    }
+  } catch(e) {}
+  if (btn) { btn.disabled = false; btn.textContent = btn.dataset.orig || 'Generate'; }
+  return "Generation failed. Please try again in a moment.";
 }
 
 function copyCode(id) {
@@ -358,9 +242,6 @@ Offline mode: ${offline ? 'yes - include full service worker caching' : 'basic o
 
   const result = await callGroq(prompt, system, 4000);
   parsePWAFiles(result);
-  // Show index.html live preview
-  const htmlMatch = result.match(/===index\.html===\n([\s\S]*?)(?====|$)/);
-  if (htmlMatch) { showOutput(htmlMatch[1].trim(), 'index.html', true); }
 }
 
 function parsePWAFiles(raw) {
@@ -414,120 +295,6 @@ async function downloadPWAZip() {
   Object.entries(pwaFiles).forEach(([n, c]) => folder.file(n, c));
   const blob = await zip.generateAsync({type:'blob'});
   const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'pwa-app.zip'; a.click();
-}
-</script>
-
-<script>
-/* ── Live Preview Engine ───────────────────────────────── */
-let _generatedCode = '';
-let _codeFilename = 'output.html';
-let _isHTML = true;
-
-function showOutput(code, filename, isHTML) {
-  _generatedCode = code;
-  _codeFilename = filename || 'output.html';
-  _isHTML = isHTML !== false;
-  const section = document.getElementById('previewSection');
-  if (section) section.style.display = 'block';
-  if (_isHTML) {
-    const frame = document.getElementById('previewFrame');
-    if (frame) frame.srcdoc = code;
-    const editor = document.getElementById('codeEditor');
-    if (editor) editor.value = code;
-  } else {
-    const display = document.getElementById('codeDisplay');
-    if (display) display.textContent = code;
-  }
-  if (section) section.scrollIntoView({behavior: 'smooth', block: 'start'});
-}
-function applyEdits() {
-  const code = document.getElementById('codeEditor')?.value;
-  if (code) { _generatedCode = code; document.getElementById('previewFrame').srcdoc = code; }
-}
-function refreshPreview() {
-  const frame = document.getElementById('previewFrame');
-  if (frame && _generatedCode) frame.srcdoc = _generatedCode;
-}
-function openFullscreen() {
-  const win = window.open('', '_blank');
-  win.document.write(_generatedCode);
-  win.document.close();
-}
-function downloadHTML() {
-  const code = document.getElementById('codeEditor')?.value || _generatedCode;
-  _download(code, _codeFilename, 'text/html');
-}
-function downloadCode() {
-  _download(_generatedCode, _codeFilename, 'text/plain');
-}
-function copyCode() {
-  const code = document.getElementById('codeEditor')?.value ||
-               document.getElementById('codeDisplay')?.textContent ||
-               _generatedCode;
-  navigator.clipboard.writeText(code).then(() => {
-    const btn = event?.target;
-    if (btn) {
-      const orig = btn.textContent;
-      btn.textContent = '✅ Copied!';
-      btn.style.background = '#0d1a0d';
-      btn.style.color = '#00FF88';
-      setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.color = ''; }, 2000);
-    }
-  });
-}
-function _download(content, filename, type) {
-  const blob = new Blob([content], {type});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = filename;
-  a.click();
-}
-</script>
-<script>
-function loadExample() {
-  document.getElementById('appName').value = 'Maya Design Card';
-  if(document.getElementById('appDesc')) document.getElementById('appDesc').value = 'Digital business card for Maya Rivera, freelance graphic designer. Shows portfolio, contact info, and social links.';
-  if(document.getElementById('appContact')) document.getElementById('appContact').value = 'maya@mayadesign.co';
-
-  const exampleHTML = `<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0a0a0a">
-<title>Maya Rivera — Designer</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0a0a;color:#fff;font-family:'Segoe UI',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center}
-.card{background:#111;border:1px solid #1a1a1a;border-radius:20px;padding:40px 32px;max-width:380px;width:100%}
-.avatar{width:90px;height:90px;background:#00FF88;border-radius:50%;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;font-size:2rem;font-weight:900;color:#000}
-h1{font-size:1.5rem;font-weight:900;margin-bottom:4px}
-.title{color:#00FF88;font-size:.88rem;margin-bottom:24px;letter-spacing:1px;text-transform:uppercase}
-.skills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:24px}
-.skill{background:#1a1a1a;color:#aaa;font-size:.75rem;padding:4px 12px;border-radius:20px}
-.links{display:flex;flex-direction:column;gap:10px}
-.link-btn{display:block;background:#1a1a1a;color:#fff;text-decoration:none;padding:12px;border-radius:10px;font-size:.9rem;transition:background .2s}
-.link-btn:hover{background:#00FF88;color:#000}
-.link-btn span{margin-right:8px}
-</style></head><body>
-<div class="card">
-  <div class="avatar">M</div>
-  <h1>Maya Rivera</h1>
-  <div class="title">Freelance Graphic Designer</div>
-  <div class="skills">
-    <span class="skill">Brand Identity</span>
-    <span class="skill">UI/UX</span>
-    <span class="skill">Illustration</span>
-    <span class="skill">Motion</span>
-  </div>
-  <div class="links">
-    <a href="mailto:maya@mayadesign.co" class="link-btn"><span>✉️</span>maya@mayadesign.co</a>
-    <a href="https://mayadesign.co" class="link-btn"><span>🌐</span>mayadesign.co</a>
-    <a href="https://instagram.com/mayadesigns" class="link-btn"><span>📸</span>@mayadesigns</a>
-    <a href="tel:+15551234567" class="link-btn"><span>📞</span>+1 (555) 123-4567</a>
-  </div>
-</div>
-<p style="color:#333;font-size:.72rem;margin-top:20px">Tap the install button to save to your home screen</p>
-</body></html>`;
-  
-  showOutput(exampleHTML, 'index.html', true);
 }
 </script>
 </body>
