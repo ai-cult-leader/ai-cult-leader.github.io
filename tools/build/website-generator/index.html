@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Generate a complete website with AI. Get full HTML/CSS/JS code, deploy free on GitHub Pages. No coding needed. Business, portfolio, or landing page.">
+<meta name="description" content="Generate a complete website with AI. Get full HTML/CSS/JS code, deploy free on GitHub Pages. No coding needed.">
 <title>Free AI Website Generator — Build & Deploy in Minutes | AI Guerrilla</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -24,7 +24,7 @@ select option{background:#111}
 .btn:disabled{opacity:.5;cursor:not-allowed}
 .btn-secondary{background:#1a1a1a;color:#fff;border:1px solid #2a2a2a;font-weight:600;border-radius:8px;padding:10px 20px;font-size:.85rem;cursor:pointer;font-family:inherit;transition:border-color .2s}
 .btn-secondary:hover{border-color:#00FF88;color:#00FF88}
-.output-section{display:none;margin-top:32px}
+.output-section{display:block;margin-top:32px}
 .output-section.visible{display:block}
 .code-block{background:#0d0d0d;border:1px solid #1a1a1a;border-radius:8px;padding:20px;font-family:monospace;color:#00FF88;font-size:.85rem;overflow-x:auto;white-space:pre-wrap;word-break:break-word;max-height:500px;overflow-y:auto}
 .guide-section{background:#0f0f0f;border:1px solid #1a1a1a;border-radius:12px;padding:28px;margin-top:32px}
@@ -44,6 +44,19 @@ select option{background:#111}
 .hero-badge{font-size:.78rem;color:#00FF88;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px}
 .card{background:#111;border:1px solid #1a1a1a;border-radius:12px;padding:24px;margin-bottom:16px}
 @media(max-width:600px){.container{padding:24px 16px}.btn{width:100%}.action-row{flex-direction:column}nav{padding:10px 16px !important}nav a[href="/free-ai-tools/"]{display:none}}
+.output-section .code-block:empty::before{content:"Your generated code will appear here after you click Generate.";color:#2a2a2a;font-style:italic;font-family:inherit}
+.output-section{border-top:1px solid #1a1a1a;padding-top:28px}
+</style>
+<style>
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.preview-pane{position:sticky;top:72px}
+.preview-shell{border:1px solid #2a2a2a;border-radius:10px;overflow:hidden;background:#111}
+.preview-bar{background:#1a1a1a;padding:8px 14px;font-size:.75rem;color:#888;display:flex;justify-content:space-between;align-items:center}
+.preview-placeholder{height:500px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#333;font-size:.9rem;gap:12px}
+.preview-placeholder svg{opacity:.15}
+iframe#wsPreviewFrame{width:100%;height:500px;border:none;background:#fff;display:none}
+.dl-bar{display:flex;gap:10px;padding:12px;border-top:1px solid #1a1a1a;background:#0d0d0d}
+@media(max-width:800px){.two-col{grid-template-columns:1fr}.preview-pane{position:static}}
 </style>
 </head>
 <body>
@@ -55,90 +68,104 @@ select option{background:#111}
     <a href="https://skool.com/aiguerrilla" style="background:#00FF88;color:#000;font-weight:700;padding:6px 14px;border-radius:6px;text-decoration:none;font-size:.8rem;white-space:nowrap">Community</a>
   </div>
 </nav>
-<div class="container">
+<div class="container" style="max-width:1100px">
   <div class="hero-badge">Free Tool — No Signup</div>
   <h1>AI Website Generator</h1>
-  <p>Describe your website, pick a style, and get complete HTML/CSS/JS code in seconds. Deploy free on GitHub Pages.</p>
+  <p>Fill in the form, hit Generate — see your full website instantly. Download and deploy free in minutes.</p>
 
-  <div class="card">
-    <label>Business / Project Name *</label>
-    <input type="text" id="bizName" placeholder="Sunrise Coffee Co.">
+  <div class="two-col">
+    <!-- LEFT: Form -->
+    <div>
+      <div class="card">
+        <label>Business / Project Name *</label>
+        <input type="text" id="bizName" placeholder="Sunrise Coffee Co.">
 
-    <label>Describe your website *</label>
-    <textarea id="siteDesc" placeholder="A cozy coffee shop in Austin, TX. We specialize in single-origin pour-overs and homemade pastries. Open 7am-6pm daily. Address: 123 Main St." rows="4"></textarea>
+        <label>Describe your website *</label>
+        <textarea id="siteDesc" placeholder="A cozy coffee shop in Austin, TX. Single-origin pour-overs and homemade pastries. Open 7am-6pm. Address: 123 Main St." rows="4"></textarea>
 
-    <label>Website Type</label>
-    <select id="siteType">
-      <option>Business landing page</option>
-      <option>Personal portfolio</option>
-      <option>Restaurant/cafe</option>
-      <option>Service business</option>
-      <option>Non-profit</option>
-      <option>Blog/newsletter</option>
-      <option>Event page</option>
-      <option>Product launch</option>
-    </select>
+        <label>Website Type</label>
+        <select id="siteType">
+          <option>Business landing page</option>
+          <option>Personal portfolio</option>
+          <option>Restaurant/cafe</option>
+          <option>Service business</option>
+          <option>Non-profit</option>
+          <option>Blog/newsletter</option>
+          <option>Event page</option>
+          <option>Product launch</option>
+        </select>
 
-    <label>Style</label>
-    <select id="siteStyle">
-      <option>Modern & dark</option>
-      <option>Clean & minimal</option>
-      <option>Bold & colorful</option>
-      <option>Professional & corporate</option>
-      <option>Warm & friendly</option>
-    </select>
+        <label>Style</label>
+        <select id="siteStyle">
+          <option>Modern & dark</option>
+          <option>Clean & minimal</option>
+          <option>Bold & colorful</option>
+          <option>Professional & corporate</option>
+          <option>Warm & friendly</option>
+        </select>
 
-    <label>Primary Color</label>
-    <div style="display:flex;align-items:center;gap:12px">
-      <input type="color" id="primaryColor" value="#00FF88">
-      <span style="color:#888;font-size:.85rem">Pick your brand color</span>
-    </div>
-
-    <label>Contact Email (optional)</label>
-    <input type="email" id="contactEmail" placeholder="hello@yourbusiness.com">
-
-    <div style="margin-top:24px">
-<div id="_apiErrMsg" style="display:none;background:#1a0a0a;border:1px solid #3a1a1a;border-radius:8px;padding:16px 20px;margin-top:20px;color:#ff6b6b;font-size:.9rem;line-height:1.6"></div>
-      <button class="btn" id="generateBtn" data-orig="Generate My Website" onclick="generateWebsite()">Generate My Website</button>
-    </div>
-  </div>
-
-  <div class="output-section" id="outputSection">
-    <div style="display:flex;border-bottom:1px solid #1a1a1a;margin-bottom:0">
-      <button class="tab-btn" id="wsCodeTab" onclick="switchWsTab('code')">Code</button>
-      <button class="tab-btn active" id="wsPreviewTab" onclick="switchWsTab('preview')">👁 Live Preview</button>
-    </div>
-    <div id="wsCodeView" style="display:none;padding-top:16px">
-      <pre class="code-block" id="websiteCode" style="max-height:500px"></pre>
-      <div class="action-row" style="margin-top:12px">
-        <button class="btn" onclick="downloadWebsite()">⬇ Download index.html</button>
-        <button class="btn-secondary" onclick="copyCode('websiteCode')">Copy All Code</button>
-      </div>
-    </div>
-    <div id="wsPreviewView" style="padding-top:16px">
-      <div style="border:1px solid #2a2a2a;border-radius:8px;overflow:hidden">
-        <div style="background:#1a1a1a;padding:8px 14px;font-size:.75rem;color:#aaa;display:flex;gap:12px;align-items:center">
-          <span style="color:#555">●●●</span><span>Website Preview</span>
+        <label>Primary Color</label>
+        <div style="display:flex;align-items:center;gap:12px">
+          <input type="color" id="primaryColor" value="#00FF88">
+          <span style="color:#888;font-size:.85rem">Pick your brand color</span>
         </div>
-        <iframe id="wsPreviewFrame" style="width:100%;height:600px;border:none;background:#fff" sandbox="allow-scripts allow-same-origin"></iframe>
+
+        <label>Contact Email (optional)</label>
+        <input type="email" id="contactEmail" placeholder="hello@yourbusiness.com">
+
+        <div style="margin-top:24px">
+<div id="_apiErrMsg" style="display:none;background:#1a0a0a;border:1px solid #3a1a1a;border-radius:8px;padding:16px 20px;margin-top:20px;color:#ff6b6b;font-size:.9rem;line-height:1.6"></div>
+          <button class="btn" style="width:100%" id="generateBtn" data-orig="⚡ Generate My Website" onclick="generateWebsite()">⚡ Generate My Website</button>
+        </div>
       </div>
-      <div class="action-row" style="margin-top:12px">
-        <button class="btn" onclick="downloadWebsite()">⬇ Download index.html</button>
-        <button class="btn-secondary" onclick="switchWsTab('code')">View Code</button>
+
+      <div class="guide-section" style="margin-top:20px">
+        <div class="tag">Deploy Guide</div>
+        <h2>Go Live in 5 Minutes — Free</h2>
+        <ol>
+          <li><strong>Generate & Download</strong> — Fill the form, click Generate, then Download</li>
+          <li><strong>Create GitHub account</strong> — <a href="https://github.com" style="color:#00FF88" target="_blank">github.com</a> (free)</li>
+          <li><strong>New repo</strong> — Name it: <code style="color:#00FF88">yourusername.github.io</code></li>
+          <li><strong>Upload index.html</strong> — Drag and drop into the repo</li>
+          <li><strong>Enable Pages</strong> — Settings → Pages → Source: main</li>
+          <li><strong>You're live!</strong> — <code style="color:#00FF88">yourusername.github.io</code></li>
+        </ol>
       </div>
     </div>
 
-    <div class="guide-section" style="margin-top:32px">
-      <div class="tag">Deploy Guide</div>
-      <h2>Go Live in 5 Minutes — Free</h2>
-      <ol>
-        <li><strong>Download your index.html file</strong> — Click the button above</li>
-        <li><strong>Create a GitHub account</strong> — Go to <a href="https://github.com" style="color:#00FF88" target="_blank">github.com</a> (free)</li>
-        <li><strong>New repository</strong> — Name it exactly: <code style="color:#00FF88">yourusername.github.io</code></li>
-        <li><strong>Upload your file</strong> — Drag and drop your index.html into the repo</li>
-        <li><strong>Enable Pages</strong> — Go to Settings → Pages → Source: main branch</li>
-        <li><strong>You're live!</strong> — Your website is at <code style="color:#00FF88">https://yourusername.github.io</code></li>
-      </ol>
+    <!-- RIGHT: Preview pane (always visible) -->
+    <div class="preview-pane">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <span style="font-weight:700;font-size:.95rem">Live Preview</span>
+        <div style="display:flex;gap:8px">
+          <button class="btn-secondary" id="wsCodeToggle" onclick="switchWsTab('code')" style="display:none;font-size:.78rem;padding:6px 12px">View Code</button>
+          <button class="btn-secondary" id="wsPreviewToggle" onclick="switchWsTab('preview')" style="display:none;font-size:.78rem;padding:6px 12px">👁 Preview</button>
+        </div>
+      </div>
+      <div class="preview-shell">
+        <div class="preview-bar">
+          <span style="color:#555">● ● ●</span>
+          <span id="previewLabel">Your website will appear here</span>
+          <span></span>
+        </div>
+        <!-- Placeholder state -->
+        <div id="wsPlaceholder" class="preview-placeholder">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#00FF88" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          <span>Generate to see your website here</span>
+          <span style="font-size:.78rem;color:#2a2a2a">It takes about 5-10 seconds</span>
+        </div>
+        <!-- Live preview iframe -->
+        <iframe id="wsPreviewFrame" sandbox="allow-scripts allow-same-origin"></iframe>
+        <!-- Code view -->
+        <div id="wsCodeView" style="display:none">
+          <pre class="code-block" id="websiteCode" style="max-height:460px;border:none;border-radius:0;margin:0"></pre>
+        </div>
+      </div>
+      <!-- Download bar — always visible, disabled until generated -->
+      <div class="dl-bar">
+        <button class="btn" id="dlBtn" onclick="downloadWebsite()" disabled style="opacity:.35;flex:1">⬇ Download index.html</button>
+        <button class="btn-secondary" id="copyBtn" onclick="copyCode('websiteCode')" disabled style="opacity:.35">Copy Code</button>
+      </div>
     </div>
   </div>
 </div>
@@ -247,43 +274,57 @@ let websiteContent = '';
 async function generateWebsite() {
   const name = document.getElementById('bizName').value.trim();
   const desc = document.getElementById('siteDesc').value.trim();
+  if (!name || !desc) { alert('Please fill in the business name and description.'); return; }
   const type = document.getElementById('siteType').value;
   const style = document.getElementById('siteStyle').value;
   const color = document.getElementById('primaryColor').value;
   const email = document.getElementById('contactEmail').value.trim();
-  if (!name || !desc) { alert('Please fill in the business name and description.'); return; }
 
-  const system = `You are an expert web developer. Generate a complete, beautiful, single-file HTML website. Include ALL CSS inside a <style> tag and ALL JavaScript inside a <script> tag — ONE FILE ONLY, completely self-contained. Make it fully responsive, modern, and professional. Return ONLY the complete HTML code starting with <!DOCTYPE html>, nothing else — no explanation, no markdown, no code fences.`;
+  document.getElementById('wsPlaceholder').innerHTML = '<div style="height:460px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px"><div style="width:36px;height:36px;border:3px solid #00FF88;border-top-color:transparent;border-radius:50%;animation:spin 0.8s linear infinite"></div><span style="color:#888">Building your website...</span></div>';
+  document.getElementById('previewLabel').textContent = 'Generating...';
 
-  const prompt = `Create a complete ${type} website for: ${name}
-Style: ${style}
-Primary color: ${color}
-Contact email: ${email || 'Not provided'}
-Description: ${desc}
-
-Make it look like a real professional website. Include navigation, hero section, about/features section, contact info, and footer.`;
+  const system = `You are an expert web developer. Generate a complete, beautiful, single-file HTML website. Include ALL CSS inside a <style> tag and ALL JS inside a <script> tag. ONE FILE, self-contained, fully responsive. Return ONLY HTML starting with <!DOCTYPE html>, no markdown, no fences.`;
+  const prompt = `Create a ${type} website for: ${name}\nStyle: ${style}\nColor: ${color}\nEmail: ${email||'not provided'}\nDescription: ${desc}\nInclude: nav, hero, features/about, contact, footer.`;
 
   const result = await callGroq(prompt, system, 4000);
-  if (result === "__ERROR__") return;
-  const cleaned = result.replace(/^```html\n?/,'').replace(/^```\n?/,'').replace(/```$/,'').trim();
-  websiteContent = cleaned;
-  document.getElementById('websiteCode').textContent = cleaned;
-  document.getElementById('wsPreviewFrame').srcdoc = cleaned;
-  document.getElementById('outputSection').classList.add('visible');
-  switchWsTab('preview');
+  if (result === "__ERROR__") {
+    document.getElementById('wsPlaceholder').innerHTML = '<div style="height:460px;display:flex;align-items:center;justify-content:center;color:#555;font-size:.85rem;padding:20px;text-align:center">Generation failed. Try again in a moment.</div>';
+    document.getElementById('previewLabel').textContent = 'Error';
+    return;
+  }
+  websiteContent = result.replace(/^```html\n?/,'').replace(/^```\n?/,'').replace(/```$/,'').trim();
+  document.getElementById('websiteCode').textContent = websiteContent;
+  document.getElementById('wsPlaceholder').style.display = 'none';
+  const frame = document.getElementById('wsPreviewFrame');
+  frame.style.display = 'block';
+  frame.srcdoc = websiteContent;
+  document.getElementById('previewLabel').textContent = name + ' — ' + type;
+  document.getElementById('dlBtn').disabled = false;
+  document.getElementById('dlBtn').style.opacity = '1';
+  document.getElementById('copyBtn').disabled = false;
+  document.getElementById('copyBtn').style.opacity = '1';
+  document.getElementById('wsCodeToggle').style.display = '';
 }
 
 function switchWsTab(tab) {
-  document.getElementById('wsCodeView').style.display = tab === 'code' ? '' : 'none';
-  document.getElementById('wsPreviewView').style.display = tab === 'preview' ? '' : 'none';
-  document.getElementById('wsCodeTab').classList.toggle('active', tab === 'code');
-  document.getElementById('wsPreviewTab').classList.toggle('active', tab === 'preview');
+  const frame = document.getElementById('wsPreviewFrame');
+  const code = document.getElementById('wsCodeView');
+  if (tab === 'preview') {
+    frame.style.display = 'block'; code.style.display = 'none';
+    document.getElementById('wsCodeToggle').style.display = '';
+    document.getElementById('wsPreviewToggle').style.display = 'none';
+  } else {
+    frame.style.display = 'none'; code.style.display = 'block';
+    document.getElementById('wsCodeToggle').style.display = 'none';
+    document.getElementById('wsPreviewToggle').style.display = '';
+  }
 }
 
 function downloadWebsite() {
-  if (!websiteContent) { alert('Generate your website first!'); return; }
+  if (!websiteContent) return;
   downloadFile(websiteContent, 'index.html', 'text/html');
 }
 </script>
+<style>@keyframes spin{to{transform:rotate(360deg)}}</style>
 </body>
 </html>
