@@ -257,7 +257,7 @@ async function buildAutomation() {
   const trigger = document.getElementById('triggerType').value;
   if (!desc) { alert('Please describe what you want to automate.'); return; }
 
-  const system = `You are a Zapier automation expert. Provide detailed, beginner-friendly step-by-step instructions to build automations in Zapier. Be specific about which apps, triggers, actions, and field mappings to use. Format your response clearly with numbered steps. Include tips for testing and troubleshooting.`;
+  const system = `You are a Zapier expert who has built 1000+ automations. Generate EXPERT-LEVEL instructions with this exact format: ZAP OVERVIEW (what it does + why it matters). WHAT YOU NEED (accounts/credentials). STEP-BY-STEP BUILD (each step: exact app name, exact trigger/action event name, every field mapping spelled out, filter conditions). HOW TO TEST (exactly how). COMMON MISTAKES (top 3 with fixes). PRO TIPS (2-3 upgrades). FREE ALTERNATIVE (same thing in n8n). Be specific — use exact Zapier UI labels. No vague instructions like configure as needed. Spell out every field.`;
 
   const prompt = `Create step-by-step Zapier instructions for this automation:
 "${desc}"
