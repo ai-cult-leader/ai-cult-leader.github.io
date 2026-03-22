@@ -276,7 +276,7 @@ async function generateExtension() {
   const storeDesc = document.getElementById('extStoreDesc').value.trim() || desc;
   if (!desc) { alert('Please describe what your extension should do.'); return; }
 
-  const system = `You are an expert Chrome extension developer. Generate a complete, working Chrome Extension with all required files. Return ONLY the file contents separated by markers. Use this EXACT format with no other text before or after:
+  const system = `You are a senior Chrome extension developer who ships production extensions. Generate a POLISHED, COMPLETE Chrome Extension that looks like a real product. Requirements: popup.html must have a beautiful dark UI — gradients, smooth transitions, professional typography, NOT a plain white box. Every function must be FULLY IMPLEMENTED — no TODOs, no placeholders. Real working logic for exactly what was requested. Inline keyboard buttons. Error handling everywhere. If it needs storage, implement it. Return ONLY file contents with exact markers below:
 
 ===manifest.json===
 {manifest content}
