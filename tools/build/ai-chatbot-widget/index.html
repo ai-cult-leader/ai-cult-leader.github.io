@@ -24,7 +24,7 @@ select option{background:#111}
 .btn:disabled{opacity:.5;cursor:not-allowed}
 .btn-secondary{background:#1a1a1a;color:#fff;border:1px solid #2a2a2a;font-weight:600;border-radius:8px;padding:10px 20px;font-size:.85rem;cursor:pointer;font-family:inherit;transition:border-color .2s}
 .btn-secondary:hover{border-color:#00FF88;color:#00FF88}
-.output-section{display:none;margin-top:32px}
+.output-section{display:block;margin-top:32px}
 .output-section.visible{display:block}
 .code-block{background:#0d0d0d;border:1px solid #1a1a1a;border-radius:8px;padding:20px;font-family:monospace;color:#00FF88;font-size:.85rem;overflow-x:auto;white-space:pre-wrap;word-break:break-word;max-height:500px;overflow-y:auto}
 .guide-section{background:#0f0f0f;border:1px solid #1a1a1a;border-radius:12px;padding:28px;margin-top:32px}
@@ -44,6 +44,8 @@ select option{background:#111}
 .hero-badge{font-size:.78rem;color:#00FF88;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px}
 .card{background:#111;border:1px solid #1a1a1a;border-radius:12px;padding:24px;margin-bottom:16px}
 @media(max-width:600px){.container{padding:24px 16px}.btn{width:100%}.action-row{flex-direction:column}nav{padding:10px 16px !important}nav a[href="/free-ai-tools/"]{display:none}}
+.output-section .code-block:empty::before{content:"Your generated code will appear here after you click Generate.";color:#2a2a2a;font-style:italic;font-family:inherit}
+.output-section{border-top:1px solid #1a1a1a;padding-top:28px}
 </style>
 </head>
 <body>
