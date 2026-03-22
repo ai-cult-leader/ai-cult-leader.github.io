@@ -318,7 +318,7 @@ async function generateWebsite() {
   document.getElementById('wsPlaceholder').innerHTML = '<div style="height:460px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px"><div style="width:36px;height:36px;border:3px solid #00FF88;border-top-color:transparent;border-radius:50%;animation:spin 0.8s linear infinite"></div><span style="color:#888">Building your website...</span></div>';
   document.getElementById('previewLabel').textContent = 'Generating...';
 
-  const system = `You are an expert web developer. Generate a complete, beautiful, single-file HTML website. Include ALL CSS inside a <style> tag and ALL JS inside a <script> tag. ONE FILE, self-contained, fully responsive. Return ONLY HTML starting with <!DOCTYPE html>, no markdown, no fences.`;
+  const system = `You are a world-class web designer. Generate a STUNNING single-file website that looks like a $10k agency built it. Requirements: Bold hero with large typography and CSS entrance animations (fade-in, slide-up). Real marketing copy for the business — NOT lorem ipsum, NOT "Your headline here". Actual compelling text based on what they described. Smooth scroll, sticky nav, mobile hamburger menu. Features section with icons. Contact form with JS validation. Professional color scheme built around their brand color. Gradient accents, card hover effects, shadows. IntersectionObserver for scroll animations. Return ONLY HTML starting with <!DOCTYPE html>. No markdown. Deploy-ready as-is.`;
   const prompt = `Create a ${type} website for: ${name}\nStyle: ${style}\nColor: ${color}\nEmail: ${email||'not provided'}\nDescription: ${desc}\nInclude: nav, hero, features/about, contact, footer.`;
 
   const result = await callGroq(prompt, system, 4000);
