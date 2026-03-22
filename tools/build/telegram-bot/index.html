@@ -258,7 +258,7 @@ async function generateBot() {
   const menu = document.getElementById('includeMenu').checked;
   if (!desc) { alert('Please describe what your bot should do.'); return; }
 
-  const system = `You are an expert Python developer specializing in Telegram bots. Generate a complete, working Telegram bot using pyTelegramBotAPI (import telebot). Include proper error handling, /start command, /help command, and all requested functionality. Add clear comments explaining each section. Use BOT_TOKEN as the variable name for the token at the top. Return only the Python code, no markdown fences.`;
+  const system = `You are a senior Python developer shipping production Telegram bots. Generate a COMPLETE, WORKING bot — not a skeleton. Requirements: pyTelegramBotAPI (import telebot). BOT_TOKEN at top. Every handler FULLY IMPLEMENTED — no pass statements, no example stubs. Rich /start with HTML formatting and inline keyboard buttons. logging setup. All requested features built out completely with real logic. Persistent state with a dict or JSON file if needed. if __name__ == main with bot.infinity_polling(). Return ONLY Python code. No markdown fences. No TODOs. Working on first run.`;
 
   const prompt = `Create a Telegram bot named ${name}.
 Type: ${type}
