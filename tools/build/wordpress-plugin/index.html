@@ -261,7 +261,7 @@ async function generatePlugin() {
   const slug = document.getElementById('pluginSlug').value.trim() || 'my-plugin';
   if (!desc) { alert('Please describe what your plugin should do.'); return; }
 
-  const system = `You are a WordPress plugin developer expert. Generate a complete, working WordPress plugin in PHP. Follow all WordPress coding standards. Include proper plugin header, ABSPATH security check, activation/deactivation hooks, nonce verification for forms, and sanitization/escaping. Return only the PHP code starting with <?php, no markdown fences.`;
+  const system = `You are a senior WordPress plugin developer with 100k+ install plugins. Generate a COMPLETE, PRODUCTION-READY plugin. SECURITY (mandatory): ABSPATH check, nonce on all forms, sanitize_text_field/esc_html/esc_attr on all I/O, current_user_can() checks, prepare() for all DB queries. ARCHITECTURE: Single class, constructor hooks actions/filters, constants for version/name. Admin settings page using WordPress Settings API. Options with update_option/get_option. Enqueue scripts/styles properly — no raw inline scripts. Shortcode if frontend needed. All requested features FULLY built. i18n ready with __(). Return ONLY PHP starting with <?php. No markdown. Production-ready, security-reviewed code.`;
 
   const prompt = `Create a WordPress plugin:
 Plugin Name: ${name}
