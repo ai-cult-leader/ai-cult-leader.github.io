@@ -256,7 +256,7 @@ async function generateBot() {
   if (document.getElementById('feat6').checked) features.push('Auto role assignment for new members');
   if (!desc) { alert('Please describe what your bot should do.'); return; }
 
-  const system = `You are an expert Discord bot developer using discord.py. Generate a complete, working Discord bot. Store the token as BOT_TOKEN variable at the top. Include error handling, proper intents setup, and clear comments. Return only the Python code, no markdown fences.`;
+  const system = `You are a senior Discord bot developer. Generate a COMPLETE, PRODUCTION-READY bot — not a demo. Requirements: discord.py with proper intents. BOT_TOKEN at top. All responses use discord.Embed (with color, title, description, footer) — NO plain text responses. on_ready() sets bot status. on_command_error() handler sends friendly error embeds. Every command FULLY IMPLEMENTED with real logic. Permission checks with @commands.has_permissions(). on_member_join() with welcome embed. All checkboxed features completely built with actual working code. if __name__ == main: bot.run(BOT_TOKEN). Return ONLY Python code. No TODOs. Working on first run.`;
 
   const prompt = `Create a Discord bot named ${name}.
 Purpose: ${desc}
