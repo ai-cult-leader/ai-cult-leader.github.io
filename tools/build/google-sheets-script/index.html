@@ -79,6 +79,7 @@ select option{background:#111}
     </div>
 
     <div style="margin-top:24px">
+<div id="_apiErrMsg" style="display:none;background:#1a0a0a;border:1px solid #3a1a1a;border-radius:8px;padding:16px 20px;margin-top:20px;color:#ff6b6b;font-size:.9rem;line-height:1.6"></div>
       <button class="btn" id="generateBtn" data-orig="Generate My Script" onclick="generateScript()">Generate My Script</button>
     </div>
   </div>
@@ -175,7 +176,19 @@ async function callGroq(prompt, system, maxTokens = 2000) {
   }
 
   if (btn) { btn.disabled = false; btn.textContent = btn.dataset.orig || 'Generate'; }
-  return "Generation failed. Please try again in a moment.";
+  // Show user-friendly error with reset time
+  const now = new Date();
+  const resetUTC = new Date(now);
+  resetUTC.setUTCHours(24, 0, 0, 0);
+  const minsLeft = Math.ceil((resetUTC - now) / 60000);
+  const hrs = Math.floor(minsLeft / 60), mins = minsLeft % 60;
+  const resetStr = hrs > 0 ? `${hrs}h ${mins}m` : `${mins} minutes`;
+  const errDiv = document.getElementById('_apiErrMsg');
+  if (errDiv) {
+    errDiv.innerHTML = `⚠️ All AI providers are at their daily limit right now. They reset in <strong>${resetStr}</strong>. Try again then, or <a href="https://skool.com/aiguerrilla" style="color:#00FF88">join the community</a> for access to unlimited tools.`;
+    errDiv.style.display = 'block';
+  }
+  return "__ERROR__";
 }
 
 function copyCode(id) {
@@ -219,6 +232,7 @@ ${trigger ? 'Include installable triggers (time-based or onChange) appropriate f
 Add comments explaining how to configure it (email addresses, column names, etc.).`;
 
   const result = await callGroq(prompt, system, 3000);
+  if (result === "__ERROR__") return;
   scriptCode = result.replace(/^```javascript\n?/,'').replace(/^```js\n?/,'').replace(/^```\n?/,'').replace(/```$/,'').trim();
   document.getElementById('scriptCode').textContent = scriptCode;
   document.getElementById('outputSection').classList.add('visible');
