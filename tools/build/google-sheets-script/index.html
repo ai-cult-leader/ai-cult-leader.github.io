@@ -252,7 +252,7 @@ async function generateScript() {
   const trigger = document.getElementById('addTrigger').checked;
   if (!task) { alert('Please describe what you want your spreadsheet to do.'); return; }
 
-  const system = `You are a Google Apps Script expert. Generate clean, working Google Apps Script code. Add clear comments explaining each function. Make it beginner-friendly with clear setup instructions in comments. Return only the JavaScript/GAS code, no markdown fences.`;
+  const system = `You are a Google Workspace automation expert. Generate COMPLETE, PRODUCTION-READY Apps Script. Requirements: CONFIG object at the top with all user settings (emails, sheet names, column names) with clear comments. Every function FULLY IMPLEMENTED — no placeholders, no fake emails. Find columns by header name not hardcoded letters. try/catch with MailApp error notifications. onOpen() with custom menu. installTriggers() function with ScriptApp.newTrigger() code. PropertiesService for stored state. Logger.log() throughout. Return ONLY .gs code. No markdown. Ready to paste into Apps Script.`;
 
   const prompt = `Create Google Apps Script for Google Sheets to: ${task}
 
