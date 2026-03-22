@@ -93,15 +93,31 @@ select option{background:#111}
   </div>
 
   <div class="output-section" id="outputSection">
-    <h2>Your Chatbot Embed Code</h2>
-    <pre class="code-block" id="embedCode" style="max-height:500px"></pre>
-    <div class="action-row" style="margin-top:12px">
-      <button class="btn" onclick="copyCode('embedCode')">Copy Embed Code</button>
-      <button class="btn-secondary" onclick="previewChatbot()">👁 Preview Widget</button>
-      <button class="btn-secondary" onclick="downloadEmbed()">⬇ Download</button>
+    <div style="display:flex;border-bottom:1px solid #1a1a1a;margin-bottom:0">
+      <button class="tab-btn" id="cbCodeTab" onclick="switchCbTab('code')">Embed Code</button>
+      <button class="tab-btn active" id="cbPreviewTab" onclick="switchCbTab('preview')">👁 Live Preview</button>
     </div>
-    <div style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:8px;padding:16px;margin-top:16px">
-      <p style="color:#00FF88;margin:0;font-size:.9rem"><strong>To install:</strong> Paste this code in your website's HTML just before the closing &lt;/body&gt; tag. That's it!</p>
+    <div id="cbCodeView" style="display:none;padding-top:16px">
+      <pre class="code-block" id="embedCode" style="max-height:500px"></pre>
+      <div class="action-row" style="margin-top:12px">
+        <button class="btn" onclick="copyCode('embedCode')">Copy Embed Code</button>
+        <button class="btn-secondary" onclick="downloadEmbed()">⬇ Download</button>
+      </div>
+      <div style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:8px;padding:16px;margin-top:16px">
+        <p style="color:#00FF88;margin:0;font-size:.9rem"><strong>To install:</strong> Paste this code in your website's HTML just before the closing &lt;/body&gt; tag. That's it!</p>
+      </div>
+    </div>
+    <div id="cbPreviewView" style="padding-top:16px">
+      <div style="border:1px solid #2a2a2a;border-radius:8px;overflow:hidden">
+        <div style="background:#1a1a1a;padding:8px 14px;font-size:.75rem;color:#aaa;display:flex;gap:12px;align-items:center">
+          <span style="color:#555">●●●</span><span>Chatbot Preview — look for the chat bubble in the bottom-right corner</span>
+        </div>
+        <iframe id="cbPreviewFrame" style="width:100%;height:600px;border:none;background:#f5f5f5" sandbox="allow-scripts allow-same-origin"></iframe>
+      </div>
+      <div class="action-row" style="margin-top:12px">
+        <button class="btn" onclick="copyCode('embedCode')">Copy Embed Code</button>
+        <button class="btn-secondary" onclick="switchCbTab('code')">View Code</button>
+      </div>
     </div>
   </div>
 </div>
@@ -222,13 +238,16 @@ The widget should look polished with the color ${color} as the accent. Include l
   const result = await callGroq(prompt, system, 4000);
   embedContent = result.replace(/^```html\n?/,'').replace(/^```\n?/,'').replace(/```$/,'').trim();
   document.getElementById('embedCode').textContent = embedContent;
+  const previewHtml = `<!DOCTYPE html><html><head><meta charset="UTF-8"><style>body{background:#f0f0f0;font-family:sans-serif;padding:40px;text-align:center}h2{color:#333;margin-bottom:8px}p{color:#888;font-size:.9rem}</style></head><body><h2>Your Chatbot is Ready</h2><p>Click the chat bubble in the bottom-right corner to start a conversation.</p>${embedContent}</body></html>`;
+  document.getElementById('cbPreviewFrame').srcdoc = previewHtml;
   document.getElementById('outputSection').classList.add('visible');
+  switchCbTab('preview');
 }
-function previewChatbot() {
-  if (!embedContent) { alert('Generate your chatbot first!'); return; }
-  const win = window.open('', '_blank');
-  win.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8"><style>body{background:#f5f5f5;font-family:sans-serif;padding:40px;text-align:center}h1{color:#333}</style></head><body><h1>Chatbot Preview</h1><p style="color:#666">Look for the chat bubble in the bottom-right corner!</p>${embedContent}</body></html>`);
-  win.document.close();
+function switchCbTab(tab) {
+  document.getElementById('cbCodeView').style.display = tab === 'code' ? '' : 'none';
+  document.getElementById('cbPreviewView').style.display = tab === 'preview' ? '' : 'none';
+  document.getElementById('cbCodeTab').classList.toggle('active', tab === 'code');
+  document.getElementById('cbPreviewTab').classList.toggle('active', tab === 'preview');
 }
 function downloadEmbed() {
   if (!embedContent) { alert('Generate your chatbot first!'); return; }
