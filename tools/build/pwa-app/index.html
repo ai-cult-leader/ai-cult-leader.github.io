@@ -297,18 +297,7 @@ async function generatePWA() {
   const offline = document.getElementById('offlineMode').checked;
   if (!desc) { alert('Please describe what your app should do.'); return; }
 
-  const system = `You are an expert Progressive Web App developer. Generate exactly 3 files for a PWA. Return ONLY the file contents with these exact markers and nothing else:
-
-===index.html===
-{complete HTML file with embedded CSS and JS, mobile-optimized}
-
-===manifest.json===
-{valid PWA manifest JSON}
-
-===sw.js===
-{service worker JavaScript for offline caching}
-
-Make the app look professional, mobile-first, with large touch targets. App name: ${name}.`;
+  const system = `You are a top-tier mobile UI/UX developer. Generate a STUNNING PWA that looks like a real App Store app. Requirements: INDEX.HTML: Beautiful mobile-first design with large touch targets (min 48px). Bottom nav bar if multiple sections. Smooth CSS transitions and micro-animations. Real content for the business — NO placeholders or lorem ipsum. Write actual copy. iOS safe areas (env(safe-area-inset-*)). Looks premium — gradients, cards, shadows, proper typography. Feels native. MANIFEST.JSON: All fields — name, short_name, start_url, display:standalone, background_color, theme_color, icons (192+512 sizes using SVG data URI), orientation, scope. SW.JS: Cache-first strategy. Cache all assets on install. Network fallback. Versioned cache name. Clean old caches on activate. App name: ${name}. Return ONLY file contents with exact markers, nothing else:`;
 
   const prompt = `Create a PWA for: ${desc}
 App name: ${name}
