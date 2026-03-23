@@ -281,23 +281,122 @@ async function generateLandingPage() {
   const testimonial = document.getElementById('testimonial').value.trim();
   if (!name || !offer || !benefits) { alert('Please fill in the business name, offer, and benefits.'); return; }
 
-  const system = `You are a CRO expert and world-class web designer. Generate a HIGH-CONVERTING landing page that looks like a $10k agency built it. Requirements: Write REAL compelling copy using the exact offer and benefits provided — NOT placeholders. Power words, urgency, specific numbers. Hero with gradient/dark overlay, massive bold headline, subheadline, bright CTA button. Benefit cards with CSS icons. Testimonials with star ratings and initial avatars. FAQ accordion with working JS. Sticky nav. Scroll animations with IntersectionObserver. CTA button in hero AND at bottom. Mobile responsive. Return ONLY HTML starting with <!DOCTYPE html>. No markdown. Deploy-ready.`;
+  const system = `You are a world-class copywriter. Return ONLY a valid JSON object (no markdown, no fences):
+{"headline":"bold power headline max 10 words","subheadline":"compelling 1-2 sentence description of the offer","urgency":"short urgency line e.g. Limited spots available","benefit1_icon":"emoji","benefit1_title":"benefit","benefit1_desc":"one sentence","benefit2_icon":"emoji","benefit2_title":"benefit","benefit2_desc":"one sentence","benefit3_icon":"emoji","benefit3_title":"benefit","benefit3_desc":"one sentence","benefit4_icon":"emoji","benefit4_title":"benefit","benefit4_desc":"one sentence","proof":"social proof number e.g. 2,400+ students","testi1_quote":"compelling testimonial","testi1_name":"Full Name","testi1_role":"Job Title","testi2_quote":"compelling testimonial","testi2_name":"Full Name","testi2_role":"Job Title","faq1_q":"common question","faq1_a":"answer","faq2_q":"common question","faq2_a":"answer","faq3_q":"common question","faq3_a":"answer"}`;
 
-  const prompt = `Business: ${name}
-Industry: ${industry}
-Style: ${style}
-Offer: ${offer}
-Benefits:
-${benefits}
-CTA button text: ${ctaText}
-CTA link: ${ctaLink}
-${testimonial ? 'Testimonial: ' + testimonial : ''}
+  const prompt = `Product: ${name}. Offer: ${offer}. Benefits: ${benefits}. CTA: ${ctaText}. Industry: ${industry}. Testimonial hint: ${testimonial||'none'}. Write powerful conversion-focused copy.`;
 
-Make it highly conversion-optimized with urgency, clear value proposition, and strong CTA.`;
-
-  const result = await callGroq(prompt, system, 4000);
+  const result = await callGroq(prompt, system, 1200);
   if (result === "__ERROR__") return;
-  pageContent = result.replace(/^```html\n?/,'').replace(/^```\n?/,'').replace(/```$/,'').trim();
+
+  let c = {};
+  try { c = JSON.parse(result.replace(/^```json\n?/,'').replace(/^```\n?/,'').replace(/```$/,'').trim()); } catch(e) {
+    const m = result.match(/\{[\s\S]*\}/); if(m) try{c=JSON.parse(m[0])}catch(e2){}
+  }
+
+  const isDark = style.includes('Dark') || style.includes('dark');
+  const bg = isDark ? '#0a0a0a' : '#ffffff';
+  const fg = isDark ? '#ffffff' : '#111111';
+  const cardBg = isDark ? '#111111' : '#f9fafb';
+  const cardBorder = isDark ? '#1a1a1a' : '#e5e7eb';
+  const muted = isDark ? '#888' : '#6b7280';
+  const bList = benefits.split('\n').filter(Boolean);
+
+  pageContent = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>${name} — ${offer.slice(0,50)}</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:${bg};color:${fg};font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6}
+.hero{background:${isDark?'linear-gradient(135deg,#0a0a0a,#111)':'linear-gradient(135deg,#f0fdf4,#ffffff)'};padding:80px 5% 60px;text-align:center;border-bottom:1px solid ${cardBorder}}
+.hero-badge{display:inline-block;background:${ctaLink&&ctaLink.includes('#')?ctaLink:'#00C853'}22;color:${ctaLink&&ctaLink.includes('#')?ctaLink:'#00C853'};border:1px solid ${ctaLink&&ctaLink.includes('#')?ctaLink:'#00C853'}44;padding:5px 16px;border-radius:20px;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px}
+.hero h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:900;line-height:1.1;max-width:800px;margin:0 auto 20px}
+.hero h1 em{font-style:normal;color:#00C853}
+.hero-sub{font-size:1.1rem;color:${muted};max-width:560px;margin:0 auto 16px}
+.hero-proof{font-size:.9rem;color:${muted};margin-bottom:28px}
+.hero-proof strong{color:${fg}}
+.cta-btn{display:inline-block;background:#00C853;color:#000;font-weight:900;padding:16px 40px;border-radius:8px;font-size:1.1rem;text-decoration:none;transition:transform .2s,opacity .2s;border:none;cursor:pointer}
+.cta-btn:hover{transform:translateY(-2px);opacity:.9}
+.urgency{margin-top:14px;font-size:.85rem;color:#ef4444;font-weight:600}
+.benefits{padding:72px 5%}
+.sec-label{text-align:center;font-size:.75rem;color:#00C853;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:10px}
+.sec-title{text-align:center;font-size:clamp(1.5rem,3vw,2rem);font-weight:900;margin-bottom:48px;max-width:600px;margin-left:auto;margin-right:auto}
+.grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:${cardBg};border:1px solid ${cardBorder};border-radius:12px;padding:28px;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-3px);border-color:#00C85344}
+.card-icon{font-size:1.8rem;margin-bottom:12px}
+.card h3{font-size:1rem;font-weight:700;margin-bottom:8px}
+.card p{color:${muted};font-size:.88rem;line-height:1.6}
+.testimonials{padding:72px 5%;background:${isDark?'#111':'#f9fafb'}}
+.testi-grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.testi{background:${bg};border:1px solid ${cardBorder};border-radius:12px;padding:28px}
+.stars{color:#f59e0b;font-size:1rem;margin-bottom:12px}
+.testi-q{font-size:.95rem;line-height:1.7;color:${fg};font-style:italic;margin-bottom:18px}
+.testi-author{display:flex;align-items:center;gap:12px}
+.avatar{width:40px;height:40px;border-radius:50%;background:#00C853;color:#000;font-weight:900;font-size:.9rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.author-name{font-weight:700;font-size:.88rem}
+.author-role{color:${muted};font-size:.8rem}
+.faq{padding:72px 5%}
+.faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.faq-item{background:${cardBg};border:1px solid ${cardBorder};border-radius:10px;overflow:hidden}
+.faq-q{padding:18px 20px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;user-select:none}
+.faq-q:hover{color:#00C853}
+.faq-icon{transition:transform .3s;font-size:1.2rem;color:#00C853}
+.faq-a{display:none;padding:0 20px 18px;color:${muted};line-height:1.7;font-size:.92rem}
+.final-cta{padding:80px 5%;text-align:center;background:${isDark?'linear-gradient(135deg,#0a0a0a,#111)':'linear-gradient(135deg,#f0fdf4,#ffffff)'};border-top:1px solid ${cardBorder}}
+.final-cta h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:900;margin-bottom:16px}
+.final-cta p{color:${muted};margin-bottom:28px;max-width:520px;margin-left:auto;margin-right:auto}
+footer{padding:28px 5%;border-top:1px solid ${cardBorder};text-align:center;color:${muted};font-size:.83rem}
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s}
+.fade-up.visible{opacity:1;transform:none}
+@media(max-width:600px){.hero{padding:60px 5% 40px}}
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-badge">${industry}</div>
+  <h1>${c.headline||offer}</h1>
+  <p class="hero-sub">${c.subheadline||offer}</p>
+  <p class="hero-proof"><strong>${c.proof||'Thousands of happy customers'}</strong> — and growing every day</p>
+  <a href="${ctaLink||'#'}" class="cta-btn">${ctaText||'Get Started Today'}</a>
+  <p class="urgency">⚡ ${c.urgency||'Limited time — act now'}</p>
+</section>
+<section class="benefits">
+  <div class="sec-label">What You Get</div>
+  <div class="sec-title">Everything Included</div>
+  <div class="grid">
+    ${[1,2,3,4].map(i=>`<div class="card fade-up"><div class="card-icon">${c['benefit'+i+'_icon']||'✅'}</div><h3>${c['benefit'+i+'_title']||bList[i-1]||'Benefit '+i}</h3><p>${c['benefit'+i+'_desc']||''}</p></div>`).join('')}
+  </div>
+</section>
+<section class="testimonials">
+  <div class="sec-label">Social Proof</div>
+  <div class="sec-title">Real Results from Real People</div>
+  <div class="testi-grid">
+    ${[1,2].map(i=>`<div class="testi fade-up"><div class="stars">★★★★★</div><p class="testi-q">"${c['testi'+i+'_quote']||'Amazing results. Highly recommend.'}"</p><div class="testi-author"><div class="avatar">${(c['testi'+i+'_name']||'A')[0]}</div><div><div class="author-name">${c['testi'+i+'_name']||'Happy Customer'}</div><div class="author-role">${c['testi'+i+'_role']||'Verified Buyer'}</div></div></div></div>`).join('')}
+  </div>
+</section>
+<section class="faq">
+  <div class="sec-label">FAQ</div>
+  <div class="sec-title">Got Questions?</div>
+  <div class="faq-list">
+    ${[1,2,3].map(i=>`<div class="faq-item fade-up"><div class="faq-q" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block';this.querySelector('.faq-icon').style.transform=this.nextElementSibling.style.display==='block'?'rotate(45deg)':''"><span>${c['faq'+i+'_q']||'Common Question '+i}</span><span class="faq-icon">+</span></div><div class="faq-a">${c['faq'+i+'_a']||'Answer here.'}</div></div>`).join('')}
+  </div>
+</section>
+<section class="final-cta">
+  <h2>Ready to Get Started?</h2>
+  <p>${c.subheadline||offer}</p>
+  <a href="${ctaLink||'#'}" class="cta-btn">${ctaText||'Get Started Today'}</a>
+</section>
+<footer>© ${new Date().getFullYear()} ${name} · All rights reserved</footer>
+<script>
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}){threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+</body></html>`;
+
   document.getElementById('pageCode').textContent = pageContent;
   document.getElementById('lpPreviewFrame').srcdoc = pageContent;
   document.getElementById('outputSection').classList.add('visible');
