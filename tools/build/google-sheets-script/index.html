@@ -298,7 +298,7 @@ Add comments explaining how to configure it (email addresses, column names, etc.
 
   const result = await callGroq(prompt, system, 3000);
   if (result === "__ERROR__") return;
-  scriptCode = result.replace(/^```javascript\n?/,'').replace(/^```js\n?/,'').replace(/^```\n?/,'').replace(/```$/,'').trim();
+  scriptCode = result.replace(new RegExp('^\x60\x60\x60javascript\n?'),'').replace(new RegExp('^\x60\x60\x60js\n?'),'').replace(new RegExp('^\x60\x60\x60\n?'),'').replace(new RegExp('\x60\x60\x60$'),'').trim();
   document.getElementById('scriptCode').textContent = scriptCode;
   document.getElementById('outputSection').classList.add('visible');
   renderPreviewCard('previewCard', {
