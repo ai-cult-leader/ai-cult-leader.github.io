@@ -229,10 +229,13 @@ function copyCode(id) {
 
 function setIframeContent(frameId, html) {
   const frame = document.getElementById(frameId);
-  const blob = new Blob([html], {type: 'text/html'});
-  const url = URL.createObjectURL(blob);
-  frame.onload = () => URL.revokeObjectURL(url);
-  frame.src = url;
+  // Write directly into iframe document — most reliable cross-browser method
+  frame.removeAttribute('sandbox');
+  frame.removeAttribute('referrerpolicy');
+  const doc = frame.contentDocument || frame.contentWindow.document;
+  doc.open();
+  doc.write(html);
+  doc.close();
 }
 
 function downloadFile(content, filename, type = 'text/plain') {
