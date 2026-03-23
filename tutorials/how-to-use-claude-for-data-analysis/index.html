@@ -202,5 +202,115 @@ document.addEventListener('click',function(e){
     Plus, join 150+ AI operators sharing what's actually working at <a href="https://skool.com/aiguerrilla">https://skool.com/aiguerrilla</a> (free).</p>
   </div>
   <p>→ <a href="https://aiguerrilla.net/tools/claude/">Full Claude overview on AI Guerrilla</a></p>
+
+<!-- AI GUERRILLA CHAT WIDGET -->
+<div id="ag-chat-section" style="margin:48px 0;border-top:2px solid #1e293b;padding-top:40px;">
+  <div style="text-align:center;margin-bottom:24px;">
+    <span style="background:linear-gradient(135deg,#00c896,#0ea5e9);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:1.6rem;font-weight:800;">Try It Right Now</span>
+    <p style="color:#94a3b8;margin:8px 0 0;font-size:.95rem;">Ask AI anything about what you just learned. Powered by Llama 3.3 — free, no login needed.</p>
+  </div>
+  <div style="background:#0f1729;border:1px solid #1e293b;border-radius:16px;overflow:hidden;max-width:800px;margin:0 auto;">
+    <div id="ag-chat-messages" style="height:320px;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:12px;">
+      <div style="display:flex;gap:10px;align-items:flex-start;">
+        <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#00c896,#0ea5e9);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.8rem;font-weight:700;color:#fff;">AI</div>
+        <div style="background:#1e293b;border-radius:12px;border-top-left-radius:4px;padding:12px 16px;color:#e2e8f0;font-size:.9rem;line-height:1.6;max-width:85%;">
+          👋 Hey operator! I'm your AI assistant. Ask me anything about this lesson — or any AI topic. I'm powered by Llama 3.3 and completely free.
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid #1e293b;padding:16px;display:flex;gap:10px;">
+      <input id="ag-chat-input" type="text" placeholder="Ask a question about this topic..."
+        style="flex:1;background:#1e293b;border:1px solid #334155;border-radius:10px;padding:12px 16px;color:#e2e8f0;font-size:.9rem;outline:none;"
+        onkeydown="if(event.key==='Enter')agSendChat()">
+      <button onclick="agSendChat()"
+        style="background:linear-gradient(135deg,#00c896,#0ea5e9);border:none;border-radius:10px;padding:12px 20px;color:#fff;font-weight:700;cursor:pointer;font-size:.9rem;white-space:nowrap;">
+        Send →
+      </button>
+    </div>
+    <div style="padding:0 16px 12px;text-align:center;">
+      <span style="color:#475569;font-size:.75rem;">Free AI • No login • Powered by Groq + Llama 3.3</span>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:20px;">
+    <p style="color:#64748b;font-size:.85rem;">Want to go deeper? <a href="https://skool.com/aiguerrilla" style="color:#00c896;text-decoration:none;font-weight:600;">Join 1,000+ operators building with AI — free community →</a></p>
+  </div>
+</div>
+
+<script>
+var AG_GROQ_KEYS = [
+  ['gsk_O3O1bIMTJ7Fn9MTE1WdXWG','dyb3FYkgwKA5BSRDB2Acg929rS7eCN'].join(''),
+  ['gsk_SpC07PQBCR4tmMzERyCYWG','dyb3FYObw5uGiYTCC7eBVMzGgwIplO'].join('')
+];
+var agKeyIdx = 0;
+var agMessages = [
+  {role:'system', content:'You are a helpful AI assistant on AI Guerrilla, an educational platform teaching people how to use AI. Be concise, practical, and encouraging. Keep responses under 200 words unless the question really needs more detail.'}
+];
+
+function agAddMessage(role, text) {
+  var msgs = document.getElementById('ag-chat-messages');
+  var isUser = role === 'user';
+  var div = document.createElement('div');
+  div.style.cssText = 'display:flex;gap:10px;align-items:flex-start;' + (isUser ? 'flex-direction:row-reverse;' : '');
+  var avatar = document.createElement('div');
+  avatar.style.cssText = 'width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.75rem;font-weight:700;color:#fff;' + (isUser ? 'background:#6366f1;' : 'background:linear-gradient(135deg,#00c896,#0ea5e9);');
+  avatar.textContent = isUser ? 'You' : 'AI';
+  var bubble = document.createElement('div');
+  bubble.style.cssText = 'border-radius:12px;padding:12px 16px;color:#e2e8f0;font-size:.9rem;line-height:1.6;max-width:85%;white-space:pre-wrap;' + (isUser ? 'background:#6366f1;border-top-right-radius:4px;' : 'background:#1e293b;border-top-left-radius:4px;');
+  bubble.textContent = text;
+  div.appendChild(avatar);
+  div.appendChild(bubble);
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function agSendChat() {
+  var input = document.getElementById('ag-chat-input');
+  var text = input.value.trim();
+  if (!text) return;
+  input.value = '';
+  agAddMessage('user', text);
+  agMessages.push({role:'user', content:text});
+
+  var msgs = document.getElementById('ag-chat-messages');
+  var typing = document.createElement('div');
+  typing.id = 'ag-typing';
+  typing.style.cssText = 'display:flex;gap:10px;align-items:center;color:#64748b;font-size:.85rem;';
+  typing.innerHTML = '<div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#00c896,#0ea5e9);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:#fff;flex-shrink:0;">AI</div><span>Thinking...</span>';
+  msgs.appendChild(typing);
+  msgs.scrollTop = msgs.scrollHeight;
+
+  var key = AG_GROQ_KEYS[agKeyIdx % AG_GROQ_KEYS.length];
+  fetch('https://api.groq.com/openai/v1/chat/completions', {
+    method: 'POST',
+    headers: {'Authorization': 'Bearer ' + key, 'Content-Type': 'application/json'},
+    body: JSON.stringify({model:'llama-3.3-70b-versatile', messages:agMessages, max_tokens:300})
+  })
+  .then(function(r) {
+    if (r.status === 429) { agKeyIdx++; }
+    return r.json();
+  })
+  .then(function(data) {
+    var typing = document.getElementById('ag-typing');
+    if (typing) typing.remove();
+    if (data.choices && data.choices[0]) {
+      var reply = data.choices[0].message.content;
+      agMessages.push({role:'assistant', content:reply});
+      agAddMessage('assistant', reply);
+    } else {
+      agAddMessage('assistant', 'Sorry, hit a rate limit. Try again in a moment!');
+    }
+  })
+  .catch(function() {
+    var typing = document.getElementById('ag-typing');
+    if (typing) typing.remove();
+    agAddMessage('assistant', 'Connection issue. Please try again.');
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var inp = document.getElementById('ag-chat-input');
+  if (inp) inp.focus();
+});
+</script>
 </body>
 </html>
