@@ -229,7 +229,7 @@ async function callGroq(prompt, system, maxTokens = 2000) {
   const hrs = Math.floor(minsLeft/60), mins = minsLeft%60;
   const resetStr = hrs > 0 ? hrs+"h "+mins+"m" : mins+" minutes";
   if (errDiv) {
-    errDiv.innerHTML = "⚠️ Free AI quota reached. Resets in <strong>" + resetStr + "</strong>. &nbsp;|&nbsp; <strong>Use your own free Groq key:</strong> <a href='https://console.groq.com' target='_blank' style='color:#00FF88'>Get free key →</a> then paste it here: <input id='_userKeyInput' type='text' placeholder='gsk_...' style='background:#111;border:1px solid #333;color:#fff;padding:4px 8px;border-radius:4px;width:220px;font-size:.8rem'> <button onclick="localStorage.setItem('ag_user_groq_key',document.getElementById('_userKeyInput').value);this.textContent='✓ Saved! Try again.';" style='background:#00FF88;color:#000;border:none;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:.8rem;margin-left:4px'>Save Key</button>";
+    errDiv.innerHTML = "⚠️ Free AI quota reached. Resets in <strong>" + resetStr + "</strong>. Try again shortly or <a href='https://skool.com/aiguerrilla' style='color:#00FF88'>join the community</a> for more access.";
     errDiv.style.display = 'block';
   }
   return "__ERROR__";
