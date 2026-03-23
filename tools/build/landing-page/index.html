@@ -126,7 +126,7 @@ select option{background:#111}
         <div style="background:#1a1a1a;padding:8px 14px;font-size:.75rem;color:#aaa;display:flex;gap:12px;align-items:center">
           <span style="color:#555">●●●</span><span>Landing Page Preview</span>
         </div>
-        <iframe id="lpPreviewFrame" style="width:100%;height:700px;border:none;background:#fff" sandbox="allow-scripts allow-same-origin"></iframe>
+        <iframe id="lpPreviewFrame" style="width:100%;height:700px;border:none;background:#fff" referrerpolicy="no-referrer"></iframe>
       </div>
       <div class="action-row" style="margin-top:12px">
         <button class="btn" onclick="downloadPage()">⬇ Download index.html</button>
@@ -224,6 +224,15 @@ function copyCode(id) {
     btn.style.color = '#00FF88';
     setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.color = ''; }, 2000);
   });
+}
+
+
+function setIframeContent(frameId, html) {
+  const frame = document.getElementById(frameId);
+  const blob = new Blob([html], {type: 'text/html'});
+  const url = URL.createObjectURL(blob);
+  frame.onload = () => URL.revokeObjectURL(url);
+  frame.src = url;
 }
 
 function downloadFile(content, filename, type = 'text/plain') {
@@ -398,7 +407,7 @@ document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 </body></html>`;
 
   document.getElementById('pageCode').textContent = pageContent;
-  document.getElementById('lpPreviewFrame').srcdoc = pageContent;
+  setIframeContent('lpPreviewFrame', pageContent);
   document.getElementById('outputSection').classList.add('visible');
   switchLpTab('preview');
   renderPreviewCard('previewCard', {
