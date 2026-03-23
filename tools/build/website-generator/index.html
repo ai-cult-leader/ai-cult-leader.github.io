@@ -169,15 +169,21 @@ const GROQ_KEYS = [
   ["gsk_SpC07PQBCR4t","mMzERyCYWGdyb3FY","Obw5uGiYTCC7eBVMzGgwIplO"].join("")
 ];
 const GEMINI_KEY = ["AIzaSyDb5SKqAIzm","BhBIe1rRpDZSy_FHO_ORq9c"].join("");
+const GEMINI_KEY2 = ["AIzaSyDb5SKqAIzm","BhBIe1rRpDZSy_FHO_ORq9c"].join(""); // same pool, used for different models
+
+// Check for user-provided key in localStorage
+function getUserKey() { try { return localStorage.getItem('ag_user_groq_key') || ''; } catch(e) { return ''; } }
 
 // All attempts in priority order — tried one by one until one succeeds
 const AI_ATTEMPTS = [
   {type:"groq", model:"llama-3.3-70b-versatile", key:0},
-  {type:"groq", model:"llama-3.3-70b-versatile", key:1},
   {type:"groq", model:"llama-3.1-8b-instant",    key:0},
+  {type:"groq", model:"llama-3.3-70b-versatile", key:1},
   {type:"groq", model:"llama-3.1-8b-instant",    key:1},
-  {type:"gemini", model:"gemma-3-12b-it"},
   {type:"gemini", model:"gemini-2.0-flash"},
+  {type:"gemini", model:"gemini-1.5-flash"},
+  {type:"gemini", model:"gemma-3-12b-it"},
+  {type:"user_groq", model:"llama-3.3-70b-versatile"},
 ];
 
 async function callGroq(prompt, system, maxTokens = 2000) {
@@ -190,12 +196,15 @@ async function callGroq(prompt, system, maxTokens = 2000) {
     try {
       let res, data, text;
 
-      if (attempt.type === "groq") {
+      if (attempt.type === "groq" || attempt.type === "user_groq") {
+        const apiKey = attempt.type === "user_groq" ? getUserKey() : GROQ_KEYS[attempt.key];
+        if (!apiKey) continue;
         res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
           method: "POST",
-          headers: {"Authorization": "Bearer " + GROQ_KEYS[attempt.key], "Content-Type": "application/json"},
+          headers: {"Authorization": "Bearer " + apiKey, "Content-Type": "application/json"},
           body: JSON.stringify({model: attempt.model, messages: [{role:"system",content:system},{role:"user",content:prompt}], max_tokens: maxTokens, temperature: 0.3})
         });
+        if (res.status === 429 || res.status === 503) { console.warn("Rate limited, trying next..."); continue; }
         data = await res.json();
         text = data.choices?.[0]?.message?.content;
       } else {
@@ -204,6 +213,7 @@ async function callGroq(prompt, system, maxTokens = 2000) {
           headers: {"Content-Type": "application/json"},
           body: JSON.stringify({contents:[{role:"user",parts:[{text: system + "\n\n" + prompt}]}], generationConfig:{maxOutputTokens:maxTokens, temperature:0.3}})
         });
+        if (res.status === 429 || res.status === 503) { console.warn("Gemini rate limited, trying next..."); continue; }
         data = await res.json();
         text = data.candidates?.[0]?.content?.parts?.[0]?.text;
       }
@@ -227,7 +237,7 @@ async function callGroq(prompt, system, maxTokens = 2000) {
   const hrs = Math.floor(minsLeft/60), mins = minsLeft%60;
   const resetStr = hrs > 0 ? hrs+"h "+mins+"m" : mins+" minutes";
   if (errDiv) {
-    errDiv.innerHTML = "⚠️ AI providers are at their daily limit. Resets in <strong>" + resetStr + "</strong>. <a href='https://skool.com/aiguerrilla' style='color:#00FF88'>Join the community</a> for unlimited access.";
+    errDiv.innerHTML = "⚠️ Free AI quota reached. Resets in <strong>" + resetStr + "</strong>. &nbsp;|&nbsp; <strong>Use your own free Groq key:</strong> <a href='https://console.groq.com' target='_blank' style='color:#00FF88'>Get free key →</a> then paste it here: <input id='_userKeyInput' type='text' placeholder='gsk_...' style='background:#111;border:1px solid #333;color:#fff;padding:4px 8px;border-radius:4px;width:220px;font-size:.8rem'> <button onclick="localStorage.setItem('ag_user_groq_key',document.getElementById('_userKeyInput').value);this.textContent='✓ Saved! Try again.';" style='background:#00FF88;color:#000;border:none;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:.8rem;margin-left:4px'>Save Key</button>";
     errDiv.style.display = 'block';
   }
   return "__ERROR__";
