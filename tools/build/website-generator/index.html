@@ -342,9 +342,8 @@ async function generateWebsite() {
 
   let c = {};
   try {
-    const jsonStr = raw.replace(/^```json
-?/,'').replace(/^```
-?/,'').replace(/```$/,'').trim();
+    const fence = '```';
+    const jsonStr = raw.replace(new RegExp('^' + fence + 'json\n?'),'').replace(new RegExp('^' + fence + '\n?'),'').replace(new RegExp(fence + '$'),'').trim();
     const match = jsonStr.match(/\{[\s\S]*\}/);
     c = JSON.parse(match ? match[0] : jsonStr);
   } catch(e) { console.warn('JSON parse failed:', e); }
