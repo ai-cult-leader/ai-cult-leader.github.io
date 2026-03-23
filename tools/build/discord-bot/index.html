@@ -301,7 +301,7 @@ Include all requested features, a !help command listing all commands, and good e
 
   const result = await callGroq(prompt, system, 3000);
   if (result === "__ERROR__") return;
-  botCode = result.replace(/^```python\n?/,'').replace(/^```\n?/,'').replace(/```$/,'').trim();
+  botCode = result.replace(new RegExp('^\x60\x60\x60python\n?'),'').replace(new RegExp('^\x60\x60\x60\n?'),'').replace(new RegExp('\x60\x60\x60$'),'').trim();
   document.getElementById('botCode').textContent = botCode;
   document.getElementById('outputSection').classList.add('visible');
   renderPreviewCard('previewCard', {
