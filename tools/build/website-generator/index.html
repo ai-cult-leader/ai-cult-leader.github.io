@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Generate a complete website with AI. Get full HTML/CSS/JS code, deploy free on GitHub Pages. No coding needed.">
-<title>Free AI Website Generator — Build & Deploy in Minutes | AI Guerrilla</title>
+<meta name="description" content="Generate a complete website with AI. Get full HTML/CSS/JS code instantly. Deploy free on GitHub Pages. No coding needed.">
+<title>Free AI Website Generator | AI Guerrilla</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#0a0a0a;color:#fff;font-family:'Segoe UI',sans-serif;line-height:1.6}
@@ -52,11 +52,11 @@ select option{background:#111}
 .preview-pane{position:sticky;top:72px}
 .preview-shell{border:1px solid #2a2a2a;border-radius:10px;overflow:hidden;background:#111}
 .preview-bar{background:#1a1a1a;padding:8px 14px;font-size:.75rem;color:#888;display:flex;justify-content:space-between;align-items:center}
-.preview-placeholder{height:500px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#333;font-size:.9rem;gap:12px}
-.preview-placeholder svg{opacity:.15}
-iframe#wsPreviewFrame{width:100%;height:500px;border:none;background:#fff;display:none}
+.preview-placeholder{height:500px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#333;gap:12px}
+#wsIframe{width:100%;height:500px;border:none;display:none}
 .dl-bar{display:flex;gap:10px;padding:12px;border-top:1px solid #1a1a1a;background:#0d0d0d}
 @media(max-width:800px){.two-col{grid-template-columns:1fr}.preview-pane{position:static}}
+@keyframes spin{to{transform:rotate(360deg)}}
 </style>
 </head>
 <body>
@@ -71,71 +71,51 @@ iframe#wsPreviewFrame{width:100%;height:500px;border:none;background:#fff;displa
 <div class="container" style="max-width:1100px">
   <div class="hero-badge">Free Tool — No Signup</div>
   <h1>AI Website Generator</h1>
-  <p>Fill in the form, hit Generate — see your full website instantly. Download and deploy free in minutes.</p>
-
+  <p>Fill the form, hit Generate — see your full styled website instantly. Download and deploy free.</p>
   <div class="two-col">
-    <!-- LEFT: Form -->
     <div>
       <div class="card">
         <label>Business / Project Name *</label>
-        <input type="text" id="bizName" placeholder="Sunrise Coffee Co.">
-
-        <label>Describe your website *</label>
-        <textarea id="siteDesc" placeholder="A cozy coffee shop in Austin, TX. Single-origin pour-overs and homemade pastries. Open 7am-6pm. Address: 123 Main St." rows="4"></textarea>
-
+        <input type="text" id="bizName" placeholder="Apex Fitness Studio">
+        <label>Describe your business *</label>
+        <textarea id="siteDesc" placeholder="Premium personal training studio in Miami. 1-on-1 coaching, HIIT classes, nutrition plans. 90-day money back guarantee." rows="4"></textarea>
         <label>Website Type</label>
         <select id="siteType">
-          <option>Business landing page</option>
-          <option>Personal portfolio</option>
-          <option>Restaurant/cafe</option>
-          <option>Service business</option>
-          <option>Non-profit</option>
-          <option>Blog/newsletter</option>
-          <option>Event page</option>
-          <option>Product launch</option>
+          <option>Business</option><option>Portfolio</option><option>Restaurant</option>
+          <option>Service</option><option>Non-profit</option><option>Event</option>
         </select>
-
-        <label>Style</label>
+        <label>Color Theme</label>
         <select id="siteStyle">
-          <option>Modern & dark</option>
-          <option>Clean & minimal</option>
-          <option>Bold & colorful</option>
-          <option>Professional & corporate</option>
-          <option>Warm & friendly</option>
+          <option value="dark">Dark &amp; Bold</option>
+          <option value="light">Light &amp; Clean</option>
+          <option value="colorful">Colorful &amp; Energetic</option>
         </select>
-
-        <label>Primary Color</label>
+        <label>Brand Color</label>
         <div style="display:flex;align-items:center;gap:12px">
           <input type="color" id="primaryColor" value="#00FF88">
-          <span style="color:#888;font-size:.85rem">Pick your brand color</span>
+          <span style="color:#888;font-size:.85rem">Pick your color</span>
         </div>
-
-        <label>Contact Email (optional)</label>
+        <label>Contact Email</label>
         <input type="email" id="contactEmail" placeholder="hello@yourbusiness.com">
-
         <div style="margin-top:24px">
 <div id="_apiErrMsg" style="display:none;background:#1a0a0a;border:1px solid #3a1a1a;border-radius:8px;padding:16px 20px;margin-top:20px;color:#ff6b6b;font-size:.9rem;line-height:1.6"></div>
           <button class="btn" style="width:100%" id="generateBtn" data-orig="⚡ Generate My Website" onclick="generateWebsite()">⚡ Generate My Website</button>
         </div>
       </div>
-
       <div class="guide-section" style="margin-top:20px">
         <div class="tag">Deploy Guide</div>
-        <h2>Go Live in 5 Minutes — Free</h2>
+        <h2>Go Live in 5 Minutes Free</h2>
         <ol>
-          <li><strong>Generate & Download</strong> — Fill the form, click Generate, then Download</li>
-          <li><strong>Create GitHub account</strong> — <a href="https://github.com" style="color:#00FF88" target="_blank">github.com</a> (free)</li>
-          <li><strong>New repo</strong> — Name it: <code style="color:#00FF88">yourusername.github.io</code></li>
-          <li><strong>Upload index.html</strong> — Drag and drop into the repo</li>
-          <li><strong>Enable Pages</strong> — Settings → Pages → Source: main</li>
-          <li><strong>You're live!</strong> — <code style="color:#00FF88">yourusername.github.io</code></li>
+          <li><strong>Generate &amp; Download</strong> — Fill form → Generate → Download index.html</li>
+          <li><strong>GitHub account</strong> — <a href="https://github.com" style="color:#00FF88" target="_blank">github.com</a> (free)</li>
+          <li><strong>New repo</strong> — Name it <code style="color:#00FF88">yourusername.github.io</code></li>
+          <li><strong>Upload file</strong> — Drag index.html into repo</li>
+          <li><strong>Enable Pages</strong> — Settings → Pages → main branch</li>
         </ol>
       </div>
     </div>
-
-    <!-- RIGHT: Preview pane (always visible) -->
     <div class="preview-pane">
-      <div id="wsCard" style="display:none"></div>
+      <div id="wsCard" style="display:none;margin-bottom:14px"></div>
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
         <span style="font-weight:700;font-size:.95rem">Live Preview</span>
         <div style="display:flex;gap:8px">
@@ -149,23 +129,18 @@ iframe#wsPreviewFrame{width:100%;height:500px;border:none;background:#fff;displa
           <span id="previewLabel">Your website will appear here</span>
           <span></span>
         </div>
-        <!-- Placeholder state -->
         <div id="wsPlaceholder" class="preview-placeholder">
-          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#00FF88" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-          <span>Generate to see your website here</span>
-          <span style="font-size:.78rem;color:#2a2a2a">It takes about 5-10 seconds</span>
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#00FF88" stroke-width="1.5" opacity=".3"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          <span style="color:#555">Generate to see your website here</span>
         </div>
-        <!-- Live preview iframe -->
-        <iframe id="wsPreviewFrame" referrerpolicy="no-referrer"></iframe>
-        <!-- Code view -->
+        <iframe id="wsIframe"></iframe>
         <div id="wsCodeView" style="display:none">
           <pre class="code-block" id="websiteCode" style="max-height:460px;border:none;border-radius:0;margin:0"></pre>
         </div>
       </div>
-      <!-- Download bar — always visible, disabled until generated -->
       <div class="dl-bar">
         <button class="btn" id="dlBtn" onclick="downloadWebsite()" disabled style="opacity:.35;flex:1">⬇ Download index.html</button>
-        <button class="btn-secondary" id="copyBtn" onclick="copyCode('websiteCode')" disabled style="opacity:.35">Copy Code</button>
+        <button class="btn-secondary" id="copyBtn" onclick="copyCode('websiteCode')" disabled style="opacity:.35">Copy</button>
       </div>
     </div>
   </div>
@@ -319,267 +294,189 @@ function renderPreviewCard(containerId, opts) {
 let websiteContent = '';
 
 async function generateWebsite() {
-  const name = document.getElementById('bizName').value.trim();
-  const desc = document.getElementById('siteDesc').value.trim();
-  if (!name || !desc) { alert('Please fill in the business name and description.'); return; }
-  const type = document.getElementById('siteType').value;
-  const style = document.getElementById('siteStyle').value;
-  const color = document.getElementById('primaryColor').value;
-  const email = document.getElementById('contactEmail').value.trim();
+  const bizName = document.getElementById('bizName').value.trim();
+  const bizDesc = document.getElementById('siteDesc').value.trim();
+  if (!bizName || !bizDesc) { alert('Please fill in the name and description.'); return; }
+  const bizType   = document.getElementById('siteType').value;
+  const bizStyle  = document.getElementById('siteStyle').value;
+  const bizColor  = document.getElementById('primaryColor').value || '#00FF88';
+  const bizEmail  = document.getElementById('contactEmail').value.trim();
 
-  document.getElementById('wsPlaceholder').innerHTML = '<div style="height:460px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px"><div style="width:36px;height:36px;border:3px solid #00FF88;border-top-color:transparent;border-radius:50%;animation:spin 0.8s linear infinite"></div><span style="color:#888">Building your website...</span></div>';
+  document.getElementById('wsPlaceholder').style.display = '';
+  document.getElementById('wsPlaceholder').innerHTML = '<div style="height:460px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px"><div style="width:40px;height:40px;border:3px solid '+bizColor+';border-top-color:transparent;border-radius:50%;animation:spin .8s linear infinite"></div><span style="color:#888">Building your website...</span></div>';
+  document.getElementById('wsIframe').style.display = 'none';
+  document.getElementById('wsCodeView').style.display = 'none';
   document.getElementById('previewLabel').textContent = 'Generating...';
 
-  // AI generates ONLY the content/copy — template handles all design
-  const system = `You are a world-class copywriter. Return ONLY a valid JSON object with these exact keys (no markdown, no fences, raw JSON only):
-{"tagline":"short punchy tagline under 8 words","headline":"bold hero headline under 10 words","subheadline":"compelling 1-2 sentence hero description","cta":"CTA button text","feature1_icon":"emoji","feature1_title":"feature title","feature1_desc":"1 sentence description","feature2_icon":"emoji","feature2_title":"feature title","feature2_desc":"1 sentence description","feature3_icon":"emoji","feature3_title":"feature title","feature3_desc":"1 sentence description","about_title":"about section heading","about_body":"2-3 compelling sentences about this business","stat1_num":"number or short stat","stat1_label":"what it means","stat2_num":"number or short stat","stat2_label":"what it means","stat3_num":"number or short stat","stat3_label":"what it means","testimonial_quote":"compelling fake testimonial quote","testimonial_name":"First Last","testimonial_title":"Job Title or Customer"}`;
-  const prompt = `Business: ${name}. Type: ${type}. Description: ${desc}. Email: ${email||'none'}. Write compelling, specific marketing copy for this business. Make the stats realistic for this industry.`;
+  const system = `You are a copywriter. Return ONLY raw JSON (no markdown, no fences, just the object):
+{"tagline":"punchy tagline max 6 words","headline":"bold hero headline max 10 words","subheadline":"1-2 sentence description","cta":"CTA button text","f1_icon":"emoji","f1_title":"feature","f1_desc":"1 sentence","f2_icon":"emoji","f2_title":"feature","f2_desc":"1 sentence","f3_icon":"emoji","f3_title":"feature","f3_desc":"1 sentence","about":"2-3 sentences about the business","s1_num":"stat","s1_label":"label","s2_num":"stat","s2_label":"label","s3_num":"stat","s3_label":"label","tq":"testimonial quote","tn":"First Last","tt":"Job Title"}`;
+  const prompt = `Business: ${bizName}. Type: ${bizType}. Description: ${bizDesc}. Write real marketing copy.`;
 
-  const result = await callGroq(prompt, system, 1200);
-  if (result === "__ERROR__") {
-    document.getElementById('wsPlaceholder').innerHTML = '<div style="height:460px;display:flex;align-items:center;justify-content:center;color:#555;font-size:.85rem;padding:20px;text-align:center">Generation failed. Try again in a moment.</div>';
-    document.getElementById('previewLabel').textContent = 'Error';
+  const raw = await callGroq(prompt, system, 800);
+  if (raw === "__ERROR__") {
+    document.getElementById('wsPlaceholder').innerHTML = '<div style="height:460px;display:flex;align-items:center;justify-content:center;color:#555;padding:20px;text-align:center">Generation failed. Try again.</div>';
     return;
   }
 
   let c = {};
-  try { c = JSON.parse(result.replace(/^```json\n?/,'').replace(/^```\n?/,'').replace(/```$/,'').trim()); } catch(e) {
-    // fallback extraction
-    const m = result.match(/\{[\s\S]*\}/);
-    if (m) try { c = JSON.parse(m[0]); } catch(e2) {}
-  }
+  try {
+    const jsonStr = raw.replace(/^```json
+?/,'').replace(/^```
+?/,'').replace(/```$/,'').trim();
+    const match = jsonStr.match(/\{[\s\S]*\}/);
+    c = JSON.parse(match ? match[0] : jsonStr);
+  } catch(e) { console.warn('JSON parse failed:', e); }
 
-  // Determine colors based on style
-  const isDark = style.includes('dark') || style.includes('Bold');
-  const bg = isDark ? '#0a0a0a' : (style.includes('minimal') ? '#ffffff' : '#f8f9fa');
-  const fg = isDark ? '#ffffff' : '#111111';
-  const accent = color || '#00FF88';
-  const cardBg = isDark ? '#111111' : '#ffffff';
-  const cardBorder = isDark ? '#1a1a1a' : '#e5e7eb';
-  const mutedText = isDark ? '#888888' : '#6b7280';
-  const heroBg = isDark
-    ? `linear-gradient(135deg, #0a0a0a 0%, #111 50%, #0a0a0a 100%)`
-    : `linear-gradient(135deg, ${accent}22 0%, ${bg} 60%)`;
+  // Build full styled HTML from template — NO CSS from AI
+  const dark   = bizStyle === 'dark';
+  const light  = bizStyle === 'light';
+  const bg     = dark ? '#0a0a0a' : light ? '#ffffff' : '#0f0f0f';
+  const fg     = dark||!light ? '#ffffff' : '#111111';
+  const card   = dark ? '#111111' : light ? '#f9fafb' : '#141414';
+  const border = dark ? '#1e1e1e' : light ? '#e5e7eb' : '#1e1e1e';
+  const muted  = dark||!light ? '#888888' : '#6b7280';
+  const acc    = bizColor;
+  const accDark = acc + '22';
+  const accGlow = acc + '55';
 
   websiteContent = `<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>${name}</title>
+<title>${bizName}</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:${bg};color:${fg};font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6}
-a{color:${accent};text-decoration:none}
-/* NAV */
-nav{background:${isDark?'rgba(10,10,10,0.95)':'rgba(255,255,255,0.95)'};backdrop-filter:blur(10px);position:sticky;top:0;z-index:100;border-bottom:1px solid ${cardBorder};padding:0 5%}
-.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
-.nav-logo{font-weight:900;font-size:1.25rem;color:${accent}}
-.nav-links{display:flex;gap:24px;align-items:center}
-.nav-links a{color:${mutedText};font-size:.9rem;transition:color .2s}
-.nav-links a:hover{color:${accent}}
-.nav-cta{background:${accent};color:${isDark?'#000':'#fff'};font-weight:700;padding:8px 20px;border-radius:6px;font-size:.85rem}
-/* HERO */
-.hero{background:${heroBg};padding:100px 5% 80px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-50%;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,${accent}18 0%,transparent 70%);pointer-events:none}
-.hero-tag{display:inline-block;background:${accent}22;color:${accent};border:1px solid ${accent}44;border-radius:20px;padding:4px 14px;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px}
-.hero h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;line-height:1.1;margin-bottom:20px;max-width:800px;margin-left:auto;margin-right:auto}
-.hero h1 span{color:${accent}}
-.hero p{font-size:1.1rem;color:${mutedText};max-width:560px;margin:0 auto 32px}
-.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn-primary{background:${accent};color:${isDark?'#000':'#fff'};font-weight:700;padding:14px 32px;border-radius:8px;font-size:1rem;border:none;cursor:pointer;transition:transform .2s,opacity .2s;display:inline-block}
-.btn-primary:hover{transform:translateY(-2px);opacity:.9}
-.btn-secondary{background:transparent;color:${fg};font-weight:600;padding:14px 32px;border-radius:8px;font-size:1rem;border:2px solid ${cardBorder};cursor:pointer;transition:border-color .2s;display:inline-block}
-.btn-secondary:hover{border-color:${accent}}
-/* STATS */
-.stats{padding:48px 5%;background:${isDark?'#111':'#f3f4f6'}}
-.stats-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}
-.stat-num{font-size:2.2rem;font-weight:900;color:${accent}}
-.stat-label{font-size:.85rem;color:${mutedText};margin-top:4px}
-/* FEATURES */
+body{background:${bg};color:${fg};font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:${acc};text-decoration:none}
+nav{background:${dark?'rgba(10,10,10,.96)':light?'rgba(255,255,255,.96)':'rgba(15,15,15,.96)'};backdrop-filter:blur(12px);position:sticky;top:0;z-index:100;border-bottom:1px solid ${border}}
+.ni{max-width:1100px;margin:0 auto;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nl{font-weight:900;font-size:1.25rem;color:${acc}}
+.nm{display:flex;gap:20px;align-items:center}
+.nm a{color:${muted};font-size:.9rem;transition:color .2s}
+.nm a:hover{color:${acc}}
+.nc{background:${acc};color:${dark||!light?'#000':'#fff'};font-weight:700;padding:8px 20px;border-radius:6px;font-size:.85rem}
+.hero{background:${dark?'linear-gradient(145deg,#0a0a0a 0%,#111 100%)':light?'linear-gradient(145deg,#f8fffe 0%,#fff 100%)':'linear-gradient(145deg,#0f0f0f 0%,#1a1a1a 100%)'};padding:100px 5% 80px;text-align:center;position:relative;overflow:hidden}
+.hero:before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(circle,${accDark} 0%,transparent 65%);pointer-events:none}
+.ht{display:inline-block;background:${accDark};color:${acc};border:1px solid ${accGlow};border-radius:20px;padding:5px 16px;font-size:.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:20px}
+.hero h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;line-height:1.1;max-width:820px;margin:0 auto 20px}
+.hero h1 b{color:${acc}}
+.hero p{font-size:1.05rem;color:${muted};max-width:560px;margin:0 auto 32px}
+.hb{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn1{display:inline-block;background:${acc};color:${dark||!light?'#000':'#fff'};font-weight:800;padding:15px 36px;border-radius:8px;font-size:1rem;transition:transform .2s,box-shadow .2s;border:none;cursor:pointer}
+.btn1:hover{transform:translateY(-2px);box-shadow:0 8px 32px ${accGlow}}
+.btn2{display:inline-block;background:transparent;color:${fg};font-weight:600;padding:15px 36px;border-radius:8px;font-size:1rem;border:2px solid ${border};transition:border-color .2s}
+.btn2:hover{border-color:${acc}}
+.stats{padding:44px 5%;background:${dark?'#0d0d0d':light?'#f3f4f6':'#0d0d0d'}}
+.sg{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}
+.sn{font-size:2.4rem;font-weight:900;color:${acc}}
+.sl{font-size:.83rem;color:${muted};margin-top:4px}
 .features{padding:80px 5%}
-.section-label{text-align:center;font-size:.75rem;color:${accent};letter-spacing:3px;text-transform:uppercase;margin-bottom:12px;font-weight:700}
-.section-title{text-align:center;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;margin-bottom:48px;max-width:600px;margin-left:auto;margin-right:auto}
-.features-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
-.feature-card{background:${cardBg};border:1px solid ${cardBorder};border-radius:14px;padding:32px;transition:transform .2s,border-color .2s}
-.feature-card:hover{transform:translateY(-4px);border-color:${accent}44}
-.feature-icon{font-size:2rem;margin-bottom:16px}
-.feature-card h3{font-size:1.05rem;font-weight:700;margin-bottom:10px}
-.feature-card p{color:${mutedText};font-size:.9rem;line-height:1.6}
-/* ABOUT */
-.about{padding:80px 5%;background:${isDark?'#111':'#f9fafb'}}
-.about-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-.about-badge{display:inline-block;background:${accent};color:${isDark?'#000':'#fff'};font-weight:700;padding:4px 14px;border-radius:20px;font-size:.75rem;margin-bottom:16px}
-.about h2{font-size:1.8rem;font-weight:900;margin-bottom:16px;line-height:1.2}
-.about p{color:${mutedText};line-height:1.8}
-.about-visual{background:linear-gradient(135deg,${accent}22,${accent}08);border:1px solid ${accent}33;border-radius:16px;padding:40px;text-align:center}
-.about-visual-icon{font-size:4rem;margin-bottom:16px}
-/* TESTIMONIAL */
-.testimonial{padding:80px 5%;text-align:center}
-.testi-card{max-width:680px;margin:0 auto;background:${cardBg};border:1px solid ${cardBorder};border-radius:16px;padding:40px}
-.stars{color:#f59e0b;font-size:1.2rem;margin-bottom:16px}
-.testi-quote{font-size:1.1rem;line-height:1.7;color:${fg};margin-bottom:24px;font-style:italic}
-.testi-avatar{width:48px;height:48px;border-radius:50%;background:${accent};color:${isDark?'#000':'#fff'};font-weight:900;font-size:1.1rem;display:inline-flex;align-items:center;justify-content:center;margin-bottom:8px}
-.testi-name{font-weight:700;margin-bottom:4px}
-.testi-title{color:${mutedText};font-size:.85rem}
-/* CONTACT */
-.contact{padding:80px 5%;background:${isDark?'#111':'#f3f4f6'}}
-.contact-inner{max-width:600px;margin:0 auto;text-align:center}
+.sl2{text-align:center;font-size:.72rem;color:${acc};letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:10px}
+.st{text-align:center;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;margin-bottom:48px;max-width:600px;margin-left:auto;margin-right:auto}
+.fg{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.fc{background:${card};border:1px solid ${border};border-radius:14px;padding:32px;transition:transform .25s,border-color .25s}
+.fc:hover{transform:translateY(-5px);border-color:${accGlow}}
+.fi{font-size:2rem;margin-bottom:16px}
+.fc h3{font-size:1.02rem;font-weight:700;margin-bottom:10px}
+.fc p{color:${muted};font-size:.88rem;line-height:1.65}
+.about{padding:80px 5%;background:${dark?'#0d0d0d':light?'#f9fafb':'#0d0d0d'}}
+.ag{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.ab-badge{display:inline-block;background:${acc};color:${dark||!light?'#000':'#fff'};font-weight:700;padding:4px 14px;border-radius:20px;font-size:.72rem;margin-bottom:16px}
+.about h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:900;margin-bottom:16px;line-height:1.2}
+.about p{color:${muted};line-height:1.8}
+.av{background:linear-gradient(135deg,${accDark},${acc}11);border:1px solid ${accGlow};border-radius:16px;padding:44px;text-align:center}
+.testi{padding:80px 5%;text-align:center}
+.tc{max-width:660px;margin:0 auto;background:${card};border:1px solid ${border};border-radius:16px;padding:40px}
+.stars{color:#f59e0b;font-size:1.1rem;margin-bottom:14px}
+.tq{font-size:1rem;line-height:1.75;color:${fg};font-style:italic;margin-bottom:22px}
+.ta{width:46px;height:46px;border-radius:50%;background:${acc};color:${dark||!light?'#000':'#fff'};font-weight:900;font-size:1rem;display:inline-flex;align-items:center;justify-content:center;margin-bottom:8px}
+.tn{font-weight:700;font-size:.9rem}
+.tt{color:${muted};font-size:.8rem}
+.contact{padding:80px 5%;background:${dark?'#0d0d0d':light?'#f3f4f6':'#0d0d0d'}}
+.ci{max-width:580px;margin:0 auto;text-align:center}
 .contact h2{font-size:1.8rem;font-weight:900;margin-bottom:12px}
-.contact p{color:${mutedText};margin-bottom:32px}
-.contact-form{display:flex;flex-direction:column;gap:14px;text-align:left}
-.contact-form input,.contact-form textarea{background:${cardBg};border:1px solid ${cardBorder};color:${fg};padding:14px 18px;border-radius:8px;font-size:1rem;font-family:inherit;outline:none;transition:border-color .2s;width:100%}
-.contact-form input:focus,.contact-form textarea:focus{border-color:${accent}}
-.contact-form textarea{resize:vertical;min-height:120px}
-/* FOOTER */
-footer{padding:40px 5%;border-top:1px solid ${cardBorder};display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
-.footer-logo{font-weight:900;color:${accent}}
-.footer-links{display:flex;gap:20px}
-.footer-links a{color:${mutedText};font-size:.85rem;transition:color .2s}
-.footer-links a:hover{color:${accent}}
-.footer-copy{color:${mutedText};font-size:.8rem}
-/* ANIMATIONS */
-.fade-up{opacity:0;transform:translateY(30px);transition:opacity .6s,transform .6s}
-.fade-up.visible{opacity:1;transform:translateY(0)}
-/* MOBILE */
-@media(max-width:768px){
-  .about-inner{grid-template-columns:1fr}
-  .stats-inner{grid-template-columns:1fr}
-  nav .nav-links{display:none}
-  footer{flex-direction:column;text-align:center}
-}
+.contact p{color:${muted};margin-bottom:28px}
+.cf{display:flex;flex-direction:column;gap:14px;text-align:left}
+.cf input,.cf textarea{background:${card};border:1px solid ${border};color:${fg};padding:14px 18px;border-radius:8px;font-size:1rem;font-family:inherit;outline:none;width:100%;transition:border-color .2s}
+.cf input:focus,.cf textarea:focus{border-color:${acc}}
+.cf textarea{resize:vertical;min-height:110px}
+footer{padding:36px 5%;border-top:1px solid ${border};display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.fl{font-weight:900;color:${acc}}
+.flk{display:flex;gap:18px}
+.flk a{color:${muted};font-size:.85rem;transition:color .2s}
+.flk a:hover{color:${acc}}
+.fc2{color:${muted};font-size:.8rem}
+.fu{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease}
+.fu.vis{opacity:1;transform:none}
+@media(max-width:768px){.ag{grid-template-columns:1fr}.sg{grid-template-columns:1fr}.nm{display:none}footer{flex-direction:column;text-align:center}}
 </style>
 </head>
 <body>
-<nav>
-  <div class="nav-inner">
-    <div class="nav-logo">${name}</div>
-    <div class="nav-links">
-      <a href="#features">Features</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-      <a href="#contact" class="nav-cta">${c.cta||'Get Started'}</a>
-    </div>
-  </div>
-</nav>
+<nav><div class="ni"><div class="nl">${bizName}</div><div class="nm"><a href="#features">Features</a><a href="#about">About</a><a href="#contact">Contact</a><a href="#contact" class="nc">${c.cta||'Get Started'}</a></div></div></nav>
 <section class="hero">
-  <div class="hero-tag">${c.tagline||name}</div>
-  <h1>${c.headline||name} <span>.</span></h1>
-  <p>${c.subheadline||desc}</p>
-  <div class="hero-btns">
-    <a href="#contact" class="btn-primary">${c.cta||'Get Started Today'}</a>
-    <a href="#about" class="btn-secondary">Learn More</a>
-  </div>
+  <div class="ht">${c.tagline||bizType}</div>
+  <h1>${c.headline||bizName} <b>.</b></h1>
+  <p>${c.subheadline||bizDesc}</p>
+  <div class="hb"><a href="#contact" class="btn1">${c.cta||'Get Started Today'}</a><a href="#about" class="btn2">Learn More</a></div>
 </section>
-<section class="stats">
-  <div class="stats-inner">
-    <div class="fade-up"><div class="stat-num">${c.stat1_num||'500+'}</div><div class="stat-label">${c.stat1_label||'Happy Clients'}</div></div>
-    <div class="fade-up"><div class="stat-num">${c.stat2_num||'10yrs'}</div><div class="stat-label">${c.stat2_label||'Experience'}</div></div>
-    <div class="fade-up"><div class="stat-num">${c.stat3_num||'98%'}</div><div class="stat-label">${c.stat3_label||'Satisfaction Rate'}</div></div>
-  </div>
-</section>
+<section class="stats"><div class="sg">
+  <div class="fu"><div class="sn">${c.s1_num||'500+'}</div><div class="sl">${c.s1_label||'Happy Clients'}</div></div>
+  <div class="fu"><div class="sn">${c.s2_num||'10yrs'}</div><div class="sl">${c.s2_label||'Experience'}</div></div>
+  <div class="fu"><div class="sn">${c.s3_num||'98%'}</div><div class="sl">${c.s3_label||'Satisfaction'}</div></div>
+</div></section>
 <section class="features" id="features">
-  <div class="section-label">What We Offer</div>
-  <div class="section-title">Everything You Need to Succeed</div>
-  <div class="features-grid">
-    <div class="feature-card fade-up"><div class="feature-icon">${c.feature1_icon||'⚡'}</div><h3>${c.feature1_title||'Feature One'}</h3><p>${c.feature1_desc||'Description here.'}</p></div>
-    <div class="feature-card fade-up"><div class="feature-icon">${c.feature2_icon||'🎯'}</div><h3>${c.feature2_title||'Feature Two'}</h3><p>${c.feature2_desc||'Description here.'}</p></div>
-    <div class="feature-card fade-up"><div class="feature-icon">${c.feature3_icon||'💎'}</div><h3>${c.feature3_title||'Feature Three'}</h3><p>${c.feature3_desc||'Description here.'}</p></div>
+  <div class="sl2">What We Offer</div><div class="st">Everything You Need</div>
+  <div class="fg">
+    <div class="fc fu"><div class="fi">${c.f1_icon||'⚡'}</div><h3>${c.f1_title||'Feature 1'}</h3><p>${c.f1_desc||''}</p></div>
+    <div class="fc fu"><div class="fi">${c.f2_icon||'🎯'}</div><h3>${c.f2_title||'Feature 2'}</h3><p>${c.f2_desc||''}</p></div>
+    <div class="fc fu"><div class="fi">${c.f3_icon||'💎'}</div><h3>${c.f3_title||'Feature 3'}</h3><p>${c.f3_desc||''}</p></div>
   </div>
 </section>
-<section class="about" id="about">
-  <div class="about-inner">
-    <div class="fade-up">
-      <div class="about-badge">Our Story</div>
-      <h2>${c.about_title||'About '+name}</h2>
-      <p>${c.about_body||desc}</p>
-    </div>
-    <div class="about-visual fade-up">
-      <div class="about-visual-icon">🏆</div>
-      <div style="font-weight:700;font-size:1.1rem;margin-bottom:8px">${name}</div>
-      <div style="color:${mutedText};font-size:.85rem">${type}</div>
-    </div>
-  </div>
+<section class="about" id="about"><div class="ag">
+  <div class="fu"><div class="ab-badge">Our Story</div><h2>${c.about_title||'About '+bizName}</h2><p>${c.about||bizDesc}</p></div>
+  <div class="av fu"><div style="font-size:3.5rem;margin-bottom:12px">🏆</div><div style="font-weight:900;font-size:1.1rem;margin-bottom:6px">${bizName}</div><div style="color:${muted};font-size:.85rem">${bizType}</div></div>
+</div></section>
+<section class="testi">
+  <div class="sl2">Social Proof</div><div class="st">Trusted by Real People</div>
+  <div class="tc fu"><div class="stars">★★★★★</div><p class="tq">"${c.tq||'Absolutely incredible. Highly recommend.'}"</p><div class="ta">${(c.tn||'J')[0]}</div><div class="tn">${c.tn||'Jane Smith'}</div><div class="tt">${c.tt||'Verified Customer'}</div></div>
 </section>
-<section class="testimonial">
-  <div class="section-label">What People Say</div>
-  <div class="section-title">Trusted by Real People</div>
-  <div class="testi-card fade-up">
-    <div class="stars">★★★★★</div>
-    <div class="testi-quote">"${c.testimonial_quote||'Absolutely incredible service. Highly recommend to anyone looking for results.'}"</div>
-    <div class="testi-avatar">${(c.testimonial_name||'J')[0]}</div>
-    <div class="testi-name">${c.testimonial_name||'Jane Smith'}</div>
-    <div class="testi-title">${c.testimonial_title||'Verified Customer'}</div>
-  </div>
-</section>
-<section class="contact" id="contact">
-  <div class="contact-inner">
-    <div class="section-label">Get In Touch</div>
-    <h2>Ready to Get Started?</h2>
-    <p>${email ? 'Reach us at <a href="mailto:'+email+'">'+email+'</a> or fill out the form below.' : 'Fill out the form and we will get back to you shortly.'}</p>
-    <form class="contact-form" onsubmit="event.preventDefault();this.innerHTML='<div style=\'text-align:center;padding:20px;color:${accent}\'>✅ Message sent! We will be in touch soon.</div>'">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="How can we help you?"></textarea>
-      <button type="submit" class="btn-primary">${c.cta||'Send Message'}</button>
-    </form>
-  </div>
-</section>
-<footer>
-  <div class="footer-logo">${name}</div>
-  <div class="footer-links"><a href="#features">Features</a><a href="#about">About</a><a href="#contact">Contact</a></div>
-  <div class="footer-copy">© ${new Date().getFullYear()} ${name}. All rights reserved.</div>
-</footer>
-<script>
-const obs = new IntersectionObserver((entries)=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:0.1});
-document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
-</script>
+<section class="contact" id="contact"><div class="ci">
+  <div class="sl2">Get In Touch</div><h2>Ready to Get Started?</h2>
+  <p>${bizEmail?'Email us at <a href="mailto:'+bizEmail+'">'+bizEmail+'</a> or use the form.':'Fill out the form and we will get back to you.'}</p>
+  <form class="cf" onsubmit="event.preventDefault();this.innerHTML='<div style=text-align:center;padding:20px;color:${acc}>✅ Message sent! We will be in touch soon.</div>'">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="How can we help?"></textarea>
+    <button type="submit" class="btn1">${c.cta||'Send Message'}</button>
+  </form>
+</div></section>
+<footer><div class="fl">${bizName}</div><div class="flk"><a href="#features">Features</a><a href="#about">About</a><a href="#contact">Contact</a></div><div class="fc2">© ${new Date().getFullYear()} ${bizName}</div></footer>
+<script>const ob=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')}),{threshold:0.1});document.querySelectorAll('.fu').forEach(el=>ob.observe(el));<\/script>
 </body></html>`;
 
+  // Write into iframe via contentDocument
   document.getElementById('websiteCode').textContent = websiteContent;
   document.getElementById('wsPlaceholder').style.display = 'none';
-  const frame = document.getElementById('wsPreviewFrame');
-  frame.style.display = 'block';
-  setIframeContent('wsPreviewFrame', websiteContent);
-  document.getElementById('previewLabel').textContent = name + ' — ' + type;
-  document.getElementById('dlBtn').disabled = false;
-  document.getElementById('dlBtn').style.opacity = '1';
-  document.getElementById('copyBtn').disabled = false;
-  document.getElementById('copyBtn').style.opacity = '1';
+  const iframe = document.getElementById('wsIframe');
+  iframe.style.display = 'block';
+  const doc = iframe.contentDocument || iframe.contentWindow.document;
+  doc.open(); doc.write(websiteContent); doc.close();
+
+  document.getElementById('previewLabel').textContent = bizName + ' — ' + bizType;
+  document.getElementById('dlBtn').disabled = false; document.getElementById('dlBtn').style.opacity = '1';
+  document.getElementById('copyBtn').disabled = false; document.getElementById('copyBtn').style.opacity = '1';
   document.getElementById('wsCodeToggle').style.display = '';
-  renderPreviewCard('wsCard', {
-    title: name,
-    subtitle: type + ' · ' + style,
-    icon: '🌐',
-    color: color||'#00FF88',
-    badges: [type, style, 'GitHub Pages Ready'],
-    stats: [
-      {value: '1', label: 'HTML File'},
-      {value: 'Free', label: 'Hosting'},
-      {value: '< 5min', label: 'Deploy Time'}
-    ]
-  });
+  renderPreviewCard('wsCard', {title:bizName, subtitle:bizType+' · '+bizStyle, icon:'🌐', color:bizColor, badges:[bizType,bizStyle,'GitHub Pages Ready'], stats:[{value:'1',label:'HTML File'},{value:'Free',label:'Hosting'},{value:'< 5min',label:'Deploy Time'}]});
 }
 
 function switchWsTab(tab) {
-  const frame = document.getElementById('wsPreviewFrame');
+  const iframe = document.getElementById('wsIframe');
   const code = document.getElementById('wsCodeView');
-  if (tab === 'preview') {
-    frame.style.display = 'block'; code.style.display = 'none';
-    document.getElementById('wsCodeToggle').style.display = '';
-    document.getElementById('wsPreviewToggle').style.display = 'none';
-  } else {
-    frame.style.display = 'none'; code.style.display = 'block';
-    document.getElementById('wsCodeToggle').style.display = 'none';
-    document.getElementById('wsPreviewToggle').style.display = '';
-  }
+  if (tab==='preview') { iframe.style.display='block'; code.style.display='none'; document.getElementById('wsCodeToggle').style.display=''; document.getElementById('wsPreviewToggle').style.display='none'; }
+  else { iframe.style.display='none'; code.style.display='block'; document.getElementById('wsCodeToggle').style.display='none'; document.getElementById('wsPreviewToggle').style.display=''; }
 }
-
-function downloadWebsite() {
-  if (!websiteContent) return;
-  downloadFile(websiteContent, 'index.html', 'text/html');
-}
+function downloadWebsite() { if(!websiteContent) return; downloadFile(websiteContent,'index.html','text/html'); }
 </script>
-<style>@keyframes spin{to{transform:rotate(360deg)}}</style>
 </body>
 </html>
