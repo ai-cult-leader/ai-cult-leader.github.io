@@ -312,7 +312,7 @@ Include:
 
   const result = await callGroq(prompt, system, 3500);
   if (result === "__ERROR__") return;
-  pluginCode = result.replace(/^```php\n?/,'').replace(/^```\n?/,'').replace(/```$/,'').trim();
+  pluginCode = result.replace(new RegExp('^\x60\x60\x60php\n?'),'').replace(new RegExp('^\x60\x60\x60\n?'),'').replace(new RegExp('\x60\x60\x60$'),'').trim();
   document.getElementById('pluginCode').textContent = pluginCode;
   document.getElementById('outputSection').classList.add('visible');
   renderPreviewCard('previewCard', {
