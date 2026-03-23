@@ -324,7 +324,7 @@ async function generateLandingPage() {
   if (result === "__ERROR__") return;
 
   let c = {};
-  try { c = JSON.parse(result.replace(/^```json\n?/,'').replace(/^```\n?/,'').replace(/```$/,'').trim()); } catch(e) {
+  try { c = JSON.parse(result.replace(new RegExp('^\x60\x60\x60json\n?'),'').replace(new RegExp('^\x60\x60\x60\n?'),'').replace(new RegExp('\x60\x60\x60$'),'').trim()); } catch(e) {
     const m = result.match(/\{[\s\S]*\}/); if(m) try{c=JSON.parse(m[0])}catch(e2){}
   }
 
