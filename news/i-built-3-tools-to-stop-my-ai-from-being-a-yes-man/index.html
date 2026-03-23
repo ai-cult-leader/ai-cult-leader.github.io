@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Operators, the Dev.to piece highlights a critical vulnerability: AI coding assistants, even advanced models like Claude Code, suffer from context window li">
+<meta name="description" content="## I Built 3 Tools to Stop My AI from Being a Yes-Man (and forgetting everything)  The problem with AI coding assistants isn't their ability to generate co">
 <meta property="og:title" content="I Built 3 Tools to Stop My AI from Being a Yes-Man (and forgetting everything) | AI Guerrilla">
-<meta property="og:description" content="Operators, the Dev.to piece highlights a critical vulnerability: AI coding assistants, even advanced models like Claude Code, suffer from context window limitations and a tendency toward compliant, un">
+<meta property="og:description" content="## I Built 3 Tools to Stop My AI from Being a Yes-Man (and forgetting everything)  The problem with AI coding assistants isn't their ability to generate code; it's their tendency to hallucinate, contr">
 <title>I Built 3 Tools to Stop My AI from Being a Yes-Man (and forgetting everything) | AI News | AI Guerrilla</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -16,9 +16,18 @@ nav{padding:16px 40px;border-bottom:1px solid #1a1a1a;display:flex;justify-conte
 h1{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:900;margin-bottom:16px;line-height:1.2}
 .meta{font-size:.82rem;color:#555;margin-bottom:28px}
 .meta a{color:#00FF88;text-decoration:none}
-.commentary{background:#0d1a0d;border-left:3px solid #00FF88;padding:20px 24px;border-radius:0 10px 10px 0;margin:28px 0}
-.commentary-label{font-size:.7rem;color:#00FF88;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
-.commentary p{color:#bbb;font-size:1rem;line-height:1.7;margin:0}
+.article-body{margin:28px 0}
+.author-bar{display:flex;align-items:center;gap:14px;padding:16px 20px;background:#111;border:1px solid #1a1a1a;border-radius:10px;margin-bottom:28px}
+.author-avatar{width:44px;height:44px;border-radius:50%;background:#00FF88;color:#000;font-weight:900;font-size:1.1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.author-name{font-weight:700;font-size:.9rem}
+.author-sub{color:#555;font-size:.78rem;margin-top:2px}
+.read-time{margin-left:auto;font-size:.75rem;color:#555;background:#0a0a0a;border:1px solid #1a1a1a;padding:4px 10px;border-radius:20px}
+.article-content{color:#ccc;font-size:1rem;line-height:1.85}
+.article-content p{margin-bottom:18px}
+.article-content h2{color:#fff;font-size:1.1rem;font-weight:800;margin:28px 0 12px;padding-left:12px;border-left:3px solid #00FF88}
+.article-content strong{color:#fff;font-weight:700}
+.article-content ul{padding-left:20px;margin-bottom:18px}
+.article-content ul li{margin-bottom:8px;color:#bbb}
 .source-link{display:inline-block;background:#111;border:1px solid #2a2a2a;color:#aaa;padding:10px 20px;border-radius:8px;text-decoration:none;font-size:.88rem;margin:20px 0}
 .source-link:hover{border-color:#00FF88;color:#00FF88}
 .cta-box{background:#0d1a0d;border:2px solid #00FF88;border-radius:12px;padding:32px;text-align:center;margin:40px 0}
@@ -41,23 +50,59 @@ footer a{color:#00FF88;text-decoration:none}
   <div class="meta"><a href="/news/">AI News</a> &rsaquo; Dev.to &middot; 2026-03-22</div>
   <h1>I Built 3 Tools to Stop My AI from Being a Yes-Man (and forgetting everything)</h1>
   <img src="https://images.pexels.com/photos/6153740/pexels-photo-6153740.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="I Built 3 Tools to Stop My AI from Being a Yes-Man (and forgetting everything)" style="width:100%;max-height:400px;object-fit:cover;border-radius:12px;margin-bottom:24px" loading="lazy">
-  <div class="commentary">
-    <div class="commentary-label">James's Take — AI Guerrilla</div>
-    <p>Operators, the Dev.to piece highlights a critical vulnerability: AI coding assistants, even advanced models like Claude Code, suffer from context window limitations and a tendency toward compliant, unoriginal output. Implement techniques like iterative prompting and external knowledge injection, as detailed in the article, to maintain control and ensure your AI remains a tool, not a parrot. Prioritize robust testing and validation workflows to mitigate the risks of blindly accepting AI-generated code.</p>
+  <div class="article-body">
+    <div class="author-bar">
+      <div class="author-avatar">J</div>
+      <div>
+        <div class="author-name">James — AI Cult Leader</div>
+        <div class="author-sub">AI Guerrilla · Analysis</div>
+      </div>
+      <div class="read-time" id="readTime"></div>
+    </div>
+    <div class="article-content" id="articleContent"></div>
   </div>
-  <a class="source-link" href="https://dev.to/dead1786/i-built-3-tools-to-stop-my-ai-from-being-a-yes-man-and-forgetting-everything-m3f" target="_blank" rel="noopener">Read full article at Dev.to &rarr;</a>
+  <a class="source-link" href="https://dev.to/dead1786/i-built-3-tools-to-stop-my-ai-from-being-a-yes-man-and-forgetting-everything-m3f" target="_blank" rel="noopener">Read full article on Dev.to &rarr;</a>
   <div class="cta-box">
-    <h2>Stay Ahead of AI News</h2>
-    <p>150+ operators sharing what's actually working. Updated hourly.</p>
+    <h2>Join 150+ Operators Building With AI</h2>
+    <p>Daily insights, done-for-you templates, and live Q&amp;A. Free to join.</p>
     <a class="cta-btn" href="https://skool.com/aiguerrilla">Join Free &rarr; skool.com/aiguerrilla</a>
   </div>
 </div>
 <div style="background:#0d0d0d;border-top:1px solid #1a1a1a;padding:28px 20px;text-align:center">
-  <p style="color:#555;font-size:.88rem;margin-bottom:8px">Free AI community for operators</p>
-  <a href="https://skool.com/aiguerrilla" style="color:#00FF88;text-decoration:none;font-size:.92rem;font-weight:600">Join at skool.com/aiguerrilla &rarr;</a>
+  <p style="color:#555;font-size:.88rem;margin-bottom:8px">Free AI training + community for operators</p>
+  <a href="https://skool.com/aiguerrilla" style="color:#00FF88;text-decoration:none;font-size:.92rem;font-weight:600">skool.com/aiguerrilla &rarr;</a>
 </div>
 <footer>
-  <p><a href="/news/">News</a> &middot; <a href="/tools/">Tools</a> &middot; <a href="/academy/">Academy</a> &middot; <a href="/free-ai-tools/">Free Tools</a></p>
+  <p><a href="/news/">News</a> &middot; <a href="/tools/">Tools</a> &middot; <a href="/academy/">Academy</a> &middot; <a href="/free-ai-tools/">Free Tools</a> &middot; <a href="/api-keys/">API Keys</a></p>
   <p style="margin-top:8px">&copy; 2026 AI Guerrilla</p>
 </footer>
+<script>
+(function(){
+  const el = document.getElementById('articleContent');
+  const rt = document.getElementById('readTime');
+  const raw = "## I Built 3 Tools to Stop My AI from Being a Yes-Man (and forgetting everything)\n\nThe problem with AI coding assistants isn't their ability to generate code; it's their tendency to hallucinate, contradict themselves, and completely forget context over longer conversations. A recent Dev.to article detailed a developer\u2019s experience building three custom tools \u2013 a context manager, a consistency checker, and a summarizer \u2013 to mitigate these issues when using Claude Code for complex projects. These tools essentially force the AI to be more disciplined and maintain a coherent understanding of the ongoing task.\n\n**Why This Matters for Operators**\n\nOperators building anything beyond trivial AI-powered features are already wrestling with this. If you're relying on AI to generate significant portions of your codebase, or to assist in complex refactoring, inconsistent output and forgotten context directly translate to wasted developer time, increased debugging costs, and potentially buggy deployments. The article highlights a critical vulnerability: assuming AI coding assistants are reliable, self-aware collaborators is a recipe for disaster. This isn't about the AI being \"bad\"; it's about its architecture \u2013 designed for rapid generation, not sustained, accurate reasoning. Expecting it to behave otherwise is naive.\n\n**What You Should Do Right Now**\n\nStop treating your AI coding assistant like a magic code generator. Start experimenting with techniques to manage context and enforce consistency. The developer\u2019s tools \u2013 while requiring some engineering effort \u2013 provide a blueprint. At a minimum, implement a system for explicitly feeding the AI relevant code snippets and documentation at the start of each interaction. Consider using a vector database to store and retrieve relevant context dynamically. Finally, *always* manually review and test any AI-generated code, even if it seems perfect on the surface.\n\n**The Bigger Picture**\n\nThis isn't a Claude-specific issue; it\u2019s a fundamental limitation of current large language models. The trend is towards increasingly powerful models, but raw power doesn't automatically equate to reliability. We\u2019re seeing a shift from blindly trusting AI output to actively engineering systems that constrain and verify it. Expect to see more tooling emerge that focuses on \u201cAI alignment\u201d \u2013 ensuring AI behavior aligns with human intent and project requirements \u2013 rather than simply chasing larger parameter counts.\n\n**Bottom Line**\n\nYour AI isn't a genius; it's a powerful tool that needs careful management. Build the guardrails, or you\u2019ll be cleaning up the mess.";
+  let html = raw
+    .split(/\n\n+/)
+    .filter(p => p.trim())
+    .map(p => {
+      p = p.trim();
+      // Bold section headers like **Why This Matters**
+      if (/^\*\*[^*]+\*\*$/.test(p)) {
+        return '<h2>' + p.replace(/\*\*/g,'') + '</h2>';
+      }
+      // Inline bold
+      p = p.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+      // Bullet lists
+      if (p.startsWith('- ') || p.startsWith('* ')) {
+        const items = p.split('\n').filter(l=>l.trim()).map(l=>'<li>'+l.replace(/^[-*]\s*/,'')+'</li>').join('');
+        return '<ul>'+items+'</ul>';
+      }
+      return '<p>' + p + '</p>';
+    })
+    .join('');
+  el.innerHTML = html;
+  const words = el.textContent.trim().split(/\s+/).length;
+  if (rt) rt.textContent = Math.ceil(words/200) + ' min read';
+})();
+</script>
 </body></html>
