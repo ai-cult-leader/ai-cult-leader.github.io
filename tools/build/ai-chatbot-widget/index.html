@@ -318,7 +318,7 @@ The widget should look polished with the color ${color} as the accent. Include l
 
   const result = await callGroq(prompt, system, 4000);
   if (result === "__ERROR__") return;
-  embedContent = result.replace(/^```html\n?/,'').replace(/^```\n?/,'').replace(/```$/,'').trim();
+  embedContent = result.replace(new RegExp('^\x60\x60\x60html\n?'),'').replace(new RegExp('^\x60\x60\x60\n?'),'').replace(new RegExp('\x60\x60\x60$'),'').trim();
   document.getElementById('embedCode').textContent = embedContent;
   renderPreviewCard('previewCard', {
     title: name + ' Chatbot',
