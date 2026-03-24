@@ -247,7 +247,7 @@ async function generateWebsite() {
   var sys = 'You are a professional website copywriter. Return ONLY a raw JSON object with no markdown, no explanation.';
   var prompt = 'Write website copy for a '+type+' called "'+name+'". Description: '+desc+'. Style: '+style+'. Return this JSON: {"tagline":"...","headline":"...","subheadline":"...","cta":"...","features":[{"icon":"emoji","title":"...","desc":"..."},{"icon":"emoji","title":"...","desc":"..."},{"icon":"emoji","title":"...","desc":"..."}],"about":"...","stats":[{"num":"...","label":"..."},{"num":"...","label":"..."},{"num":"...","label":"..."}],"testimonial":{"quote":"...","name":"...","title":"..."},"faq":[{"q":"...","a":"..."},{"q":"...","a":"..."},{"q":"...","a":"..."},{"q":"...","a":"..."},{"q":"...","a":"..."}]}';
 
-  var raw = await callAI(prompt, sys, 1800);
+  var raw = await callAI(prompt, sys, 2500);
   if (!raw) { setStatus('AI call failed — check console', '#f87171'); btn.disabled = false; return; }
 
   var copy;
