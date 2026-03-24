@@ -278,8 +278,7 @@ async function generateLP() {
     +'<footer style="background:#050505;color:#555;text-align:center;padding:24px;font-size:.82rem;">© 2025 '+name+'</footer>\n'
     +'</body>\n</html>';
 
-  var blob = new Blob([_lpHTML], {type:'text/html'});
-  document.getElementById('previewFrame').src = URL.createObjectURL(blob);
+  document.getElementById('previewFrame').srcdoc = _lpHTML;
   document.getElementById('dlBtn').style.display = 'inline-block';
   setStatus('Landing page generated!');
   btn.disabled = false;
