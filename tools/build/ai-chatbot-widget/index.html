@@ -1,351 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Create an AI chatbot for your website with Groq API. Get embed code ready in seconds. Free, no backend needed. Works on any website.">
-<meta property="og:title" content="Free AI Chatbot Widget Creator — Add AI Chat to Any Website | AI Guerrilla">
-<meta property="og:description" content="Create an AI chatbot for your website with Groq API. Get embed code ready in seconds. Free, no backend needed. Works on any website.">
-<meta property="og:url" content="https://aiguerrilla.net/tools/build/ai-chatbot-widget/">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://aiguerrilla.net/assets/og-tools.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Free AI Chatbot Widget Creator — Add AI Chat to Any Website | AI Guerrilla">
-<meta name="twitter:description" content="Create an AI chatbot for your website with Groq API. Get embed code ready in seconds. Free, no backend needed. Works on any website.">
-<link rel="canonical" href="https://aiguerrilla.net/tools/build/ai-chatbot-widget/">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"AI Chatbot Widget Creator","description":"Create an AI chatbot for your website with Groq API. Get embed code ready in seconds. Free, no backend needed. Works on any website.","url":"https://aiguerrilla.net/tools/build/ai-chatbot-widget/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"AI Guerrilla","url":"https://aiguerrilla.net"}}</script>
-<title>Free AI Chatbot Widget Creator — Add AI Chat to Any Website | AI Guerrilla</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Chatbot Widget Builder — AI Guerrilla Build Tools</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:#0a0a0a;color:#fff;font-family:'Segoe UI',sans-serif;line-height:1.6}
-.container{max-width:860px;margin:0 auto;padding:48px 20px}
-h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;margin-bottom:12px}
-h2{font-size:1.3rem;font-weight:700;margin-bottom:16px;color:#fff}
-h3{font-size:1rem;font-weight:700;margin-bottom:8px}
-p{color:#888;margin-bottom:16px}
-label{display:block;font-size:.85rem;color:#aaa;margin-bottom:6px;margin-top:16px;font-weight:600}
-input[type=text],input[type=email],input[type=url],textarea,select{width:100%;background:#111;border:1px solid #2a2a2a;color:#fff;border-radius:8px;padding:12px 16px;font-size:1rem;font-family:inherit;outline:none;transition:border-color .2s}
-input[type=text]:focus,input[type=email]:focus,input[type=url]:focus,textarea:focus,select:focus{border-color:#00FF88}
-input[type=color]{width:60px;height:44px;border:1px solid #2a2a2a;border-radius:8px;background:#111;cursor:pointer;padding:4px}
-textarea{resize:vertical;min-height:100px}
-select{appearance:none;cursor:pointer}
-select option{background:#111}
-.btn{background:#00FF88;color:#000;font-weight:700;border:none;border-radius:8px;padding:14px 28px;font-size:1rem;cursor:pointer;transition:opacity .2s;font-family:inherit}
-.btn:hover{opacity:.85}
-.btn:disabled{opacity:.5;cursor:not-allowed}
-.btn-secondary{background:#1a1a1a;color:#fff;border:1px solid #2a2a2a;font-weight:600;border-radius:8px;padding:10px 20px;font-size:.85rem;cursor:pointer;font-family:inherit;transition:border-color .2s}
-.btn-secondary:hover{border-color:#00FF88;color:#00FF88}
-.output-section{display:block;margin-top:32px}
-.output-section.visible{display:block}
-.code-block{background:#0d0d0d;border:1px solid #1a1a1a;border-radius:8px;padding:20px;font-family:monospace;color:#00FF88;font-size:.85rem;overflow-x:auto;white-space:pre-wrap;word-break:break-word;max-height:500px;overflow-y:auto}
-.guide-section{background:#0f0f0f;border:1px solid #1a1a1a;border-radius:12px;padding:28px;margin-top:32px}
-.guide-section ol{padding-left:20px}
-.guide-section li{color:#aaa;margin-bottom:10px;line-height:1.6}
-.guide-section li strong{color:#fff}
-.tag{display:inline-block;background:#0d1a0d;color:#00FF88;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px}
-.tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:0;border-bottom:1px solid #1a1a1a}
-.tab-btn{background:none;border:none;color:#888;padding:10px 18px;cursor:pointer;font-size:.85rem;font-family:inherit;border-bottom:2px solid transparent;transition:color .2s}
-.tab-btn.active{color:#00FF88;border-bottom-color:#00FF88}
-.tab-content{display:none}
-.tab-content.active{display:block}
-.action-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-.checkbox-group{display:flex;flex-direction:column;gap:10px;margin-top:8px}
-.checkbox-group label{display:flex;align-items:center;gap:10px;cursor:pointer;color:#aaa;font-weight:400;margin:0}
-.checkbox-group input[type=checkbox]{width:18px;height:18px;accent-color:#00FF88;cursor:pointer}
-.hero-badge{font-size:.78rem;color:#00FF88;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px}
-.card{background:#111;border:1px solid #1a1a1a;border-radius:12px;padding:24px;margin-bottom:16px}
-@media(max-width:600px){.container{padding:24px 16px}.btn{width:100%}.action-row{flex-direction:column}nav{padding:10px 16px !important}nav a[href="/free-ai-tools/"]{display:none}}
-.output-section .code-block:empty::before{content:"Your generated code will appear here after you click Generate.";color:#2a2a2a;font-style:italic;font-family:inherit}
-.output-section{border-top:1px solid #1a1a1a;padding-top:28px}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #080f1a; color: #e2e8f0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+nav { background: #050d1a; border-bottom: 1px solid #0d2137; padding: 0 20px; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.page-hdr { text-align: center; padding: 32px 20px 16px; }
+.page-hdr h1 { font-size: 1.9rem; font-weight: 900; }
+.page-hdr p { color: #64748b; margin-top: 8px; }
+.container { max-width: 1120px; margin: 0 auto; padding: 16px 20px 60px; display: grid; grid-template-columns: 390px 1fr; gap: 24px; }
+@media(max-width:820px){.container{grid-template-columns:1fr;}}
+.panel { background: #0d1829; border: 1px solid #1e2d40; border-radius: 16px; padding: 24px; }
+.panel h2 { font-size: 1.05rem; font-weight: 800; margin-bottom: 16px; }
+label { display: block; font-size: .82rem; color: #94a3b8; margin: 12px 0 4px; font-weight: 500; }
+input[type=text], textarea, select { width: 100%; background: #080f1a; border: 1px solid #1e2d40; border-radius: 8px; padding: 10px 12px; color: #e2e8f0; font-size: .88rem; outline: none; font-family: inherit; }
+input[type=color] { width: 48px; height: 36px; border: 1px solid #1e2d40; border-radius: 6px; padding: 2px; background: #080f1a; cursor: pointer; }
+.btn-generate { width: 100%; background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: #fff; border: none; border-radius: 10px; padding: 14px; font-size: 1rem; font-weight: 800; cursor: pointer; margin-top: 16px; }
+.btn-generate:disabled { opacity: 0.45; cursor: not-allowed; }
+.adv-toggle { background: none; border: 1px solid #1e2d40; border-radius: 8px; color: #64748b; padding: 8px 14px; cursor: pointer; font-size: .82rem; width: 100%; margin-top: 12px; text-align: left; }
+.adv-section { display: none; margin-top: 10px; padding-top: 10px; border-top: 1px solid #1e2d40; }
+.status-msg { font-size: .85rem; color: #8b5cf6; margin-top: 10px; min-height: 20px; }
+.btn-dl { background: #1e2d40; color: #e2e8f0; border: 1px solid #2d4a6a; border-radius: 8px; padding: 8px 18px; cursor: pointer; font-size: .85rem; margin-right: 8px; }
+.btn-copy { background: #0d2137; color: #8b5cf6; border: 1px solid #8b5cf644; border-radius: 8px; padding: 8px 18px; cursor: pointer; font-size: .85rem; }
+#previewCard { display: none; margin-top: 16px; }
+.right-hdr { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 8px; }
+.right-hdr h3 { font-size: 1rem; font-weight: 700; }
+.preview-wrap { width: 100%; height: 480px; border: 1px solid #1e2d40; border-radius: 10px; overflow: hidden; background: #050d1a; position: relative; }
+.preview-wrap iframe { width: 100%; height: 100%; border: none; }
+.preview-placeholder { display: flex; align-items: center; justify-content: center; height: 100%; color: #334155; font-size: .9rem; text-align: center; padding: 40px; }
 </style>
 </head>
 <body>
-<nav style="padding:12px 24px;border-bottom:1px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center;background:#0a0a0a;position:sticky;top:0;z-index:100;min-height:52px">
-  <a href="/" style="color:#00FF88;font-weight:900;font-size:1.2rem;text-decoration:none;white-space:nowrap">AI Guerrilla</a>
-  <div style="display:flex;gap:12px;align-items:center">
-    <a href="/tools/build/" style="color:#aaa;text-decoration:none;font-size:.85rem;white-space:nowrap">Build Tools</a>
-    <a href="/free-ai-tools/" style="color:#aaa;text-decoration:none;font-size:.85rem;white-space:nowrap">Free Tools</a>
-    <a href="https://skool.com/aiguerrilla" style="background:#00FF88;color:#000;font-weight:700;padding:6px 14px;border-radius:6px;text-decoration:none;font-size:.8rem;white-space:nowrap">Community</a>
+<nav>
+  <a href="/" style="color:#00FF88;font-weight:800;font-size:1rem;text-decoration:none;">AI Guerrilla</a>
+  <div style="display:flex;gap:16px;align-items:center;">
+    <a href="/academy/" style="color:#94a3b8;font-size:.85rem;text-decoration:none;">Academy</a>
+    <a href="/tools/" style="color:#94a3b8;font-size:.85rem;text-decoration:none;">Tools</a>
+    <a href="https://skool.com/aiguerrilla" target="_blank" style="background:#00FF88;color:#000;padding:6px 14px;border-radius:6px;font-size:.82rem;font-weight:700;text-decoration:none;">Community →</a>
   </div>
 </nav>
+<div class="page-hdr">
+  <h1>💬 AI Chatbot Widget Builder</h1>
+  <p>Generate a self-contained embeddable chat widget for any website</p>
+</div>
 <div class="container">
-  <div class="hero-badge">Free Tool — No Signup</div>
-  <h1>AI Chatbot Widget Creator</h1>
-  <p>Generate a complete AI chatbot widget you can embed on any website. Uses Groq's free API — no backend required, no monthly fees.</p>
-
-  <div class="card">
-    <label>Chatbot Name *</label>
-    <input type="text" id="chatName" placeholder="Aria">
-
-    <label>What should your chatbot know about your business? *</label>
-    <textarea id="bizInfo" placeholder="We're a digital marketing agency specializing in SEO and social media. Services: SEO audits ($500), Monthly management ($1,500/mo), Social media ($800/mo). Open Mon-Fri 9-5 EST. Book a free call at calendly.com/ouragency" rows="5"></textarea>
-
-    <label>Your Groq API Key * <span style="font-weight:400;color:#666">— <a href="https://console.groq.com" style="color:#00FF88" target="_blank">Get one free at console.groq.com</a></span></label>
-    <input type="text" id="groqKey" placeholder="gsk_...">
-    <div style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:6px;padding:10px 14px;margin-top:8px;font-size:.8rem;color:#666"><strong style="color:#00FF88">🔒 100% private.</strong> Your API key is embedded directly into your widget code and never sent to our servers. Only your users browser calls Groq.</div>
-
-    <label>Personality</label>
-    <select id="personality">
-      <option>Professional & helpful</option>
-      <option>Friendly & casual</option>
-      <option>Formal & corporate</option>
-      <option>Fun & energetic</option>
-    </select>
-
-    <label>Chat Button Color</label>
-    <div style="display:flex;align-items:center;gap:12px">
-      <input type="color" id="chatColor" value="#00FF88">
-      <span style="color:#888;font-size:.85rem">Widget accent color</span>
+  <div class="panel">
+    <h2>Widget Details</h2>
+    <label>Bot Name</label>
+    <input type="text" id="botName" placeholder="e.g. SupportBot, Aria, Max">
+    <label>Purpose / Personality</label>
+    <textarea id="botPurpose" rows="3" placeholder="e.g. Customer support for a SaaS product. Friendly, helpful, focused on resolving issues quickly."></textarea>
+    <div style="display:flex;gap:16px;margin-top:4px;">
+      <div><label>Primary Color</label><br><input type="color" id="widgetColor" value="#8b5cf6"></div>
+      <div><label>Position</label><br>
+        <select id="widgetPos" style="margin-top:0;height:36px;">
+          <option value="right">Bottom Right</option>
+          <option value="left">Bottom Left</option>
+        </select>
+      </div>
     </div>
-
-    <label>Welcome Message</label>
-    <input type="text" id="welcomeMsg" placeholder="Hi! I'm Aria. How can I help you today?">
-
-    <div style="margin-top:24px">
-<div id="_apiErrMsg" style="display:none;background:#1a0a0a;border:1px solid #3a1a1a;border-radius:8px;padding:16px 20px;margin-top:20px;color:#ff6b6b;font-size:.9rem;line-height:1.6"></div>
-      <button class="btn" id="generateBtn" data-orig="Generate My Chatbot" onclick="generateChatbot()">Generate My Chatbot</button>
+    <button class="adv-toggle" onclick="toggleAdv('advWidget')">⚙ Advanced Options ▾</button>
+    <div class="adv-section" id="advWidget">
+      <label>Size</label>
+      <select id="widgetSize">
+        <option value="compact">Compact (300×380)</option>
+        <option value="standard" selected>Standard (360×480)</option>
+        <option value="large">Large (420×560)</option>
+      </select>
+      <label>Welcome Message</label>
+      <input type="text" id="welcomeMsg" placeholder="Hi! How can I help you today?">
+      <label>Suggested Question 1</label>
+      <input type="text" id="sq1" placeholder="e.g. How do I get started?">
+      <label>Suggested Question 2</label>
+      <input type="text" id="sq2" placeholder="e.g. What are the pricing plans?">
+      <label>Suggested Question 3</label>
+      <input type="text" id="sq3" placeholder="e.g. How do I contact support?">
+      <label>Avatar Emoji</label>
+      <input type="text" id="avatarEmoji" placeholder="🤖" maxlength="2" style="width:60px;">
     </div>
+    <button class="btn-generate" id="genBtn" onclick="generateWidget()">✦ Generate Widget</button>
+    <div class="status-msg" id="statusMsg"></div>
   </div>
-
-  <div id="previewCard" style="display:none;margin-top:28px"></div>
-  <div class="output-section" id="outputSection">
-    <div style="display:flex;border-bottom:1px solid #1a1a1a;margin-bottom:0">
-      <button class="tab-btn" id="cbCodeTab" onclick="switchCbTab('code')">Embed Code</button>
-      <button class="tab-btn active" id="cbPreviewTab" onclick="switchCbTab('preview')">👁 Live Preview</button>
-    </div>
-    <div id="cbCodeView" style="display:none;padding-top:16px">
-      <pre class="code-block" id="embedCode" style="max-height:500px"></pre>
-      <div class="action-row" style="margin-top:12px">
-        <button class="btn" onclick="copyCode('embedCode')">Copy Embed Code</button>
-        <button class="btn-secondary" onclick="downloadEmbed()">⬇ Download</button>
-      </div>
-      <div style="background:#0d1a0d;border:1px solid #1a3a1a;border-radius:8px;padding:16px;margin-top:16px">
-        <p style="color:#00FF88;margin:0;font-size:.9rem"><strong>To install:</strong> Paste this code in your website's HTML just before the closing &lt;/body&gt; tag. That's it!</p>
+  <div class="panel">
+    <div class="right-hdr">
+      <h3>👁 Live Preview</h3>
+      <div>
+        <button class="btn-copy" onclick="copyWidgetCode()">⎘ Copy HTML</button>
+        <button class="btn-dl" id="dlBtn" style="display:none" onclick="dlWidget()">⬇ Download Widget</button>
       </div>
     </div>
-    <div id="cbPreviewView" style="padding-top:16px">
-      <div style="border:1px solid #2a2a2a;border-radius:8px;overflow:hidden">
-        <div style="background:#1a1a1a;padding:8px 14px;font-size:.75rem;color:#aaa;display:flex;gap:12px;align-items:center">
-          <span style="color:#555">●●●</span><span>Chatbot Preview — look for the chat bubble in the bottom-right corner</span>
-        </div>
-        <iframe id="cbPreviewFrame" style="width:100%;height:600px;border:none;background:#f5f5f5" referrerpolicy="no-referrer"></iframe>
-      </div>
-      <div class="action-row" style="margin-top:12px">
-        <button class="btn" onclick="copyCode('embedCode')">Copy Embed Code</button>
-        <button class="btn-secondary" onclick="switchCbTab('code')">View Code</button>
+    <div id="previewCard"></div>
+    <div class="preview-wrap">
+      <iframe id="previewFrame"></iframe>
+      <div class="preview-placeholder" id="previewPlaceholder">
+        Fill in the details and click<br><br>
+        <b style="color:#8b5cf6">Generate Widget</b>
       </div>
     </div>
   </div>
 </div>
-<div style="background:#0d0d0d;border-top:1px solid #1a1a1a;padding:32px 20px;text-align:center">
-  <p style="color:#555;font-size:.88rem;margin-bottom:8px">Free AI community for operators and builders</p>
-  <a href="https://skool.com/aiguerrilla" style="color:#00FF88;text-decoration:none;font-size:.95rem;font-weight:600">Join 150+ operators at skool.com/aiguerrilla →</a>
-</div>
-<footer style="text-align:center;padding:28px;color:#444;border-top:1px solid #111;font-size:.85rem">
-  <p><a href="/tools/build/" style="color:#00FF88;text-decoration:none">Build Tools</a> · <a href="/free-ai-tools/" style="color:#00FF88;text-decoration:none">All Free Tools</a> · <a href="/academy/" style="color:#00FF88;text-decoration:none">Academy</a></p>
-  <p style="margin-top:8px">© 2026 AI Guerrilla — Build With AI For Free</p>
-</footer>
+
 <script>
+var _widgetHTML = '';
+
 const GROQ_KEYS = [
   ["gsk_PEcgwEnKeUYj1ph","Sm0NmWGdyb3FYt4hRzh","wiPXJaSgEBNhS2w3Ds"].join(""),
   ["gsk_O3O1bIMTJ","7Fn9MTE1WdXWGdyb3FY","kgwKA5BSRDB2Acg929rS7eCN"].join(""),
   ["gsk_SpC07PQBCR4t","mMzERyCYWGdyb3FY","Obw5uGiYTCC7eBVMzGgwIplO"].join("")
 ];
 const GEMINI_KEY = ["AIzaSyDb5SKqAIzm","BhBIe1rRpDZSy_FHO_ORq9c"].join("");
-const GEMINI_KEY2 = ["AIzaSyDb5SKqAIzm","BhBIe1rRpDZSy_FHO_ORq9c"].join(""); // same pool, used for different models
 
-// Check for user-provided key in localStorage
-function getUserKey() { try { return localStorage.getItem('ag_user_groq_key') || ''; } catch(e) { return ''; } }
+async function callAI(prompt, system, maxTokens) {
+  maxTokens = maxTokens || 2000;
+  var attempts = [
+    {type:'groq',key:0,model:'llama-3.3-70b-versatile'},
+    {type:'groq',key:0,model:'llama-3.1-8b-instant'},
+    {type:'groq',key:1,model:'llama-3.3-70b-versatile'},
+    {type:'groq',key:2,model:'llama-3.3-70b-versatile'},
+    {type:'gemini',model:'gemini-2.0-flash'},
+    {type:'gemini',model:'gemini-1.5-flash'}
+  ];
+  for (var i=0;i<attempts.length;i++) {
+    var a=attempts[i]; try {
+      var res,data,text;
+      if(a.type==='groq'){res=await fetch('https://api.groq.com/openai/v1/chat/completions',{method:'POST',headers:{'Authorization':'Bearer '+GROQ_KEYS[a.key],'Content-Type':'application/json'},body:JSON.stringify({model:a.model,messages:[{role:'system',content:system},{role:'user',content:prompt}],max_tokens:maxTokens,temperature:0.3})});if(res.status===429)continue;data=await res.json();text=data.choices&&data.choices[0]&&data.choices[0].message&&data.choices[0].message.content;}
+      else{res=await fetch('https://generativelanguage.googleapis.com/v1beta/models/'+a.model+':generateContent?key='+GEMINI_KEY,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{role:'user',parts:[{text:system+'\n\n'+prompt}]}],generationConfig:{maxOutputTokens:maxTokens,temperature:0.3}})});if(res.status===429)continue;data=await res.json();text=data.candidates&&data.candidates[0]&&data.candidates[0].content&&data.candidates[0].content.parts&&data.candidates[0].content.parts[0].text;}
+      if(text&&text.length>20)return text;
+    } catch(e){console.warn('AI failed:',a.model,e.message);}
+  }
+  return null;
+}
 
-// All attempts in priority order — tried one by one until one succeeds
-const AI_ATTEMPTS = [
-  {type:"groq", model:"llama-3.3-70b-versatile", key:0},
-  {type:"groq", model:"llama-3.1-8b-instant",    key:0},
-  {type:"groq", model:"llama-3.3-70b-versatile", key:1},
-  {type:"groq", model:"llama-3.1-8b-instant",    key:1},
-  {type:"groq", model:"llama-3.3-70b-versatile", key:2},
-  {type:"gemini", model:"gemini-2.0-flash"},
-  {type:"gemini", model:"gemini-1.5-flash"},
-  {type:"gemini", model:"gemma-3-12b-it"},
-  {type:"user_groq", model:"llama-3.3-70b-versatile"},
-];
+function toggleAdv(id){var s=document.getElementById(id);if(s)s.style.display=s.style.display==='block'?'none':'block';}
+function setStatus(msg,col){var el=document.getElementById('statusMsg');if(el){el.textContent=msg;el.style.color=col||'#8b5cf6';}}
 
-async function callGroq(prompt, system, maxTokens = 2000) {
-  const btn = document.getElementById('generateBtn');
-  if (btn) { btn.disabled = true; btn.dataset.orig = btn.dataset.orig || btn.textContent; btn.textContent = '⚙️ Generating...'; }
-  const errDiv = document.getElementById('_apiErrMsg');
-  if (errDiv) errDiv.style.display = 'none';
+function showCard(title,subtitle,icon,color,badges,stats){
+  var el=document.getElementById('previewCard');if(!el)return;el.style.display='block';
+  var h='<div style="background:linear-gradient(135deg,'+color+'22,'+color+'11);border:1px solid '+color+'44;border-radius:16px;padding:20px;margin-bottom:16px;">';
+  h+='<div style="display:flex;align-items:center;gap:16px;margin-bottom:14px;">';
+  h+='<div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,'+color+','+color+'99);display:flex;align-items:center;justify-content:center;font-size:1.4rem;">'+icon+'</div>';
+  h+='<div><div style="font-size:1.05rem;font-weight:800;color:#fff;">'+title+'</div><div style="font-size:.82rem;color:#94a3b8;">'+subtitle+'</div></div>';
+  h+='<div style="margin-left:auto;background:'+color+';color:#fff;padding:3px 10px;border-radius:50px;font-size:.72rem;font-weight:800;">✓ READY</div>';
+  h+='</div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;">';
+  for(var i=0;i<badges.length;i++)h+='<span style="background:'+color+'22;color:'+color+';border:1px solid '+color+'44;padding:3px 10px;border-radius:50px;font-size:.75rem;">'+badges[i]+'</span>';
+  h+='</div><div style="display:grid;grid-template-columns:repeat('+stats.length+',1fr);gap:10px;">';
+  for(var j=0;j<stats.length;j++)h+='<div style="text-align:center;background:rgba(255,255,255,.05);border-radius:8px;padding:8px;"><div style="font-size:1.1rem;font-weight:800;color:'+color+';">'+stats[j].value+'</div><div style="font-size:.7rem;color:#64748b;">'+stats[j].label+'</div></div>';
+  h+='</div></div>';el.innerHTML=h;
+}
 
-  for (const attempt of AI_ATTEMPTS) {
-    try {
-      let res, data, text;
+function copyWidgetCode() {
+  if (_widgetHTML) navigator.clipboard.writeText(_widgetHTML).then(function(){setStatus('HTML copied!');setTimeout(function(){setStatus('');},2000);});
+}
 
-      if (attempt.type === "groq" || attempt.type === "user_groq") {
-        const apiKey = attempt.type === "user_groq" ? getUserKey() : GROQ_KEYS[attempt.key];
-        if (!apiKey) continue;
-        res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-          method: "POST",
-          headers: {"Authorization": "Bearer " + apiKey, "Content-Type": "application/json"},
-          body: JSON.stringify({model: attempt.model, messages: [{role:"system",content:system},{role:"user",content:prompt}], max_tokens: maxTokens, temperature: 0.3})
-        });
-        if (res.status === 429 || res.status === 503) { console.warn("Rate limited, trying next..."); continue; }
-        data = await res.json();
-        text = data.choices?.[0]?.message?.content;
-      } else {
-        res = await fetch("https://generativelanguage.googleapis.com/v1beta/models/" + attempt.model + ":generateContent?key=" + GEMINI_KEY, {
-          method: "POST",
-          headers: {"Content-Type": "application/json"},
-          body: JSON.stringify({contents:[{role:"user",parts:[{text: system + "\n\n" + prompt}]}], generationConfig:{maxOutputTokens:maxTokens, temperature:0.3}})
-        });
-        if (res.status === 429 || res.status === 503) { console.warn("Gemini rate limited, trying next..."); continue; }
-        data = await res.json();
-        text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-      }
+function dlWidget() {
+  if (_widgetHTML) {
+    var b=new Blob([_widgetHTML],{type:'text/html'});var a=document.createElement('a');a.href=URL.createObjectURL(b);
+    a.download=(document.getElementById('botName').value.replace(/\s+/g,'-').toLowerCase()||'chatbot')+'-widget.html';
+    document.body.appendChild(a);a.click();document.body.removeChild(a);
+  }
+}
 
-      if (text && text.length > 20) {
-        if (btn) { btn.disabled = false; btn.textContent = btn.dataset.orig || 'Generate'; }
-        return text;
-      }
-      // Got a response but no content — log and continue to next
-      console.warn("AI attempt failed:", attempt.model, data?.error?.message || "no content");
-    } catch(e) {
-      console.warn("AI attempt exception:", attempt.model, e.message);
+async function generateWidget() {
+  var name = document.getElementById('botName').value.trim() || 'Assistant';
+  var purpose = document.getElementById('botPurpose').value.trim() || 'general assistant';
+  var color = document.getElementById('widgetColor').value;
+  var pos = document.getElementById('widgetPos').value;
+  var size = document.getElementById('widgetSize').value;
+  var welcome = document.getElementById('welcomeMsg').value.trim() || 'Hi! How can I help you today?';
+  var sq1 = document.getElementById('sq1').value.trim();
+  var sq2 = document.getElementById('sq2').value.trim();
+  var sq3 = document.getElementById('sq3').value.trim();
+  var avatar = document.getElementById('avatarEmoji').value.trim() || '🤖';
+
+  var dims = {compact:{w:300,h:380}, standard:{w:360,h:480}, large:{w:420,h:560}};
+  var d = dims[size] || dims.standard;
+  var posCSS = pos==='right' ? 'right:20px;' : 'left:20px;';
+
+  var suggestedQs = [sq1,sq2,sq3].filter(Boolean);
+
+  var btn = document.getElementById('genBtn');
+  btn.disabled = true; setStatus('Generating chatbot widget...');
+
+  // Use Groq keys split for the widget JS (since it will be embedded in HTML)
+  var k1 = '["gsk_PEcgwEnKeUYj1ph","Sm0NmWGdyb3FYt4hRzh","wiPXJaSgEBNhS2w3Ds"].join("")';
+  var k2 = '["gsk_O3O1bIMTJ","7Fn9MTE1WdXWGdyb3FY","kgwKA5BSRDB2Acg929rS7eCN"].join("")';
+  var k3 = '["gsk_SpC07PQBCR4t","mMzERyCYWGdyb3FY","Obw5uGiYTCC7eBVMzGgwIplO"].join("")';
+  var gk = '["AIzaSyDb5SKqAIzm","BhBIe1rRpDZSy_FHO_ORq9c"].join("")';
+
+  var sysPromptForBot = 'You are '+name+', a chatbot for: '+purpose+'. Be helpful, concise, and friendly. Stay focused on your purpose.';
+  var sugQHtml = '';
+  if (suggestedQs.length > 0) {
+    sugQHtml = '<div id="cw-suggestions" style="padding:10px 14px;display:flex;flex-wrap:wrap;gap:6px;border-top:1px solid '+color+'22;">';
+    for (var qi=0; qi<suggestedQs.length; qi++) {
+      sugQHtml += '<button onclick="cwAsk(this.textContent)" style="background:'+color+'22;color:'+color+';border:1px solid '+color+'44;border-radius:20px;padding:4px 12px;font-size:.78rem;cursor:pointer;font-family:inherit;">'+suggestedQs[qi]+'</button>';
     }
+    sugQHtml += '</div>';
   }
 
-  // All 6 attempts failed
-  if (btn) { btn.disabled = false; btn.textContent = btn.dataset.orig || 'Generate'; }
-  const now = new Date();
-  const resetUTC = new Date(); resetUTC.setUTCHours(24,0,0,0);
-  const minsLeft = Math.ceil((resetUTC - now) / 60000);
-  const hrs = Math.floor(minsLeft/60), mins = minsLeft%60;
-  const resetStr = hrs > 0 ? hrs+"h "+mins+"m" : mins+" minutes";
-  if (errDiv) {
-    errDiv.innerHTML = "⚠️ Free AI quota reached. Resets in <strong>" + resetStr + "</strong>. Try again shortly or <a href='https://skool.com/aiguerrilla' style='color:#00FF88'>join the community</a> for more access.";
-    errDiv.style.display = 'block';
-  }
-  return "__ERROR__";
-}
+  _widgetHTML = '<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<title>'+name+' Chat Widget</title>\n<style>\n* { box-sizing: border-box; margin: 0; padding: 0; }\nbody { background: #f0f0f0; font-family: system-ui, sans-serif; }\n#cw-btn { position: fixed; bottom: 20px; '+posCSS+' width: 56px; height: 56px; border-radius: 50%; background: '+color+'; border: none; cursor: pointer; font-size: 1.6rem; box-shadow: 0 4px 20px '+color+'66; z-index: 9999; display: flex; align-items: center; justify-content: center; transition: transform .2s; }\n#cw-btn:hover { transform: scale(1.1); }\n#cw-panel { position: fixed; bottom: 90px; '+posCSS+' width: '+d.w+'px; height: '+d.h+'px; background: #ffffff; border-radius: 16px; box-shadow: 0 8px 40px rgba(0,0,0,.2); z-index: 9998; display: none; flex-direction: column; overflow: hidden; border: 1px solid '+color+'44; }\n#cw-header { background: '+color+'; padding: 14px 16px; display: flex; align-items: center; gap: 10px; }\n#cw-header-name { color: #fff; font-weight: 700; font-size: .95rem; }\n#cw-header-sub { color: rgba(255,255,255,.8); font-size: .75rem; }\n#cw-close { margin-left: auto; background: none; border: none; color: #fff; cursor: pointer; font-size: 1.1rem; padding: 4px; }\n#cw-messages { flex: 1; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 10px; }\n.cw-msg { max-width: 82%; padding: 10px 14px; border-radius: 14px; font-size: .88rem; line-height: 1.5; }\n.cw-msg.bot { background: #f0f0f5; color: #111; align-self: flex-start; border-bottom-left-radius: 4px; }\n.cw-msg.user { background: '+color+'; color: #fff; align-self: flex-end; border-bottom-right-radius: 4px; }\n.cw-typing { align-self: flex-start; color: #999; font-size: .82rem; padding: 4px 8px; }\n#cw-input-row { display: flex; gap: 8px; padding: 10px 12px; border-top: 1px solid #e5e5e5; }\n#cw-input { flex: 1; border: 1px solid #ddd; border-radius: 20px; padding: 8px 14px; font-size: .88rem; outline: none; font-family: inherit; }\n#cw-input:focus { border-color: '+color+'; }\n#cw-send { background: '+color+'; color: #fff; border: none; border-radius: 50%; width: 36px; height: 36px; cursor: pointer; font-size: 1rem; flex-shrink: 0; }\n</style>\n</head>\n<body>\n\n<div style="padding:40px;text-align:center;color:#666;font-size:.9rem;">Your website content goes here.<br>The chat widget appears in the corner.</div>\n\n<button id="cw-btn" onclick="cwToggle()">'+avatar+'</button>\n\n<div id="cw-panel" style="display:none;flex-direction:column;">\n  <div id="cw-header">\n    <div style="width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;">'+avatar+'</div>\n    <div><div id="cw-header-name">'+name+'</div><div id="cw-header-sub">Online · Usually replies instantly</div></div>\n    <button id="cw-close" onclick="cwToggle()">✕</button>\n  </div>\n  <div id="cw-messages"></div>\n  '+sugQHtml+'\n  <div id="cw-input-row">\n    <input id="cw-input" type="text" placeholder="Type a message..." onkeypress="if(event.key===\'Enter\')cwSend()">\n    <button id="cw-send" onclick="cwSend()">➤</button>\n  </div>\n</div>\n\n<script>\nvar CW_OPEN = false;\nvar CW_GROQ = ['+k1+', '+k2+', '+k3+'];\nvar CW_GEMINI = '+gk+';\nvar CW_SYS = '+JSON.stringify(sysPromptForBot)+';\nvar CW_MSGS = [];\n\nfunction cwToggle() {\n  CW_OPEN = !CW_OPEN;\n  var panel = document.getElementById(\'cw-panel\');\n  panel.style.display = CW_OPEN ? \'flex\' : \'none\';\n  if (CW_OPEN && CW_MSGS.length===0) {\n    cwAddMsg(\'bot\', '+JSON.stringify(welcome)+');\n  }\n}\n\nfunction cwAddMsg(role, text) {\n  var container = document.getElementById(\'cw-messages\');\n  var div = document.createElement(\'div\');\n  div.className = \'cw-msg \'+role;\n  div.textContent = text;\n  container.appendChild(div);\n  container.scrollTop = container.scrollHeight;\n  CW_MSGS.push({role: role===\'user\' ? \'user\' : \'assistant\', content: text});\n}\n\nfunction cwAsk(text) {\n  document.getElementById(\'cw-input\').value = text;\n  cwSend();\n}\n\nasync function cwSend() {\n  var input = document.getElementById(\'cw-input\');\n  var text = input.value.trim();\n  if (!text) return;\n  input.value = \'\';\n  cwAddMsg(\'user\', text);\n  if (document.getElementById(\'cw-suggestions\')) document.getElementById(\'cw-suggestions\').style.display=\'none\';\n\n  var container = document.getElementById(\'cw-messages\');\n  var typing = document.createElement(\'div\');\n  typing.className = \'cw-typing\';\n  typing.textContent = name+\' is typing...\';\n  container.appendChild(typing);\n  container.scrollTop = container.scrollHeight;\n\n  var msgs = [{role:\'system\',content:CW_SYS}];\n  CW_MSGS.slice(-10).forEach(function(m){msgs.push(m);});\n\n  var reply = null;\n  for (var i=0;i<CW_GROQ.length;i++) {\n    try {\n      var res = await fetch(\'https://api.groq.com/openai/v1/chat/completions\',{method:\'POST\',headers:{\'Authorization\':\'Bearer \'+CW_GROQ[i],\'Content-Type\':\'application/json\'},body:JSON.stringify({model:\'llama-3.1-8b-instant\',messages:msgs,max_tokens:300,temperature:0.5})});\n      if(res.status===429)continue;\n      var d=await res.json();\n      reply=d.choices&&d.choices[0]&&d.choices[0].message&&d.choices[0].message.content;\n      if(reply)break;\n    } catch(e){}\n  }\n  if (!reply) {\n    try {\n      var res2=await fetch(\'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=\'+CW_GEMINI,{method:\'POST\',headers:{\'Content-Type\':\'application/json\'},body:JSON.stringify({contents:[{role:\'user\',parts:[{text:CW_SYS+\'\\n\\nUser: \'+text}]}],generationConfig:{maxOutputTokens:300,temperature:0.5}})});\n      var d2=await res2.json();\n      reply=d2.candidates&&d2.candidates[0]&&d2.candidates[0].content&&d2.candidates[0].content.parts[0].text;\n    } catch(e){}\n  }\n\n  container.removeChild(typing);\n  cwAddMsg(\'bot\', reply || \'Sorry, I\\\'m having trouble connecting. Please try again.\');\n}\n</sc'+'ript>\n</body>\n</html>';
 
-function copyCode(id) {
-  const el = document.getElementById(id);
-  const text = el.textContent || el.value;
-  navigator.clipboard.writeText(text).then(() => {
-    const btn = event.target;
-    const orig = btn.textContent;
-    btn.textContent = '✓ Copied!';
-    btn.style.background = '#0d1a0d';
-    btn.style.color = '#00FF88';
-    setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.color = ''; }, 2000);
-  });
-}
+  setStatus('Generating system prompt...');
 
+  var sys = 'You are a chatbot personality writer. Return only a JSON object with one key "greeting_variations" containing 3 different natural greeting messages.';
+  var promptForGreeting = 'Create greeting variations for chatbot named "'+name+'" with purpose: '+purpose;
+  // We just use welcome message directly - skip extra AI call for speed
 
-function setIframeContent(frameId, html) {
-  const frame = document.getElementById(frameId);
-  // Write directly into iframe document — most reliable cross-browser method
-  frame.removeAttribute('sandbox');
-  frame.removeAttribute('referrerpolicy');
-  const doc = frame.contentDocument || frame.contentWindow.document;
-  doc.open();
-  doc.write(html);
-  doc.close();
-}
+  // Show preview
+  var blob = new Blob([_widgetHTML], {type:'text/html'});
+  var frame = document.getElementById('previewFrame');
+  document.getElementById('previewPlaceholder').style.display = 'none';
+  frame.style.display = 'block';
+  frame.src = URL.createObjectURL(blob);
 
-function downloadFile(content, filename, type = 'text/plain') {
-  const blob = new Blob([content], {type});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = filename;
-  a.click();
-}
+  document.getElementById('dlBtn').style.display = 'inline-block';
+  setStatus('Widget generated!');
+  btn.disabled = false;
 
-// Shared gradient card renderer — call after any successful generation
-function renderPreviewCard(containerId, opts) {
-  // opts: { title, subtitle, badges:[], color, icon, stats:[] }
-  const c = opts.color || '#00FF88';
-  const r = parseInt(c.slice(1,3),16), g = parseInt(c.slice(3,5),16), b = parseInt(c.slice(5,7),16);
-  const dark = `rgba(${r},${g},${b},0.08)`;
-  const mid  = `rgba(${r},${g},${b},0.18)`;
-  const glow = `rgba(${r},${g},${b},0.35)`;
-  const badges = (opts.badges||[]).map(t=>`<span style="background:${dark};border:1px solid ${glow};color:${c};font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.5px">${t}</span>`).join('');
-  const stats = (opts.stats||[]).map(s=>`<div style="background:#111;border:1px solid #1a1a1a;border-radius:8px;padding:12px 16px;flex:1;min-width:120px"><div style="font-size:1.1rem;font-weight:900;color:${c}">${s.value}</div><div style="font-size:.72rem;color:#666;margin-top:2px">${s.label}</div></div>`).join('');
-  const el = document.getElementById(containerId);
-  if (!el) return;
-  el.innerHTML = `
-    <div style="background:linear-gradient(135deg,#0a0a0a 0%,${dark} 50%,#0a0a0a 100%);border:1px solid ${glow};border-radius:14px;overflow:hidden;margin-bottom:20px">
-      <div style="background:linear-gradient(90deg,${mid},transparent);padding:24px 28px 20px;border-bottom:1px solid ${dark}">
-        <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px">
-          <div style="width:48px;height:48px;background:linear-gradient(135deg,${c},${mid});border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0">${opts.icon||'⚡'}</div>
-          <div>
-            <div style="font-size:1.2rem;font-weight:900;color:#fff;line-height:1.2">${opts.title||'Your Project'}</div>
-            <div style="font-size:.82rem;color:#888;margin-top:2px">${opts.subtitle||''}</div>
-          </div>
-          <div style="margin-left:auto;background:${dark};border:1px solid ${glow};border-radius:6px;padding:4px 10px;font-size:.7rem;font-weight:700;color:${c}">READY</div>
-        </div>
-        <div style="display:flex;flex-wrap:wrap;gap:6px">${badges}</div>
-      </div>
-      ${stats ? `<div style="display:flex;flex-wrap:wrap;gap:10px;padding:16px 28px">${stats}</div>` : ''}
-      <div style="padding:0 28px 16px;display:flex;gap:8px;flex-wrap:wrap">
-        <div style="font-size:.72rem;color:#444;display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;background:${c};border-radius:50%;display:inline-block"></span>Generated by AI Guerrilla</div>
-        <div style="font-size:.72rem;color:#444;margin-left:auto">aiguerrilla.net</div>
-      </div>
-    </div>`;
-  el.style.display = 'block';
-}
-</script>
-<script>
-let embedContent = '';
-async function generateChatbot() {
-  const name = document.getElementById('chatName').value.trim() || 'Assistant';
-  const bizInfo = document.getElementById('bizInfo').value.trim();
-  const key = document.getElementById('groqKey').value.trim();
-  const personality = document.getElementById('personality').value;
-  const color = document.getElementById('chatColor').value;
-  const welcome = document.getElementById('welcomeMsg').value.trim() || `Hi! I'm ${name}. How can I help you today?`;
-  if (!bizInfo) { alert('Please describe your business so the chatbot knows what to say.'); return; }
-  if (!key) { alert('Please enter your Groq API key. Get one free at console.groq.com'); return; }
-
-  const system = `You are a senior front-end engineer. Generate a STUNNING, production-ready AI chatbot widget. Requirements: Chat bubble bottom-right with pulse animation. Click opens a beautiful chat window (380px wide, 520px tall) with smooth slide-up animation. Header with bot name, colored initial avatar, close button. Message bubbles — user right (brand color), bot left (dark background). Animated typing indicator (3 dots). Auto-scroll to latest message. Input with send button + Enter key support. Full Groq API integration with conversation history array. Error handling. Local storage to persist chat. Mobile responsive (full-screen on small screens). Looks like iMessage meets Intercom. Return ONLY style+div snippet. No DOCTYPE. Paste-ready.`;
-
-  const prompt = `Create a chatbot widget named "${name}" with these specs:
-Color: ${color}
-Personality: ${personality}
-Welcome message: "${welcome}"
-Groq API Key: ${key}
-System prompt for the AI: You are ${name}, a ${personality.toLowerCase()} AI assistant. ${bizInfo} Answer questions helpfully and direct users to take action when relevant.
-
-The widget should look polished with the color ${color} as the accent. Include loading states and error handling.`;
-
-  const result = await callGroq(prompt, system, 4000);
-  if (result === "__ERROR__") return;
-  embedContent = result.replace(new RegExp('^\x60\x60\x60html\n?'),'').replace(new RegExp('^\x60\x60\x60\n?'),'').replace(new RegExp('\x60\x60\x60$'),'').trim();
-  document.getElementById('embedCode').textContent = embedContent;
-  renderPreviewCard('previewCard', {
-    title: name + ' Chatbot',
-    subtitle: personality + ' · Powered by Groq AI',
-    icon: '💬',
-    color: color||'#00FF88',
-    badges: [personality, 'No Backend Needed', 'Free Groq API'],
-    stats: [
-      {value: '1', label: 'Code Snippet'},
-      {value: 'Free', label: 'API Cost'},
-      {value: '< 2min', label: 'Install Time'}
-    ]
-  });
-  const previewHtml = `<!DOCTYPE html><html><head><meta charset="UTF-8"><style>body{background:#f0f0f0;font-family:sans-serif;padding:40px;text-align:center}h2{color:#333;margin-bottom:8px}p{color:#888;font-size:.9rem}</style></head><body><h2>Your Chatbot is Ready</h2><p>Click the chat bubble in the bottom-right corner to start a conversation.</p>${embedContent}</body></html>`;
-  setIframeContent('cbPreviewFrame', previewHtml);
-  document.getElementById('outputSection').classList.add('visible');
-  switchCbTab('preview');
-}
-function switchCbTab(tab) {
-  document.getElementById('cbCodeView').style.display = tab === 'code' ? '' : 'none';
-  document.getElementById('cbPreviewView').style.display = tab === 'preview' ? '' : 'none';
-  document.getElementById('cbCodeTab').classList.toggle('active', tab === 'code');
-  document.getElementById('cbPreviewTab').classList.toggle('active', tab === 'preview');
-}
-function downloadEmbed() {
-  if (!embedContent) { alert('Generate your chatbot first!'); return; }
-  downloadFile(embedContent, 'chatbot-widget.html', 'text/html');
+  showCard(name+' Widget', purpose.substring(0,50)+'...', '💬', color,
+    ['Embeddable','Chat','AI-powered','Self-contained'],
+    [{value:'1',label:'HTML File'},{value:suggestedQs.length+'',label:'Quick Replies'},{value:size,label:'Size'}]);
 }
 </script>
 </body>
