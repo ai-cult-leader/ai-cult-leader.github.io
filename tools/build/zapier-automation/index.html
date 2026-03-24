@@ -1,340 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Describe what you want to automate and get step-by-step Zapier instructions. Free automation builder for non-technical users.">
-<meta property="og:title" content="Free Zapier Automation Builder — Automate Your Work with AI | AI Guerrilla">
-<meta property="og:description" content="Describe what you want to automate and get step-by-step Zapier instructions. Free automation builder for non-technical users.">
-<meta property="og:url" content="https://aiguerrilla.net/tools/build/zapier-automation/">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://aiguerrilla.net/assets/og-tools.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Free Zapier Automation Builder — Automate Your Work with AI | AI Guerrilla">
-<meta name="twitter:description" content="Describe what you want to automate and get step-by-step Zapier instructions. Free automation builder for non-technical users.">
-<link rel="canonical" href="https://aiguerrilla.net/tools/build/zapier-automation/">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Zapier Automation Builder","description":"Describe what you want to automate and get step-by-step Zapier instructions. Free automation builder for non-technical users.","url":"https://aiguerrilla.net/tools/build/zapier-automation/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"AI Guerrilla","url":"https://aiguerrilla.net"}}</script>
-<title>Free Zapier Automation Builder — Automate Your Work with AI | AI Guerrilla</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zapier Automation Builder — AI Guerrilla Build Tools</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:#0a0a0a;color:#fff;font-family:'Segoe UI',sans-serif;line-height:1.6}
-.container{max-width:860px;margin:0 auto;padding:48px 20px}
-h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;margin-bottom:12px}
-h2{font-size:1.3rem;font-weight:700;margin-bottom:16px;color:#fff}
-h3{font-size:1rem;font-weight:700;margin-bottom:8px}
-p{color:#888;margin-bottom:16px}
-label{display:block;font-size:.85rem;color:#aaa;margin-bottom:6px;margin-top:16px;font-weight:600}
-input[type=text],input[type=email],input[type=url],textarea,select{width:100%;background:#111;border:1px solid #2a2a2a;color:#fff;border-radius:8px;padding:12px 16px;font-size:1rem;font-family:inherit;outline:none;transition:border-color .2s}
-input[type=text]:focus,input[type=email]:focus,input[type=url]:focus,textarea:focus,select:focus{border-color:#00FF88}
-input[type=color]{width:60px;height:44px;border:1px solid #2a2a2a;border-radius:8px;background:#111;cursor:pointer;padding:4px}
-textarea{resize:vertical;min-height:100px}
-select{appearance:none;cursor:pointer}
-select option{background:#111}
-.btn{background:#00FF88;color:#000;font-weight:700;border:none;border-radius:8px;padding:14px 28px;font-size:1rem;cursor:pointer;transition:opacity .2s;font-family:inherit}
-.btn:hover{opacity:.85}
-.btn:disabled{opacity:.5;cursor:not-allowed}
-.btn-secondary{background:#1a1a1a;color:#fff;border:1px solid #2a2a2a;font-weight:600;border-radius:8px;padding:10px 20px;font-size:.85rem;cursor:pointer;font-family:inherit;transition:border-color .2s}
-.btn-secondary:hover{border-color:#00FF88;color:#00FF88}
-.output-section{display:block;margin-top:32px}
-.output-section.visible{display:block}
-.code-block{background:#0d0d0d;border:1px solid #1a1a1a;border-radius:8px;padding:20px;font-family:monospace;color:#00FF88;font-size:.85rem;overflow-x:auto;white-space:pre-wrap;word-break:break-word;max-height:500px;overflow-y:auto}
-.guide-section{background:#0f0f0f;border:1px solid #1a1a1a;border-radius:12px;padding:28px;margin-top:32px}
-.guide-section ol{padding-left:20px}
-.guide-section li{color:#aaa;margin-bottom:10px;line-height:1.6}
-.guide-section li strong{color:#fff}
-.tag{display:inline-block;background:#0d1a0d;color:#00FF88;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px}
-.tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:0;border-bottom:1px solid #1a1a1a}
-.tab-btn{background:none;border:none;color:#888;padding:10px 18px;cursor:pointer;font-size:.85rem;font-family:inherit;border-bottom:2px solid transparent;transition:color .2s}
-.tab-btn.active{color:#00FF88;border-bottom-color:#00FF88}
-.tab-content{display:none}
-.tab-content.active{display:block}
-.action-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-.checkbox-group{display:flex;flex-direction:column;gap:10px;margin-top:8px}
-.checkbox-group label{display:flex;align-items:center;gap:10px;cursor:pointer;color:#aaa;font-weight:400;margin:0}
-.checkbox-group input[type=checkbox]{width:18px;height:18px;accent-color:#00FF88;cursor:pointer}
-.hero-badge{font-size:.78rem;color:#00FF88;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px}
-.card{background:#111;border:1px solid #1a1a1a;border-radius:12px;padding:24px;margin-bottom:16px}
-@media(max-width:600px){.container{padding:24px 16px}.btn{width:100%}.action-row{flex-direction:column}nav{padding:10px 16px !important}nav a[href="/free-ai-tools/"]{display:none}}
-.output-section .code-block:empty::before{content:"Your generated code will appear here after you click Generate.";color:#2a2a2a;font-style:italic;font-family:inherit}
-.output-section{border-top:1px solid #1a1a1a;padding-top:28px}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #080f1a; color: #e2e8f0; font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+nav { background: #050d1a; border-bottom: 1px solid #0d2137; padding: 0 20px; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.page-hdr { text-align: center; padding: 32px 20px 16px; }
+.page-hdr h1 { font-size: 1.9rem; font-weight: 900; }
+.page-hdr p { color: #64748b; margin-top: 8px; }
+.container { max-width: 1120px; margin: 0 auto; padding: 16px 20px 60px; display: grid; grid-template-columns: 390px 1fr; gap: 24px; }
+@media(max-width:820px){.container{grid-template-columns:1fr;}}
+.panel { background: #0d1829; border: 1px solid #1e2d40; border-radius: 16px; padding: 24px; }
+.panel h2 { font-size: 1.05rem; font-weight: 800; margin-bottom: 16px; }
+label { display: block; font-size: .82rem; color: #94a3b8; margin: 12px 0 4px; font-weight: 500; }
+input[type=text], textarea, select { width: 100%; background: #080f1a; border: 1px solid #1e2d40; border-radius: 8px; padding: 10px 12px; color: #e2e8f0; font-size: .88rem; outline: none; font-family: inherit; }
+input[type=text]:focus, textarea:focus { border-color: #ff6b35; }
+.btn-generate { width: 100%; background: linear-gradient(135deg, #ff6b35, #f7931e); color: #000; border: none; border-radius: 10px; padding: 14px; font-size: 1rem; font-weight: 800; cursor: pointer; margin-top: 16px; }
+.btn-generate:disabled { opacity: 0.45; cursor: not-allowed; }
+.adv-toggle { background: none; border: 1px solid #1e2d40; border-radius: 8px; color: #64748b; padding: 8px 14px; cursor: pointer; font-size: .82rem; width: 100%; margin-top: 12px; text-align: left; }
+.adv-section { display: none; margin-top: 10px; padding-top: 10px; border-top: 1px solid #1e2d40; }
+.status-msg { font-size: .85rem; color: #ff6b35; margin-top: 10px; min-height: 20px; }
+.btn-copy { background: #0d2137; color: #ff6b35; border: 1px solid #ff6b3544; border-radius: 8px; padding: 8px 18px; cursor: pointer; font-size: .85rem; }
+#previewCard { display: none; margin-top: 16px; }
+.right-hdr { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 8px; }
+.right-hdr h3 { font-size: 1rem; font-weight: 700; }
+.output-area { background: #050d1a; border: 1px solid #1e2d40; border-radius: 10px; min-height: 440px; padding: 20px; font-size: .88rem; line-height: 1.7; }
+.section-block { margin-bottom: 20px; }
+.section-block h4 { color: #ff6b35; font-size: .9rem; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+.section-block h4::before { content: ''; display: inline-block; width: 3px; height: 16px; background: #ff6b35; border-radius: 2px; }
+.step-item { background: #0d1829; border: 1px solid #1e2d40; border-radius: 8px; padding: 12px 16px; margin-bottom: 8px; }
+.step-num { display: inline-block; background: #ff6b35; color: #000; border-radius: 50%; width: 20px; height: 20px; text-align: center; line-height: 20px; font-size: .72rem; font-weight: 800; margin-right: 8px; }
+.field-map { background: #0a0f1a; border: 1px solid #ff6b3533; border-radius: 6px; padding: 10px 14px; margin-top: 6px; font-family: monospace; font-size: .82rem; color: #94a3b8; }
+.field-arrow { color: #ff6b35; margin: 0 8px; }
+.placeholder-msg { color: #334155; text-align: center; padding: 80px 40px; }
 </style>
 </head>
 <body>
-<nav style="padding:12px 24px;border-bottom:1px solid #1a1a1a;display:flex;justify-content:space-between;align-items:center;background:#0a0a0a;position:sticky;top:0;z-index:100;min-height:52px">
-  <a href="/" style="color:#00FF88;font-weight:900;font-size:1.2rem;text-decoration:none;white-space:nowrap">AI Guerrilla</a>
-  <div style="display:flex;gap:12px;align-items:center">
-    <a href="/tools/build/" style="color:#aaa;text-decoration:none;font-size:.85rem;white-space:nowrap">Build Tools</a>
-    <a href="/free-ai-tools/" style="color:#aaa;text-decoration:none;font-size:.85rem;white-space:nowrap">Free Tools</a>
-    <a href="https://skool.com/aiguerrilla" style="background:#00FF88;color:#000;font-weight:700;padding:6px 14px;border-radius:6px;text-decoration:none;font-size:.8rem;white-space:nowrap">Community</a>
+<nav>
+  <a href="/" style="color:#00FF88;font-weight:800;font-size:1rem;text-decoration:none;">AI Guerrilla</a>
+  <div style="display:flex;gap:16px;align-items:center;">
+    <a href="/academy/" style="color:#94a3b8;font-size:.85rem;text-decoration:none;">Academy</a>
+    <a href="/tools/" style="color:#94a3b8;font-size:.85rem;text-decoration:none;">Tools</a>
+    <a href="https://skool.com/aiguerrilla" target="_blank" style="background:#00FF88;color:#000;padding:6px 14px;border-radius:6px;font-size:.82rem;font-weight:700;text-decoration:none;">Community →</a>
   </div>
 </nav>
+<div class="page-hdr">
+  <h1>⚡ Zapier Automation Builder</h1>
+  <p>Describe what you want to automate — get step-by-step instructions for Zapier, n8n, or Make.com</p>
+</div>
 <div class="container">
-  <div class="hero-badge">Free Tool — No Signup</div>
-  <h1>Zapier Automation Builder</h1>
-  <p>Describe what you want to automate in plain English. Get exact, step-by-step Zapier setup instructions — no technical knowledge needed.</p>
-
-  <div class="card">
-    <label>What do you want to automate? *</label>
-    <textarea id="autoDesc" placeholder="When someone fills out my contact form, add them to my Mailchimp email list and send them a welcome email automatically" rows="4"></textarea>
-
-    <label>Apps You Use (select all that apply)</label>
-    <div class="checkbox-group" style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-      <label><input type="checkbox" id="app_gmail"> Gmail</label>
-      <label><input type="checkbox" id="app_sheets"> Google Sheets</label>
-      <label><input type="checkbox" id="app_slack"> Slack</label>
-      <label><input type="checkbox" id="app_notion"> Notion</label>
-      <label><input type="checkbox" id="app_mailchimp"> Mailchimp</label>
-      <label><input type="checkbox" id="app_hubspot"> HubSpot</label>
-      <label><input type="checkbox" id="app_shopify"> Shopify</label>
-      <label><input type="checkbox" id="app_stripe"> Stripe</label>
-      <label><input type="checkbox" id="app_typeform"> Typeform</label>
-      <label><input type="checkbox" id="app_calendly"> Calendly</label>
-      <label><input type="checkbox" id="app_airtable"> Airtable</label>
-      <label><input type="checkbox" id="app_zoom"> Zoom</label>
+  <div class="panel">
+    <h2>Automation Details</h2>
+    <label>What do you want to automate?</label>
+    <textarea id="autoDesc" rows="5" placeholder="Describe your automation in plain English. e.g. 'When a new lead fills out my Typeform, add them to my Mailchimp list, send me a Slack notification, and create a row in Google Sheets with their info.'"></textarea>
+    <button class="adv-toggle" onclick="toggleAdv('advZap')">⚙ Advanced Options ▾</button>
+    <div class="adv-section" id="advZap">
+      <label>Trigger App</label>
+      <select id="triggerApp">
+        <option value="">Auto-detect</option>
+        <option>Typeform</option><option>Google Forms</option><option>Stripe</option>
+        <option>WooCommerce</option><option>Calendly</option><option>HubSpot</option>
+        <option>Gmail</option><option>Slack</option><option>Airtable</option>
+        <option>Notion</option><option>Shopify</option><option>Webflow</option>
+      </select>
+      <label>Action App</label>
+      <select id="actionApp">
+        <option value="">Auto-detect</option>
+        <option>Mailchimp</option><option>Slack</option><option>Google Sheets</option>
+        <option>Gmail</option><option>Notion</option><option>Airtable</option>
+        <option>HubSpot</option><option>Twilio</option><option>Discord</option>
+        <option>Trello</option><option>Asana</option><option>Monday.com</option>
+      </select>
+      <label>Output Format</label>
+      <select id="outputFormat">
+        <option value="all">All Three (Zapier + n8n + Make.com)</option>
+        <option value="zapier">Zapier only</option>
+        <option value="n8n">n8n only</option>
+        <option value="make">Make.com only</option>
+      </select>
     </div>
-
-    <label>Trigger Type</label>
-    <select id="triggerType">
-      <option>Triggered by an event (e.g. form submit, new purchase)</option>
-      <option>On a schedule (e.g. every day at 9am)</option>
-      <option>Both event and schedule</option>
-    </select>
-
-    <div style="margin-top:24px">
-<div id="_apiErrMsg" style="display:none;background:#1a0a0a;border:1px solid #3a1a1a;border-radius:8px;padding:16px 20px;margin-top:20px;color:#ff6b6b;font-size:.9rem;line-height:1.6"></div>
-      <button class="btn" id="generateBtn" data-orig="Build My Automation" onclick="buildAutomation()">Build My Automation</button>
-    </div>
+    <button class="btn-generate" id="genBtn" onclick="generateAutomation()">⚡ Build Automation</button>
+    <div class="status-msg" id="statusMsg"></div>
   </div>
-
-  <div id="previewCard" style="display:none;margin-top:28px"></div>
-  <div class="output-section" id="outputSection">
-    <h2>Your Zapier Setup Instructions</h2>
-    <div id="instructionsOutput" style="background:#0d0d0d;border:1px solid #1a1a1a;border-radius:8px;padding:24px;white-space:pre-wrap;font-size:.9rem;color:#ddd;line-height:1.8;max-height:600px;overflow-y:auto"></div>
-    <div class="action-row" style="margin-top:12px">
-      <button class="btn-secondary" onclick="copyInstructions()">Copy Instructions</button>
-      <button class="btn-secondary" onclick="downloadInstructions()">⬇ Download as .txt</button>
+  <div class="panel">
+    <div class="right-hdr">
+      <h3>⚡ Automation Blueprint</h3>
+      <button class="btn-copy" onclick="copyOutput()">⎘ Copy</button>
     </div>
-
-    <div style="background:#0f0f14;border:1px solid #1a1a2a;border-radius:12px;padding:24px;margin-top:24px">
-      <div style="font-size:.72rem;color:#7070FF;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;font-weight:700">Alternative: Free with n8n</div>
-      <h3 style="color:#aaa;margin-bottom:8px">Build the same automation for free with n8n</h3>
-      <p style="font-size:.85rem;color:#666">n8n is an open-source automation tool you can self-host for free. It works exactly like Zapier but with no monthly fees and 400+ integrations.</p>
-      <a href="https://n8n.io" target="_blank" style="color:#7070FF;text-decoration:none;font-size:.85rem;font-weight:600">Get n8n free at n8n.io →</a>
+    <div id="previewCard"></div>
+    <div class="output-area" id="outputArea">
+      <div class="placeholder-msg">
+        Describe your automation and click<br><br>
+        <b style="color:#ff6b35">Build Automation</b><br><br>
+        You'll get step-by-step instructions with field mappings for Zapier, n8n, and Make.com
+      </div>
     </div>
   </div>
 </div>
-<div style="background:#0d0d0d;border-top:1px solid #1a1a1a;padding:32px 20px;text-align:center">
-  <p style="color:#555;font-size:.88rem;margin-bottom:8px">Free AI community for operators and builders</p>
-  <a href="https://skool.com/aiguerrilla" style="color:#00FF88;text-decoration:none;font-size:.95rem;font-weight:600">Join 150+ operators at skool.com/aiguerrilla →</a>
-</div>
-<footer style="text-align:center;padding:28px;color:#444;border-top:1px solid #111;font-size:.85rem">
-  <p><a href="/tools/build/" style="color:#00FF88;text-decoration:none">Build Tools</a> · <a href="/free-ai-tools/" style="color:#00FF88;text-decoration:none">All Free Tools</a> · <a href="/academy/" style="color:#00FF88;text-decoration:none">Academy</a></p>
-  <p style="margin-top:8px">© 2026 AI Guerrilla — Build With AI For Free</p>
-</footer>
+
 <script>
+var _outputText = '';
+
 const GROQ_KEYS = [
   ["gsk_PEcgwEnKeUYj1ph","Sm0NmWGdyb3FYt4hRzh","wiPXJaSgEBNhS2w3Ds"].join(""),
   ["gsk_O3O1bIMTJ","7Fn9MTE1WdXWGdyb3FY","kgwKA5BSRDB2Acg929rS7eCN"].join(""),
   ["gsk_SpC07PQBCR4t","mMzERyCYWGdyb3FY","Obw5uGiYTCC7eBVMzGgwIplO"].join("")
 ];
 const GEMINI_KEY = ["AIzaSyDb5SKqAIzm","BhBIe1rRpDZSy_FHO_ORq9c"].join("");
-const GEMINI_KEY2 = ["AIzaSyDb5SKqAIzm","BhBIe1rRpDZSy_FHO_ORq9c"].join(""); // same pool, used for different models
 
-// Check for user-provided key in localStorage
-function getUserKey() { try { return localStorage.getItem('ag_user_groq_key') || ''; } catch(e) { return ''; } }
-
-// All attempts in priority order — tried one by one until one succeeds
-const AI_ATTEMPTS = [
-  {type:"groq", model:"llama-3.3-70b-versatile", key:0},
-  {type:"groq", model:"llama-3.1-8b-instant",    key:0},
-  {type:"groq", model:"llama-3.3-70b-versatile", key:1},
-  {type:"groq", model:"llama-3.1-8b-instant",    key:1},
-  {type:"groq", model:"llama-3.3-70b-versatile", key:2},
-  {type:"gemini", model:"gemini-2.0-flash"},
-  {type:"gemini", model:"gemini-1.5-flash"},
-  {type:"gemini", model:"gemma-3-12b-it"},
-  {type:"user_groq", model:"llama-3.3-70b-versatile"},
-];
-
-async function callGroq(prompt, system, maxTokens = 2000) {
-  const btn = document.getElementById('generateBtn');
-  if (btn) { btn.disabled = true; btn.dataset.orig = btn.dataset.orig || btn.textContent; btn.textContent = '⚙️ Generating...'; }
-  const errDiv = document.getElementById('_apiErrMsg');
-  if (errDiv) errDiv.style.display = 'none';
-
-  for (const attempt of AI_ATTEMPTS) {
-    try {
-      let res, data, text;
-
-      if (attempt.type === "groq" || attempt.type === "user_groq") {
-        const apiKey = attempt.type === "user_groq" ? getUserKey() : GROQ_KEYS[attempt.key];
-        if (!apiKey) continue;
-        res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-          method: "POST",
-          headers: {"Authorization": "Bearer " + apiKey, "Content-Type": "application/json"},
-          body: JSON.stringify({model: attempt.model, messages: [{role:"system",content:system},{role:"user",content:prompt}], max_tokens: maxTokens, temperature: 0.3})
-        });
-        if (res.status === 429 || res.status === 503) { console.warn("Rate limited, trying next..."); continue; }
-        data = await res.json();
-        text = data.choices?.[0]?.message?.content;
-      } else {
-        res = await fetch("https://generativelanguage.googleapis.com/v1beta/models/" + attempt.model + ":generateContent?key=" + GEMINI_KEY, {
-          method: "POST",
-          headers: {"Content-Type": "application/json"},
-          body: JSON.stringify({contents:[{role:"user",parts:[{text: system + "\n\n" + prompt}]}], generationConfig:{maxOutputTokens:maxTokens, temperature:0.3}})
-        });
-        if (res.status === 429 || res.status === 503) { console.warn("Gemini rate limited, trying next..."); continue; }
-        data = await res.json();
-        text = data.candidates?.[0]?.content?.parts?.[0]?.text;
-      }
-
-      if (text && text.length > 20) {
-        if (btn) { btn.disabled = false; btn.textContent = btn.dataset.orig || 'Generate'; }
-        return text;
-      }
-      // Got a response but no content — log and continue to next
-      console.warn("AI attempt failed:", attempt.model, data?.error?.message || "no content");
-    } catch(e) {
-      console.warn("AI attempt exception:", attempt.model, e.message);
-    }
+async function callAI(prompt, system, maxTokens) {
+  maxTokens = maxTokens || 2000;
+  var attempts = [
+    {type:'groq',key:0,model:'llama-3.3-70b-versatile'},
+    {type:'groq',key:0,model:'llama-3.1-8b-instant'},
+    {type:'groq',key:1,model:'llama-3.3-70b-versatile'},
+    {type:'groq',key:2,model:'llama-3.3-70b-versatile'},
+    {type:'gemini',model:'gemini-2.0-flash'},
+    {type:'gemini',model:'gemini-1.5-flash'}
+  ];
+  for (var i=0;i<attempts.length;i++) {
+    var a=attempts[i]; try {
+      var res,data,text;
+      if(a.type==='groq'){res=await fetch('https://api.groq.com/openai/v1/chat/completions',{method:'POST',headers:{'Authorization':'Bearer '+GROQ_KEYS[a.key],'Content-Type':'application/json'},body:JSON.stringify({model:a.model,messages:[{role:'system',content:system},{role:'user',content:prompt}],max_tokens:maxTokens,temperature:0.4})});if(res.status===429)continue;data=await res.json();text=data.choices&&data.choices[0]&&data.choices[0].message&&data.choices[0].message.content;}
+      else{res=await fetch('https://generativelanguage.googleapis.com/v1beta/models/'+a.model+':generateContent?key='+GEMINI_KEY,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{role:'user',parts:[{text:system+'\n\n'+prompt}]}],generationConfig:{maxOutputTokens:maxTokens,temperature:0.4}})});if(res.status===429)continue;data=await res.json();text=data.candidates&&data.candidates[0]&&data.candidates[0].content&&data.candidates[0].content.parts&&data.candidates[0].content.parts[0].text;}
+      if(text&&text.length>20)return text;
+    } catch(e){console.warn('AI failed:',a.model,e.message);}
   }
-
-  // All 6 attempts failed
-  if (btn) { btn.disabled = false; btn.textContent = btn.dataset.orig || 'Generate'; }
-  const now = new Date();
-  const resetUTC = new Date(); resetUTC.setUTCHours(24,0,0,0);
-  const minsLeft = Math.ceil((resetUTC - now) / 60000);
-  const hrs = Math.floor(minsLeft/60), mins = minsLeft%60;
-  const resetStr = hrs > 0 ? hrs+"h "+mins+"m" : mins+" minutes";
-  if (errDiv) {
-    errDiv.innerHTML = "⚠️ Free AI quota reached. Resets in <strong>" + resetStr + "</strong>. Try again shortly or <a href='https://skool.com/aiguerrilla' style='color:#00FF88'>join the community</a> for more access.";
-    errDiv.style.display = 'block';
-  }
-  return "__ERROR__";
+  return null;
 }
 
-function copyCode(id) {
-  const el = document.getElementById(id);
-  const text = el.textContent || el.value;
-  navigator.clipboard.writeText(text).then(() => {
-    const btn = event.target;
-    const orig = btn.textContent;
-    btn.textContent = '✓ Copied!';
-    btn.style.background = '#0d1a0d';
-    btn.style.color = '#00FF88';
-    setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.color = ''; }, 2000);
-  });
+function toggleAdv(id){var s=document.getElementById(id);if(s)s.style.display=s.style.display==='block'?'none':'block';}
+function setStatus(msg,col){var el=document.getElementById('statusMsg');if(el){el.textContent=msg;el.style.color=col||'#ff6b35';}}
+
+function showCard(title,subtitle,icon,color,badges,stats){
+  var el=document.getElementById('previewCard');if(!el)return;el.style.display='block';
+  var h='<div style="background:linear-gradient(135deg,'+color+'22,'+color+'11);border:1px solid '+color+'44;border-radius:16px;padding:20px;margin-bottom:16px;">';
+  h+='<div style="display:flex;align-items:center;gap:14px;margin-bottom:12px;">';
+  h+='<div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,'+color+','+color+'99);display:flex;align-items:center;justify-content:center;font-size:1.3rem;">'+icon+'</div>';
+  h+='<div><div style="font-size:1rem;font-weight:800;color:#fff;">'+title+'</div><div style="font-size:.8rem;color:#94a3b8;">'+subtitle+'</div></div>';
+  h+='<div style="margin-left:auto;background:'+color+';color:#000;padding:3px 10px;border-radius:50px;font-size:.72rem;font-weight:800;">✓ READY</div>';
+  h+='</div><div style="display:flex;gap:8px;flex-wrap:wrap;">';
+  for(var i=0;i<badges.length;i++)h+='<span style="background:'+color+'22;color:'+color+';border:1px solid '+color+'44;padding:3px 10px;border-radius:50px;font-size:.75rem;">'+badges[i]+'</span>';
+  h+='</div></div>';el.innerHTML=h;
 }
 
-
-function setIframeContent(frameId, html) {
-  const frame = document.getElementById(frameId);
-  // Write directly into iframe document — most reliable cross-browser method
-  frame.removeAttribute('sandbox');
-  frame.removeAttribute('referrerpolicy');
-  const doc = frame.contentDocument || frame.contentWindow.document;
-  doc.open();
-  doc.write(html);
-  doc.close();
+function copyOutput() {
+  var el = document.getElementById('outputArea');
+  if (el) navigator.clipboard.writeText(el.innerText || el.textContent).then(function(){setStatus('Copied!');setTimeout(function(){setStatus('');},2000);});
 }
 
-function downloadFile(content, filename, type = 'text/plain') {
-  const blob = new Blob([content], {type});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = filename;
-  a.click();
+function renderOutput(text) {
+  var area = document.getElementById('outputArea');
+  // Convert plain text to structured HTML
+  var html = text
+    .replace(/^## (.+)$/gm, '<h3 style="color:#ff6b35;font-size:1rem;margin:20px 0 10px;border-bottom:1px solid #ff6b3533;padding-bottom:6px;">$1</h3>')
+    .replace(/^### (.+)$/gm, '<h4 style="color:#f7931e;font-size:.9rem;margin:14px 0 8px;">$1</h4>')
+    .replace(/^\*\*(.+)\*\*$/gm, '<strong style="color:#e2e8f0;">$1</strong>')
+    .replace(/`([^`]+)`/g, '<code style="background:#1e2d40;padding:2px 6px;border-radius:4px;font-size:.8rem;color:#ff6b35;">$1</code>')
+    .replace(/^(\d+)\. (.+)$/gm, '<div style="display:flex;gap:10px;margin-bottom:8px;"><span style="background:#ff6b35;color:#000;border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;flex-shrink:0;margin-top:1px;">$1</span><span style="color:#e2e8f0;line-height:1.5;">$2</span></div>')
+    .replace(/^- (.+)$/gm, '<div style="color:#94a3b8;padding-left:16px;margin-bottom:4px;line-height:1.5;">• $1</div>')
+    .replace(/\n\n/g, '<br><br>')
+    .replace(/\n/g, '<br>');
+  area.innerHTML = '<div style="font-size:.88rem;line-height:1.8;">' + html + '</div>';
+  _outputText = text;
 }
 
-// Shared gradient card renderer — call after any successful generation
-function renderPreviewCard(containerId, opts) {
-  // opts: { title, subtitle, badges:[], color, icon, stats:[] }
-  const c = opts.color || '#00FF88';
-  const r = parseInt(c.slice(1,3),16), g = parseInt(c.slice(3,5),16), b = parseInt(c.slice(5,7),16);
-  const dark = `rgba(${r},${g},${b},0.08)`;
-  const mid  = `rgba(${r},${g},${b},0.18)`;
-  const glow = `rgba(${r},${g},${b},0.35)`;
-  const badges = (opts.badges||[]).map(t=>`<span style="background:${dark};border:1px solid ${glow};color:${c};font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.5px">${t}</span>`).join('');
-  const stats = (opts.stats||[]).map(s=>`<div style="background:#111;border:1px solid #1a1a1a;border-radius:8px;padding:12px 16px;flex:1;min-width:120px"><div style="font-size:1.1rem;font-weight:900;color:${c}">${s.value}</div><div style="font-size:.72rem;color:#666;margin-top:2px">${s.label}</div></div>`).join('');
-  const el = document.getElementById(containerId);
-  if (!el) return;
-  el.innerHTML = `
-    <div style="background:linear-gradient(135deg,#0a0a0a 0%,${dark} 50%,#0a0a0a 100%);border:1px solid ${glow};border-radius:14px;overflow:hidden;margin-bottom:20px">
-      <div style="background:linear-gradient(90deg,${mid},transparent);padding:24px 28px 20px;border-bottom:1px solid ${dark}">
-        <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px">
-          <div style="width:48px;height:48px;background:linear-gradient(135deg,${c},${mid});border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0">${opts.icon||'⚡'}</div>
-          <div>
-            <div style="font-size:1.2rem;font-weight:900;color:#fff;line-height:1.2">${opts.title||'Your Project'}</div>
-            <div style="font-size:.82rem;color:#888;margin-top:2px">${opts.subtitle||''}</div>
-          </div>
-          <div style="margin-left:auto;background:${dark};border:1px solid ${glow};border-radius:6px;padding:4px 10px;font-size:.7rem;font-weight:700;color:${c}">READY</div>
-        </div>
-        <div style="display:flex;flex-wrap:wrap;gap:6px">${badges}</div>
-      </div>
-      ${stats ? `<div style="display:flex;flex-wrap:wrap;gap:10px;padding:16px 28px">${stats}</div>` : ''}
-      <div style="padding:0 28px 16px;display:flex;gap:8px;flex-wrap:wrap">
-        <div style="font-size:.72rem;color:#444;display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;background:${c};border-radius:50%;display:inline-block"></span>Generated by AI Guerrilla</div>
-        <div style="font-size:.72rem;color:#444;margin-left:auto">aiguerrilla.net</div>
-      </div>
-    </div>`;
-  el.style.display = 'block';
-}
-</script>
-<script>
-let instructions = '';
-function getSelectedApps() {
-  const apps = ['gmail','sheets','slack','notion','mailchimp','hubspot','shopify','stripe','typeform','calendly','airtable','zoom'];
-  return apps.filter(a => document.getElementById('app_' + a)?.checked).map(a => a.charAt(0).toUpperCase() + a.slice(1));
-}
-async function buildAutomation() {
-  const desc = document.getElementById('autoDesc').value.trim();
-  const apps = getSelectedApps();
-  const trigger = document.getElementById('triggerType').value;
-  if (!desc) { alert('Please describe what you want to automate.'); return; }
+async function generateAutomation() {
+  var desc = document.getElementById('autoDesc').value.trim();
+  if (!desc) { setStatus('Please describe your automation', '#f87171'); return; }
+  var triggerApp = document.getElementById('triggerApp').value;
+  var actionApp = document.getElementById('actionApp').value;
+  var format = document.getElementById('outputFormat').value;
 
-  const system = `You are a Zapier expert who has built 1000+ automations. Generate EXPERT-LEVEL instructions with this exact format: ZAP OVERVIEW (what it does + why it matters). WHAT YOU NEED (accounts/credentials). STEP-BY-STEP BUILD (each step: exact app name, exact trigger/action event name, every field mapping spelled out, filter conditions). HOW TO TEST (exactly how). COMMON MISTAKES (top 3 with fixes). PRO TIPS (2-3 upgrades). FREE ALTERNATIVE (same thing in n8n). Be specific — use exact Zapier UI labels. No vague instructions like configure as needed. Spell out every field.`;
+  var btn = document.getElementById('genBtn');
+  btn.disabled = true; setStatus('Building automation blueprint...');
 
-  const prompt = `Create step-by-step Zapier instructions for this automation:
-"${desc}"
+  var platforms = format === 'all' ? 'Zapier, n8n, and Make.com' :
+                  format === 'zapier' ? 'Zapier' :
+                  format === 'n8n' ? 'n8n' : 'Make.com';
 
-Apps the user has: ${apps.length ? apps.join(', ') : 'not specified — suggest appropriate ones'}
-Trigger type: ${trigger}
+  var sys = 'You are an expert automation consultant. Provide clear, actionable step-by-step instructions for setting up no-code automations.';
+  var prompt = 'Create a detailed automation blueprint for: '+desc
+    + (triggerApp ? '\nTrigger app: '+triggerApp : '')
+    + (actionApp ? '\nAction app: '+actionApp : '')
+    + '\nPlatform(s): '+platforms
+    + '\n\nProvide:\n1. Overview of what this automation does\n2. Prerequisites (accounts, API keys needed)\n3. Step-by-step setup for '+platforms+'\n4. Exact field mappings (Source Field → Destination Field)\n5. Testing steps\n6. Common issues and fixes\n\nFormat with clear headers using ## and numbered steps.';
 
-Provide:
-1. Which trigger app and event to choose
-2. How to configure the trigger step by step
-3. Which action app(s) and events
-4. Exactly which fields to map and how
-5. Any filters or conditions to add
-6. How to test the Zap
-7. Any tips to avoid common mistakes
+  var raw = await callAI(prompt, sys, 2000);
+  if (!raw) { setStatus('AI failed', '#f87171'); btn.disabled=false; return; }
 
-Be very specific and beginner-friendly. Use Zapier's actual UI terminology.`;
+  renderOutput(raw);
+  setStatus('Automation blueprint ready!');
+  btn.disabled = false;
 
-  const result = await callGroq(prompt, system, 2500);
-  if (result === "__ERROR__") return;
-  instructions = result;
-  document.getElementById('instructionsOutput').textContent = result;
-  document.getElementById('outputSection').classList.add('visible');
-  renderPreviewCard('previewCard', {
-    title: 'Zapier Automation',
-    subtitle: trigger + ' · ' + (apps.length||0) + ' apps',
-    icon: '⚡',
-    color: '#FF4A00',
-    badges: apps.slice(0,4).concat(['Zapier']),
-    stats: [
-      {value: apps.length||'?', label: 'Apps Connected'},
-      {value: 'Auto', label: 'Runs'},
-      {value: 'Free Plan', label: 'Zapier Tier'}
-    ]
-  });
-}
-function copyInstructions() {
-  if (!instructions) return;
-  navigator.clipboard.writeText(instructions).then(() => alert('Instructions copied!'));
-}
-function downloadInstructions() {
-  if (!instructions) { alert('Build your automation first!'); return; }
-  downloadFile(instructions, 'zapier-automation.txt');
+  var badges = [platforms];
+  if (triggerApp) badges.push(triggerApp);
+  if (actionApp) badges.push(actionApp);
+  showCard('Automation Blueprint', desc.substring(0,55)+'...', '⚡', '#ff6b35', badges,
+    [{value:format==='all'?'3':'1',label:'Platforms'},{value:'✓',label:'Field Maps'},{value:'✓',label:'Test Steps'}]);
 }
 </script>
 </body>
