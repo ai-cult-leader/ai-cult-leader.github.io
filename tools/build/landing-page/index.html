@@ -189,16 +189,27 @@ async function generateLP() {
   if (logoFile) { try { logoBase64 = await fileToBase64(logoFile); } catch(e){} }
 
   var sys = 'You are a conversion copywriter specializing in landing pages. Return ONLY a raw JSON object, no markdown.';
-  var prompt = 'Write high-converting landing page copy for "'+name+'" targeted at '+audience+'. Tagline: '+tagline+'. Main benefit: '+benefit+'. Price: '+price+'. Return JSON with these exact keys: {"headline":"...","subheadline":"...","benefits":["...","...","...","...","..."],"social_proof":{"quote":"...","name":"...","result":"..."},"urgency":"...","guarantee":"30-day money-back guarantee","offer_headline":"...","offer_features":["...","...","..."]}';
+  var prompt = 'Write high-converting landing page copy for "'+name+'" targeted at '+audience+'. Tagline: '+tagline+'. Main benefit: '+benefit+'. Price: '+price+'. Return ONLY this JSON with no extra text: {"headline":"short bold headline","subheadline":"1 sentence","benefits":["benefit 1","benefit 2","benefit 3"],"social_proof":{"quote":"testimonial","name":"Customer Name","result":"result achieved"},"urgency":"urgency line","guarantee":"30-day guarantee","offer_headline":"offer headline","offer_features":["feature 1","feature 2"]}';
 
-  var raw = await callAI(prompt, sys, 1400);
+  var raw = await callAI(prompt, sys, 2500);
   if (!raw) { setStatus('AI call failed', '#f87171'); btn.disabled=false; return; }
 
   var copy;
   try {
     var s=raw.indexOf('{'), e=raw.lastIndexOf('}');
-    copy = JSON.parse(raw.substring(s,e+1));
-  } catch(err) { setStatus('Parse error: '+err.message, '#f87171'); btn.disabled=false; return; }
+    if(s===-1||e===-1){throw new Error('No JSON found');}
+    var jsonStr=raw.substring(s,e+1);
+    // Fix truncated arrays/strings
+    jsonStr=jsonStr.replace(/,\s*["}]\s*$/,'').replace(/:\s*"[^"]*$/,':"..."');
+    // Count braces to ensure closure
+    var opens=0,closes=0;
+    for(var i=0;i<jsonStr.length;i++){if(jsonStr[i]==='{')opens++;if(jsonStr[i]==='}')closes++;}
+    while(closes<opens){jsonStr+='}';closes++;}
+    copy = JSON.parse(jsonStr);
+  } catch(err) {
+    // Last resort: use defaults
+    copy = {headline:name+' — '+tagline,subheadline:benefit,benefits:[benefit,'Save time','Easy to use'],social_proof:{quote:'Amazing product!',name:'Happy Customer',result:'Great results'},urgency:'Limited time offer',guarantee:'30-day money-back guarantee',offer_headline:'Get '+name+' Today',offer_features:['Full access','Support included']};
+  }
 
   var bg = bgStyle==='dark' ? '#080808' : '#f8f8f8';
   var fg = bgStyle==='dark' ? '#ffffff' : '#111111';
