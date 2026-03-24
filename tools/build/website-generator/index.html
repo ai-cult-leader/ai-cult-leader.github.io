@@ -360,8 +360,7 @@ async function generateWebsite() {
     +'<footer style="background:#050505;color:#555;text-align:center;padding:28px;font-size:.85rem;">© 2025 '+name+'. All rights reserved.</footer>\n'
     +'</body>\n</html>';
 
-  var blob = new Blob([_websiteHTML], {type:'text/html'});
-  document.getElementById('previewFrame').src = URL.createObjectURL(blob);
+  document.getElementById('previewFrame').srcdoc = _websiteHTML;
   document.getElementById('dlBtn').style.display = 'inline-block';
   setStatus('Website generated!');
   btn.disabled = false;
