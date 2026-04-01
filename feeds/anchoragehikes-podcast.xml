@@ -1,0 +1,1403 @@
+<?xml version="1.0" ?>
+<rss xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:ns1="http://purl.org/rss/1.0/modules/content/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+  <channel>
+    <title>AnchorageHikes — Alaska Trail News &amp; Outdoors</title>
+    <link>https://anchoragehikes.com</link>
+    <description>Alaska's most complete hiking resource. Trail news, alerts, and outdoor guides for Chugach State Park, Denali, Kenai Peninsula, and all Alaska trails.</description>
+    <language>en-us</language>
+    <ns0:author>AnchorageHikes.com</ns0:author>
+    <ns0:category text="Sports"/>
+    <ns0:category text="News"/>
+    <ns0:explicit>no</ns0:explicit>
+    <ns0:image href="https://anchoragehikes.com/logo.png"/>
+    <image>
+      <url>https://anchoragehikes.com/logo.png</url>
+      <title>AnchorageHikes</title>
+      <link>https://anchoragehikes.com</link>
+    </image>
+    <item>
+      <title>Wildlife Activity Summary — March 30, 2026</title>
+      <link>https://anchoragehikes.com/wildlife-activity-summary-march-30-2026/</link>
+      <guid isPermaLink="true">https://anchoragehikes.com/wildlife-activity-summary-march-30-2026/</guid>
+      <pubDate>Mon, 30 Mar 2026 22:00:20 +0000</pubDate>
+      <description>No new wildlife sightings reported near Anchorage trails on 2026-03-30.</description>
+      <ns1:encoded>{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;NewsArticle&quot;,
+  &quot;headline&quot;: &quot;Wildlife Activity Summary — March 30, 2026&quot;,
+  &quot;url&quot;: &quot;https://anchoragehikes.com/wildlife-activity-summary-march-30-2026/&quot;,
+  &quot;datePublished&quot;: &quot;2026-03-30T23:00:20&quot;,
+  &quot;dateModified&quot;: &quot;2026-03-30T23:00:20&quot;,
+  &quot;author&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com Editorial Team&quot;,
+    &quot;url&quot;: &quot;https://anchoragehikes.com/about/&quot;
+  },
+  &quot;publisher&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com&quot;,
+    &quot;logo&quot;: {
+      &quot;@type&quot;: &quot;ImageObject&quot;,
+      &quot;url&quot;: &quot;https://anchoragehikes.com/wp-content/uploads/2026/03/ah-icon-512.png&quot;,
+      &quot;width&quot;: 512,
+      &quot;height&quot;: 512
+    }
+  },
+  &quot;description&quot;: &quot;No new wildlife sightings reported near Anchorage trails on 2026-03-30.&quot;,
+  &quot;articleSection&quot;: &quot;Alaska Hiking&quot;,
+  &quot;keywords&quot;: &quot;Alaska hiking, trails, outdoor recreation, Anchorage&quot;
+}
+
+No new wildlife sightings reported near Anchorage trails today (2026-03-30).
+Always remain bear-aware and carry bear spray regardless of recent sighting reports.
+Bears, moose, and other wildlife can appear on any trail at any time.
+
+Current bear spray requirement: Highly recommended on all Chugach State Park trails
+Keep dogs on leash in all state park trails
+Make noise while hiking, especially near berry patches and streams
+
+Complete Alaska Bear Safety Guide →
+
+  Planning a trip to Anchorage? Find local gear shops, restaurants, and services at
+  AnchorageList.com —
+  Anchorage&amp;#8217;s most complete local directory.</ns1:encoded>
+      <ns0:summary>No new wildlife sightings reported near Anchorage trails on 2026-03-30.</ns0:summary>
+    </item>
+    <item>
+      <title>Mat-Su Borough Parks Cleanup — April 29, 2026</title>
+      <link>https://anchoragehikes.com/mat-su-borough-parks-cleanup-20260429/</link>
+      <guid isPermaLink="true">https://anchoragehikes.com/mat-su-borough-parks-cleanup-20260429/</guid>
+      <pubDate>Mon, 30 Mar 2026 21:04:54 +0000</pubDate>
+      <description>Cleanup — April 29, 2026 — Mat-Su Borough. Join us for a park cleanup in the Mat-Su Borough. We will be picking up trash and beautifying the pa</description>
+      <ns1:encoded>{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;NewsArticle&quot;,
+  &quot;headline&quot;: &quot;Mat-Su Borough Parks Cleanup — April 29, 2026&quot;,
+  &quot;url&quot;: &quot;https://anchoragehikes.com/mat-su-borough-parks-cleanup-20260429/&quot;,
+  &quot;datePublished&quot;: &quot;2026-03-30T22:04:54&quot;,
+  &quot;dateModified&quot;: &quot;2026-03-30T22:04:54&quot;,
+  &quot;author&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com Editorial Team&quot;,
+    &quot;url&quot;: &quot;https://anchoragehikes.com/about/&quot;
+  },
+  &quot;publisher&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com&quot;,
+    &quot;logo&quot;: {
+      &quot;@type&quot;: &quot;ImageObject&quot;,
+      &quot;url&quot;: &quot;https://anchoragehikes.com/wp-content/uploads/2026/03/ah-icon-512.png&quot;,
+      &quot;width&quot;: 512,
+      &quot;height&quot;: 512
+    }
+  },
+  &quot;description&quot;: &quot;Cleanup — April 29, 2026 — Mat-Su Borough. Join us for a park cleanup in the Mat-Su Borough. We will be picking up trash and beautifying the pa&quot;,
+  &quot;articleSection&quot;: &quot;Alaska Hiking&quot;,
+  &quot;keywords&quot;: &quot;Alaska hiking, trails, outdoor recreation, Anchorage&quot;
+}
+
+
+
+
+
+
+
+      Cleanup
+      Easy
+      Free
+    
+Mat-Su Borough Parks Cleanup
+
+      📅 April 29, 2026 &amp;nbsp;•&amp;nbsp; 🕐 9:00 AM AKDT &amp;nbsp;•&amp;nbsp; 🏢 Mat-Su Borough Parks
+    
+
+
+
+
+
+
+
+Date
+April 29, 2026
+
+
+
+Time
+9:00 AM AKDT
+
+
+
+Location
+Mat-Su Borough
+
+
+
+Cost
+Free
+
+
+
+Join us for a park cleanup in the Mat-Su Borough. We will be picking up trash and beautifying the parks, and no experience is necessary. This is a great opportunity to give back to the community and enjoy the beautiful scenery of the area.
+
+
+cleanupmat-sufree
+
+
+📍 Location &amp;amp; Directions
+61.6167° N, -149.2667° W
+📌 Mat-Su Borough
+  
+    🗺️ Get Directions in Google Maps
+  
+
+    &lt;iframe width=&quot;100%&quot; height=&quot;320&quot; style=&quot;border:0;display:block;&quot;
+      src=&quot;https://maps.google.com/maps?q=61.6167,-149.2667&amp;#038;z=14&amp;#038;output=embed&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot;
+      referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;
+  
+
+
+Ready to Join?
+Organized by Mat-Su Borough Parks &amp;nbsp;•&amp;nbsp; Free
+  
+    Register / Learn More →
+  
+Source: https://www.matsuborough.us/
+
+
+
+  ← All Alaska Events
+  Browse Trails
+  AnchorageHikes.com
+
+
+
+{&quot;@context&quot;: &quot;https://schema.org&quot;, &quot;@type&quot;: &quot;Event&quot;, &quot;name&quot;: &quot;Mat-Su Borough Parks Cleanup&quot;, &quot;startDate&quot;: &quot;2026-04-29&quot;, &quot;location&quot;: {&quot;@type&quot;: &quot;Place&quot;, &quot;name&quot;: &quot;Mat-Su Borough&quot;, &quot;geo&quot;: {&quot;@type&quot;: &quot;GeoCoordinates&quot;, &quot;latitude&quot;: 61.6167, &quot;longitude&quot;: -149.2667}}, &quot;organizer&quot;: {&quot;@type&quot;: &quot;Organization&quot;, &quot;name&quot;: &quot;Mat-Su Borough Parks&quot;}, &quot;offers&quot;: {&quot;@type&quot;: &quot;Offer&quot;, &quot;price&quot;: &quot;0&quot;, &quot;priceCurrency&quot;: &quot;USD&quot;, &quot;url&quot;: &quot;https://www.matsuborough.us/parks-and-recreation/events/&quot;}, &quot;description&quot;: &quot;Join us for a park cleanup in the Mat-Su Borough. We will be picking up trash and beautifying the parks, and no experience is necessary. This is a great opportunity to give back to the community and enjoy the beautiful scenery of the area.&quot;}</ns1:encoded>
+      <ns0:summary>Cleanup — April 29, 2026 — Mat-Su Borough. Join us for a park cleanup in the Mat-Su Borough. We will be picking up trash and beautifying the pa</ns0:summary>
+    </item>
+    <item>
+      <title>Bear Safety Clinic — May 8, 2026</title>
+      <link>https://anchoragehikes.com/bear-safety-clinic-20260508/</link>
+      <guid isPermaLink="true">https://anchoragehikes.com/bear-safety-clinic-20260508/</guid>
+      <pubDate>Mon, 30 Mar 2026 21:04:15 +0000</pubDate>
+      <description>Workshop — May 8, 2026 — Anchorage. Join us for a bear safety clinic, where you will learn about the basics of bear safety and how to pr</description>
+      <ns1:encoded>{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;NewsArticle&quot;,
+  &quot;headline&quot;: &quot;Bear Safety Clinic — May 8, 2026&quot;,
+  &quot;url&quot;: &quot;https://anchoragehikes.com/bear-safety-clinic-20260508/&quot;,
+  &quot;datePublished&quot;: &quot;2026-03-30T22:04:15&quot;,
+  &quot;dateModified&quot;: &quot;2026-03-30T22:04:41&quot;,
+  &quot;author&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com Editorial Team&quot;,
+    &quot;url&quot;: &quot;https://anchoragehikes.com/about/&quot;
+  },
+  &quot;publisher&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com&quot;,
+    &quot;logo&quot;: {
+      &quot;@type&quot;: &quot;ImageObject&quot;,
+      &quot;url&quot;: &quot;https://anchoragehikes.com/wp-content/uploads/2026/03/ah-icon-512.png&quot;,
+      &quot;width&quot;: 512,
+      &quot;height&quot;: 512
+    }
+  },
+  &quot;description&quot;: &quot;Workshop — May 8, 2026 — Anchorage. Join us for a bear safety clinic, where you will learn about the basics of bear safety and how to pr&quot;,
+  &quot;articleSection&quot;: &quot;Alaska Hiking&quot;,
+  &quot;keywords&quot;: &quot;Alaska hiking, trails, outdoor recreation, Anchorage&quot;
+}
+
+
+
+
+
+
+
+      Workshop
+      Easy
+      $20
+    
+Bear Safety Clinic
+
+      📅 May 8, 2026 &amp;nbsp;•&amp;nbsp; 🕐 10:00 AM AKDT &amp;nbsp;•&amp;nbsp; 🏢 Friends of Chugach
+    
+
+
+
+
+
+
+
+Date
+May 8, 2026
+
+
+
+Time
+10:00 AM AKDT
+
+
+
+Location
+Anchorage
+
+
+
+Cost
+$20
+
+
+
+Join us for a bear safety clinic, where you will learn about the basics of bear safety and how to protect yourself in bear country. This clinic is perfect for hikers, campers, and anyone who spends time outdoors in Alaska.
+
+
+bear safetyworkshopanchorage
+
+
+📍 Location &amp;amp; Directions
+61.2181° N, -149.9003° W
+📌 Anchorage
+  
+    🗺️ Get Directions in Google Maps
+  
+
+    &lt;iframe width=&quot;100%&quot; height=&quot;320&quot; style=&quot;border:0;display:block;&quot;
+      src=&quot;https://maps.google.com/maps?q=61.2181,-149.9003&amp;#038;z=14&amp;#038;output=embed&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot;
+      referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;
+  
+
+
+Ready to Join?
+Organized by Friends of Chugach &amp;nbsp;•&amp;nbsp; $20
+  
+    Register / Learn More →
+  
+Source: https://www.friendsofchugach.org/
+
+
+
+  ← All Alaska Events
+  Browse Trails
+  AnchorageHikes.com
+
+
+
+{&quot;@context&quot;: &quot;https://schema.org&quot;, &quot;@type&quot;: &quot;Event&quot;, &quot;name&quot;: &quot;Bear Safety Clinic&quot;, &quot;startDate&quot;: &quot;2026-05-08&quot;, &quot;location&quot;: {&quot;@type&quot;: &quot;Place&quot;, &quot;name&quot;: &quot;Anchorage&quot;, &quot;geo&quot;: {&quot;@type&quot;: &quot;GeoCoordinates&quot;, &quot;latitude&quot;: 61.2181, &quot;longitude&quot;: -149.9003}}, &quot;organizer&quot;: {&quot;@type&quot;: &quot;Organization&quot;, &quot;name&quot;: &quot;Friends of Chugach&quot;}, &quot;offers&quot;: {&quot;@type&quot;: &quot;Offer&quot;, &quot;price&quot;: &quot;20&quot;, &quot;priceCurrency&quot;: &quot;USD&quot;, &quot;url&quot;: &quot;https://www.friendsofchugach.org/events/bear-safety-clinic/&quot;}, &quot;description&quot;: &quot;Join us for a bear safety clinic, where you will learn about the basics of bear safety and how to protect yourself in bear country. This clinic is perfect for hikers, campers, and anyone who spends time outdoors in Alaska.&quot;}</ns1:encoded>
+      <ns0:summary>Workshop — May 8, 2026 — Anchorage. Join us for a bear safety clinic, where you will learn about the basics of bear safety and how to pr</ns0:summary>
+    </item>
+    <item>
+      <title>Southeast Alaska Birding Walk — April 22, 2026</title>
+      <link>https://anchoragehikes.com/southeast-alaska-birding-walk-20260422/</link>
+      <guid isPermaLink="true">https://anchoragehikes.com/southeast-alaska-birding-walk-20260422/</guid>
+      <pubDate>Mon, 30 Mar 2026 21:03:34 +0000</pubDate>
+      <description>Birding — April 22, 2026 — Southeast Alaska. Join us for a birding walk in the beautiful forests of Southeast Alaska. We will explore the unique</description>
+      <ns1:encoded>{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;NewsArticle&quot;,
+  &quot;headline&quot;: &quot;Southeast Alaska Birding Walk — April 22, 2026&quot;,
+  &quot;url&quot;: &quot;https://anchoragehikes.com/southeast-alaska-birding-walk-20260422/&quot;,
+  &quot;datePublished&quot;: &quot;2026-03-30T22:03:34&quot;,
+  &quot;dateModified&quot;: &quot;2026-03-30T22:04:05&quot;,
+  &quot;author&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com Editorial Team&quot;,
+    &quot;url&quot;: &quot;https://anchoragehikes.com/about/&quot;
+  },
+  &quot;publisher&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com&quot;,
+    &quot;logo&quot;: {
+      &quot;@type&quot;: &quot;ImageObject&quot;,
+      &quot;url&quot;: &quot;https://anchoragehikes.com/wp-content/uploads/2026/03/ah-icon-512.png&quot;,
+      &quot;width&quot;: 512,
+      &quot;height&quot;: 512
+    }
+  },
+  &quot;description&quot;: &quot;Birding — April 22, 2026 — Southeast Alaska. Join us for a birding walk in the beautiful forests of Southeast Alaska. We will explore the unique&quot;,
+  &quot;articleSection&quot;: &quot;Alaska Hiking&quot;,
+  &quot;keywords&quot;: &quot;Alaska hiking, trails, outdoor recreation, Anchorage&quot;
+}
+
+
+
+
+
+
+
+      Birding
+      Easy
+      Free
+    
+Southeast Alaska Birding Walk
+
+      📅 April 22, 2026 &amp;nbsp;•&amp;nbsp; 🕐 8:00 AM AKDT &amp;nbsp;•&amp;nbsp; 🏢 USFS Chugach
+    
+
+
+
+
+
+
+
+Date
+April 22, 2026
+
+
+
+Time
+8:00 AM AKDT
+
+
+
+Location
+Southeast Alaska
+
+
+
+Cost
+Free
+
+
+
+Join us for a birding walk in the beautiful forests of Southeast Alaska. We will explore the unique habitats of the area and spot a variety of bird species. This walk is approximately 2 miles round trip and is considered easy in difficulty.
+
+
+birdingsoutheastfree
+
+
+📍 Location &amp;amp; Directions
+57.0453° N, -135.3339° W
+📌 Southeast Alaska
+  
+    🗺️ Get Directions in Google Maps
+  
+
+    &lt;iframe width=&quot;100%&quot; height=&quot;320&quot; style=&quot;border:0;display:block;&quot;
+      src=&quot;https://maps.google.com/maps?q=57.0453,-135.3339&amp;#038;z=14&amp;#038;output=embed&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot;
+      referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;
+  
+
+
+Ready to Join?
+Organized by USFS Chugach &amp;nbsp;•&amp;nbsp; Free
+  
+    Register / Learn More →
+  
+Source: https://www.fs.usda.gov/chugach/
+
+
+
+  ← All Alaska Events
+  Browse Trails
+  AnchorageHikes.com
+
+
+
+{&quot;@context&quot;: &quot;https://schema.org&quot;, &quot;@type&quot;: &quot;Event&quot;, &quot;name&quot;: &quot;Southeast Alaska Birding Walk&quot;, &quot;startDate&quot;: &quot;2026-04-22&quot;, &quot;location&quot;: {&quot;@type&quot;: &quot;Place&quot;, &quot;name&quot;: &quot;Southeast Alaska&quot;, &quot;geo&quot;: {&quot;@type&quot;: &quot;GeoCoordinates&quot;, &quot;latitude&quot;: 57.0453, &quot;longitude&quot;: -135.3339}}, &quot;organizer&quot;: {&quot;@type&quot;: &quot;Organization&quot;, &quot;name&quot;: &quot;USFS Chugach&quot;}, &quot;offers&quot;: {&quot;@type&quot;: &quot;Offer&quot;, &quot;price&quot;: &quot;0&quot;, &quot;priceCurrency&quot;: &quot;USD&quot;, &quot;url&quot;: &quot;https://www.fs.usda.gov/chugach/events/&quot;}, &quot;description&quot;: &quot;Join us for a birding walk in the beautiful forests of Southeast Alaska. We will explore the unique habitats of the area and spot a variety of bird species. This walk is approximately 2 miles round trip and is considered easy in difficulty.&quot;}</ns1:encoded>
+      <ns0:summary>Birding — April 22, 2026 — Southeast Alaska. Join us for a birding walk in the beautiful forests of Southeast Alaska. We will explore the unique</ns0:summary>
+    </item>
+    <item>
+      <title>Fairbanks Kayaking Meetup — May 15, 2026</title>
+      <link>https://anchoragehikes.com/fairbanks-kayaking-meetup-20260515/</link>
+      <guid isPermaLink="true">https://anchoragehikes.com/fairbanks-kayaking-meetup-20260515/</guid>
+      <pubDate>Mon, 30 Mar 2026 21:02:44 +0000</pubDate>
+      <description>Meetup — May 15, 2026 — Fairbanks. Join us for a kayaking meetup in Fairbanks. We will paddle around the beautiful lakes and rivers of</description>
+      <ns1:encoded>{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;NewsArticle&quot;,
+  &quot;headline&quot;: &quot;Fairbanks Kayaking Meetup — May 15, 2026&quot;,
+  &quot;url&quot;: &quot;https://anchoragehikes.com/fairbanks-kayaking-meetup-20260515/&quot;,
+  &quot;datePublished&quot;: &quot;2026-03-30T22:02:44&quot;,
+  &quot;dateModified&quot;: &quot;2026-03-30T22:03:24&quot;,
+  &quot;author&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com Editorial Team&quot;,
+    &quot;url&quot;: &quot;https://anchoragehikes.com/about/&quot;
+  },
+  &quot;publisher&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com&quot;,
+    &quot;logo&quot;: {
+      &quot;@type&quot;: &quot;ImageObject&quot;,
+      &quot;url&quot;: &quot;https://anchoragehikes.com/wp-content/uploads/2026/03/ah-icon-512.png&quot;,
+      &quot;width&quot;: 512,
+      &quot;height&quot;: 512
+    }
+  },
+  &quot;description&quot;: &quot;Meetup — May 15, 2026 — Fairbanks. Join us for a kayaking meetup in Fairbanks. We will paddle around the beautiful lakes and rivers of&quot;,
+  &quot;articleSection&quot;: &quot;Alaska Hiking&quot;,
+  &quot;keywords&quot;: &quot;Alaska hiking, trails, outdoor recreation, Anchorage&quot;
+}
+
+
+
+
+
+
+
+      Meetup
+      Easy
+      Free
+    
+Fairbanks Kayaking Meetup
+
+      📅 May 15, 2026 &amp;nbsp;•&amp;nbsp; 🕐 6:00 PM AKDT &amp;nbsp;•&amp;nbsp; 🏢 REI Anchorage
+    
+
+
+
+
+
+
+
+Date
+May 15, 2026
+
+
+
+Time
+6:00 PM AKDT
+
+
+
+Location
+Fairbanks
+
+
+
+Cost
+Free
+
+
+
+Join us for a kayaking meetup in Fairbanks. We will paddle around the beautiful lakes and rivers of the area, and enjoy the stunning scenery. No experience is necessary, and kayaks will be provided.
+
+
+kayakingmeetupfairbanks
+
+
+📍 Location &amp;amp; Directions
+64.8433° N, -147.7333° W
+📌 Fairbanks
+  
+    🗺️ Get Directions in Google Maps
+  
+
+    &lt;iframe width=&quot;100%&quot; height=&quot;320&quot; style=&quot;border:0;display:block;&quot;
+      src=&quot;https://maps.google.com/maps?q=64.8433,-147.7333&amp;#038;z=14&amp;#038;output=embed&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot;
+      referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;
+  
+
+
+Ready to Join?
+Organized by REI Anchorage &amp;nbsp;•&amp;nbsp; Free
+  
+    Register / Learn More →
+  
+Source: https://www.rei.com/stores/anchorage.html
+
+
+
+  ← All Alaska Events
+  Browse Trails
+  AnchorageHikes.com
+
+
+
+{&quot;@context&quot;: &quot;https://schema.org&quot;, &quot;@type&quot;: &quot;Event&quot;, &quot;name&quot;: &quot;Fairbanks Kayaking Meetup&quot;, &quot;startDate&quot;: &quot;2026-05-15&quot;, &quot;location&quot;: {&quot;@type&quot;: &quot;Place&quot;, &quot;name&quot;: &quot;Fairbanks&quot;, &quot;geo&quot;: {&quot;@type&quot;: &quot;GeoCoordinates&quot;, &quot;latitude&quot;: 64.8433, &quot;longitude&quot;: -147.7333}}, &quot;organizer&quot;: {&quot;@type&quot;: &quot;Organization&quot;, &quot;name&quot;: &quot;REI Anchorage&quot;}, &quot;offers&quot;: {&quot;@type&quot;: &quot;Offer&quot;, &quot;price&quot;: &quot;0&quot;, &quot;priceCurrency&quot;: &quot;USD&quot;, &quot;url&quot;: &quot;https://www.rei.com/stores/anchorage.html/events&quot;}, &quot;description&quot;: &quot;Join us for a kayaking meetup in Fairbanks. We will paddle around the beautiful lakes and rivers of the area, and enjoy the stunning scenery. No experience is necessary, and kayaks will be provided.&quot;}</ns1:encoded>
+      <ns0:summary>Meetup — May 15, 2026 — Fairbanks. Join us for a kayaking meetup in Fairbanks. We will paddle around the beautiful lakes and rivers of</ns0:summary>
+    </item>
+    <item>
+      <title>Denali Volunteer Day — April 24, 2026</title>
+      <link>https://anchoragehikes.com/denali-volunteer-day-20260424/</link>
+      <guid isPermaLink="true">https://anchoragehikes.com/denali-volunteer-day-20260424/</guid>
+      <pubDate>Mon, 30 Mar 2026 21:02:05 +0000</pubDate>
+      <description>Volunteer Day — April 24, 2026 — Denali National Park. Join us for a day of volunteering in Denali National Park. We will be working on trail maintenance a</description>
+      <ns1:encoded>{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;NewsArticle&quot;,
+  &quot;headline&quot;: &quot;Denali Volunteer Day — April 24, 2026&quot;,
+  &quot;url&quot;: &quot;https://anchoragehikes.com/denali-volunteer-day-20260424/&quot;,
+  &quot;datePublished&quot;: &quot;2026-03-30T22:02:05&quot;,
+  &quot;dateModified&quot;: &quot;2026-03-30T22:02:35&quot;,
+  &quot;author&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com Editorial Team&quot;,
+    &quot;url&quot;: &quot;https://anchoragehikes.com/about/&quot;
+  },
+  &quot;publisher&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com&quot;,
+    &quot;logo&quot;: {
+      &quot;@type&quot;: &quot;ImageObject&quot;,
+      &quot;url&quot;: &quot;https://anchoragehikes.com/wp-content/uploads/2026/03/ah-icon-512.png&quot;,
+      &quot;width&quot;: 512,
+      &quot;height&quot;: 512
+    }
+  },
+  &quot;description&quot;: &quot;Volunteer Day — April 24, 2026 — Denali National Park. Join us for a day of volunteering in Denali National Park. We will be working on trail maintenance a&quot;,
+  &quot;articleSection&quot;: &quot;Alaska Hiking&quot;,
+  &quot;keywords&quot;: &quot;Alaska hiking, trails, outdoor recreation, Anchorage&quot;
+}
+
+
+
+
+
+
+
+      Volunteer Day
+      Easy
+      Free
+    
+Denali Volunteer Day
+
+      📅 April 24, 2026 &amp;nbsp;•&amp;nbsp; 🕐 9:00 AM AKDT &amp;nbsp;•&amp;nbsp; 🏢 Alaska Trails
+    
+
+
+
+
+
+
+
+Date
+April 24, 2026
+
+
+
+Time
+9:00 AM AKDT
+
+
+
+Location
+Denali National Park
+
+
+
+Cost
+Free
+
+
+
+Join us for a day of volunteering in Denali National Park. We will be working on trail maintenance and cleanup, and no experience is necessary. This is a great opportunity to give back to the community and enjoy the beautiful scenery of the park.
+
+
+volunteerdenalifree
+
+
+📍 Location &amp;amp; Directions
+63.7333° N, -149.0667° W
+📌 Denali National Park
+  
+    🗺️ Get Directions in Google Maps
+  
+
+    &lt;iframe width=&quot;100%&quot; height=&quot;320&quot; style=&quot;border:0;display:block;&quot;
+      src=&quot;https://maps.google.com/maps?q=63.7333,-149.0667&amp;#038;z=14&amp;#038;output=embed&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot;
+      referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;
+  
+
+
+Ready to Join?
+Organized by Alaska Trails &amp;nbsp;•&amp;nbsp; Free
+  
+    Register / Learn More →
+  
+Source: https://www.alaskatrails.org/
+
+
+
+  ← All Alaska Events
+  Browse Trails
+  AnchorageHikes.com
+
+
+
+{&quot;@context&quot;: &quot;https://schema.org&quot;, &quot;@type&quot;: &quot;Event&quot;, &quot;name&quot;: &quot;Denali Volunteer Day&quot;, &quot;startDate&quot;: &quot;2026-04-24&quot;, &quot;location&quot;: {&quot;@type&quot;: &quot;Place&quot;, &quot;name&quot;: &quot;Denali National Park&quot;, &quot;geo&quot;: {&quot;@type&quot;: &quot;GeoCoordinates&quot;, &quot;latitude&quot;: 63.7333, &quot;longitude&quot;: -149.0667}}, &quot;organizer&quot;: {&quot;@type&quot;: &quot;Organization&quot;, &quot;name&quot;: &quot;Alaska Trails&quot;}, &quot;offers&quot;: {&quot;@type&quot;: &quot;Offer&quot;, &quot;price&quot;: &quot;0&quot;, &quot;priceCurrency&quot;: &quot;USD&quot;, &quot;url&quot;: &quot;https://www.alaskatrails.org/events/volunteer-day/&quot;}, &quot;description&quot;: &quot;Join us for a day of volunteering in Denali National Park. We will be working on trail maintenance and cleanup, and no experience is necessary. This is a great opportunity to give back to the community and enjoy the beautiful scenery of the park.&quot;}</ns1:encoded>
+      <ns0:summary>Volunteer Day — April 24, 2026 — Denali National Park. Join us for a day of volunteering in Denali National Park. We will be working on trail maintena...</ns0:summary>
+    </item>
+    <item>
+      <title>Kenai Peninsula Trail Race — May 1, 2026</title>
+      <link>https://anchoragehikes.com/kenai-peninsula-trail-race-20260501/</link>
+      <guid isPermaLink="true">https://anchoragehikes.com/kenai-peninsula-trail-race-20260501/</guid>
+      <pubDate>Mon, 30 Mar 2026 21:01:39 +0000</pubDate>
+      <description>Trail Race — May 1, 2026 — Kenai Peninsula. Get ready for a challenging trail race on the beautiful Kenai Peninsula. The course will take you th</description>
+      <ns1:encoded>{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;NewsArticle&quot;,
+  &quot;headline&quot;: &quot;Kenai Peninsula Trail Race — May 1, 2026&quot;,
+  &quot;url&quot;: &quot;https://anchoragehikes.com/kenai-peninsula-trail-race-20260501/&quot;,
+  &quot;datePublished&quot;: &quot;2026-03-30T22:01:39&quot;,
+  &quot;dateModified&quot;: &quot;2026-03-30T22:01:56&quot;,
+  &quot;author&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com Editorial Team&quot;,
+    &quot;url&quot;: &quot;https://anchoragehikes.com/about/&quot;
+  },
+  &quot;publisher&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com&quot;,
+    &quot;logo&quot;: {
+      &quot;@type&quot;: &quot;ImageObject&quot;,
+      &quot;url&quot;: &quot;https://anchoragehikes.com/wp-content/uploads/2026/03/ah-icon-512.png&quot;,
+      &quot;width&quot;: 512,
+      &quot;height&quot;: 512
+    }
+  },
+  &quot;description&quot;: &quot;Trail Race — May 1, 2026 — Kenai Peninsula. Get ready for a challenging trail race on the beautiful Kenai Peninsula. The course will take you th&quot;,
+  &quot;articleSection&quot;: &quot;Alaska Hiking&quot;,
+  &quot;keywords&quot;: &quot;Alaska hiking, trails, outdoor recreation, Anchorage&quot;
+}
+
+
+
+
+
+
+
+      Trail Race
+      Hard
+      $50
+    
+Kenai Peninsula Trail Race
+
+      📅 May 1, 2026 &amp;nbsp;•&amp;nbsp; 🕐 8:00 AM AKDT &amp;nbsp;•&amp;nbsp; 🏢 Mountaineering Club of Alaska
+    
+
+
+
+
+
+
+
+Date
+May 1, 2026
+
+
+
+Time
+8:00 AM AKDT
+
+
+
+Location
+Kenai Peninsula
+
+
+
+Cost
+$50
+
+
+
+Get ready for a challenging trail race on the beautiful Kenai Peninsula. The course will take you through stunning scenery and varied terrain, with options for 5K, 10K, and half-marathon distances. Registration includes a t-shirt and post-race refreshments.
+
+
+racerunningkenai
+
+
+📍 Location &amp;amp; Directions
+60.4553° N, -151.2681° W
+📌 Kenai Peninsula
+  
+    🗺️ Get Directions in Google Maps
+  
+
+    &lt;iframe width=&quot;100%&quot; height=&quot;320&quot; style=&quot;border:0;display:block;&quot;
+      src=&quot;https://maps.google.com/maps?q=60.4553,-151.2681&amp;#038;z=14&amp;#038;output=embed&quot; allowfullscreen=&quot;&quot; loading=&quot;lazy&quot;
+      referrerpolicy=&quot;no-referrer-when-downgrade&quot;&gt;
+  
+
+
+Ready to Join?
+Organized by Mountaineering Club of Alaska &amp;nbsp;•&amp;nbsp; $50
+  
+    Register / Learn More →
+  
+Source: https://www.mountaineeringclubofalaska.org/
+
+
+
+  ← All Alaska Events
+  Browse Trails
+  AnchorageHikes.com
+
+
+
+{&quot;@context&quot;: &quot;https://schema.org&quot;, &quot;@type&quot;: &quot;Event&quot;, &quot;name&quot;: &quot;Kenai Peninsula Trail Race&quot;, &quot;startDate&quot;: &quot;2026-05-01&quot;, &quot;location&quot;: {&quot;@type&quot;: &quot;Place&quot;, &quot;name&quot;: &quot;Kenai Peninsula&quot;, &quot;geo&quot;: {&quot;@type&quot;: &quot;GeoCoordinates&quot;, &quot;latitude&quot;: 60.4553, &quot;longitude&quot;: -151.2681}}, &quot;organizer&quot;: {&quot;@type&quot;: &quot;Organization&quot;, &quot;name&quot;: &quot;Mountaineering Club of Alaska&quot;}, &quot;offers&quot;: {&quot;@type&quot;: &quot;Offer&quot;, &quot;price&quot;: &quot;50&quot;, &quot;priceCurrency&quot;: &quot;USD&quot;, &quot;url&quot;: &quot;https://www.mountaineeringclubofalaska.org/events/trail-race/&quot;}, &quot;description&quot;: &quot;Get ready for a challenging trail race on the beautiful Kenai Peninsula. The course will take you through stunning scenery and varied terrain, with options for 5K, 10K, and half-marathon distances. Registration includes a t-shirt and post-race refreshments.&quot;}</ns1:encoded>
+      <ns0:summary>Trail Race — May 1, 2026 — Kenai Peninsula. Get ready for a challenging trail race on the beautiful Kenai Peninsula. The course will take you th</ns0:summary>
+    </item>
+    <item>
+      <title>Trail Conditions — March 30, 2026</title>
+      <link>https://anchoragehikes.com/trail-conditions-march-30-2026/</link>
+      <guid isPermaLink="true">https://anchoragehikes.com/trail-conditions-march-30-2026/</guid>
+      <pubDate>Mon, 30 Mar 2026 20:00:10 +0000</pubDate>
+      <description>Daily trail conditions update for Anchorage Alaska trails — 2026-03-30</description>
+      <ns1:encoded>{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;NewsArticle&quot;,
+  &quot;headline&quot;: &quot;Trail Conditions — March 30, 2026&quot;,
+  &quot;url&quot;: &quot;https://anchoragehikes.com/trail-conditions-march-30-2026/&quot;,
+  &quot;datePublished&quot;: &quot;2026-03-30T21:00:10&quot;,
+  &quot;dateModified&quot;: &quot;2026-03-30T21:00:10&quot;,
+  &quot;author&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com Editorial Team&quot;,
+    &quot;url&quot;: &quot;https://anchoragehikes.com/about/&quot;
+  },
+  &quot;publisher&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com&quot;,
+    &quot;logo&quot;: {
+      &quot;@type&quot;: &quot;ImageObject&quot;,
+      &quot;url&quot;: &quot;https://anchoragehikes.com/wp-content/uploads/2026/03/ah-icon-512.png&quot;,
+      &quot;width&quot;: 512,
+      &quot;height&quot;: 512
+    }
+  },
+  &quot;description&quot;: &quot;Daily trail conditions update for Anchorage Alaska trails — 2026-03-30&quot;,
+  &quot;articleSection&quot;: &quot;Alaska Hiking&quot;,
+  &quot;keywords&quot;: &quot;Alaska hiking, trails, outdoor recreation, Anchorage&quot;
+}
+
+
+🏔️ Daily Trail Conditions Update — 2026-03-30
+Automatically generated from NWS, Alaska 511, and Chugach State Park sources
+
+Trail Conditions Summary
+Trail conditions in Anchorage, Alaska are currently favorable for hiking, with clear skies and cold temperatures dominating the forecast. With no active road or trail events reported in the area, hikers can expect a peaceful and scenic experience on the trails.
+Weather Impact on Trails
+The sunny weather and northeast winds will provide excellent visibility on the trails, making it an ideal day for taking in the breathtaking views of the surrounding landscape. However, the cold temperatures, with a high near 35 and a low of 16, will require hikers to dress in layers and be prepared for potential icy patches on the trails. There is no precipitation forecasted, which will help keep the trails dry and firm.
+Specific Trail Status Notes
+Some popular trails to consider today include:
+
+Flattop Mountain: The trail is likely to be snowy and icy, with potential for strong winds at the summit. Hikers should be prepared with crampons and trekking poles.
+Coastal Trail: The trail is expected to be clear and dry, with stunning views of the surrounding coastline.
+Eagle River: The trails in the Eagle River area are likely to be snowy, with some icy patches. Hikers should be cautious and wear appropriate footwear.
+Chugach State Park: The park&amp;#8217;s trails are open, but hikers should be aware of potential snow and ice on the trails, particularly at higher elevations.
+
+Bear and Wildlife Activity Level
+As we are still in the early spring season, bear activity is expected to be low. However, it&amp;#8217;s always important for hikers to be aware of their surroundings and take necessary precautions, such as making noise while hiking and carrying bear spray.
+Safety Recommendations for Today
+To ensure a safe and enjoyable hike, we recommend:
+
+Dressing in layers to stay warm and dry
+Wearing appropriate footwear, such as insulated and waterproof boots
+Bringing a map, compass, and GPS device or smartphone with a GPS app
+Letting someone know your hiking plans and expected return time
+Being aware of your surroundings and watching for potential hazards, such as icy patches and wildlife
+
+
+📡 Source Data
+
+Weather: NWS Anchorage Forecast →
+Road/Trail Events: Alaska 511 →
+ — No active events
+Chugach State Park: Official Park Page →
+
+
+⚠️ Always verify conditions before heading out. Trail conditions can change rapidly in Alaska.
+Contact Chugach State Park at (907) 345-5014 for current closures.
+
+  Planning a trip to Anchorage? Find local gear shops, restaurants, and services at
+  AnchorageList.com —
+  Anchorage&amp;#8217;s most complete local directory.</ns1:encoded>
+      <ns0:summary>Daily trail conditions update for Anchorage Alaska trails — 2026-03-30</ns0:summary>
+    </item>
+    <item>
+      <title>Google Verification Head</title>
+      <link>https://anchoragehikes.com/google-verification-head-2/</link>
+      <guid isPermaLink="true">https://anchoragehikes.com/google-verification-head-2/</guid>
+      <pubDate>Mon, 30 Mar 2026 16:36:36 +0000</pubDate>
+      <description>Read the latest Alaska hiking news and trail updates from AnchorageHikes.com — your guide to outdoor adventures in the Chugach Mountains and beyond.</description>
+      <ns1:encoded>{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;NewsArticle&quot;,
+  &quot;headline&quot;: &quot;Google Verification Head&quot;,
+  &quot;url&quot;: &quot;https://anchoragehikes.com/google-verification-head-2/&quot;,
+  &quot;datePublished&quot;: &quot;2026-03-30T17:36:36&quot;,
+  &quot;dateModified&quot;: &quot;2026-03-30T17:36:36&quot;,
+  &quot;author&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com Editorial Team&quot;,
+    &quot;url&quot;: &quot;https://anchoragehikes.com/about/&quot;
+  },
+  &quot;publisher&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com&quot;,
+    &quot;logo&quot;: {
+      &quot;@type&quot;: &quot;ImageObject&quot;,
+      &quot;url&quot;: &quot;https://anchoragehikes.com/wp-content/uploads/2026/03/ah-icon-512.png&quot;,
+      &quot;width&quot;: 512,
+      &quot;height&quot;: 512
+    }
+  },
+  &quot;description&quot;: &quot;Alaska hiking news and trail updates from AnchorageHikes.com&quot;,
+  &quot;articleSection&quot;: &quot;Alaska Hiking&quot;,
+  &quot;keywords&quot;: &quot;Alaska hiking, trails, outdoor recreation, Anchorage&quot;
+}
+
+
+  Planning a trip to Anchorage? Find local gear shops, restaurants, and services at
+  AnchorageList.com —
+  Anchorage&amp;#8217;s most complete local directory.</ns1:encoded>
+      <ns0:summary>Read the latest Alaska hiking news and trail updates from AnchorageHikes.com — your guide to outdoor adventures in the Chugach Mountains and beyond.</ns0:summary>
+    </item>
+    <item>
+      <title>Google Verification Head</title>
+      <link>https://anchoragehikes.com/google-verification-head/</link>
+      <guid isPermaLink="true">https://anchoragehikes.com/google-verification-head/</guid>
+      <pubDate>Mon, 30 Mar 2026 16:36:35 +0000</pubDate>
+      <description>Read the latest Alaska hiking news and trail updates from AnchorageHikes.com — your guide to outdoor adventures in the Chugach Mountains and beyond.</description>
+      <ns1:encoded>{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;NewsArticle&quot;,
+  &quot;headline&quot;: &quot;Google Verification Head&quot;,
+  &quot;url&quot;: &quot;https://anchoragehikes.com/google-verification-head/&quot;,
+  &quot;datePublished&quot;: &quot;2026-03-30T17:36:35&quot;,
+  &quot;dateModified&quot;: &quot;2026-03-30T17:36:35&quot;,
+  &quot;author&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com Editorial Team&quot;,
+    &quot;url&quot;: &quot;https://anchoragehikes.com/about/&quot;
+  },
+  &quot;publisher&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com&quot;,
+    &quot;logo&quot;: {
+      &quot;@type&quot;: &quot;ImageObject&quot;,
+      &quot;url&quot;: &quot;https://anchoragehikes.com/wp-content/uploads/2026/03/ah-icon-512.png&quot;,
+      &quot;width&quot;: 512,
+      &quot;height&quot;: 512
+    }
+  },
+  &quot;description&quot;: &quot;Alaska hiking news and trail updates from AnchorageHikes.com&quot;,
+  &quot;articleSection&quot;: &quot;Alaska Hiking&quot;,
+  &quot;keywords&quot;: &quot;Alaska hiking, trails, outdoor recreation, Anchorage&quot;
+}
+
+
+  Planning a trip to Anchorage? Find local gear shops, restaurants, and services at
+  AnchorageList.com —
+  Anchorage&amp;#8217;s most complete local directory.</ns1:encoded>
+      <ns0:summary>Read the latest Alaska hiking news and trail updates from AnchorageHikes.com — your guide to outdoor adventures in the Chugach Mountains and beyond.</ns0:summary>
+    </item>
+    <item>
+      <title>How I’m Managing Pre-PCT Trail Jitters</title>
+      <link>https://anchoragehikes.com/how-im-managing-pre-pct-trail-jitters/</link>
+      <guid isPermaLink="true">https://anchoragehikes.com/how-im-managing-pre-pct-trail-jitters/</guid>
+      <pubDate>Mon, 30 Mar 2026 03:29:15 +0000</pubDate>
+      <description>Conquering the Wilderness Within: Finding Calm Before Your Alaskan Adventure Are you a hiker dreaming of tackling the rugged trails of Alaska, but fe</description>
+      <ns1:encoded>{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;NewsArticle&quot;,
+  &quot;headline&quot;: &quot;How I’m Managing Pre-PCT Trail Jitters&quot;,
+  &quot;url&quot;: &quot;https://anchoragehikes.com/how-im-managing-pre-pct-trail-jitters/&quot;,
+  &quot;datePublished&quot;: &quot;2026-03-30T04:29:15&quot;,
+  &quot;dateModified&quot;: &quot;2026-03-30T04:29:15&quot;,
+  &quot;author&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com Editorial Team&quot;,
+    &quot;url&quot;: &quot;https://anchoragehikes.com/about/&quot;
+  },
+  &quot;publisher&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com&quot;,
+    &quot;logo&quot;: {
+      &quot;@type&quot;: &quot;ImageObject&quot;,
+      &quot;url&quot;: &quot;https://anchoragehikes.com/wp-content/uploads/2026/03/ah-icon-512.png&quot;,
+      &quot;width&quot;: 512,
+      &quot;height&quot;: 512
+    }
+  },
+  &quot;description&quot;: &quot;Conquering the Wilderness Within: Finding Calm Before Your Alaskan Adventure Are you a hiker dreaming of tackling the rugged trails of Alaska, but fe&quot;,
+  &quot;articleSection&quot;: &quot;Alaska Hiking&quot;,
+  &quot;keywords&quot;: &quot;Alaska hiking, trails, outdoor recreation, Anchorage&quot;
+}
+
+
+  Alaska Hiking &amp;#038; Outdoors
+  Mon, 30 Ma
+
+
+🏔
+
+AnchorageHikes Editorial
+AnchorageHikes.com · Alaska Outdoor News
+
+
+
+Conquering the Wilderness Within: Finding Calm Before Your Alaskan Adventure
+Are you a hiker dreaming of tackling the rugged trails of Alaska, but feeling a creeping sense of anxiety before you even lace up your boots? You’re not alone. Many of us, myself included, experience a surge of pre-trip jitters – a whirlwind of “what ifs” and a desperate need to control every detail. But in Alaska, where the landscapes are vast, the weather unpredictable, and the wilderness demands respect, mastering that mental game is just as crucial as physical preparation.
+Recently, I read about a long-distance hiker, Amy Acocelli Speek, grappling with these very feelings before her Pacific Crest Trail journey. Her experience highlighted a critical truth: the mental aspect of thru-hiking – and any significant outdoor endeavor – is often overlooked. It’s about silencing the internal critic, accepting the unknown, and finding a rhythm with the wilderness, not fighting against it.
+Why This Matters for Alaska Hikers
+Alaska’s trails, from the challenging Crow Pass to the iconic Flattop Mountain in Chugach State Park, demand a level of mental fortitude.  The distances are often longer than you anticipate, the weather can shift dramatically in minutes, and wildlife encounters – from moose near Eagle River Nature Center to bears in the Kenai Fjords – require constant vigilance.  Alaska’s subsistence culture, deeply rooted in Native traditions, reminds us that we are guests in this land, and respecting its rhythms is paramount.  Just as Amy learned to manage her internal monologue for a marathon, hikers in Alaska need to develop strategies to quiet the anxieties that arise when faced with solitude and the raw power of nature.
+Practical Guidance for the Trail
+
+  Planning a trip to Anchorage? Find local gear shops, restaurants, and services at
+  AnchorageList.com —
+  Anchorage&amp;#8217;s most complete local directory.</ns1:encoded>
+      <ns0:summary>Conquering the Wilderness Within: Finding Calm Before Your Alaskan Adventure Are you a hiker dreaming of tackling the rugged trails of Alaska, but fe</ns0:summary>
+    </item>
+    <item>
+      <title>Ready to Go Ultralight? Start with These 7 Gear Picks.</title>
+      <link>https://anchoragehikes.com/ready-to-go-ultralight-start-with-these-7-gear-picks/</link>
+      <guid isPermaLink="true">https://anchoragehikes.com/ready-to-go-ultralight-start-with-these-7-gear-picks/</guid>
+      <pubDate>Mon, 30 Mar 2026 03:29:05 +0000</pubDate>
+      <description>Ready to Conquer Alaska’s Trails? Start with These 7 Gear Picks. Alaska’s wilderness calls to every hiker, promising breathtaking vistas and a profou</description>
+      <ns1:encoded>Planning a trip to Anchorage? Find local gear shops, restaurants, and services at
+  AnchorageList.com —
+  Anchorage&amp;#8217;s most complete local directory.</ns1:encoded>
+      <ns0:summary>Ready to Conquer Alaska’s Trails? Start with These 7 Gear Picks. Alaska’s wilderness calls to every hiker, promising breathtaking vistas and a profou</ns0:summary>
+    </item>
+    <item>
+      <title>First Look: The Latest Tech in Rain and Sun Protection</title>
+      <link>https://anchoragehikes.com/first-look-the-latest-tech-in-rain-and-sun-protection/</link>
+      <guid isPermaLink="true">https://anchoragehikes.com/first-look-the-latest-tech-in-rain-and-sun-protection/</guid>
+      <pubDate>Mon, 30 Mar 2026 03:28:54 +0000</pubDate>
+      <description>Conquer Any Alaskan Weather: New Tech Promises Unstoppable Protection Alaska’s trails demand respect, and that respect starts with reliable gear. Rec</description>
+      <ns1:encoded>{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;NewsArticle&quot;,
+  &quot;headline&quot;: &quot;First Look: The Latest Tech in Rain and Sun Protection&quot;,
+  &quot;url&quot;: &quot;https://anchoragehikes.com/first-look-the-latest-tech-in-rain-and-sun-protection/&quot;,
+  &quot;datePublished&quot;: &quot;2026-03-30T04:28:54&quot;,
+  &quot;dateModified&quot;: &quot;2026-03-30T04:28:54&quot;,
+  &quot;author&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com Editorial Team&quot;,
+    &quot;url&quot;: &quot;https://anchoragehikes.com/about/&quot;
+  },
+  &quot;publisher&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com&quot;,
+    &quot;logo&quot;: {
+      &quot;@type&quot;: &quot;ImageObject&quot;,
+      &quot;url&quot;: &quot;https://anchoragehikes.com/wp-content/uploads/2026/03/ah-icon-512.png&quot;,
+      &quot;width&quot;: 512,
+      &quot;height&quot;: 512
+    }
+  },
+  &quot;description&quot;: &quot;Conquer Any Alaskan Weather: New Tech Promises Unstoppable Protection Alaska&amp;#8217;s trails demand respect, and that respect starts with reliable gear. Rec&quot;,
+  &quot;articleSection&quot;: &quot;Alaska Hiking&quot;,
+  &quot;keywords&quot;: &quot;Alaska hiking, trails, outdoor recreation, Anchorage&quot;
+}
+
+
+  Alaska Hiking &amp;#038; Outdoors
+  Tue, 24 Ma
+
+
+🏔
+
+AnchorageHikes Editorial
+AnchorageHikes.com · Alaska Outdoor News
+
+
+
+Conquer Any Alaskan Weather: New Tech Promises Unstoppable Protection
+Alaska’s trails demand respect, and that respect starts with reliable gear. Recent advancements in waterproof and sun protection are changing the game, offering hikers a serious edge against the state’s notoriously fickle weather.  Mountain Hardwear’s latest innovations, particularly their DrySpell technology, are pushing the boundaries of what’s possible in the Alaskan backcountry.
+Why This Matters for Alaska Hikers
+Alaska’s diverse landscapes – from the towering peaks of Chugach State Park and the glacial majesty of Denali to the coastal trails of Point Woronzof and the rugged beauty of Crow Pass – require serious preparation.  The conditions here are brutal: sudden downpours can materialize on a sunny morning, UV radiation is intense at high altitudes, and wildlife encounters – from moose near Eagle River Nature Center to bears in the Kenai Fjords – require constant vigilance.  Just like a seasoned subsistence hunter preparing for a winter caribou drive, you need layers that perform flawlessly.  Understanding the difference between a flimsy rain jacket and a truly waterproof, breathable shell is crucial, especially when venturing beyond the well-maintained trails around Eagle River Nature Center.  Remember, a single mistake in Alaska can quickly escalate, so prioritizing robust protection is paramount.
+Practical Guidance for the Trail
+
+  Planning a trip to Anchorage? Find local gear shops, restaurants, and services at
+  AnchorageList.com —
+  Anchorage&amp;#8217;s most complete local directory.</ns1:encoded>
+      <ns0:summary>Conquer Any Alaskan Weather: New Tech Promises Unstoppable Protection Alaska’s trails demand respect, and that respect starts with reliable gear. Rec</ns0:summary>
+    </item>
+    <item>
+      <title>The Strange History of the Spork, Backpacking’s Favorite Utensil</title>
+      <link>https://anchoragehikes.com/the-strange-history-of-the-spork-backpackings-favorite-utensil-2/</link>
+      <guid isPermaLink="true">https://anchoragehikes.com/the-strange-history-of-the-spork-backpackings-favorite-utensil-2/</guid>
+      <pubDate>Mon, 30 Mar 2026 03:28:43 +0000</pubDate>
+      <description>The Strange History of the Spork, Backpacking’s Favorite Utensil Are you a hiker constantly seeking the perfect blend of lightweight gear and functio</description>
+      <ns1:encoded>{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;NewsArticle&quot;,
+  &quot;headline&quot;: &quot;The Strange History of the Spork, Backpacking’s Favorite Utensil&quot;,
+  &quot;url&quot;: &quot;https://anchoragehikes.com/the-strange-history-of-the-spork-backpackings-favorite-utensil-2/&quot;,
+  &quot;datePublished&quot;: &quot;2026-03-30T04:28:43&quot;,
+  &quot;dateModified&quot;: &quot;2026-03-30T04:28:43&quot;,
+  &quot;author&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com Editorial Team&quot;,
+    &quot;url&quot;: &quot;https://anchoragehikes.com/about/&quot;
+  },
+  &quot;publisher&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com&quot;,
+    &quot;logo&quot;: {
+      &quot;@type&quot;: &quot;ImageObject&quot;,
+      &quot;url&quot;: &quot;https://anchoragehikes.com/wp-content/uploads/2026/03/ah-icon-512.png&quot;,
+      &quot;width&quot;: 512,
+      &quot;height&quot;: 512
+    }
+  },
+  &quot;description&quot;: &quot;The Strange History of the Spork, Backpacking’s Favorite Utensil Are you a hiker constantly seeking the perfect blend of lightweight gear and functio&quot;,
+  &quot;articleSection&quot;: &quot;Alaska Hiking&quot;,
+  &quot;keywords&quot;: &quot;Alaska hiking, trails, outdoor recreation, Anchorage&quot;
+}
+
+
+  Alaska Hiking &amp;#038; Outdoors
+  Wed, 25 Ma
+
+
+🏔
+
+AnchorageHikes Editorial
+AnchorageHikes.com · Alaska Outdoor News
+
+
+
+The Strange History of the Spork, Backpacking’s Favorite Utensil
+Are you a hiker constantly seeking the perfect blend of lightweight gear and functionality?
+The humble spork – that seemingly simple combination spoon and fork – has a surprisingly complex and fascinating history, stretching back centuries and fueled by the burgeoning spirit of travel and exploration. It’s a testament to human ingenuity and our enduring need for efficient eating tools, and it’s a story that resonates deeply with Alaska outdoor enthusiasts.
+Why This Matters for Alaska Hikers
+As Alaska hikers, we understand the importance of minimizing weight and maximizing utility. The Chugach State Park, with its challenging trails like Flattop Mountain and Crow Pass, demands every ounce counts.  Whether you’re navigating the rugged terrain of Denali National Park or enjoying a riverside lunch along the Eagle River Nature Center, a reliable utensil is crucial.  Alaska’s vast wilderness – from the Kenai Fjords’ icy shores to the remote stretches of the Tanana River – requires preparedness.  Just like the pioneers who first traversed these lands, we need tools that are dependable and adaptable.  Respect for subsistence traditions, deeply rooted in Alaska Native culture, also highlights the value of multi-functional gear, mirroring the resourcefulness of those who’ve relied on simple tools for generations.
+Practical Guidance for the Trail
+
+  Planning a trip to Anchorage? Find local gear shops, restaurants, and services at
+  AnchorageList.com —
+  Anchorage&amp;#8217;s most complete local directory.</ns1:encoded>
+      <ns0:summary>The Strange History of the Spork, Backpacking’s Favorite Utensil Are you a hiker constantly seeking the perfect blend of lightweight gear and functio</ns0:summary>
+    </item>
+    <item>
+      <title>One Misstep on a Ladder Triggered an Airlift Rescue on a Popular North Carolina Trail</title>
+      <link>https://anchoragehikes.com/one-misstep-on-a-ladder-triggered-an-airlift-rescue-on-a-popular-north-carolina-trail/</link>
+      <guid isPermaLink="true">https://anchoragehikes.com/one-misstep-on-a-ladder-triggered-an-airlift-rescue-on-a-popular-north-carolina-trail/</guid>
+      <pubDate>Mon, 30 Mar 2026 03:28:32 +0000</pubDate>
+      <description>Don’t Let a Moment of Inattention Cost You Your Adventure A single misstep on a ladder nearly turned a summit attempt into a harrowing rescue, remind</description>
+      <ns1:encoded>{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;NewsArticle&quot;,
+  &quot;headline&quot;: &quot;One Misstep on a Ladder Triggered an Airlift Rescue on a Popular North Carolina Trail&quot;,
+  &quot;url&quot;: &quot;https://anchoragehikes.com/one-misstep-on-a-ladder-triggered-an-airlift-rescue-on-a-popular-north-carolina-trail/&quot;,
+  &quot;datePublished&quot;: &quot;2026-03-30T04:28:32&quot;,
+  &quot;dateModified&quot;: &quot;2026-03-30T04:28:32&quot;,
+  &quot;author&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com Editorial Team&quot;,
+    &quot;url&quot;: &quot;https://anchoragehikes.com/about/&quot;
+  },
+  &quot;publisher&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com&quot;,
+    &quot;logo&quot;: {
+      &quot;@type&quot;: &quot;ImageObject&quot;,
+      &quot;url&quot;: &quot;https://anchoragehikes.com/wp-content/uploads/2026/03/ah-icon-512.png&quot;,
+      &quot;width&quot;: 512,
+      &quot;height&quot;: 512
+    }
+  },
+  &quot;description&quot;: &quot;Don&amp;#8217;t Let a Moment of Inattention Cost You Your Adventure A single misstep on a ladder nearly turned a summit attempt into a harrowing rescue, remind&quot;,
+  &quot;articleSection&quot;: &quot;Alaska Hiking&quot;,
+  &quot;keywords&quot;: &quot;Alaska hiking, trails, outdoor recreation, Anchorage&quot;
+}
+
+
+  Alaska Hiking &amp;#038; Outdoors
+  Wed, 25 Ma
+
+
+🏔
+
+AnchorageHikes Editorial
+AnchorageHikes.com · Alaska Outdoor News
+
+
+
+Don’t Let a Moment of Inattention Cost You Your Adventure
+A single misstep on a ladder nearly turned a summit attempt into a harrowing rescue, reminding us all of the critical importance of preparedness and respect for the mountains. Recently, a hiker on Grandfather Mountain in North Carolina required a complex hoist airlift operation after falling and injuring their leg, highlighting the potential dangers lurking even on seemingly well-maintained trails.
+This incident, detailed by Backpacker Magazine, involved a hiker near the summit of MacRae Peak, one of Grandfather Mountain’s four peaks, who lost their footing on the final ladder section. Responders from multiple agencies, including Linville-Central Rescue and Grandfather Mountain State Park, worked tirelessly to reach the injured hiker at an elevation of approximately 5,800 feet. Due to the challenging terrain and the need for a lengthy carry-out, a Black Hawk helicopter was ultimately deployed to safely transport the individual to a medical facility.
+Why This Matters for Alaska Hikers
+Alaska’s wilderness demands respect, and this story underscores the need for meticulous planning, especially when tackling trails with exposed sections like those found on Flattop Mountain in Chugach State Park or the demanding climbs of Crow Pass. While Alaska’s peaks might not always feature ladders, the potential for unexpected hazards – from rapidly changing weather to challenging river crossings – is ever-present.  Consider the longer distances and colder temperatures you’ll encounter on trails like the Eagle River Nature Center loop, or the potential for wildlife encounters, whether it’s a moose near Ship Creek or a bear in Denali National Park.  Alaska’s subsistence culture also means respecting traditional land use and being aware of potential closures or restrictions.  Just as this hiker needed a hoist, a sudden storm or injury could quickly turn a beautiful day into a serious situation in the vast Alaskan landscape.
+Practical Guidance for the Trail
+
+  Planning a trip to Anchorage? Find local gear shops, restaurants, and services at
+  AnchorageList.com —
+  Anchorage&amp;#8217;s most complete local directory.</ns1:encoded>
+      <ns0:summary>Don’t Let a Moment of Inattention Cost You Your Adventure A single misstep on a ladder nearly turned a summit attempt into a harrowing rescue, remind</ns0:summary>
+    </item>
+    <item>
+      <title>What This Year’s Historically Low Snowpack Means for Pacific Crest Trail Hikers</title>
+      <link>https://anchoragehikes.com/what-this-years-historically-low-snowpack-means-for-pacific-crest-trail-hikers/</link>
+      <guid isPermaLink="true">https://anchoragehikes.com/what-this-years-historically-low-snowpack-means-for-pacific-crest-trail-hikers/</guid>
+      <pubDate>Mon, 30 Mar 2026 03:28:21 +0000</pubDate>
+      <description>Forget the White Peaks: This Year’s Snowpack Crisis Will Redefine Your Alaska Hiking Season Alaska outdoor enthusiasts, prepare for a shift. Across t</description>
+      <ns1:encoded>{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;NewsArticle&quot;,
+  &quot;headline&quot;: &quot;What This Year’s Historically Low Snowpack Means for Pacific Crest Trail Hikers&quot;,
+  &quot;url&quot;: &quot;https://anchoragehikes.com/what-this-years-historically-low-snowpack-means-for-pacific-crest-trail-hikers/&quot;,
+  &quot;datePublished&quot;: &quot;2026-03-30T04:28:21&quot;,
+  &quot;dateModified&quot;: &quot;2026-03-30T04:28:21&quot;,
+  &quot;author&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com Editorial Team&quot;,
+    &quot;url&quot;: &quot;https://anchoragehikes.com/about/&quot;
+  },
+  &quot;publisher&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com&quot;,
+    &quot;logo&quot;: {
+      &quot;@type&quot;: &quot;ImageObject&quot;,
+      &quot;url&quot;: &quot;https://anchoragehikes.com/wp-content/uploads/2026/03/ah-icon-512.png&quot;,
+      &quot;width&quot;: 512,
+      &quot;height&quot;: 512
+    }
+  },
+  &quot;description&quot;: &quot;Forget the White Peaks: This Year’s Snowpack Crisis Will Redefine Your Alaska Hiking Season Alaska outdoor enthusiasts, prepare for a shift. Across t&quot;,
+  &quot;articleSection&quot;: &quot;Alaska Hiking&quot;,
+  &quot;keywords&quot;: &quot;Alaska hiking, trails, outdoor recreation, Anchorage&quot;
+}
+
+
+  Alaska Hiking &amp;#038; Outdoors
+  Thu, 26 Ma
+
+
+🏔
+
+AnchorageHikes Editorial
+AnchorageHikes.com · Alaska Outdoor News
+
+
+
+Forget the White Peaks: This Year’s Snowpack Crisis Will Redefine Your Alaska Hiking Season
+Alaska outdoor enthusiasts, prepare for a shift. Across the West, historically low snowpack is creating a dramatically different hiking landscape, and it’s going to impact your favorite trails here in the Last Frontier. With heat waves accelerating snowmelt, the Pacific Crest Trail is facing a summer of unprecedented challenges, and the lessons learned from this situation are directly relevant to our Alaskan adventures.
+Why This Matters for Alaska Hikers
+The dramatic reduction in snowpack – particularly in the Klamath and Willamette basins – highlights the vulnerability of our beloved Alaskan trails. While Chugach State Park and Flattop Mountain might still boast impressive snowfields this early in the season, the overall trend is concerning. Lower snow levels mean earlier starts to the summer hiking season, but also increased risk of exposed trails, faster stream flows, and a greater need for careful route planning. Trails like Crow Pass, known for its stunning alpine meadows, could see significantly drier conditions, impacting wildlife viewing and potentially increasing the risk of wildfires. Even familiar spots like the Eagle River Nature Center might experience altered water levels and vegetation.  Alaska’s unique challenges – colder temperatures, unpredictable weather, and the ever-present need for bear safety – are amplified by this shifting landscape.  Remember, many Indigenous communities rely on the snowpack for subsistence, and its decline impacts their traditional way of life, a crucial element of Alaska’s cultural heritage.
+Practical Guidance for the Trail
+Here’s what you need to know as you plan your summer hikes:  First, check local snow reports religiously – the USDA Snow Survey Program is a great resource. Second, be prepared for rapid trail degradation. Carry microspikes or trekking poles, even on trails you normally don’t need them. Third, prioritize water sources; many streams will be running low or dry. Invest in a reliable water filter or purification tablets. Fourth, understand bear country protocol – with less snow cover, bears may be more active and concentrated near water sources.  Consider carrying bear spray and practicing proper food storage.  Finally, be aware of potential river crossings – with reduced snowpack, water levels will be higher and currents stronger.  Bush plane access to remote areas might be impacted by fluctuating weather conditions.  For those chasing the aurora season, keep an eye on extended forecasts – a drier summer could mean fewer opportunities for viewing the Northern Lights.
+Alaska Context
+Alaska’s vast, rugged terrain and reliance on unpredictable weather patterns mean we’re already accustomed to adapting to challenging conditions. However, this snowpack crisis underscores the importance of long-term climate monitoring and sustainable land management practices. The legacy of military land use in areas like Fort Wainwright and Eielson Air Force Base also influences trail access and potential environmental impacts. Coastal communities, like those along Point Woronzof, are particularly vulnerable to the effects of a warming climate and reduced snowpack.
+Let’s embrace the challenge and become even more mindful stewards of our incredible Alaskan wilderness.  As hikers, let’s commit to responsible trail practices, respect for local communities, and a deep appreciation for the delicate balance of our remarkable landscape.  Plan your hikes carefully, be prepared, and remember – the spirit of adventure thrives even in the face of change.
+
+  Source: Backpacker Magazine
+
+
+Explore Anchorage Trails
+Alaska&amp;#8217;s most complete hiking database — trail maps, conditions, guides, and local knowledge.
+  Browse Trails →
+
+
+  Planning a trip to Anchorage? Find local gear shops, restaurants, and services at
+  AnchorageList.com —
+  Anchorage&amp;#8217;s most complete local directory.</ns1:encoded>
+      <ns0:summary>Forget the White Peaks: This Year’s Snowpack Crisis Will Redefine Your Alaska Hiking Season Alaska outdoor enthusiasts, prepare for a shift. Across t</ns0:summary>
+    </item>
+    <item>
+      <title>Hiker Dies from Rattlesnake Bite on California Trail</title>
+      <link>https://anchoragehikes.com/hiker-dies-from-rattlesnake-bite-on-california-trail/</link>
+      <guid isPermaLink="true">https://anchoragehikes.com/hiker-dies-from-rattlesnake-bite-on-california-trail/</guid>
+      <pubDate>Mon, 30 Mar 2026 03:28:11 +0000</pubDate>
+      <description>Don’t Let a Serpent Steal Your Alaskan Adventure Rattlesnake bites are tragically claiming lives in Southern California, serving as a stark reminder</description>
+      <ns1:encoded>{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;NewsArticle&quot;,
+  &quot;headline&quot;: &quot;Hiker Dies from Rattlesnake Bite on California Trail&quot;,
+  &quot;url&quot;: &quot;https://anchoragehikes.com/hiker-dies-from-rattlesnake-bite-on-california-trail/&quot;,
+  &quot;datePublished&quot;: &quot;2026-03-30T04:28:11&quot;,
+  &quot;dateModified&quot;: &quot;2026-03-30T04:28:11&quot;,
+  &quot;author&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com Editorial Team&quot;,
+    &quot;url&quot;: &quot;https://anchoragehikes.com/about/&quot;
+  },
+  &quot;publisher&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com&quot;,
+    &quot;logo&quot;: {
+      &quot;@type&quot;: &quot;ImageObject&quot;,
+      &quot;url&quot;: &quot;https://anchoragehikes.com/wp-content/uploads/2026/03/ah-icon-512.png&quot;,
+      &quot;width&quot;: 512,
+      &quot;height&quot;: 512
+    }
+  },
+  &quot;description&quot;: &quot;Don&amp;#8217;t Let a Serpent Steal Your Alaskan Adventure Rattlesnake bites are tragically claiming lives in Southern California, serving as a stark reminder&quot;,
+  &quot;articleSection&quot;: &quot;Alaska Hiking&quot;,
+  &quot;keywords&quot;: &quot;Alaska hiking, trails, outdoor recreation, Anchorage&quot;
+}
+
+
+  Alaska Hiking &amp;#038; Outdoors
+  Thu, 26 Ma
+
+
+🏔
+
+AnchorageHikes Editorial
+AnchorageHikes.com · Alaska Outdoor News
+
+
+
+Don’t Let a Serpent Steal Your Alaskan Adventure
+Rattlesnake bites are tragically claiming lives in Southern California, serving as a stark reminder that even familiar trails can hold hidden dangers. Sadly, a 46-year-old hiker, Gabriela Bautista, succumbed to a bite sustained on a popular trail near Thousand Oaks, marking the second fatal snake encounter in the region this year, following a mountain biker’s death just weeks prior.
+Why This Matters for Alaska Hikers
+While the circumstances are specific to California, this story underscores a critical truth for all Alaska outdoor enthusiasts: vigilance is paramount. Alaska’s vast wilderness, from the towering peaks of Flattop Mountain in Chugach State Park to the challenging trails of Crow Pass, demands respect for its wildlife. We’re talking about colder temperatures, longer distances, and a significantly higher concentration of venomous snakes – rattlesnakes, copperheads, and garter snakes – than many realize.  Consider the potential for encounters along the Eagle River Nature Center trails, or even while exploring the coastal beauty of Point Woronzof.  Just as the warmer weather in California may be fueling increased snake activity, a milder winter could mean more snakes emerging earlier in Alaska.  Furthermore, understanding the importance of subsistence practices – deeply rooted in Alaska Native culture and land use – is crucial; respecting traditional territories and minimizing disturbance is a cornerstone of responsible hiking.
+Practical Guidance for the Trail
+
+  Planning a trip to Anchorage? Find local gear shops, restaurants, and services at
+  AnchorageList.com —
+  Anchorage&amp;#8217;s most complete local directory.</ns1:encoded>
+      <ns0:summary>Don’t Let a Serpent Steal Your Alaskan Adventure Rattlesnake bites are tragically claiming lives in Southern California, serving as a stark reminder</ns0:summary>
+    </item>
+    <item>
+      <title>BearVault’s BV One is Our New Favorite Bear Canister</title>
+      <link>https://anchoragehikes.com/bearvaults-bv-one-is-our-new-favorite-bear-canister/</link>
+      <guid isPermaLink="true">https://anchoragehikes.com/bearvaults-bv-one-is-our-new-favorite-bear-canister/</guid>
+      <pubDate>Mon, 30 Mar 2026 03:28:00 +0000</pubDate>
+      <description>Forget Everything You Know About Bear Canisters – Alaska Hikers, Meet the BV One Are you tired of lugging around bulky, awkward bear canisters on you</description>
+      <ns1:encoded>{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;NewsArticle&quot;,
+  &quot;headline&quot;: &quot;BearVault’s BV One is Our New Favorite Bear Canister&quot;,
+  &quot;url&quot;: &quot;https://anchoragehikes.com/bearvaults-bv-one-is-our-new-favorite-bear-canister/&quot;,
+  &quot;datePublished&quot;: &quot;2026-03-30T04:28:00&quot;,
+  &quot;dateModified&quot;: &quot;2026-03-30T04:28:00&quot;,
+  &quot;author&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com Editorial Team&quot;,
+    &quot;url&quot;: &quot;https://anchoragehikes.com/about/&quot;
+  },
+  &quot;publisher&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com&quot;,
+    &quot;logo&quot;: {
+      &quot;@type&quot;: &quot;ImageObject&quot;,
+      &quot;url&quot;: &quot;https://anchoragehikes.com/wp-content/uploads/2026/03/ah-icon-512.png&quot;,
+      &quot;width&quot;: 512,
+      &quot;height&quot;: 512
+    }
+  },
+  &quot;description&quot;: &quot;Forget Everything You Know About Bear Canisters – Alaska Hikers, Meet the BV One Are you tired of lugging around bulky, awkward bear canisters on you&quot;,
+  &quot;articleSection&quot;: &quot;Alaska Hiking&quot;,
+  &quot;keywords&quot;: &quot;Alaska hiking, trails, outdoor recreation, Anchorage&quot;
+}
+
+
+  Planning a trip to Anchorage? Find local gear shops, restaurants, and services at
+  AnchorageList.com —
+  Anchorage&amp;#8217;s most complete local directory.</ns1:encoded>
+      <ns0:summary>Forget Everything You Know About Bear Canisters – Alaska Hikers, Meet the BV One Are you tired of lugging around bulky, awkward bear canisters on you</ns0:summary>
+    </item>
+    <item>
+      <title>The Best Trekking Poles for Hiking and Backpacking (2026)</title>
+      <link>https://anchoragehikes.com/the-best-trekking-poles-for-hiking-and-backpacking-2026/</link>
+      <guid isPermaLink="true">https://anchoragehikes.com/the-best-trekking-poles-for-hiking-and-backpacking-2026/</guid>
+      <pubDate>Mon, 30 Mar 2026 03:14:11 +0000</pubDate>
+      <description>Unleash Your Alaskan Adventure: The Right Trekking Poles Can Make or Break Your Hike Alaska’s trails are legendary – from the granite peaks of Flatto</description>
+      <ns1:encoded>{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;NewsArticle&quot;,
+  &quot;headline&quot;: &quot;The Best Trekking Poles for Hiking and Backpacking (2026)&quot;,
+  &quot;url&quot;: &quot;https://anchoragehikes.com/the-best-trekking-poles-for-hiking-and-backpacking-2026/&quot;,
+  &quot;datePublished&quot;: &quot;2026-03-30T04:14:11&quot;,
+  &quot;dateModified&quot;: &quot;2026-03-30T04:14:11&quot;,
+  &quot;author&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com Editorial Team&quot;,
+    &quot;url&quot;: &quot;https://anchoragehikes.com/about/&quot;
+  },
+  &quot;publisher&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com&quot;,
+    &quot;logo&quot;: {
+      &quot;@type&quot;: &quot;ImageObject&quot;,
+      &quot;url&quot;: &quot;https://anchoragehikes.com/wp-content/uploads/2026/03/ah-icon-512.png&quot;,
+      &quot;width&quot;: 512,
+      &quot;height&quot;: 512
+    }
+  },
+  &quot;description&quot;: &quot;Unleash Your Alaskan Adventure: The Right Trekking Poles Can Make or Break Your Hike Alaska&amp;#8217;s trails are legendary – from the granite peaks of Flatto&quot;,
+  &quot;articleSection&quot;: &quot;Alaska Hiking&quot;,
+  &quot;keywords&quot;: &quot;Alaska hiking, trails, outdoor recreation, Anchorage&quot;
+}
+
+
+  Alaska Hiking &amp;#038; Outdoors
+  Fri, 27 Ma
+
+
+🏔
+
+AnchorageHikes Editorial
+AnchorageHikes.com · Alaska Outdoor News
+
+
+
+Unleash Your Alaskan Adventure: The Right Trekking Poles Can Make or Break Your Hike
+Alaska’s trails are legendary – from the granite peaks of Flattop Mountain in Chugach State Park to the challenging ascent of Crow Pass. But conquering these wild landscapes demands more than just boots and a map; it requires the right gear, and for many hikers, that starts with a solid pair of trekking poles. Recently, *Backpacker Magazine* released their 2026 rankings, and we’ve sifted through the data to bring you the best options for Alaska’s diverse terrain.
+Why This Matters for Alaska Hikers
+Alaska’s backcountry is a demanding environment. Trails can be relentlessly steep, often winding through dense forests near the Eagle River Nature Center or across vast tundra stretching towards Denali. The weather can shift dramatically in minutes, and wildlife – bears, moose, and wolves – are a constant consideration. Trekking poles aren’t just about comfort; they’re about stability, reducing strain on your knees, and providing crucial support on challenging ascents and descents.  Whether you’re exploring the coastal beauty of Point Woronzof or venturing into the remote Kenai Fjords, a reliable pair of poles can be the difference between a memorable adventure and a serious setback.  Remember, Alaska’s trails are often built on the traditional lands and subsistence practices of Alaska Native peoples, and respecting these connections is paramount.
+Practical Guidance for the Trail
+
+  Planning a trip to Anchorage? Find local gear shops, restaurants, and services at
+  AnchorageList.com —
+  Anchorage&amp;#8217;s most complete local directory.</ns1:encoded>
+      <ns0:summary>Unleash Your Alaskan Adventure: The Right Trekking Poles Can Make or Break Your Hike Alaska’s trails are legendary – from the granite peaks of Flatto</ns0:summary>
+    </item>
+    <item>
+      <title>The 6 Best Satellite Communicators (2026)</title>
+      <link>https://anchoragehikes.com/the-6-best-satellite-communicators-2026/</link>
+      <guid isPermaLink="true">https://anchoragehikes.com/the-6-best-satellite-communicators-2026/</guid>
+      <pubDate>Mon, 30 Mar 2026 03:14:00 +0000</pubDate>
+      <description>Lost in the Wild? Satellite Communicators Are Your New Best Friend Alaska’s vast wilderness calls to hikers, offering unparalleled beauty and challen</description>
+      <ns1:encoded>{
+  &quot;@context&quot;: &quot;https://schema.org&quot;,
+  &quot;@type&quot;: &quot;NewsArticle&quot;,
+  &quot;headline&quot;: &quot;The 6 Best Satellite Communicators (2026)&quot;,
+  &quot;url&quot;: &quot;https://anchoragehikes.com/the-6-best-satellite-communicators-2026/&quot;,
+  &quot;datePublished&quot;: &quot;2026-03-30T04:14:00&quot;,
+  &quot;dateModified&quot;: &quot;2026-03-30T04:14:00&quot;,
+  &quot;author&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com Editorial Team&quot;,
+    &quot;url&quot;: &quot;https://anchoragehikes.com/about/&quot;
+  },
+  &quot;publisher&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;AnchorageHikes.com&quot;,
+    &quot;logo&quot;: {
+      &quot;@type&quot;: &quot;ImageObject&quot;,
+      &quot;url&quot;: &quot;https://anchoragehikes.com/wp-content/uploads/2026/03/ah-icon-512.png&quot;,
+      &quot;width&quot;: 512,
+      &quot;height&quot;: 512
+    }
+  },
+  &quot;description&quot;: &quot;Lost in the Wild? Satellite Communicators Are Your New Best Friend Alaska&amp;#8217;s vast wilderness calls to hikers, offering unparalleled beauty and challen&quot;,
+  &quot;articleSection&quot;: &quot;Alaska Hiking&quot;,
+  &quot;keywords&quot;: &quot;Alaska hiking, trails, outdoor recreation, Anchorage&quot;
+}
+
+
+  Alaska Hiking &amp;#038; Outdoors
+  Fri, 27 Ma
+
+
+🏔
+
+AnchorageHikes Editorial
+AnchorageHikes.com · Alaska Outdoor News
+
+
+
+Lost in the Wild? Satellite Communicators Are Your New Best Friend
+Alaska’s vast wilderness calls to hikers, offering unparalleled beauty and challenge – but it also demands respect and preparation. Recently, a solo hiker on the Crow Pass Trail near Palmer experienced a sudden, unexpected blizzard, forcing a lengthy shelter-in-place situation. Thankfully, equipped with a satellite communicator, they were able to send a distress signal and coordinate a rescue, highlighting the critical role these devices play in Alaska’s rugged terrain.
+Why This Matters for Alaska Hikers
+Alaska’s trails, from the iconic Flattop Mountain in Chugach State Park to the challenging stretches of the Kenai Fjords National Park, demand a heightened level of preparedness. The conditions here – unpredictable weather, vast distances, and the constant possibility of wildlife encounters – mean that reliable communication is paramount. Whether you’re exploring the Eagle River Nature Center’s trails or venturing into the remote backcountry near Ship Creek, a satellite communicator isn’t just a luxury; it’s a lifeline.  Remember, Alaska’s landscapes, shaped by millennia of Native subsistence traditions and now influenced by military land use, require a deep understanding of the environment and a commitment to responsible exploration.
+Practical Guidance for the Trail
+Before hitting the trail, ensure your satellite communicator is fully charged and tested. Familiarize yourself with its features – SOS signaling, two-way messaging, and location sharing are key.  Pay close attention to weather forecasts; a window of good weather might be your only opportunity to send a message.  Always check for trail closures and permit requirements, particularly in areas managed by the Forest Service.  Consider the seasonality – aurora season can be spectacular, but also brings longer nights and increased challenges.  And, crucially, practice bear safety protocols: carry bear spray, make noise while hiking, and store food properly.  River crossings can be treacherous; assess the current and depth carefully before attempting to cross.  While bush plane access can be a game-changer in emergencies, it’s not always a viable option in remote areas.
+Alaska Context
+
+  Planning a trip to Anchorage? Find local gear shops, restaurants, and services at
+  AnchorageList.com —
+  Anchorage&amp;#8217;s most complete local directory.</ns1:encoded>
+      <ns0:summary>Lost in the Wild? Satellite Communicators Are Your New Best Friend Alaska’s vast wilderness calls to hikers, offering unparalleled beauty and challen</ns0:summary>
+    </item>
+  </channel>
+</rss>
